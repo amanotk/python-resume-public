@@ -1,0 +1,276 @@
+
+
+<!doctype html>
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>4. 対話型の実行方法 &#8212; FortranユーザーのためのPython入門</title>
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/translations.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="_static/bizstyle.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="5. シーケンス型" href="chap05.html" />
+    <link rel="prev" title="3. 制御構造と関数" href="chap03.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="総合索引"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="chap05.html" title="5. シーケンス型"
+             accesskey="N">次へ</a> |</li>
+        <li class="right" >
+          <a href="chap03.html" title="3. 制御構造と関数"
+             accesskey="P">前へ</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FortranユーザーのためのPython入門</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">目次</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">4. 対話型の実行方法</a><ul>
+<li><a class="reference internal" href="#python">4.1. Pythonの対話モード</a></li>
+<li><a class="reference internal" href="#ipython">4.2. IPython</a></li>
+<li><a class="reference internal" href="#jupyter-qt-console">4.3. Jupyter Qt Console</a></li>
+<li><a class="reference internal" href="#jupyter-notebook">4.4. Jupyter Notebook</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>前のトピックへ</h4>
+  <p class="topless"><a href="chap03.html"
+                        title="前の章へ"><span class="section-number">3. </span>制御構造と関数</a></p>
+  <h4>次のトピックへ</h4>
+  <p class="topless"><a href="chap05.html"
+                        title="次の章へ"><span class="section-number">5. </span>シーケンス型</a></p>
+  <div role="note" aria-label="source link">
+    <h3>このページ</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/chap04.rst.txt"
+            rel="nofollow">ソースコードを表示</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">クイック検索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="検索" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1><a class="toc-backref" href="#id7"><span class="section-number">4. </span>対話型の実行方法</a><a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>これまではコマンドラインで完結した一つのPythonスクリプトを実行する方法を用いてきた．ここではPythonの大きな強みの一つである対話的な実行方法について紹介しよう．ただし，対話的と一口で言っても環境は様々なので，あくまでもいくつかの代表的な実行環境を紹介するにとどめる．なお，筆者のおすすめは <a class="reference internal" href="#label-ipython"><span class="std std-ref">IPython</span></a> と <a class="reference internal" href="#label-jupyternotebook"><span class="std std-ref">Jupyter Notebook</span></a> である．</p>
+<div class="contents topic" id="id2">
+<p class="topic-title">この章の内容</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#id1" id="id7">対話型の実行方法</a></p>
+<ul>
+<li><p><a class="reference internal" href="#python" id="id8">Pythonの対話モード</a></p></li>
+<li><p><a class="reference internal" href="#ipython" id="id9">IPython</a></p></li>
+<li><p><a class="reference internal" href="#jupyter-qt-console" id="id10">Jupyter Qt Console</a></p></li>
+<li><p><a class="reference internal" href="#jupyter-notebook" id="id11">Jupyter Notebook</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="python">
+<h2><a class="toc-backref" href="#id8"><span class="section-number">4.1. </span>Pythonの対話モード</a><a class="headerlink" href="#python" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ターミナルで <code class="docutils literal notranslate"><span class="pre">python</span></code> とだけ打ってみると以下のように表示され，キーボード入力待ちの状態になるであろう．</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ python
+Python <span class="m">3</span>.7.6 <span class="o">(</span>default, Jan  <span class="m">8</span> <span class="m">2020</span>, <span class="m">19</span>:59:22<span class="o">)</span>
+<span class="o">[</span>GCC <span class="m">7</span>.3.0<span class="o">]</span> :: Anaconda, Inc. on linux
+Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&quot;</span>, <span class="s2">&quot;credits&quot;</span> or <span class="s2">&quot;license&quot;</span> <span class="k">for</span> more information.
+&gt;&gt;&gt;
+</pre></div>
+</td></tr></table></div>
+<p>Pythonはインタープリター型の言語であり，一行ずつ順に実行されることは既に紹介した通りである．したがって，対話的(interactive)に任意のPythonコードを入力して実行させることができるのである．試しに <code class="docutils literal notranslate"><span class="pre">print('Hello,</span> <span class="pre">World</span> <span class="pre">!')</span></code> と入力してEnterしてみると</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, World !&#39;</span><span class="p">)</span>
+<span class="go">Hello, World !</span>
+</pre></div>
+</td></tr></table></div>
+<p>のようになる．1行目のPythonのコードが実行され，2行目の出力が得られたということである．</p>
+<p>このような対話的なPython実行環境をPythonシェルとかコンソールと呼ぶことがある．Python関係のドキュメントでは対話モードのデフォルトのプロンプト <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code> に続く行がPythonのコードを意味し，そうでない行は実行結果を意味することになっている．この文書でも特に断りのない限りはこの慣習に従うことにする．</p>
+<p>もちろん1行では完結しない構文ブロックも入力が可能である．以下の例を見てみよう．</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>            <span class="c1"># 字下げ</span>
+<span class="gp">... </span>                        <span class="c1"># 空行(字下げなしでEnter)</span>
+<span class="go">0</span>
+<span class="go">1</span>
+<span class="go">2</span>
+<span class="go">3</span>
+<span class="go">4</span>
+</pre></div>
+</td></tr></table></div>
+<p>2行目は <code class="docutils literal notranslate"><span class="pre">for</span></code> ループの中にあるため，スペースやTabキーで字下げをする．3行目は字下げをせずに空白行とすることでこの構文ブロックの終端と解釈され，ループが実行されることになる．</p>
+<p>対話モードの便利な機能の一つとしてドキュメントの参照が上げられる．例えば <code class="docutils literal notranslate"><span class="pre">print</span></code> 関数のドキュメントを参照するには</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">help</span><span class="p">(</span><span class="nb">print</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>と入力すると</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Help</span> <span class="n">on</span> <span class="n">built</span><span class="o">-</span><span class="ow">in</span> <span class="n">function</span> <span class="nb">print</span> <span class="ow">in</span> <span class="n">module</span> <span class="n">builtins</span><span class="p">:</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="n">Prints</span> <span class="n">the</span> <span class="n">values</span> <span class="n">to</span> <span class="n">a</span> <span class="n">stream</span><span class="p">,</span> <span class="ow">or</span> <span class="n">to</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="n">by</span> <span class="n">default</span><span class="o">.</span>
+    <span class="n">Optional</span> <span class="n">keyword</span> <span class="n">arguments</span><span class="p">:</span>
+    <span class="n">file</span><span class="p">:</span>  <span class="n">a</span> <span class="n">file</span><span class="o">-</span><span class="n">like</span> <span class="nb">object</span> <span class="p">(</span><span class="n">stream</span><span class="p">);</span> <span class="n">defaults</span> <span class="n">to</span> <span class="n">the</span> <span class="n">current</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span>
+    <span class="n">sep</span><span class="p">:</span>   <span class="n">string</span> <span class="n">inserted</span> <span class="n">between</span> <span class="n">values</span><span class="p">,</span> <span class="n">default</span> <span class="n">a</span> <span class="n">space</span><span class="o">.</span>
+    <span class="n">end</span><span class="p">:</span>   <span class="n">string</span> <span class="n">appended</span> <span class="n">after</span> <span class="n">the</span> <span class="n">last</span> <span class="n">value</span><span class="p">,</span> <span class="n">default</span> <span class="n">a</span> <span class="n">newline</span><span class="o">.</span>
+    <span class="n">flush</span><span class="p">:</span> <span class="n">whether</span> <span class="n">to</span> <span class="n">forcibly</span> <span class="n">flush</span> <span class="n">the</span> <span class="n">stream</span><span class="o">.</span>
+<span class="p">(</span><span class="n">END</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>のようにドキュメントが適当なページャ(Unixコマンドのlessやmoreなど）で表示されることになる．(大抵の場合終了するには <code class="docutils literal notranslate"><span class="pre">q</span></code> と入力すればよい．)このように，ちょっと使い方を調べたい時には対話モードのドキュメントを参照するのが便利である．</p>
+</div>
+<div class="section" id="ipython">
+<span id="label-ipython"></span><h2><a class="toc-backref" href="#id9"><span class="section-number">4.2. </span>IPython</a><a class="headerlink" href="#ipython" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>実際にはデフォルトの対話モードをより高機能ににしたIPythonが非常に便利である．ターミナルで <code class="docutils literal notranslate"><span class="pre">ipython</span></code> と打つと，今度は以下のように表示されるであろう．</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ ipython
+Python <span class="m">3</span>.7.6 <span class="o">(</span>default, Jan  <span class="m">8</span> <span class="m">2020</span>, <span class="m">19</span>:59:22<span class="o">)</span>
+Type <span class="s1">&#39;copyright&#39;</span>, <span class="s1">&#39;credits&#39;</span> or <span class="s1">&#39;license&#39;</span> <span class="k">for</span> more information
+IPython <span class="m">7</span>.12.0 -- An enhanced Interactive Python. Type <span class="s1">&#39;?&#39;</span> <span class="k">for</span> help.
+
+In <span class="o">[</span><span class="m">1</span><span class="o">]</span>:
+</pre></div>
+</td></tr></table></div>
+<p>今度は <code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[1]:</span></code> がプロンプトとなり，入力待ちの状態になる．</p>
+<p>基本的な使い方はデフォルトの対話モードと同じであるが，多くの便利な機能が利用できる．あまりに多いのでここでは簡単に機能を紹介するにとどめておこう．</p>
+<ul class="simple">
+<li><p>Unixシェルコマンドの実行(cd, lsなどがあたかもシェル上にいるかのように実行できる)</p></li>
+<li><p>シンタックスハイライト(コードの色付けをしてくれる)</p></li>
+<li><p>自動インデント(構文ブロックに入ると自動的にインデントされる)</p></li>
+<li><p>構文ブロックの複数行編集(構文ブロックの中では前の行に戻って編集ができる)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Out[N]</span></code> の形での出力結果の参照(出力されたオブジェクトを後から参照できる)</p></li>
+<li><p>タブキーでの補完(適宜補完および補完候補を表示してくれる)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">?</span></code> でドキュメント参照( <code class="docutils literal notranslate"><span class="pre">help(print)</span></code> の代わりに <code class="docutils literal notranslate"><span class="pre">print?</span></code> としてもよい)</p></li>
+<li><p>様々なマジックコマンド</p></li>
+</ul>
+<p>便利なマジックコマンドが多数存在するが，これについて紹介し始めるときりがないので各自で調べてほしい．特に <code class="docutils literal notranslate"><span class="pre">%edit</span></code> や <code class="docutils literal notranslate"><span class="pre">%hist</span></code> などが便利である．</p>
+</div>
+<div class="section" id="jupyter-qt-console">
+<h2><a class="toc-backref" href="#id10"><span class="section-number">4.3. </span>Jupyter Qt Console</a><a class="headerlink" href="#jupyter-qt-console" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>IPythonのコンソールと機能的にはほぼ同じであるが，専用のGUIを持つJupyter Qt Consoleというアプリケーションも存在する．ターミナルで</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ jupyter-qtconsole
+</pre></div>
+</td></tr></table></div>
+<p>のようにコマンドを実行するとこのアプリケーションが起動する．</p>
+<div class="figure align-center" id="id4">
+<a class="reference internal image-reference" href="_images/qtconsole.png"><img alt="_images/qtconsole.png" src="_images/qtconsole.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-text">Jupyter Qt Console</span><a class="headerlink" href="#id4" title="この画像へのパーマリンク">¶</a></p>
+</div>
+<p>筆者は個人的にはIPythonのコンソールの方が使いやすいと感じるが，こちらの方が好みの人もいるかもしれない．図をプロットする場合に別ウインドウでなく，このウインドウ内に埋め込むことができるというIPythonにはない利点がある．(しかし，そのような使い方であれば次に紹介する <a class="reference internal" href="#label-jupyternotebook"><span class="std std-ref">Jupyter Notebook</span></a> の方が使いやすい．)</p>
+</div>
+<div class="section" id="jupyter-notebook">
+<span id="label-jupyternotebook"></span><h2><a class="toc-backref" href="#id11"><span class="section-number">4.4. </span>Jupyter Notebook</a><a class="headerlink" href="#jupyter-notebook" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ターミナルで</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ jupyter-notebook
+</pre></div>
+</td></tr></table></div>
+<p>を実行してみよう．デフォルトのブラウザが新しく立ち上がり，下のようなページが表示されるだろう．ここで右側の「New」から「Python 3」を選択してみよう．</p>
+<div class="figure align-center" id="id5">
+<a class="reference internal image-reference" href="_images/notebook1.png"><img alt="_images/notebook1.png" src="_images/notebook1.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-text">Jupyter Notebookの起動画面</span><a class="headerlink" href="#id5" title="この画像へのパーマリンク">¶</a></p>
+</div>
+<p>この状態で表示されるのが下の図のようなnotebookと呼ばれるページで，各セルにPythonのコードを入力して実行することができる．セルにフォーカスがあたった状態でShift+Enterを入力すると，そのセルのコードを実行し，出力があればそれがセルの下に表示される．なお，セルにはMarkdownと呼ばれる形式で任意のテキストや数式などを入力し表示することができる．</p>
+<div class="figure align-center" id="id6">
+<a class="reference internal image-reference" href="_images/notebook2.png"><img alt="_images/notebook2.png" src="_images/notebook2.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-text">Jupyter Notebookの使用例</span><a class="headerlink" href="#id6" title="この画像へのパーマリンク">¶</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>Jupyter Notebookは手軽にPythonコードを実行できる非常に便利な環境である．近年になってこの環境があまりにも普及したので，「Pythonの実行環境 = Jupyter Notebook」と考えている人もいるかもしれない．しかし，noteook上で試行錯誤しながらデータの解析作業などをしていると，セルの実行順序や変数や関数の定義などの関係が分かりづらくなってしまう（というかほとんど分からなくなる）．「出来た」と思っても次に開いた時には（変数が宣言されていなかったり，セルの順序がバラバラだったり）同じ結果が再現できないということが多々発生する．こうならないためには， <strong>メニューの 「Kernel」 → 「Restart &amp; Run All」で結果が変わらないこと</strong> を確認するのが大変重要である．また，ある程度のまとまった処理はPythonのソースコード( <code class="docutils literal notranslate"><span class="pre">.py</span></code> ファイル）として分離して，notebookからは <code class="docutils literal notranslate"><span class="pre">import</span></code> して使うようにする方が読みやすく，スッキリとするであろう<a class="footnote-reference brackets" href="#module" id="id3">1</a> ．</p>
+</div>
+<hr class="docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="module"><span class="brackets"><a class="fn-backref" href="#id3">1</a></span></dt>
+<dd><p>これはモジュールを自作することを意味しており，少し高度なトピックである．</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="総合索引"
+             >索引</a></li>
+        <li class="right" >
+          <a href="chap05.html" title="5. シーケンス型"
+             >次へ</a> |</li>
+        <li class="right" >
+          <a href="chap03.html" title="3. 制御構造と関数"
+             >前へ</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FortranユーザーのためのPython入門</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Takanobu Amano.
+      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.3 で生成しました。
+    </div>
+  </body>
+</html>

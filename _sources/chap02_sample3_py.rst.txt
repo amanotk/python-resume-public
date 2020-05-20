@@ -1,0 +1,11 @@
+.. -*- coding: utf-8 -*-
+
+=====================================================
+chap02/sample3.py
+=====================================================
+
+`サンプルコードのダウンロード <sample/chap02/sample3.py>`_
+
+.. literalinclude:: sample/chap02/sample3.py
+  :language: py
+  :linenos:
