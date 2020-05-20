@@ -65,12 +65,17 @@
 <li><a class="reference internal" href="#savetxt">6.5.1.2. savetxt</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id19">6.5.2. バイナリ入出力</a></li>
+<li><a class="reference internal" href="#id20">6.5.2. バイナリ入出力</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id20">6.6. 基本的な演算</a></li>
-<li><a class="reference internal" href="#id21">6.7. インデックス操作</a></li>
-<li><a class="reference internal" href="#id22">6.8. 形状操作</a></li>
+<li><a class="reference internal" href="#id21">6.6. 配列演算</a><ul>
+<li><a class="reference internal" href="#id22">6.6.1. 算術演算</a></li>
+<li><a class="reference internal" href="#id23">6.6.2. 数学関数</a></li>
+<li><a class="reference internal" href="#id26">6.6.3. メソッド</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id27">6.7. インデックス操作</a></li>
+<li><a class="reference internal" href="#id28">6.8. 形状操作</a></li>
 </ul>
 </li>
 </ul>
@@ -104,7 +109,7 @@
           <div class="body" role="main">
             
   <div class="section" id="numpy">
-<h1><a class="toc-backref" href="#id23"><span class="section-number">6. </span>NumPy配列の基本</a><a class="headerlink" href="#numpy" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<h1><a class="toc-backref" href="#id29"><span class="section-number">6. </span>NumPy配列の基本</a><a class="headerlink" href="#numpy" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <p>NumPyと呼ばれるライブラリの存在はPythonが広く科学技術計算に用いられるようになった最も大きな要因の一つであろう．ここでは科学技術計算で用いられる大規模データの効率的な扱いを可能にするNumPyの多次元配列オブジェクトについて学ぼう．なお，以降はこの多次元配列オブジェクトを便宜的にNumPy配列と呼ぶことにする．</p>
 <blockquote>
 <div><p>サンプルプログラム</p>
@@ -112,22 +117,22 @@
 <div class="contents topic" id="id1">
 <p class="topic-title">この章の内容</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#numpy" id="id23">NumPy配列の基本</a></p>
+<li><p><a class="reference internal" href="#numpy" id="id29">NumPy配列の基本</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id2" id="id24">NumPyについて</a></p></li>
-<li><p><a class="reference internal" href="#id8" id="id25">基本的な使い方</a></p></li>
-<li><p><a class="reference internal" href="#id11" id="id26">配列オブジェクト</a></p></li>
-<li><p><a class="reference internal" href="#id15" id="id27">生成</a></p></li>
-<li><p><a class="reference internal" href="#id17" id="id28">入出力</a></p></li>
-<li><p><a class="reference internal" href="#id20" id="id29">基本的な演算</a></p></li>
-<li><p><a class="reference internal" href="#id21" id="id30">インデックス操作</a></p></li>
-<li><p><a class="reference internal" href="#id22" id="id31">形状操作</a></p></li>
+<li><p><a class="reference internal" href="#id2" id="id30">NumPyについて</a></p></li>
+<li><p><a class="reference internal" href="#id8" id="id31">基本的な使い方</a></p></li>
+<li><p><a class="reference internal" href="#id11" id="id32">配列オブジェクト</a></p></li>
+<li><p><a class="reference internal" href="#id15" id="id33">生成</a></p></li>
+<li><p><a class="reference internal" href="#id17" id="id34">入出力</a></p></li>
+<li><p><a class="reference internal" href="#id21" id="id35">配列演算</a></p></li>
+<li><p><a class="reference internal" href="#id27" id="id36">インデックス操作</a></p></li>
+<li><p><a class="reference internal" href="#id28" id="id37">形状操作</a></p></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="section" id="id2">
-<h2><a class="toc-backref" href="#id24"><span class="section-number">6.1. </span>NumPyについて</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id30"><span class="section-number">6.1. </span>NumPyについて</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p><a class="reference external" href="https://numpy.org/">NumPy</a> はPythonによる科学技術計算の根幹をなすライブラリである<a class="footnote-reference brackets" href="#numpylib" id="id4">1</a> ．このライブラリが提供する <code class="docutils literal notranslate"><span class="pre">numpy</span></code> というモジュール<a class="footnote-reference brackets" href="#module" id="id5">2</a> を使うためには</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
@@ -136,7 +141,7 @@
 <p>NumPy配列(NumPyが提供する多次元配列オブジェクト)は正確には <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code> オブジェクトである<a class="footnote-reference brackets" href="#np-ndarray" id="id6">3</a>．一般にPythonはスクリプト言語に分類される動作の遅い言語であるが，NumPy配列を用いることで非常に高速な数値演算が可能である．これはNumPy配列がCで実装されており，NumPy配列の演算は「うまく」使えばほとんどが(内部的には)Cのコードとして実行されるからである．詳細は以下で追々見ていくことにし，ここでは一言だけ， <strong>Pythonで数値計算をする際にはforループは使ってはいけない</strong> と述べるにとどめておこう<a class="footnote-reference brackets" href="#dontusefor" id="id7">4</a> ．</p>
 </div>
 <div class="section" id="id8">
-<h2><a class="toc-backref" href="#id25"><span class="section-number">6.2. </span>基本的な使い方</a><a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id31"><span class="section-number">6.2. </span>基本的な使い方</a><a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>まずは基礎の基礎を抑えよう．例えば配列を作る最も簡単な方法の一つとして</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
@@ -164,7 +169,7 @@
 <p>Pythonは様々なことが手軽に実現できる非常に便利な言語であるが，ネックとなるのはその処理の遅さである．(したがって，何も考えずに書くといとも簡単に遅いコードが出来上がってしまう．）NumPy配列を使うことで重たい処理だけを他の言語で書かれた高速なライブラリに押し付けることができ，手軽さと計算速度の速さを両立しているわけである．したがって， <strong>Pythonではループ処理をするのは可能な限り避け，可能な限り配列演算を利用するのが鉄則</strong> である．</p>
 </div>
 <div class="section" id="id11">
-<h2><a class="toc-backref" href="#id26"><span class="section-number">6.3. </span>配列オブジェクト</a><a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id32"><span class="section-number">6.3. </span>配列オブジェクト</a><a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>NumPy配列オブジェクト <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code> は多次元配列データを格納し効率的な演算を実現する．</p>
 <div class="section" id="id12">
 <h3><span class="section-number">6.3.1. </span>属性<a class="headerlink" href="#id12" title="このヘッドラインへのパーマリンク">¶</a></h3>
@@ -290,7 +295,7 @@
 </div>
 </div>
 <div class="section" id="id15">
-<h2><a class="toc-backref" href="#id27"><span class="section-number">6.4. </span>生成</a><a class="headerlink" href="#id15" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id33"><span class="section-number">6.4. </span>生成</a><a class="headerlink" href="#id15" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>配列を生成するにはいくつかの方法があるが，以下に何もないところから配列を作るための典型的な例をいくつか示そう．</p>
 <div class="section" id="arange">
 <h3><span class="section-number">6.4.1. </span>arange<a class="headerlink" href="#arange" title="このヘッドラインへのパーマリンク">¶</a></h3>
@@ -392,34 +397,193 @@
 </div>
 </div>
 <div class="section" id="id17">
-<h2><a class="toc-backref" href="#id28"><span class="section-number">6.5. </span>入出力</a><a class="headerlink" href="#id17" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id34"><span class="section-number">6.5. </span>入出力</a><a class="headerlink" href="#id17" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>NumPyは配列の入出力用に便利な関数が用意されており，非常に簡単に使うことができる．</p>
 <div class="section" id="id18">
 <h3><span class="section-number">6.5.1. </span>テキスト入出力<a class="headerlink" href="#id18" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <div class="section" id="loadtxt">
 <h4><span class="section-number">6.5.1.1. </span>loadtxt<a class="headerlink" href="#loadtxt" title="このヘッドラインへのパーマリンク">¶</a></h4>
-<p>いわゆるCSV(comma-separated values)ファイルを読み込むには <code class="docutils literal notranslate"><span class="pre">np.loadtxt</span></code> が大変便利である．</p>
+<p>テキスト形式のデータファイルを読み込むには <code class="docutils literal notranslate"><span class="pre">np.loadtxt</span></code> が大変便利である．ここではデータファイル <a class="reference external" href="data/helix1.dat">helix1.dat</a> を読み込んでみよう．このファイルの中身は以下のようになっており，値がスペースで区切られている．</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="m">0</span>.81  <span class="m">0</span>.59  <span class="m">0</span>.50
+ <span class="m">0</span>.31  <span class="m">0</span>.95  <span class="m">1</span>.00
+<span class="o">(</span>中略<span class="o">)</span>
+ <span class="m">0</span>.81  <span class="m">0</span>.59 <span class="m">15</span>.50
+ <span class="m">0</span>.31  <span class="m">0</span>.95 <span class="m">16</span>.00
+</pre></div>
+</td></tr></table></div>
+<p>このファイルは以下のように1行で読み込むことができる．</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;helix1.dat&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">shape</span>
+<span class="go">(32, 3)</span>
+</pre></div>
+</td></tr></table></div>
+<p>読み込んだ結果は2次元配列として返される．この場合は32行 x 3列のデータのため <code class="docutils literal notranslate"><span class="pre">.shape</span></code> 属性は <code class="docutils literal notranslate"><span class="pre">(32,</span> <span class="pre">3)</span></code> となっている． <code class="docutils literal notranslate"><span class="pre">np.loadtxt</span></code> には多くのオプションがあるが，重要なものは以下の通りである．</p>
+<table class="colwidths-given docutils align-default" style="width: 100%">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>パラメータ名</p></th>
+<th class="head"><p>データ型</p></th>
+<th class="head"><p>概要</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>dtype</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.dtype</span></code></p></td>
+<td><p>デフォルトでは <code class="docutils literal notranslate"><span class="pre">float</span></code> ( <code class="docutils literal notranslate"><span class="pre">np.float64</span></code> )</p></td>
+</tr>
+<tr class="row-odd"><td><p>delimiter</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td><p>値の区切り文字(デフォルトではスペース)</p></td>
+</tr>
+<tr class="row-even"><td><p>comments</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td><p>各行のこの文字列に続く部分はコメントとみなされ無視する（デフォルトでは <code class="docutils literal notranslate"><span class="pre">'#'</span></code> )</p></td>
+</tr>
+<tr class="row-odd"><td><p>skiprows</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
+<td><p>ファイル先端から指定された行数分だけ無視する（デフォルトでは0)</p></td>
+</tr>
+</tbody>
+</table>
+<p>例えばスペースではなくカンマ <code class="docutils literal notranslate"><span class="pre">,</span></code> で区切られたいわゆるCSV(Comma-Separated Values)ファイルを読み込むには</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;filename.csv&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>のように区切り文字を指定すればよい．</p>
 </div>
 <div class="section" id="savetxt">
 <h4><span class="section-number">6.5.1.2. </span>savetxt<a class="headerlink" href="#savetxt" title="このヘッドラインへのパーマリンク">¶</a></h4>
-<p><code class="docutils literal notranslate"><span class="pre">np.loadtxt</span></code> の逆にCSV形式で配列をファイルに出力する．</p>
-</div>
-</div>
-<div class="section" id="id19">
-<h3><span class="section-number">6.5.2. </span>バイナリ入出力<a class="headerlink" href="#id19" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>To be written.</p>
+<p><code class="docutils literal notranslate"><span class="pre">np.loadtxt</span></code> の逆にCSV形式で配列をファイルに出力するには <code class="docutils literal notranslate"><span class="pre">np.savetxt</span></code> を使えばよい．例えばNumPy配列オブジェクト <code class="docutils literal notranslate"><span class="pre">x</span></code> をoutput.datというファイルに出力するには</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">savetxt</span><span class="p">(</span><span class="s1">&#39;output.dat&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>とすればよい． 代表的なオプションをいかにいくつか紹介しておこう．</p>
+<table class="colwidths-given docutils align-default" style="width: 100%">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>パラメータ名</p></th>
+<th class="head"><p>データ型</p></th>
+<th class="head"><p>概要</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>fmt</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td><p>フォーマット文字列</p></td>
+</tr>
+<tr class="row-odd"><td><p>delimiter</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td><p>値の区切り文字(デフォルトではスペース)</p></td>
+</tr>
+<tr class="row-even"><td><p>comments</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td><p>ヘッダー・フッター用のコメント文字（デフォルトでは <code class="docutils literal notranslate"><span class="pre">'#'</span></code> )</p></td>
+</tr>
+<tr class="row-odd"><td><p>header</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td><p>ファイル先端のコメントヘッダー</p></td>
+</tr>
+<tr class="row-even"><td><p>footer</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td><p>ファイル終端のコメントフッター</p></td>
+</tr>
+</tbody>
+</table>
+<p>例えば <a class="reference external" href="data/helix1.dat">helix1.dat</a> を読み込み，同じフォーマットで別のファイルoutput.datに書き込むには</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;helix1.dat&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">savetxt</span><span class="p">(</span><span class="s1">&#39;output.dat&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%5.2f</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>のようにフォーマット文字列を指定すればよい．</p>
 </div>
 </div>
 <div class="section" id="id20">
-<h2><a class="toc-backref" href="#id29"><span class="section-number">6.6. </span>基本的な演算</a><a class="headerlink" href="#id20" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h3><span class="section-number">6.5.2. </span>バイナリ入出力<a class="headerlink" href="#id20" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>To be written.</p>
+</div>
 </div>
 <div class="section" id="id21">
-<h2><a class="toc-backref" href="#id30"><span class="section-number">6.7. </span>インデックス操作</a><a class="headerlink" href="#id21" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id35"><span class="section-number">6.6. </span>配列演算</a><a class="headerlink" href="#id21" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="id22">
+<h3><span class="section-number">6.6.1. </span>算術演算<a class="headerlink" href="#id22" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>以下の例を見れば一目瞭然であろう．基本的にFortranの配列と同様な演算ができると思ってよい．</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="mi">4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="go">array([ 4,  6,  8, 10])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
+<span class="go">array([-4, -4, -4, -4])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+<span class="go">array([ 0,  5, 12, 21])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+<span class="go">array([0.        , 0.2       , 0.33333333, 0.42857143])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">**</span><span class="mi">2</span>
+<span class="go">array([0, 1, 4, 9])</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="id23">
+<h3><span class="section-number">6.6.2. </span>数学関数<a class="headerlink" href="#id23" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>よく使うであろう数学関数はほぼ網羅されていると考えてよい<a class="footnote-reference brackets" href="#mathfunc" id="id24">8</a> ．Fortranなどでは提供されていない関数の使用例をいくつか示しておこう．なお，以下の例はスカラーに対して関数を呼び出しているが，配列を引数に与えた場合には各要素に対して演算した結果を返す．</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="mf">90.0</span><span class="p">)</span>       <span class="c1"># degreeからradianへの変換</span>
+<span class="go">1.5707963267948966</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">rad2deg</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>    <span class="c1"># radianからdegreeへの変換</span>
+<span class="go">90.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">lcm</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>           <span class="c1"># 最小公倍数</span>
+<span class="go">12</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">gcd</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>         <span class="c1"># 最大公約数</span>
+<span class="go">4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="mf">1.0</span><span class="n">j</span><span class="p">)</span>   <span class="c1"># 複素数の偏角</span>
+<span class="go">0.7853981633974483</span>
+</pre></div>
+</td></tr></table></div>
+<p>詳細は <a class="reference external" href="https://numpy.org/doc/1.18/reference/routines.math.html">公式ドキュメント</a> を参照のこと．</p>
+</div>
+<div class="section" id="id26">
+<h3><span class="section-number">6.6.3. </span>メソッド<a class="headerlink" href="#id26" title="このヘッドラインへのパーマリンク">¶</a></h3>
+</div>
+</div>
+<div class="section" id="id27">
+<h2><a class="toc-backref" href="#id36"><span class="section-number">6.7. </span>インデックス操作</a><a class="headerlink" href="#id27" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>To be written.</p>
 </div>
-<div class="section" id="id22">
-<h2><a class="toc-backref" href="#id31"><span class="section-number">6.8. </span>形状操作</a><a class="headerlink" href="#id22" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="id28">
+<h2><a class="toc-backref" href="#id37"><span class="section-number">6.8. </span>形状操作</a><a class="headerlink" href="#id28" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>To be written.</p>
 <hr class="docutils" />
 <dl class="footnote brackets">
@@ -443,6 +607,9 @@
 </dd>
 <dt class="label" id="shapetuple"><span class="brackets"><a class="fn-backref" href="#id13">7</a></span></dt>
 <dd><p>配列の形状はタプル(tuple)というオブジェクトとして表されている．タプルは簡単に言うと変更できない配列のようなものである．</p>
+</dd>
+<dt class="label" id="mathfunc"><span class="brackets"><a class="fn-backref" href="#id24">8</a></span></dt>
+<dd><p>NumPyで提供されていないような特殊関数であっても，ほとんどはSciPyの特殊関数モジュール <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/special.html">scipy.special</a> に実装されているであろう．ここで提供されていない関数が必要になることは稀である．</p>
 </dd>
 </dl>
 </div>
