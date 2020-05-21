@@ -23,6 +23,7 @@
 
 同様に :math:`n = 2, m = 1` なら ``2 is larger than 1``, :math:`n = m = 1` なら ``1 is equal to 1`` などと表示するものとする．
 
+.. _label_chap03_kadai3:
 
 課題3
 -----
@@ -56,6 +57,8 @@ gnuplotでは
 
 などとして結果を確認すればよい．
 
+
+.. _label_chap03_kadai4:
 
 課題4
 -----
