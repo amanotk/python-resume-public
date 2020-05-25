@@ -1,0 +1,234 @@
+.. -*- coding: utf-8 -*-
+
+.. highlight:: python
+  :linenothreshold: 1
+
+================
+対話型の実行方法
+================
+
+これまではコマンドラインで完結した一つのPythonスクリプトを実行する方法を用いてきた．ここではPythonの大きな強みの一つである対話的な実行方法について紹介しよう．ただし，対話的と一口で言っても環境は様々なので，あくまでもいくつかの代表的な実行環境を紹介するにとどめる．なお，筆者のおすすめは :ref:`label_ipython` と :ref:`label_jupyternotebook` である．
+
+.. seealso::
+
+  `sample.ipynb <sample/chap03/sample.html>`_ (`ダウンロード <sample/chap03/sample.ipynb>`_)
+
+.. contents:: この章の内容
+    :depth: 2
+
+
+Pythonの対話モード
+==================
+
+ターミナルで ``python`` とだけ打ってみると以下のように表示され，キーボード入力待ちの状態になるであろう．
+
+.. code-block:: bash
+
+  $ python
+  Python 3.7.6 (default, Jan  8 2020, 19:59:22)
+  [GCC 7.3.0] :: Anaconda, Inc. on linux
+  Type "help", "copyright", "credits" or "license" for more information.
+  >>>
+
+Pythonはインタープリター型の言語であり，一行ずつ順に実行されることは既に紹介した通りである．したがって，対話的(interactive)に任意のPythonコードを入力して実行させることができるのである．試しに ``print('Hello, World !')`` と入力してEnterしてみると
+
+::
+
+  >>> print('Hello, World !')
+  Hello, World !
+
+のようになる．1行目のPythonのコードが実行され，2行目の出力が得られたということである．
+
+このような対話的なPython実行環境をPythonシェルとかコンソールと呼ぶことがある．Python関係のドキュメントでは対話モードのデフォルトのプロンプト ``>>>`` (または ``...`` )に続く行がPythonのコードを意味し，そうでない行は実行結果を意味することになっている．この文書でも特に断りのない限りはこの慣習に従うことにする．
+
+もちろん1行では完結しない構文ブロックも入力が可能である．以下の例を見てみよう．
+
+::
+
+  >>> for i in range(5):
+  ...     print(i)            # 字下げ
+  ...                         # 空行(字下げなしでEnter)
+  0
+  1
+  2
+  3
+  4
+
+2行目は ``for`` ループの中にあるため，スペースやTabキーで字下げをする．3行目は字下げをせずに空白行とすることでこの構文ブロックの終端と解釈され，ループが実行されることになる．
+
+対話モードの便利な機能としてヒストリの利用や，ドキュメントの参照が上げられる．対話モードではbashなどのシェルと同様に過去のコマンドヒストリが記録されており，矢印キーや ``Ctrl-p`` ， ``Ctrl-n`` で行き来することができる．ドキュメントの参照については，例えば ``print`` 関数のドキュメントを参照するには
+
+::
+
+  >>> help(print)
+
+と入力すると
+
+::
+
+  Help on built-in function print in module builtins:
+  
+  print(...)
+      print(value, ..., sep=' ', end='\n', file=sys.stdout, flush=False)
+  
+      Prints the values to a stream, or to sys.stdout by default.
+      Optional keyword arguments:
+      file:  a file-like object (stream); defaults to the current sys.stdout.
+      sep:   string inserted between values, default a space.
+      end:   string appended after the last value, default a newline.
+      flush: whether to forcibly flush the stream.
+  (END)
+
+のようにドキュメントが適当なページャ(Unixコマンドのlessやmoreなど）で表示されることになる．(大抵の場合終了するには ``q`` と入力すればよい．)このように，ちょっと使い方を調べたい時には対話モードのドキュメントを参照するのが便利である．
+
+
+.. _label_ipython:
+
+IPython
+=======
+
+実際にはデフォルトの対話モードをより高機能ににしたIPythonが非常に便利である．ターミナルで ``ipython`` と打つと，今度は以下のように表示されるであろう．
+
+.. code-block:: bash
+
+  $ ipython
+  Python 3.7.6 (default, Jan  8 2020, 19:59:22)
+  Type 'copyright', 'credits' or 'license' for more information
+  IPython 7.12.0 -- An enhanced Interactive Python. Type '?' for help.
+  
+  In [1]:
+
+今度は ``In [1]:`` がプロンプトとなり，入力待ちの状態になる．
+
+基本的な使い方はデフォルトの対話モードと同じであるが，多くの便利な機能が利用できる．あまりに多いのでここでは簡単に機能を紹介するにとどめておこう．
+
+- Unixシェルコマンドの実行(cd, lsなどがあたかもシェル上にいるかのように実行できる)
+- emacsモード・viモード(他にも細かなキーバインド設定ができる)
+- シンタックスハイライト(コードの色付けをしてくれる)
+- 自動インデント(構文ブロックに入ると自動的にインデントされる)
+- 構文ブロックの複数行編集(構文ブロックの中では前の行に戻って編集ができる)
+- ``Out[N]`` の形での出力結果の参照(出力されたオブジェクトを後から参照できる)
+- タブキーでの補完(適宜補完および補完候補を表示してくれる)
+- ``?`` でドキュメント参照( ``help(print)`` の代わりに ``print?`` としてもよい)
+- 様々なマジックコマンド
+
+便利なマジックコマンドが多数存在するが，これについて紹介し始めるときりがないので各自で調べてほしい．特に ``%edit`` や ``%hist`` などが便利である．
+
+
+Jupyter Qt Console
+==================
+
+IPythonのコンソールと機能的にはほぼ同じであるが，専用のGUIを持つJupyter Qt Consoleというアプリケーションも存在する．ターミナルで
+
+.. code-block:: bash
+
+  $ jupyter-qtconsole
+
+のようにコマンドを実行するとこのアプリケーションが起動する．
+
+.. figure:: figure/qtconsole.png
+   :align: center
+   :width: 600px
+
+   Jupyter Qt Console
+
+筆者は個人的にはIPythonのコンソールの方が使いやすいと感じるが，こちらの方が好みの人もいるかもしれない．図をプロットする場合に別ウインドウでなく，このウインドウ内に埋め込むことができるというIPythonにはない利点がある．(しかし，そのような使い方であれば次に紹介する :ref:`label_jupyternotebook` の方が使いやすい．)
+
+
+.. _label_jupyternotebook:
+
+Jupyter Notebook
+================
+
+ターミナルで
+
+.. code-block:: bash
+
+  $ jupyter-notebook
+
+を実行してみよう．デフォルトのブラウザが新しく立ち上がり，下のようなページが表示されるだろう．ここで右側の「New」から「Python 3」を選択してみよう．
+
+.. figure:: figure/notebook1.png
+   :align: center
+   :width: 600px
+
+   Jupyter Notebookの起動画面
+
+この状態で表示されるのが下の図のようなnotebookと呼ばれるページで，各セルにPythonのコードを入力して実行することができる．セルにフォーカスがあたった状態でShift+Enterを入力すると，そのセルのコードを実行し，出力があればそれがセルの下に表示される．なお，セルにはMarkdownと呼ばれる形式で任意のテキストや数式などを入力し表示することができる．
+
+.. figure:: figure/notebook2.png
+   :align: center
+   :width: 600px
+
+   Jupyter Notebookの使用例
+
+.. note::
+
+  Jupyter Notebookは手軽にPythonコードを実行できる非常に便利な環境である．近年になってこの環境があまりにも普及したので，「Pythonの実行環境 = Jupyter Notebook」と考えている人もいるかもしれない．しかし，noteook上で試行錯誤しながらデータの解析作業などをしていると，セルの実行順序や変数や関数の定義などの関係が分かりづらくなってしまう（というかほとんど分からなくなる）．「出来た」と思っても次に開いた時には（変数が宣言されていなかったり，セルの順序がバラバラだったり）同じ結果が再現できないということが多々発生する．こうならないためには， **メニューの 「Kernel」 → 「Restart & Run All」で結果が変わらないこと** を確認するのが大変重要である．また，ある程度のまとまった処理はPythonのソースコード( ``.py`` ファイル）として分離して，notebookからは ``import`` して使うようにする方が読みやすく，スッキリとするであろう [#module]_ ．
+
+なお，新たにブラウザを立ち上げたくない場合 [#jupyternobrowser]_ には
+
+.. code-block:: bash
+
+  $ jupyter-notebook --no-browser
+
+とオプションを付けて起動をすればよい．デフォルトではブラウザで http://localhost:8888/ にアクセスすればJupyterのサーバーに接続することができる．8888はデフォルトのポート番号であるが ``--port`` オプションで変更することもできる．
+
+
+様々なIDE
+=========
+
+多くのPythonの統合開発環境(IDE)でも対話的な実行方法を備えているようだ．内部的にIPythonのシェルを使っていたり，Jupyter Notebookのようにセル単位で実行できたりする．変数ブラウザや補完，デバッガ機能などもあり，使いこなすことができればかなり有用そうなので，興味のある人はぜひトライしてみて欲しい．以下にいくつか例を挙げておこう．
+
+- | Spyder
+  | Anacondaに付属するIDE．使いこなせれば便利そう．
+- | PyCharm
+  | 高機能なIDEらしい．有償版と無償版が存在する．
+- | Visual Studio Code
+  | エディタでもあり，開発環境でもある．Python extensionにJupyter Notebookを使える機能が追加されている．
+
+
+プロット
+========
+
+IPythonやJupyter Notebookを使うと対話的にデータのプロットができる．matplotlibというデファクトスタンダードに近いライブラリを使って図をプロットするには以下のようにすればよい [#matplotlib]_ ．
+
+::
+
+  # numpy
+  import numpy as np
+  
+  # matplotlibのおまじない
+  from matplotlib import pylab as plt
+  
+  x = np.linspace(0.0, np.pi, 100)
+  y = np.cos(x)**2
+  plt.plot(x, y)
+
+これをJupyter Notebookで実行すると以下のように図がNotebookに埋め込まれた形で表示される．なおNumPyについては :doc:`chap06` で紹介する．
+
+.. figure:: figure/notebook3.png
+   :align: center
+   :width: 600px
+
+   Jupyter Notebookでのプロット
+
+..
+.. 課題
+..
+
+.. include:: kadai/chap03_kadai.rst
+
+-----
+
+.. [#module]
+
+  これはモジュールを自作することを意味しており，少し高度なトピックである．
+
+.. [#jupyternobrowser]
+
+  例えばリモートサーバーにssh接続している場合など．
+
+.. [#matplotlib]
+
+  matplotlibの使い方を説明し始めると長くなるのでここでは割愛する．なお，Pythonから使えるプロットライブラリはこれ以外にも多数存在し群雄割拠状態である．matplotlibが最も広く使われていることは間違いないので，まずはこれを使ってみることをオススメするが，興味のある人はplotly，bokeh，grなどについても調べてみると面白い．
