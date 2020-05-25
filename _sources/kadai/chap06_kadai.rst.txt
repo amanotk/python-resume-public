@@ -1,0 +1,392 @@
+.. -*- coding: utf-8 -*-
+
+第6章 演習課題
+==============
+
+以下の課題はJupyter Notebookの仕様を前提としているが，もちろん他の実行環境でも同等の処理を実現出来ていれば問題ない．なお，以下では
+
+::
+
+  >>> import numpy as np
+  >>> from matplotlib import pylab as plt
+
+のように必要なモジュールが ``import`` されているものとする．
+
+.. seealso::
+
+  `解答例 <sample/chap06/kadai.html>`_ (`ダウンロード <sample/chap06/kadai.ipynb>`_)
+
+
+課題1
+-----
+
+サンプルを実行して動作を確認せよ．
+
+
+課題2
+-----
+
+整数 ``N`` を引数として受け取り， :math:`0^{\circ} \leq \theta \leq 180^{\circ}` をN分割した点(端点を含むのでN+1点)，およびそれらの点における :math:`\sin \theta` ， :math:`\cos \theta` の値をそれぞれ配列として返す関数
+
+::
+
+  def trigonometric(n):
+      "θ, sinθ, cosθの値を出力する"
+      pass
+
+を作成せよ．これを呼び出し，例えば以下のようにプロットして結果を確認しよう．
+
+::
+
+  >>> x, y1, y2 = trigonometric(18)
+  >>> plt.plot(x, y1, 'ro')
+  >>> plt.plot(x, y2, 'bo')
+  >>> plt.plot(x, np.sin(np.deg2rad(x)), 'r-')
+  >>> plt.plot(x, np.cos(np.deg2rad(x)), 'b-')
+
+
+.. figure:: figure/chap06_trigonometric.png
+    :align: center
+
+    課題2
+
+
+課題3
+-----
+
+以下の級数展開
+
+.. math::
+
+  e \simeq \sum_{n=0}^{N} \frac{1}{n !}. \quad (0! = 1に注意せよ)
+
+により自然対数の底 :math:`e` の近似値を求める関数 ``approx_e``
+
+::
+
+  def approx_e(n):
+      "自然対数の底を級数展開を用いて求める"
+      pass
+
+を作成しよう．ただし整数 ``N`` を引数として受け取り，内部ではNumPy配列を使うことでループを用いない実装とせよ．
+
+ここで，階乗とガンマ関数の関係式
+
+.. math::
+
+  \Gamma(n) = (n-1)!
+
+を用いてよい．ガンマ関数は ``scipy.special.gamma`` を用いればよい．以下はその使用例である．
+
+::
+
+ >>> from scipy import special
+ >>> special.gamma(3)  # 2!
+ 2.0
+ >>> special.gamma(4)  # 3!
+ 6.0
+
+この関数を用いると例えば以下のような結果が得られる．
+
+::
+
+  >>> print('{:20} : {:>20.14e}'.format('Approximated', approx_e(10)))
+  >>> print('{:20} : {:>20.14e}'.format('Exact', np.e))
+  Approximated         : 2.71828152557319e+00
+  Exact                : 2.71828182845905e+00
+
+
+課題4
+-----
+
+以下の漸化式
+
+.. math::
+
+   p_{n+1} = p_n + \alpha p_n (1 - p_n)
+
+で定義される数列 :math:`p_n (n=0, 1, \ldots)` を考える．:math:`1 < \alpha < 3` を :math:`m` 分割し，各 :math:`\alpha` について初期値 :math:`p_0 = 0.9` から数列を生成し，そのうち :math:`n=100, \ldots, 200` を :math:`\alpha` の関数としてプロットしよう．
+
+これには，整数 ``m`` を引数にとり，:math:`\alpha` と :math:`p_n (n=100, \ldots, 200)` の組を返す関数 ``logistic``
+
+::
+
+  def logistic(m):
+      "0 < α < 1 をm分割して，それぞれに対してロジスティック写像を計算"
+      pass
+
+を作成し，この関数を用いて
+
+::
+
+  >>> a, p = logistic(2000)
+  >>> plt.scatter(a, p, s=0.001, color='r')
+  >>> plt.xlim(1.0, 3.0)
+  >>> plt.ylim(0.0, 1.4)
+
+とすればよい．結果は以下の通りである．
+
+.. figure:: figure/chap06_logistic.png
+    :align: center
+
+    課題4
+
+このような写像はロジスティック写像と呼ばれ，非常に単純な式ながら一定の条件を満たすときにはカオスを生み出すことが知られている．
+
+
+課題5
+-----
+
+以下の積分
+
+.. math::
+
+  \int_{0}^{1} \frac{4}{\pi} \frac{1}{1 + x^2} dx
+
+を台形公式およびSimpsonの公式を使って求める関数をそれぞれ作成しよう．ここで作成する関数は分割数 ``n`` を引数にとり，
+
+::
+
+  def trapezoid(n):
+      "分割数nの台形公式で関数を積分"
+      pass
+  
+  def simpson(n):
+      "分割数nのSimpson公式で関数を積分"
+      pass
+
+のような形になるものとする．ただし関数内ではループを使わずに実装すること．これらの積分公式の誤差の分割数依存性は次のようにすれば調べることができる．
+
+::
+
+  >>> M = 16
+  >>> n = 2**(np.arange(M)+1)
+  >>> err1 = np.zeros(M, dtype=np.float64)
+  >>> err2 = np.zeros(M, dtype=np.float64)
+  >>> 
+  >>> for i in range(M):
+  >>>     err1[i] = np.abs(trapezoid(n[i]) - 1)
+  >>>     err2[i] = np.abs(simpson(n[i]) - 1)
+  >>> 
+  >>> # 結果をプロット
+  >>> plt.plot(n, err1, 'rx-', label='trapezoid')
+  >>> plt.plot(n, err2, 'bx-', label='simpson')
+  >>> plt.loglog()
+  >>> plt.legend()
+
+これによって得られる図は以下の通りである．
+
+.. figure:: figure/chap06_integration.png
+    :align: center
+
+    課題5
+
+
+課題6
+-----
+
+
+
+データファイルに格納されている学生のテスト点数リストから，最高点，最大点，平均点，標準偏差を求めて返す関数 ``analyze_score`` を作成しよう．ただし，
+
+::
+
+  def analyze_score(filename):
+      "filenameからデータを読んで最高点，最低点，平均点，標準偏差を返す"
+      pass
+
+のようにファイル名を引数にとるものとする．ここで，それぞれ対応する関数( ``np.max`` ， ``np.min`` ， ``np.mean`` ， ``np.std`` )またはNumPy配列のメソッドを用いること．
+
+なお，データファイルは `score1.dat <sample/chap06/score1.dat>`_ および `score2.dat <sample/chap06/score2.dat>`_ とし，以下のようにこのファイルの最初の行にはデータ数，次の行は空行，以降に実際のデータが格納されている．
+
+.. code-block:: bash
+
+  $ cat score1.dat
+  30      # データ数
+          # 空白行
+  20      # 実際のデータはこれ以降の行
+  49
+  45
+  (以下略）
+
+したがって， ``np.loadtxt`` のオプション ``skiprows`` を用いて最初の2行を無視して読み込めばよい．
+
+例えばscore1.datを読み込んだ場合には以下のような結果が得られる．
+
+::
+
+  >>> smax, smin, savg, sstd = analyze_score('score1.dat')
+  >>> 
+  >>> print('{:20} : {:10}'.format('Best', smax))
+  >>> print('{:20} : {:10}'.format('Worst', smin))
+  >>> print('{:20} : {:10.3f}'.format('Average', savg))
+  >>> print('{:20} : {:10.3f}'.format('Standard deviation', sstd))
+  Best                 :         98
+  Worst                :          6
+  Average              :     46.400
+  Standard deviation   :     25.115
+
+同様にscore2.datについても試してみること．
+
+
+課題7
+-----
+
+前問のscore1.datおよびscore2.datのようなデータファイルを読み込みヒストグラムを作成する関数 ``hist_score``
+
+::
+
+  def hist_score(filename, nbin):
+      "filenameからデータを読んでヒストグラムを作成する"
+      pass
+
+を作成しよう．ここで引数 ``nbin`` はビンの数である．関数 ``np.histogram`` を用いること．
+
+実行例は以下のようになる．
+
+::
+
+  >>> nbin = 20
+  >>> bins, hist = hist_score('score2.dat', nbin)
+  >>> binw = bins[+1:] - bins[:-1]
+  >>> plt.bar(bins[0:-1], hist, width=binw, align='edge')
+  >>> plt.xlim(0, 100)
+
+.. figure:: figure/chap06_score.png
+    :align: center
+
+    課題7
+
+課題8
+-----
+
+データファイル `vector.dat <sample/chap06/vector.dat>`_ に格納されている2つのベクトルを読み込み，それらの内積を求める関数 ``dot_file``
+
+::
+
+  def dot_file(filename):
+      "filenameから2つのベクトルを読み込み，それらの内積を返す"
+      pass
+
+を作成しよう．関数 ``np.dot`` を用いること．ただし，以下のようにvector.datの最初の行にはベクトルの長さ，次の行は空白，ベクトル1の各要素，空白行，ベクトル2の各要素，のようにデータが格納されている．
+
+.. code-block:: bash
+
+  20                      # データ数
+                          # 空白行
+  1.000000000000000e+00
+  9.510565162951535e-01
+  (中略)
+  8.090169943749473e-01
+  9.510565162951535e-01
+                          # 空白行
+  0.000000000000000e+00
+  3.090169943749474e-01
+  (中略)
+  -5.877852522924734e-01
+  -3.090169943749476e-01
+
+``np.loadtxt`` のオプション ``skiprows`` を用いて最初の2行を無視して読み込むと以降のデータが全て1次元配列として返される(区切りの空白行は無視される)ので，この前半と後半をそれぞれ別のベクトルとして処理すればよい．
+
+
+課題9
+-----
+
+任意の長さの1次元整数型配列に与えられた整数が含まれているかどうかを調べ，含まれていた時には真 ( ``True`` ，そうでなければ偽 ``False`` )を返す関数 ``find_var`` を作成しよう．また同様に，値が含まれていた時にはその要素のインデックスを返し，そうでなければ-1を返す関数 ``find_var_index`` を作成しよう．実装は色々考えられるが， ``np.any`` や ``np.nonzero`` または ``np.where`` などを使うとよい．
+
+これらの関数を
+
+::
+
+  def find_var(x, var):
+      "varが配列xに含まれているかどうかを調べる"
+      pass
+  
+  def find_var_index(x, var):
+      "varが配列xに含まれている時にはそのインデックスを，そうでない場合は-1を返す"
+      pass
+
+のように定義し，以下のように動作を確かめよう．
+
+::
+
+  >>> x = np.random.randint(0, 100, 10)
+  >>> x
+  array([17, 75, 28, 83, 93, 20, 19, 94, 62, 61])
+  >>> find_var(x, 28)
+  True
+  >>> find_var(x, 25)
+  False
+  >>> find_var_index(x, 28)
+  2
+  >>> find_var_index(x, 25)
+  -1
+
+さらに， ``np.random.randint`` を用いて適当な長さの1次元整数配列を作成し，値を探索してみよう．
+
+
+課題10
+------
+逆関数法を使って指数分布
+
+.. math::
+
+  P(x) = \lambda \exp ( - \lambda x )
+
+に従う乱数を返す関数 ``randexp``
+
+::
+
+  def randexp(l, n):
+      "指数分布に従う乱数をn個作成する"
+      pass
+
+を作成しよう．(実用上は指数分布に従う乱数は ``numpy.random.exponential`` を用いればよい．）
+
+この関数を用いて発生させた乱数と解析的な確率分布を以下のように比較しよう．
+
+::
+
+  >>> l = 1.0
+  >>> r = randexp(l, 60000)
+  >>> # ヒストグラム
+  >>> hist, bins = np.histogram(r, bins=np.linspace(0, 12, 33), density=True)
+  >>> plt.step(bins[0:-1], hist, where='post')
+  >>> # 解析的な分布
+  >>> x = 0.5*(bins[+1:] + bins[:-1])
+  >>> y = l * np.exp(-l*x)
+  >>> plt.plot(x, y, 'k--')
+  >>> plt.semilogy()
+
+この結果は以下のようになる．
+
+.. figure:: figure/chap06_exponential.png
+    :align: center
+
+    課題10
+
+
+課題11
+------
+モンテカルロ法を用いてN次元超球の体積を求める関数 ``mc_hypersphere``
+
+::
+
+  def mc_hypersphere(n, nrand):
+      "n次元超球の体積をモンテカルロ法で求める"
+      pass
+
+を作成しよう．ここで ``nrand`` は各次元について発生させる乱数の個数である．
+
+この関数を使って近似値と解析的な値を以下のように比較しよう．
+
+::
+
+  >>> n = 3
+  >>> nrand = 100000
+  >>> print('{:20} : {:<20.14e}'.format('Monte-Carlo', mc_hypersphere(n, nrand)))
+  >>> print('{:20} : {:<20.14e}'.format('Exact', hypersphere(n)))
+  Monte-Carlo          : 4.18304000000000e+00
+  Exact                : 4.18879020478639e+00
+
+ただし，解析的な値を返す関数 ``hypersphere`` を別途定義するものとする．

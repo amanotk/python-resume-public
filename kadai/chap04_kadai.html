@@ -1,0 +1,268 @@
+
+
+<!doctype html>
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>第4章 演習課題 &#8212; FortranユーザーのためのPython入門</title>
+    <link rel="stylesheet" href="../_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../_static/bizstyle.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="総合索引"
+             accesskey="I">索引</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">FortranユーザーのためのPython入門</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">目次</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">第4章 演習課題</a><ul>
+<li><a class="reference internal" href="#id4">課題1</a></li>
+<li><a class="reference internal" href="#id5">課題2</a></li>
+<li><a class="reference internal" href="#id6">課題3</a></li>
+<li><a class="reference internal" href="#id7">課題4</a></li>
+<li><a class="reference internal" href="#id8">課題5</a></li>
+<li><a class="reference internal" href="#id9">課題6</a></li>
+<li><a class="reference internal" href="#id10">課題7</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">クイック検索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="検索" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>第4章 演習課題<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>以下の課題はJupyter Notebookの仕様を前提としているが，もちろん他の実行環境でも同等の処理を実現出来ていれば問題ない．</p>
+<div class="admonition seealso">
+<p class="admonition-title">参考</p>
+<p><a class="reference external" href="sample/chap04/kadai.html">解答例</a> (<a class="reference external" href="sample/chap04/kadai.ipynb">ダウンロード</a>)</p>
+</div>
+<div class="section" id="id4">
+<h2>課題1<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>サンプルを実行して動作を確認しよう．</p>
+</div>
+<div class="section" id="id5">
+<h2>課題2<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>2つの整数 <code class="docutils literal notranslate"><span class="pre">m</span></code> および <code class="docutils literal notranslate"><span class="pre">n</span></code> を引数として受け取り，その大小を比較する関数 <code class="docutils literal notranslate"><span class="pre">compare</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compare</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="s2">&quot;mとnを比較する&quot;</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>を作成しよう．これを呼び出すと</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">compare</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">2 is larger than 1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">compare</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="go">1 is smaller than 2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">compare</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="go">3 is equal to 3</span>
+</pre></div>
+</div>
+<p>などと出力するようにすること．</p>
+</div>
+<div class="section" id="id6">
+<h2>課題3<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>西暦(整数)を引数として受け取り，うるう年かどうか判定する関数 <code class="docutils literal notranslate"><span class="pre">is_leapyear</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_leapyear</span><span class="p">(</span><span class="n">year</span><span class="p">):</span>
+    <span class="s2">&quot;うるう年の判定&quot;</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>を作成しよう．引数がうるう年であれば真( <code class="docutils literal notranslate"><span class="pre">True</span></code> )，そうでなければ偽( <code class="docutils literal notranslate"><span class="pre">False</span></code> )を返すものとする．ただしうるう年の判定条件は以下の通りである．</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>400で割り切れる年は無条件でうるう年である．</p></li>
+<li><p>400で割り切れずに100で割り切れる年はうるう年ではない．</p></li>
+<li><p>100で割り切れずに4で割り切れる年はうるう年である．</p></li>
+</ul>
+</div></blockquote>
+<p>以下はこの関数の呼び出しの例である．</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_leapyear</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>課題4<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>整数 <code class="docutils literal notranslate"><span class="pre">N</span></code> を引数として受け取り， <span class="math notranslate nohighlight">\(0^{\circ} \leq \theta \leq 180^{\circ}\)</span> をN分割した点(端点を含むのでN+1点)，およびそれらの点における <span class="math notranslate nohighlight">\(\sin \theta\)</span> ， <span class="math notranslate nohighlight">\(\cos \theta\)</span> の値を出力する関数</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">trigonometric</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="s2">&quot;θ, sinθ, cosθの値を出力する&quot;</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>を作成せよ．これを呼び出すと例えば以下のような出力が得られるものとする．</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">trigonometric</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span>
+<span class="go">  +0.000e+00   +0.000e+00   +1.000e+00</span>
+<span class="go">  +1.000e+01   +1.736e-01   +9.848e-01</span>
+<span class="go">  +2.000e+01   +3.420e-01   +9.397e-01</span>
+<span class="go">  +3.000e+01   +5.000e-01   +8.660e-01</span>
+<span class="go">  +4.000e+01   +6.428e-01   +7.660e-01</span>
+<span class="go">  +5.000e+01   +7.660e-01   +6.428e-01</span>
+<span class="go">  +6.000e+01   +8.660e-01   +5.000e-01</span>
+<span class="go">  +7.000e+01   +9.397e-01   +3.420e-01</span>
+<span class="go">  +8.000e+01   +9.848e-01   +1.736e-01</span>
+<span class="go">  +9.000e+01   +1.000e+00   +6.123e-17</span>
+<span class="go">  +1.000e+02   +9.848e-01   -1.736e-01</span>
+<span class="go">  +1.100e+02   +9.397e-01   -3.420e-01</span>
+<span class="go">  +1.200e+02   +8.660e-01   -5.000e-01</span>
+<span class="go">  +1.300e+02   +7.660e-01   -6.428e-01</span>
+<span class="go">  +1.400e+02   +6.428e-01   -7.660e-01</span>
+<span class="go">  +1.500e+02   +5.000e-01   -8.660e-01</span>
+<span class="go">  +1.600e+02   +3.420e-01   -9.397e-01</span>
+<span class="go">  +1.700e+02   +1.736e-01   -9.848e-01</span>
+<span class="go">  +1.800e+02   +1.225e-16   -1.000e+00</span>
+</pre></div>
+</div>
+<p>ここで三角関数 ( <code class="docutils literal notranslate"><span class="pre">math.sin</span></code> および <code class="docutils literal notranslate"><span class="pre">math.cos</span></code> )の引数はラジアン単位であることに注意しよう．なお，上の例では出力のフォーマットは</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># xはθ，y1, y2はsinθ，cosθの値</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:+12.3e}</span><span class="s1"> </span><span class="si">{:+12.3e}</span><span class="s1"> </span><span class="si">{:+12.3e}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">y2</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>としている．</p>
+</div>
+<div class="section" id="id8">
+<h2>課題5<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>引数として与えられた2つの整数 <code class="docutils literal notranslate"><span class="pre">m</span></code> および <code class="docutils literal notranslate"><span class="pre">n</span></code> の最大公約数を求める関数 <code class="docutils literal notranslate"><span class="pre">gcd</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="s2">&quot;mとnの最大公倍数を求める&quot;</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>を作成せよ．これを呼び出すと例えば以下のような出力が得られるものとする．</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gcd</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="go">4</span>
+</pre></div>
+</div>
+<p>なお，最大公約数を求めるには以下のアルゴリズム(ユークリッドの互除法)を用いるとよい．(以下では <span class="math notranslate nohighlight">\(m &gt; n\)</span> を仮定していることに注意しよう)</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(m\)</span> を <span class="math notranslate nohighlight">\(n\)</span> で割った余り <span class="math notranslate nohighlight">\(r\)</span> を求める．</p></li>
+<li><p>もし <span class="math notranslate nohighlight">\(r = 0\)</span> ならば <span class="math notranslate nohighlight">\(n\)</span> が最大公約数である．</p></li>
+<li><p>もし <span class="math notranslate nohighlight">\(r \neq 0\)</span> ならば， <span class="math notranslate nohighlight">\(m\)</span> に <span class="math notranslate nohighlight">\(n\)</span> を， <span class="math notranslate nohighlight">\(n\)</span> に <span class="math notranslate nohighlight">\(r\)</span> を代入して[1]に戻る(繰り返す)．</p></li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="id9">
+<h2>課題6<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>以下の級数展開</p>
+<div class="math notranslate nohighlight">
+\[e \simeq \sum_{n=0}^{N} \frac{1}{n !}. \quad (0! = 1に注意せよ)\]</div>
+<p>により自然対数の底 <span class="math notranslate nohighlight">\(e\)</span> の近似値を求める関数 <code class="docutils literal notranslate"><span class="pre">approx_e</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">approx_e</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">epsilon</span><span class="p">):</span>
+    <span class="s2">&quot;自然対数の底を級数展開を用いて求める&quot;</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>を作成しよう．ただし整数 <code class="docutils literal notranslate"><span class="pre">N</span></code> および 実数 <code class="docutils literal notranslate"><span class="pre">epsilon</span></code> を引数として受け取り，関数の返値としては，収束ステータス(収束すれば <code class="docutils literal notranslate"><span class="pre">True</span></code> そうでなければ <code class="docutils literal notranslate"><span class="pre">False</span></code> )，反復回数，最終的な近似値の3つを返すこと．</p>
+<p>ただし以下の条件を満たすこと．</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>N &gt; 1 でない，または 0 &lt; epsilon &lt; 1 でない場合にはエラーメッセージを表示して，収束ステータス，反復回数，近似値の全てを <code class="docutils literal notranslate"><span class="pre">None</span></code> とすること．</p></li>
+<li><p>誤差がepsilon以下になった時点か， n = Nまで計算した時点で級数計算を打ち切る．</p></li>
+</ul>
+</div></blockquote>
+<p>以下はこの関数を呼び出し，結果を表示する例である．</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">status</span><span class="p">,</span> <span class="n">iteration</span><span class="p">,</span> <span class="n">e</span> <span class="o">=</span> <span class="n">approx_e</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">1.0e-8</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">status</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Converged !&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">else</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Did not converge !&#39;</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:20}</span><span class="s1"> : </span><span class="si">{:&gt;20}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="n">iteration</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:20}</span><span class="s1"> : </span><span class="si">{:&gt;20.14e}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Approximated&#39;</span><span class="p">,</span> <span class="n">e</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:20}</span><span class="s1"> : </span><span class="si">{:&gt;20.14e}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Exact&#39;</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">e</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:20}</span><span class="s1"> : </span><span class="si">{:&gt;20.14e}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Error&#39;</span><span class="p">,</span> <span class="nb">abs</span><span class="p">(</span><span class="n">e</span><span class="o">-</span><span class="n">math</span><span class="o">.</span><span class="n">e</span><span class="p">)</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">e</span><span class="p">))</span>
+<span class="go">Did not converge !</span>
+<span class="go">N                    :                   10</span>
+<span class="go">Approximated         : 2.71828180114638e+00</span>
+<span class="go">Exact                : 2.71828182845905e+00</span>
+<span class="go">Error                : 1.00477663102111e-08</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id10">
+<h2>課題7<a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>与えられた実数 <span class="math notranslate nohighlight">\(a (&gt; 0)\)</span> の平方根の近似値を以下のような逐次近似</p>
+<div class="math notranslate nohighlight">
+\[x_{n+1} = \frac{1}{2} \left( \frac{a}{x_{n}} + x_{n} \right)\]</div>
+<p>で計算して返す関数 <code class="docutils literal notranslate"><span class="pre">approx_sqrt</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">approx_sqrt</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">epsilon</span><span class="p">):</span>
+    <span class="s2">&quot;aの平方根の近似値を求める&quot;</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>を作成しよう．ここで <code class="docutils literal notranslate"><span class="pre">epsilon</span></code> は許容誤差である．</p>
+<p>なお， <span class="math notranslate nohighlight">\(x_{n}\)</span> は <span class="math notranslate nohighlight">\(\sqrt{a}\)</span> の <span class="math notranslate nohighlight">\(n\)</span> 番目の近似値である．初期値としては <span class="math notranslate nohighlight">\(x_{0} = a\)</span> を与え，<span class="math notranslate nohighlight">\(\|x_{n+1} - x_{n}\| &lt; \epsilon \|x_{n}\|\)</span> を満たすまで反復を繰り返せばよい．</p>
+<p>以下はこの関数を呼び出し，結果を表示する例である．</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sqrta1</span> <span class="o">=</span> <span class="n">approx_sqrt</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">1.0e-5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sqrta2</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:20}</span><span class="s1"> : </span><span class="si">{:&gt;20.14e}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Approximated&#39;</span><span class="p">,</span> <span class="n">sqrta1</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:20}</span><span class="s1"> : </span><span class="si">{:&gt;20.14e}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Exact&#39;</span><span class="p">,</span> <span class="n">sqrta2</span><span class="p">))</span>
+<span class="go">Approximated         : 1.41421356237469e+00</span>
+<span class="go">Exact                : 1.41421356237310e+00</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="総合索引"
+             >索引</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">FortranユーザーのためのPython入門</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Takanobu Amano.
+      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.3 で生成しました。
+    </div>
+  </body>
+</html>

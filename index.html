@@ -43,13 +43,6 @@
   <h4>次のトピックへ</h4>
   <p class="topless"><a href="chap01.html"
                         title="次の章へ"><span class="section-number">1. </span>はじめに</a></p>
-  <div role="note" aria-label="source link">
-    <h3>このページ</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/index.rst.txt"
-            rel="nofollow">ソースコードを表示</a></li>
-    </ul>
-   </div>
 <div id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">クイック検索</h3>
     <div class="searchformwrapper">
@@ -76,9 +69,16 @@
 <p>この文書は東京大学理学部地球惑星物理学科3年生向けの演習科目「地球惑星物理学演習」用に書かれたものです．それ以外の用途に使用することを妨げるものではありませんが，必ずしも万人向けのものではありませんのでご注意下さい．特に演習課題はUnix系のコマンドラインでの実行を前提としています．</p>
 <p>なお，当然のことながらこの文書の利用は自己責任でお願いします．</p>
 </div>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>この文書はまだ書き殴り状態です！</p>
+</div>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="chap01.html">1. はじめに</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap01.html">1. はじめに</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chap01.html#id3">1.1. 参考</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="chap02.html">2. Pythonの基本</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="chap02.html#id2">2.1. プログラムの実行</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap02.html#id6">2.2. ソースコードの基本構造</a></li>
@@ -89,20 +89,23 @@
 <li class="toctree-l2"><a class="reference internal" href="chap02.html#id12">2.7. 第2章 演習課題</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="chap03.html">3. 制御構造と関数</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="chap03.html#if">3.1. 条件分岐( <code class="docutils literal notranslate"><span class="pre">if</span></code> )</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap03.html#for">3.2. 反復処理( <code class="docutils literal notranslate"><span class="pre">for</span></code> )</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap03.html#while">3.3. 反復処理( <code class="docutils literal notranslate"><span class="pre">while</span></code> )</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap03.html#id4">3.4. 複雑な反復処理</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap03.html#id6">3.5. 関数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap03.html#id14">3.6. 第3章 演習課題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap03.html">3. 対話型の実行方法</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chap03.html#python">3.1. Pythonの対話モード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap03.html#ipython">3.2. IPython</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap03.html#jupyter-qt-console">3.3. Jupyter Qt Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap03.html#jupyter-notebook">3.4. Jupyter Notebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap03.html#ide">3.5. 様々なIDE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap03.html#id6">3.6. プロット</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap03.html#id8">3.7. 第3章 演習課題</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="chap04.html">4. 対話型の実行方法</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="chap04.html#python">4.1. Pythonの対話モード</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap04.html#ipython">4.2. IPython</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap04.html#jupyter-qt-console">4.3. Jupyter Qt Console</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap04.html#jupyter-notebook">4.4. Jupyter Notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap04.html">4. 制御構造と関数</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chap04.html#if">4.1. 条件分岐( <code class="docutils literal notranslate"><span class="pre">if</span></code> )</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap04.html#for">4.2. 反復処理( <code class="docutils literal notranslate"><span class="pre">for</span></code> )</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap04.html#while">4.3. 反復処理( <code class="docutils literal notranslate"><span class="pre">while</span></code> )</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap04.html#id5">4.4. 複雑な反復処理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap04.html#id7">4.5. 関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap04.html#id15">4.6. 第4章 演習課題</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="chap05.html">5. シーケンス型</a><ul>
@@ -119,8 +122,8 @@
 <li class="toctree-l2"><a class="reference internal" href="chap06.html#id17">6.5. 入出力</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap06.html#id21">6.6. 各種演算</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap06.html#id29">6.7. インデックス操作</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap06.html#id30">6.8. 形状操作</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap06.html#id31">6.9. 第6章 演習課題</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap06.html#id32">6.8. 形状操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap06.html#id33">6.9. 第6章 演習課題</a></li>
 </ul>
 </li>
 </ul>

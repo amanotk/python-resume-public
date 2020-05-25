@@ -1,0 +1,392 @@
+
+
+<!doctype html>
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>第6章 演習課題 &#8212; FortranユーザーのためのPython入門</title>
+    <link rel="stylesheet" href="../_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../_static/bizstyle.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="総合索引"
+             accesskey="I">索引</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">FortranユーザーのためのPython入門</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">目次</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">第6章 演習課題</a><ul>
+<li><a class="reference internal" href="#id4">課題1</a></li>
+<li><a class="reference internal" href="#id5">課題2</a></li>
+<li><a class="reference internal" href="#id6">課題3</a></li>
+<li><a class="reference internal" href="#id7">課題4</a></li>
+<li><a class="reference internal" href="#id8">課題5</a></li>
+<li><a class="reference internal" href="#id9">課題6</a></li>
+<li><a class="reference internal" href="#id10">課題7</a></li>
+<li><a class="reference internal" href="#id11">課題8</a></li>
+<li><a class="reference internal" href="#id12">課題9</a></li>
+<li><a class="reference internal" href="#id13">課題10</a></li>
+<li><a class="reference internal" href="#id14">課題11</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">クイック検索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="検索" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>第6章 演習課題<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>以下の課題はJupyter Notebookの仕様を前提としているが，もちろん他の実行環境でも同等の処理を実現出来ていれば問題ない．なお，以下では</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pylab</span> <span class="k">as</span> <span class="n">plt</span>
+</pre></div>
+</div>
+<p>のように必要なモジュールが <code class="docutils literal notranslate"><span class="pre">import</span></code> されているものとする．</p>
+<div class="admonition seealso">
+<p class="admonition-title">参考</p>
+<p><a class="reference external" href="sample/chap06/kadai.html">解答例</a> (<a class="reference external" href="sample/chap06/kadai.ipynb">ダウンロード</a>)</p>
+</div>
+<div class="section" id="id4">
+<h2>課題1<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>サンプルを実行して動作を確認せよ．</p>
+</div>
+<div class="section" id="id5">
+<h2>課題2<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>整数 <code class="docutils literal notranslate"><span class="pre">N</span></code> を引数として受け取り， <span class="math notranslate nohighlight">\(0^{\circ} \leq \theta \leq 180^{\circ}\)</span> をN分割した点(端点を含むのでN+1点)，およびそれらの点における <span class="math notranslate nohighlight">\(\sin \theta\)</span> ， <span class="math notranslate nohighlight">\(\cos \theta\)</span> の値をそれぞれ配列として返す関数</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">trigonometric</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="s2">&quot;θ, sinθ, cosθの値を出力する&quot;</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>を作成せよ．これを呼び出し，例えば以下のようにプロットして結果を確認しよう．</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="n">trigonometric</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="s1">&#39;ro&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="s1">&#39;bo&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span> <span class="s1">&#39;r-&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span> <span class="s1">&#39;b-&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="figure align-center" id="id15">
+<img alt="kadai/figure/chap06_trigonometric.png" src="kadai/figure/chap06_trigonometric.png" />
+<p class="caption"><span class="caption-text">課題2</span><a class="headerlink" href="#id15" title="この画像へのパーマリンク">¶</a></p>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>課題3<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>以下の級数展開</p>
+<div class="math notranslate nohighlight">
+\[e \simeq \sum_{n=0}^{N} \frac{1}{n !}. \quad (0! = 1に注意せよ)\]</div>
+<p>により自然対数の底 <span class="math notranslate nohighlight">\(e\)</span> の近似値を求める関数 <code class="docutils literal notranslate"><span class="pre">approx_e</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">approx_e</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="s2">&quot;自然対数の底を級数展開を用いて求める&quot;</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>を作成しよう．ただし整数 <code class="docutils literal notranslate"><span class="pre">N</span></code> を引数として受け取り，内部ではNumPy配列を使うことでループを用いない実装とせよ．</p>
+<p>ここで，階乗とガンマ関数の関係式</p>
+<div class="math notranslate nohighlight">
+\[\Gamma(n) = (n-1)!\]</div>
+<p>を用いてよい．ガンマ関数は <code class="docutils literal notranslate"><span class="pre">scipy.special.gamma</span></code> を用いればよい．以下はその使用例である．</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">special</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">special</span><span class="o">.</span><span class="n">gamma</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># 2!</span>
+<span class="go">2.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">special</span><span class="o">.</span><span class="n">gamma</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>  <span class="c1"># 3!</span>
+<span class="go">6.0</span>
+</pre></div>
+</div>
+<p>この関数を用いると例えば以下のような結果が得られる．</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:20}</span><span class="s1"> : </span><span class="si">{:&gt;20.14e}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Approximated&#39;</span><span class="p">,</span> <span class="n">approx_e</span><span class="p">(</span><span class="mi">10</span><span class="p">)))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:20}</span><span class="s1"> : </span><span class="si">{:&gt;20.14e}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Exact&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">e</span><span class="p">))</span>
+<span class="go">Approximated         : 2.71828152557319e+00</span>
+<span class="go">Exact                : 2.71828182845905e+00</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>課題4<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>以下の漸化式</p>
+<div class="math notranslate nohighlight">
+\[p_{n+1} = p_n + \alpha p_n (1 - p_n)\]</div>
+<p>で定義される数列 <span class="math notranslate nohighlight">\(p_n (n=0, 1, \ldots)\)</span> を考える．<span class="math notranslate nohighlight">\(1 &lt; \alpha &lt; 3\)</span> を <span class="math notranslate nohighlight">\(m\)</span> 分割し，各 <span class="math notranslate nohighlight">\(\alpha\)</span> について初期値 <span class="math notranslate nohighlight">\(p_0 = 0.9\)</span> から数列を生成し，そのうち <span class="math notranslate nohighlight">\(n=100, \ldots, 200\)</span> を <span class="math notranslate nohighlight">\(\alpha\)</span> の関数としてプロットしよう．</p>
+<p>これには，整数 <code class="docutils literal notranslate"><span class="pre">m</span></code> を引数にとり，<span class="math notranslate nohighlight">\(\alpha\)</span> と <span class="math notranslate nohighlight">\(p_n (n=100, \ldots, 200)\)</span> の組を返す関数 <code class="docutils literal notranslate"><span class="pre">logistic</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">logistic</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+    <span class="s2">&quot;0 &lt; α &lt; 1 をm分割して，それぞれに対してロジスティック写像を計算&quot;</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>を作成し，この関数を用いて</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">logistic</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>とすればよい．結果は以下の通りである．</p>
+<div class="figure align-center" id="id16">
+<img alt="kadai/figure/chap06_logistic.png" src="kadai/figure/chap06_logistic.png" />
+<p class="caption"><span class="caption-text">課題4</span><a class="headerlink" href="#id16" title="この画像へのパーマリンク">¶</a></p>
+</div>
+<p>このような写像はロジスティック写像と呼ばれ，非常に単純な式ながら一定の条件を満たすときにはカオスを生み出すことが知られている．</p>
+</div>
+<div class="section" id="id8">
+<h2>課題5<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>以下の積分</p>
+<div class="math notranslate nohighlight">
+\[\int_{0}^{1} \frac{4}{\pi} \frac{1}{1 + x^2} dx\]</div>
+<p>を台形公式およびSimpsonの公式を使って求める関数をそれぞれ作成しよう．ここで作成する関数は分割数 <code class="docutils literal notranslate"><span class="pre">n</span></code> を引数にとり，</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">trapezoid</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="s2">&quot;分割数nの台形公式で関数を積分&quot;</span>
+    <span class="k">pass</span>
+
+<span class="k">def</span> <span class="nf">simpson</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="s2">&quot;分割数nのSimpson公式で関数を積分&quot;</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>のような形になるものとする．ただし関数内ではループを使わずに実装すること．これらの積分公式の誤差の分割数依存性は次のようにすれば調べることができる．</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">M</span> <span class="o">=</span> <span class="mi">16</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">M</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">err1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">err2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">M</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">err1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">trapezoid</span><span class="p">(</span><span class="n">n</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">err2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">simpson</span><span class="p">(</span><span class="n">n</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 結果をプロット</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">err1</span><span class="p">,</span> <span class="s1">&#39;rx-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;trapezoid&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">err2</span><span class="p">,</span> <span class="s1">&#39;bx-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;simpson&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">loglog</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>これによって得られる図は以下の通りである．</p>
+<div class="figure align-center" id="id17">
+<img alt="kadai/figure/chap06_integration.png" src="kadai/figure/chap06_integration.png" />
+<p class="caption"><span class="caption-text">課題5</span><a class="headerlink" href="#id17" title="この画像へのパーマリンク">¶</a></p>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>課題6<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>データファイルに格納されている学生のテスト点数リストから，最高点，最大点，平均点，標準偏差を求めて返す関数 <code class="docutils literal notranslate"><span class="pre">analyze_score</span></code> を作成しよう．ただし，</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">analyze_score</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="s2">&quot;filenameからデータを読んで最高点，最低点，平均点，標準偏差を返す&quot;</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>のようにファイル名を引数にとるものとする．ここで，それぞれ対応する関数( <code class="docutils literal notranslate"><span class="pre">np.max</span></code> ， <code class="docutils literal notranslate"><span class="pre">np.min</span></code> ， <code class="docutils literal notranslate"><span class="pre">np.mean</span></code> ， <code class="docutils literal notranslate"><span class="pre">np.std</span></code> )またはNumPy配列のメソッドを用いること．</p>
+<p>なお，データファイルは <a class="reference external" href="sample/chap06/score1.dat">score1.dat</a> および <a class="reference external" href="sample/chap06/score2.dat">score2.dat</a> とし，以下のようにこのファイルの最初の行にはデータ数，次の行は空行，以降に実際のデータが格納されている．</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cat score1.dat
+<span class="m">30</span>      <span class="c1"># データ数</span>
+        <span class="c1"># 空白行</span>
+<span class="m">20</span>      <span class="c1"># 実際のデータはこれ以降の行</span>
+<span class="m">49</span>
+<span class="m">45</span>
+<span class="o">(</span>以下略）
+</pre></div>
+</div>
+<p>したがって， <code class="docutils literal notranslate"><span class="pre">np.loadtxt</span></code> のオプション <code class="docutils literal notranslate"><span class="pre">skiprows</span></code> を用いて最初の2行を無視して読み込めばよい．</p>
+<p>例えばscore1.datを読み込んだ場合には以下のような結果が得られる．</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">smax</span><span class="p">,</span> <span class="n">smin</span><span class="p">,</span> <span class="n">savg</span><span class="p">,</span> <span class="n">sstd</span> <span class="o">=</span> <span class="n">analyze_score</span><span class="p">(</span><span class="s1">&#39;score1.dat&#39;</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:20}</span><span class="s1"> : </span><span class="si">{:10}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Best&#39;</span><span class="p">,</span> <span class="n">smax</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:20}</span><span class="s1"> : </span><span class="si">{:10}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Worst&#39;</span><span class="p">,</span> <span class="n">smin</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:20}</span><span class="s1"> : </span><span class="si">{:10.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Average&#39;</span><span class="p">,</span> <span class="n">savg</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:20}</span><span class="s1"> : </span><span class="si">{:10.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Standard deviation&#39;</span><span class="p">,</span> <span class="n">sstd</span><span class="p">))</span>
+<span class="go">Best                 :         98</span>
+<span class="go">Worst                :          6</span>
+<span class="go">Average              :     46.400</span>
+<span class="go">Standard deviation   :     25.115</span>
+</pre></div>
+</div>
+<p>同様にscore2.datについても試してみること．</p>
+</div>
+<div class="section" id="id10">
+<h2>課題7<a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>前問のscore1.datおよびscore2.datのようなデータファイルを読み込みヒストグラムを作成する関数 <code class="docutils literal notranslate"><span class="pre">hist_score</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hist_score</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">nbin</span><span class="p">):</span>
+    <span class="s2">&quot;filenameからデータを読んでヒストグラムを作成する&quot;</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>を作成しよう．ここで引数 <code class="docutils literal notranslate"><span class="pre">nbin</span></code> はビンの数である．関数 <code class="docutils literal notranslate"><span class="pre">np.histogram</span></code> を用いること．</p>
+<p>実行例は以下のようになる．</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nbin</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bins</span><span class="p">,</span> <span class="n">hist</span> <span class="o">=</span> <span class="n">hist_score</span><span class="p">(</span><span class="s1">&#39;score2.dat&#39;</span><span class="p">,</span> <span class="n">nbin</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">binw</span> <span class="o">=</span> <span class="n">bins</span><span class="p">[</span><span class="o">+</span><span class="mi">1</span><span class="p">:]</span> <span class="o">-</span> <span class="n">bins</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">bins</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">hist</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">binw</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s1">&#39;edge&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="figure align-center" id="id18">
+<img alt="kadai/figure/chap06_score.png" src="kadai/figure/chap06_score.png" />
+<p class="caption"><span class="caption-text">課題7</span><a class="headerlink" href="#id18" title="この画像へのパーマリンク">¶</a></p>
+</div>
+</div>
+<div class="section" id="id11">
+<h2>課題8<a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>データファイル <a class="reference external" href="sample/chap06/vector.dat">vector.dat</a> に格納されている2つのベクトルを読み込み，それらの内積を求める関数 <code class="docutils literal notranslate"><span class="pre">dot_file</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dot_file</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="s2">&quot;filenameから2つのベクトルを読み込み，それらの内積を返す&quot;</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>を作成しよう．関数 <code class="docutils literal notranslate"><span class="pre">np.dot</span></code> を用いること．ただし，以下のようにvector.datの最初の行にはベクトルの長さ，次の行は空白，ベクトル1の各要素，空白行，ベクトル2の各要素，のようにデータが格納されている．</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">20</span>                      <span class="c1"># データ数</span>
+                        <span class="c1"># 空白行</span>
+<span class="m">1</span>.000000000000000e+00
+<span class="m">9</span>.510565162951535e-01
+<span class="o">(</span>中略<span class="o">)</span>
+<span class="m">8</span>.090169943749473e-01
+<span class="m">9</span>.510565162951535e-01
+                        <span class="c1"># 空白行</span>
+<span class="m">0</span>.000000000000000e+00
+<span class="m">3</span>.090169943749474e-01
+<span class="o">(</span>中略<span class="o">)</span>
+-5.877852522924734e-01
+-3.090169943749476e-01
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">np.loadtxt</span></code> のオプション <code class="docutils literal notranslate"><span class="pre">skiprows</span></code> を用いて最初の2行を無視して読み込むと以降のデータが全て1次元配列として返される(区切りの空白行は無視される)ので，この前半と後半をそれぞれ別のベクトルとして処理すればよい．</p>
+</div>
+<div class="section" id="id12">
+<h2>課題9<a class="headerlink" href="#id12" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>任意の長さの1次元整数型配列に与えられた整数が含まれているかどうかを調べ，含まれていた時には真 ( <code class="docutils literal notranslate"><span class="pre">True</span></code> ，そうでなければ偽 <code class="docutils literal notranslate"><span class="pre">False</span></code> )を返す関数 <code class="docutils literal notranslate"><span class="pre">find_var</span></code> を作成しよう．また同様に，値が含まれていた時にはその要素のインデックスを返し，そうでなければ-1を返す関数 <code class="docutils literal notranslate"><span class="pre">find_var_index</span></code> を作成しよう．実装は色々考えられるが， <code class="docutils literal notranslate"><span class="pre">np.any</span></code> や <code class="docutils literal notranslate"><span class="pre">np.nonzero</span></code> または <code class="docutils literal notranslate"><span class="pre">np.where</span></code> などを使うとよい．</p>
+<p>これらの関数を</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_var</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">var</span><span class="p">):</span>
+    <span class="s2">&quot;varが配列xに含まれているかどうかを調べる&quot;</span>
+    <span class="k">pass</span>
+
+<span class="k">def</span> <span class="nf">find_var_index</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">var</span><span class="p">):</span>
+    <span class="s2">&quot;varが配列xに含まれている時にはそのインデックスを，そうでない場合は-1を返す&quot;</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>のように定義し，以下のように動作を確かめよう．</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span>
+<span class="go">array([17, 75, 28, 83, 93, 20, 19, 94, 62, 61])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">find_var</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">28</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">find_var</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">find_var_index</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">28</span><span class="p">)</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">find_var_index</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+<span class="go">-1</span>
+</pre></div>
+</div>
+<p>さらに， <code class="docutils literal notranslate"><span class="pre">np.random.randint</span></code> を用いて適当な長さの1次元整数配列を作成し，値を探索してみよう．</p>
+</div>
+<div class="section" id="id13">
+<h2>課題10<a class="headerlink" href="#id13" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>逆関数法を使って指数分布</p>
+<div class="math notranslate nohighlight">
+\[P(x) = \lambda \exp ( - \lambda x )\]</div>
+<p>に従う乱数を返す関数 <code class="docutils literal notranslate"><span class="pre">randexp</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">randexp</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="s2">&quot;指数分布に従う乱数をn個作成する&quot;</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>を作成しよう．(実用上は指数分布に従う乱数は <code class="docutils literal notranslate"><span class="pre">numpy.random.exponential</span></code> を用いればよい．）</p>
+<p>この関数を用いて発生させた乱数と解析的な確率分布を以下のように比較しよう．</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">l</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">randexp</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="mi">60000</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># ヒストグラム</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hist</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">33</span><span class="p">),</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">bins</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">hist</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="s1">&#39;post&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 解析的な分布</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">bins</span><span class="p">[</span><span class="o">+</span><span class="mi">1</span><span class="p">:]</span> <span class="o">+</span> <span class="n">bins</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">l</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">l</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;k--&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>この結果は以下のようになる．</p>
+<div class="figure align-center" id="id19">
+<img alt="kadai/figure/chap06_exponential.png" src="kadai/figure/chap06_exponential.png" />
+<p class="caption"><span class="caption-text">課題10</span><a class="headerlink" href="#id19" title="この画像へのパーマリンク">¶</a></p>
+</div>
+</div>
+<div class="section" id="id14">
+<h2>課題11<a class="headerlink" href="#id14" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>モンテカルロ法を用いてN次元超球の体積を求める関数 <code class="docutils literal notranslate"><span class="pre">mc_hypersphere</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mc_hypersphere</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">nrand</span><span class="p">):</span>
+    <span class="s2">&quot;n次元超球の体積をモンテカルロ法で求める&quot;</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>を作成しよう．ここで <code class="docutils literal notranslate"><span class="pre">nrand</span></code> は各次元について発生させる乱数の個数である．</p>
+<p>この関数を使って近似値と解析的な値を以下のように比較しよう．</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nrand</span> <span class="o">=</span> <span class="mi">100000</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:20}</span><span class="s1"> : </span><span class="si">{:&lt;20.14e}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Monte-Carlo&#39;</span><span class="p">,</span> <span class="n">mc_hypersphere</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">nrand</span><span class="p">)))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:20}</span><span class="s1"> : </span><span class="si">{:&lt;20.14e}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Exact&#39;</span><span class="p">,</span> <span class="n">hypersphere</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span>
+<span class="go">Monte-Carlo          : 4.18304000000000e+00</span>
+<span class="go">Exact                : 4.18879020478639e+00</span>
+</pre></div>
+</div>
+<p>ただし，解析的な値を返す関数 <code class="docutils literal notranslate"><span class="pre">hypersphere</span></code> を別途定義するものとする．</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="総合索引"
+             >索引</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">FortranユーザーのためのPython入門</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Takanobu Amano.
+      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.3 で生成しました。
+    </div>
+  </body>
+</html>

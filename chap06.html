@@ -51,12 +51,13 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#id15">6.4. 生成</a><ul>
-<li><a class="reference internal" href="#arange">6.4.1. arange</a></li>
-<li><a class="reference internal" href="#zeros">6.4.2. zeros</a></li>
-<li><a class="reference internal" href="#ones">6.4.3. ones</a></li>
-<li><a class="reference internal" href="#linspace">6.4.4. linspace</a></li>
-<li><a class="reference internal" href="#geomspace-logspace">6.4.5. geomspace / logspace</a></li>
-<li><a class="reference internal" href="#id16">6.4.6. シーケンス型からの生成</a></li>
+<li><a class="reference internal" href="#id16">6.4.1. シーケンス型からの生成</a></li>
+<li><a class="reference internal" href="#arange">6.4.2. arange</a></li>
+<li><a class="reference internal" href="#zeros">6.4.3. zeros</a></li>
+<li><a class="reference internal" href="#ones">6.4.4. ones</a></li>
+<li><a class="reference internal" href="#linspace">6.4.5. linspace</a></li>
+<li><a class="reference internal" href="#geomspace-logspace">6.4.6. geomspace / logspace</a></li>
+<li><a class="reference internal" href="#random">6.4.7. random</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#id17">6.5. 入出力</a><ul>
@@ -75,16 +76,19 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#id29">6.7. インデックス操作</a></li>
-<li><a class="reference internal" href="#id30">6.8. 形状操作</a></li>
-<li><a class="reference internal" href="#id31">6.9. 第6章 演習課題</a><ul>
-<li><a class="reference internal" href="#id32">6.9.1. 課題1</a></li>
-<li><a class="reference internal" href="#id33">6.9.2. 課題2</a></li>
-<li><a class="reference internal" href="#id34">6.9.3. 課題3</a></li>
-<li><a class="reference internal" href="#id35">6.9.4. 課題4</a></li>
-<li><a class="reference internal" href="#id36">6.9.5. 課題5</a></li>
-<li><a class="reference internal" href="#id37">6.9.6. 課題6</a></li>
-<li><a class="reference internal" href="#id38">6.9.7. 課題7</a></li>
-<li><a class="reference internal" href="#id39">6.9.8. 課題8</a></li>
+<li><a class="reference internal" href="#id32">6.8. 形状操作</a></li>
+<li><a class="reference internal" href="#id33">6.9. 第6章 演習課題</a><ul>
+<li><a class="reference internal" href="#id36">6.9.1. 課題1</a></li>
+<li><a class="reference internal" href="#id37">6.9.2. 課題2</a></li>
+<li><a class="reference internal" href="#id38">6.9.3. 課題3</a></li>
+<li><a class="reference internal" href="#id39">6.9.4. 課題4</a></li>
+<li><a class="reference internal" href="#id40">6.9.5. 課題5</a></li>
+<li><a class="reference internal" href="#id41">6.9.6. 課題6</a></li>
+<li><a class="reference internal" href="#id42">6.9.7. 課題7</a></li>
+<li><a class="reference internal" href="#id43">6.9.8. 課題8</a></li>
+<li><a class="reference internal" href="#id44">6.9.9. 課題9</a></li>
+<li><a class="reference internal" href="#id45">6.9.10. 課題10</a></li>
+<li><a class="reference internal" href="#id46">6.9.11. 課題11</a></li>
 </ul>
 </li>
 </ul>
@@ -94,13 +98,6 @@
   <h4>前のトピックへ</h4>
   <p class="topless"><a href="chap05.html"
                         title="前の章へ"><span class="section-number">5. </span>シーケンス型</a></p>
-  <div role="note" aria-label="source link">
-    <h3>このページ</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/chap06.rst.txt"
-            rel="nofollow">ソースコードを表示</a></li>
-    </ul>
-   </div>
 <div id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">クイック検索</h3>
     <div class="searchformwrapper">
@@ -120,40 +117,37 @@
           <div class="body" role="main">
             
   <div class="section" id="numpy">
-<h1><a class="toc-backref" href="#id40"><span class="section-number">6. </span>NumPy配列の基本</a><a class="headerlink" href="#numpy" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<h1><a class="toc-backref" href="#id52"><span class="section-number">6. </span>NumPy配列の基本</a><a class="headerlink" href="#numpy" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <p>NumPyと呼ばれるライブラリの存在はPythonが広く科学技術計算に用いられるようになった最も大きな要因の一つであろう．ここでは科学技術計算で用いられる大規模データの効率的な扱いを可能にするNumPyの多次元配列オブジェクトについて学ぼう．なお，以降はこの多次元配列オブジェクトを便宜的にNumPy配列と呼ぶことにする．</p>
-<blockquote>
-<div><p>サンプルプログラム</p>
-</div></blockquote>
 <div class="contents topic" id="id1">
 <p class="topic-title">この章の内容</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#numpy" id="id40">NumPy配列の基本</a></p>
+<li><p><a class="reference internal" href="#numpy" id="id52">NumPy配列の基本</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id2" id="id41">NumPyについて</a></p></li>
-<li><p><a class="reference internal" href="#id8" id="id42">基本的な使い方</a></p></li>
-<li><p><a class="reference internal" href="#id11" id="id43">配列オブジェクト</a></p></li>
-<li><p><a class="reference internal" href="#id15" id="id44">生成</a></p></li>
-<li><p><a class="reference internal" href="#id17" id="id45">入出力</a></p></li>
-<li><p><a class="reference internal" href="#id21" id="id46">各種演算</a></p></li>
-<li><p><a class="reference internal" href="#id29" id="id47">インデックス操作</a></p></li>
-<li><p><a class="reference internal" href="#id30" id="id48">形状操作</a></p></li>
-<li><p><a class="reference internal" href="#id31" id="id49">第6章 演習課題</a></p></li>
+<li><p><a class="reference internal" href="#id2" id="id53">NumPyについて</a></p></li>
+<li><p><a class="reference internal" href="#id8" id="id54">基本的な使い方</a></p></li>
+<li><p><a class="reference internal" href="#id11" id="id55">配列オブジェクト</a></p></li>
+<li><p><a class="reference internal" href="#id15" id="id56">生成</a></p></li>
+<li><p><a class="reference internal" href="#id17" id="id57">入出力</a></p></li>
+<li><p><a class="reference internal" href="#id21" id="id58">各種演算</a></p></li>
+<li><p><a class="reference internal" href="#id29" id="id59">インデックス操作</a></p></li>
+<li><p><a class="reference internal" href="#id32" id="id60">形状操作</a></p></li>
+<li><p><a class="reference internal" href="#id33" id="id61">第6章 演習課題</a></p></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="section" id="id2">
-<h2><a class="toc-backref" href="#id41"><span class="section-number">6.1. </span>NumPyについて</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p><a class="reference external" href="https://numpy.org/">NumPy</a> はPythonによる科学技術計算の根幹をなすライブラリである<a class="footnote-reference brackets" href="#numpylib" id="id4">1</a> ．このライブラリが提供する <code class="docutils literal notranslate"><span class="pre">numpy</span></code> というモジュール<a class="footnote-reference brackets" href="#module" id="id5">2</a> を使うためには</p>
+<h2><a class="toc-backref" href="#id53"><span class="section-number">6.1. </span>NumPyについて</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><a class="reference external" href="https://numpy.org/">NumPy</a> はPythonによる科学技術計算の根幹をなすライブラリである <a class="footnote-reference brackets" href="#numpylib" id="id4">1</a> ．このライブラリが提供する <code class="docutils literal notranslate"><span class="pre">numpy</span></code> というモジュール <a class="footnote-reference brackets" href="#module" id="id5">2</a> を使うためには</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
 </td></tr></table></div>
 <p>のようにするのが一般的である．これは <code class="docutils literal notranslate"><span class="pre">numpy</span></code> という名前のモジュールを <code class="docutils literal notranslate"><span class="pre">import</span></code> し， <code class="docutils literal notranslate"><span class="pre">np</span></code> という別名を付けることを意味する．別名は必ずしもつけなくてもいいし，その別名を <code class="docutils literal notranslate"><span class="pre">np</span></code> にする必然性は何もない．しかし，世の中のほとんどのコードがこの書き方を採用しているので，ここでも慣例に従っておこう．以降では常に <code class="docutils literal notranslate"><span class="pre">np</span></code> が <code class="docutils literal notranslate"><span class="pre">numpy</span></code> モジュールを意味するものとする．</p>
-<p>NumPy配列(NumPyが提供する多次元配列オブジェクト)は正確には <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code> オブジェクトである<a class="footnote-reference brackets" href="#np-ndarray" id="id6">3</a>．一般にPythonはスクリプト言語に分類される動作の遅い言語であるが，NumPy配列を用いることで非常に高速な数値演算が可能である．これはNumPy配列がCで実装されており，NumPy配列の演算は「うまく」使えばほとんどが(内部的には)Cのコードとして実行されるからである．詳細は以下で追々見ていくことにし，ここでは一言だけ， <strong>Pythonで数値計算をする際にはforループは使ってはいけない</strong> と述べるにとどめておこう<a class="footnote-reference brackets" href="#dontusefor" id="id7">4</a> ．</p>
+<p>NumPy配列(NumPyが提供する多次元配列オブジェクト)は正確には <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code> オブジェクトである <a class="footnote-reference brackets" href="#np-ndarray" id="id6">3</a>．一般にPythonはスクリプト言語に分類される動作の遅い言語であるが，NumPy配列を用いることで非常に高速な数値演算が可能である．これはNumPy配列がCで実装されており，NumPy配列の演算は「うまく」使えばほとんどが(内部的には)Cのコードとして実行されるからである．詳細は以下で追々見ていくことにし，ここでは一言だけ， <strong>Pythonで数値計算をする際にはforループは使ってはいけない</strong> と述べるにとどめておこう <a class="footnote-reference brackets" href="#dontusefor" id="id7">4</a> ．</p>
 </div>
 <div class="section" id="id8">
-<h2><a class="toc-backref" href="#id42"><span class="section-number">6.2. </span>基本的な使い方</a><a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id54"><span class="section-number">6.2. </span>基本的な使い方</a><a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>まずは基礎の基礎を抑えよう．例えば配列を作る最も簡単な方法の一つとして</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
@@ -170,48 +164,59 @@
 </pre></div>
 </td></tr></table></div>
 <p>ここで整数の変数 <code class="docutils literal notranslate"><span class="pre">N</span></code> が配列のサイズである．2行目で配列 <code class="docutils literal notranslate"><span class="pre">x</span></code> を生成し，3行目でその配列の各要素について <span class="math notranslate nohighlight">\(\cos(x)\)</span> の値を計算している．</p>
-<p>ここで2行目では <code class="docutils literal notranslate"><span class="pre">np.arange</span></code> で生成した配列に対してスカラー値の掛け算や割り算(整数 / 整数 = 実数に注意)を実行していることが分かるだろう( <code class="docutils literal notranslate"><span class="pre">np.pi</span></code> は <span class="math notranslate nohighlight">\(\pi\)</span> の値である)．このとき，配列の各要素に対して演算がそれぞれ実行される．同様に3行目では配列の各要素に対して <code class="docutils literal notranslate"><span class="pre">np.cos</span></code> の関数を呼び出し，結果として生成される新しい配列を <code class="docutils literal notranslate"><span class="pre">y</span></code> に代入している．このような使い方は <strong>Fortranの配列演算の使い方と全く同じ</strong> である．CやPythonの組み込みの配列<a class="footnote-reference brackets" href="#intrinsicarray" id="id9">6</a> では当然このような書き方は許されないが，NumPy配列はあたかもFortranの配列のように使えるのである．</p>
+<p>ここで2行目では <code class="docutils literal notranslate"><span class="pre">np.arange</span></code> で生成した配列に対してスカラー値の掛け算や割り算(整数 / 整数 = 実数に注意)を実行していることが分かるだろう( <code class="docutils literal notranslate"><span class="pre">np.pi</span></code> は <span class="math notranslate nohighlight">\(\pi\)</span> の値である)．このとき，配列の各要素に対して演算がそれぞれ実行される．同様に3行目では配列の各要素に対して <code class="docutils literal notranslate"><span class="pre">np.cos</span></code> の関数を呼び出し，結果として生成される新しい配列を <code class="docutils literal notranslate"><span class="pre">y</span></code> に代入している．このような使い方は <strong>Fortranの配列演算の使い方と全く同じ</strong> である．CやPythonの組み込みの配列 <a class="footnote-reference brackets" href="#intrinsicarray" id="id9">6</a> では当然このような書き方は許されないが，NumPy配列はあたかもFortranの配列のように使えるのである．</p>
 <p>このようにループを使わずに配列演算を記述できると確かに非常に便利であるが，NumPy配列の本当の利点は単に簡便さではなく，その演算速度にある．例えば <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">np.cos(x)</span></code> を(長さ <code class="docutils literal notranslate"><span class="pre">N</span></code> の配列 <code class="docutils literal notranslate"><span class="pre">x</span></code> および <code class="docutils literal notranslate"><span class="pre">y</span></code> が定義されているとして)Pythonのループを使って書くならば，</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
 <span class="gp">&gt;&gt;&gt; </span>  <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 </pre></div>
 </td></tr></table></div>
-<p>のようになるだろう<a class="footnote-reference brackets" href="#numpymath" id="id10">5</a> ．ここでNumPy配列の各要素へのアクセスにはCのように <code class="docutils literal notranslate"><span class="pre">[]</span></code> を使って行うことに注意しよう．計算自体は同じことだが，このループはPythonで実行されるため，その演算速度は配列演算を使った場合に比べて桁違いに遅い．これは配列演算は実質的にはCで書かれたNumPyライブラリ内で実行されることになるためである．すなわち，Python上で実行される処理は遅いのだが，Pythonから呼び出した関数がCやFortranで実装されていれば，その部分についてはCやFortranで高速に処理することができるのである．</p>
+<p>のようになるだろう <a class="footnote-reference brackets" href="#numpymath" id="id10">5</a> ．ここでNumPy配列の各要素へのアクセスにはCのように <code class="docutils literal notranslate"><span class="pre">[]</span></code> を使って行うことに注意しよう．計算自体は同じことだが，このループはPythonで実行されるため，その演算速度は配列演算を使った場合に比べて桁違いに遅い．これは配列演算は実質的にはCで書かれたNumPyライブラリ内で実行されることになるためである．すなわち，Python上で実行される処理は遅いのだが，Pythonから呼び出した関数がCやFortranで実装されていれば，その部分についてはCやFortranで高速に処理することができるのである．</p>
 <p>Pythonは様々なことが手軽に実現できる非常に便利な言語であるが，ネックとなるのはその処理の遅さである．(したがって，何も考えずに書くといとも簡単に遅いコードが出来上がってしまう．）NumPy配列を使うことで重たい処理だけを他の言語で書かれた高速なライブラリに押し付けることができ，手軽さと計算速度の速さを両立しているわけである．したがって， <strong>Pythonではループ処理をするのは可能な限り避け，可能な限り配列演算を利用するのが鉄則</strong> である．</p>
 </div>
 <div class="section" id="id11">
-<h2><a class="toc-backref" href="#id43"><span class="section-number">6.3. </span>配列オブジェクト</a><a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id55"><span class="section-number">6.3. </span>配列オブジェクト</a><a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>NumPy配列オブジェクト <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code> は多次元配列データを格納し効率的な演算を実現する．</p>
 <div class="section" id="id12">
 <h3><span class="section-number">6.3.1. </span>属性<a class="headerlink" href="#id12" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>オブジェクトは一般に様々な属性(attribute)を持つ．NumPy配列の場合は当然ながら各要素をデータとして持つが，それに加えて以下のような属性が重要である．</p>
-<p>dtype</p>
-<blockquote>
-<div><p>配列要素のデータ型(整数，実数，複素数など)</p>
-</div></blockquote>
-<p>ndim</p>
-<blockquote>
-<div><p>次元数</p>
-</div></blockquote>
-<p>size</p>
-<blockquote>
-<div><p>配列サイズ（要素数)</p>
-</div></blockquote>
-<p>shape</p>
-<blockquote>
-<div><p>配列形状</p>
-</div></blockquote>
-<p>これらの属性にアクセスするには <code class="docutils literal notranslate"><span class="pre">x.dtype</span></code> のように <code class="docutils literal notranslate"><span class="pre">.</span></code> を用いる．以下の例でこれらの意味を見てみよう． <code class="docutils literal notranslate"><span class="pre">np.arange</span></code> で生成された配列 <code class="docutils literal notranslate"><span class="pre">x</span></code> について見てみると，これは64bitの整数( <code class="docutils literal notranslate"><span class="pre">int64</span></code> )配列であり，次元数は1，は配列要素は10である．最後の形状は各次元の長さであるが，この場合は1次元配列なので <code class="docutils literal notranslate"><span class="pre">(10,)</span></code> となっている．例えば3次元配列で各次元の長さが 3, 4, 5 だったとすると <code class="docutils literal notranslate"><span class="pre">(3,</span> <span class="pre">4,</span> <span class="pre">5,</span> <span class="pre">)</span></code> がその配列の形状となる<a class="footnote-reference brackets" href="#shapetuple" id="id13">7</a> ．</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<table class="colwidths-given docutils align-default" style="width: 100%">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>属性</p></th>
+<th class="head"><p>意味</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dtype</span></code></p></td>
+<td><p>配列要素のデータ型(整数，実数，複素数など)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ndim</span></code></p></td>
+<td><p>次元数</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">size</span></code></p></td>
+<td><p>配列サイズ（要素数)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">shape</span></code></p></td>
+<td><p>配列形状</p></td>
+</tr>
+</tbody>
+</table>
+<p>これらの属性にアクセスするには <code class="docutils literal notranslate"><span class="pre">x.dtype</span></code> のように <code class="docutils literal notranslate"><span class="pre">.</span></code> を用いる．以下の例でこれらの意味を見てみよう． <code class="docutils literal notranslate"><span class="pre">np.arange</span></code> で生成された配列 <code class="docutils literal notranslate"><span class="pre">x</span></code> について見てみると，これは64bitの整数( <code class="docutils literal notranslate"><span class="pre">int64</span></code> )配列であり，次元数は1，は配列要素は10である．最後の形状は各次元の長さであるが，この場合は1次元配列なので <code class="docutils literal notranslate"><span class="pre">(10,)</span></code> となっている．例えば3次元配列で各次元の長さが 3, 4, 5 だったとすると <code class="docutils literal notranslate"><span class="pre">(3,</span> <span class="pre">4,</span> <span class="pre">5,</span> <span class="pre">)</span></code> がその配列の形状となる <a class="footnote-reference brackets" href="#shapetuple" id="id13">7</a> ．</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">dtype</span>
 <span class="go">dtype(&#39;int64&#39;)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">ndim</span>
@@ -220,6 +225,8 @@
 <span class="go">10</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">shape</span>
 <span class="go">(10,)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span><span class="o">.</span><span class="n">shape</span>
+<span class="go">(2, 3)</span>
 </pre></div>
 </td></tr></table></div>
 </div>
@@ -307,10 +314,31 @@
 </div>
 </div>
 <div class="section" id="id15">
-<h2><a class="toc-backref" href="#id44"><span class="section-number">6.4. </span>生成</a><a class="headerlink" href="#id15" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id56"><span class="section-number">6.4. </span>生成</a><a class="headerlink" href="#id15" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>配列を生成するにはいくつかの方法があるが，以下に何もないところから配列を作るための典型的な例をいくつか示そう．</p>
+<div class="section" id="id16">
+<h3><span class="section-number">6.4.1. </span>シーケンス型からの生成<a class="headerlink" href="#id16" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>既存のlistやtupleを <code class="docutils literal notranslate"><span class="pre">np.array</span></code> 関数の引数に与えることでNumPy配列に変換することができる．使い方は以下の例を見れば明らかであろう．</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>              <span class="c1"># listを変換</span>
+<span class="go">array([0, 1, 2, 3, 4])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>                    <span class="c1"># tupleを変換</span>
+<span class="go">array([0, 1, 2])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]])</span>    <span class="c1"># listのlistを2次元配列に変換</span>
+<span class="go">array([[0, 1],</span>
+<span class="go">       [2, 3],</span>
+<span class="go">       [4, 5]])</span>
+</pre></div>
+</td></tr></table></div>
+</div>
 <div class="section" id="arange">
-<h3><span class="section-number">6.4.1. </span>arange<a class="headerlink" href="#arange" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3><span class="section-number">6.4.2. </span>arange<a class="headerlink" href="#arange" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>すでに見たように <code class="docutils literal notranslate"><span class="pre">np.arange</span></code> は連番の配列を作る．いくつか別の使い方も見てみよう．</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
@@ -326,7 +354,7 @@
 <p>のように <code class="docutils literal notranslate"><span class="pre">dtype</span></code> を指定することで，生成される配列のデータ型を指定することもできる．</p>
 </div>
 <div class="section" id="zeros">
-<h3><span class="section-number">6.4.2. </span>zeros<a class="headerlink" href="#zeros" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3><span class="section-number">6.4.3. </span>zeros<a class="headerlink" href="#zeros" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">np.zeros</span></code> は0で初期化された配列を作るための関数である．以下の例</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
@@ -357,7 +385,7 @@
 </td></tr></table></div>
 </div>
 <div class="section" id="ones">
-<h3><span class="section-number">6.4.3. </span>ones<a class="headerlink" href="#ones" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3><span class="section-number">6.4.4. </span>ones<a class="headerlink" href="#ones" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">np.ones</span></code> は1で初期化する以外は <code class="docutils literal notranslate"><span class="pre">np.zeros</span></code> と同じように使うことができる．例えば以下は2次元の配列を生成する．</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -384,7 +412,7 @@
 <p>この例のように引数で与えられた配列の形状およびデータ型だけを受け継ぎ，その値は1で初期化されていることに注意しよう．</p>
 </div>
 <div class="section" id="linspace">
-<h3><span class="section-number">6.4.4. </span>linspace<a class="headerlink" href="#linspace" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3><span class="section-number">6.4.5. </span>linspace<a class="headerlink" href="#linspace" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>ある区間を均等に区切った点列を配列として作成したいときに便利なのが <code class="docutils literal notranslate"><span class="pre">np.linspace</span></code> である．例えば <span class="math notranslate nohighlight">\(0 \leq x \leq 1\)</span> を均等に区切った配列を生成してみよう．</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
@@ -400,16 +428,34 @@
 <p>としてもよい．</p>
 </div>
 <div class="section" id="geomspace-logspace">
-<h3><span class="section-number">6.4.5. </span>geomspace / logspace<a class="headerlink" href="#geomspace-logspace" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3><span class="section-number">6.4.6. </span>geomspace / logspace<a class="headerlink" href="#geomspace-logspace" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>To be written.</p>
 </div>
-<div class="section" id="id16">
-<h3><span class="section-number">6.4.6. </span>シーケンス型からの生成<a class="headerlink" href="#id16" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>To be written.</p>
+<div class="section" id="random">
+<h3><span class="section-number">6.4.7. </span>random<a class="headerlink" href="#random" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>乱数配列を作るのも以下のように簡単にできる．</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>               <span class="c1"># [0, 1)の一様乱数(長さ5の配列)</span>
+<span class="go">array([0.80086594, 0.2513905 , 0.41056114, 0.14083936, 0.74182892])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># [0, 10)の整数乱数(長さ10の配列)</span>
+<span class="go">array([2, 4, 4, 3, 1, 0, 4, 2, 2, 1])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>          <span class="c1"># [0, 1)の一様乱数を形状(3, 2)の2次元配列として</span>
+<span class="go">array([[0.56945673, 0.5676268 ],</span>
+<span class="go">       [0.39896178, 0.0149435 ],</span>
+<span class="go">       [0.35165915, 0.93962764]])</span>
+</pre></div>
+</td></tr></table></div>
+<p>なお，ここで <code class="docutils literal notranslate"><span class="pre">np.random.random</span></code> というのは <code class="docutils literal notranslate"><span class="pre">numpy</span></code> モジュールの中の <code class="docutils literal notranslate"><span class="pre">random</span></code> モジュールの中の <code class="docutils literal notranslate"><span class="pre">random</span></code> 関数という意味である．</p>
 </div>
 </div>
 <div class="section" id="id17">
-<h2><a class="toc-backref" href="#id45"><span class="section-number">6.5. </span>入出力</a><a class="headerlink" href="#id17" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id57"><span class="section-number">6.5. </span>入出力</a><a class="headerlink" href="#id17" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>NumPyは配列の入出力用に便利な関数が用意されており，非常に簡単に使うことができる．</p>
 <div class="section" id="id18">
 <h3><span class="section-number">6.5.1. </span>テキスト入出力<a class="headerlink" href="#id18" title="このヘッドラインへのパーマリンク">¶</a></h3>
@@ -530,7 +576,7 @@
 </div>
 </div>
 <div class="section" id="id21">
-<h2><a class="toc-backref" href="#id46"><span class="section-number">6.6. </span>各種演算</a><a class="headerlink" href="#id21" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id58"><span class="section-number">6.6. </span>各種演算</a><a class="headerlink" href="#id21" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="section" id="id22">
 <h3><span class="section-number">6.6.1. </span>算術演算<a class="headerlink" href="#id22" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>以下の例を見れば一目瞭然であろう．基本的にFortranの配列と同様な演算ができると思ってよい．</p>
@@ -562,7 +608,7 @@
 </div>
 <div class="section" id="id23">
 <h3><span class="section-number">6.6.2. </span>ユニバーサル関数<a class="headerlink" href="#id23" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>NumPy配列を引数にとり各要素にそれぞれ適用される関数は，NumPyではユニバーサル関数( <code class="docutils literal notranslate"><span class="pre">ufunc</span></code> )と呼ばれている(通常の関数と同じものだと考えてよい)．よく使うであろう数学関数は全て提供されていると考えてよい<a class="footnote-reference brackets" href="#mathfunc" id="id24">8</a> ．Fortranなどでは提供されていない関数の使用例をいくつか示しておこう．なお，以下の例はスカラーに対して関数を呼び出しているが，配列を引数に与えた場合には各要素に対して演算した結果を返す．</p>
+<p>NumPy配列を引数にとり各要素にそれぞれ適用される関数は，NumPyではユニバーサル関数( <code class="docutils literal notranslate"><span class="pre">ufunc</span></code> )と呼ばれている(通常の関数と同じものだと考えてよい)．よく使うであろう数学関数は全て提供されていると考えてよい <a class="footnote-reference brackets" href="#mathfunc" id="id24">8</a> ．Fortranなどでは提供されていない関数の使用例をいくつか示しておこう．なお，以下の例はスカラーに対して関数を呼び出しているが，配列を引数に与えた場合には各要素に対して演算した結果を返す．</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -588,7 +634,7 @@
 </div>
 <div class="section" id="id26">
 <h3><span class="section-number">6.6.3. </span>メソッド<a class="headerlink" href="#id26" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>NumPy配列はオブジェクトなのでメソッドを持つ<a class="footnote-reference brackets" href="#objectmethod" id="id27">9</a> ．メソッドは各オブジェクトに結び付けられた関数のようなものであり，属性と同じようにオブジェクトに <code class="docutils literal notranslate"><span class="pre">.</span></code> を付けてアクセスすることになる．例えば配列の総和を計算するには <code class="docutils literal notranslate"><span class="pre">np.sum</span></code> という関数を用いることができる．以下の例を見てみよう．</p>
+<p>NumPy配列はオブジェクトなのでメソッドを持つ <a class="footnote-reference brackets" href="#objectmethod" id="id27">9</a> ．メソッドは各オブジェクトに結び付けられた関数のようなものであり，属性と同じようにオブジェクトに <code class="docutils literal notranslate"><span class="pre">.</span></code> を付けてアクセスすることになる．例えば配列の総和を計算するには <code class="docutils literal notranslate"><span class="pre">np.sum</span></code> という関数を用いることができる．以下の例を見てみよう．</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
@@ -621,7 +667,7 @@
 </div>
 </div>
 <div class="section" id="id29">
-<h2><a class="toc-backref" href="#id47"><span class="section-number">6.7. </span>インデックス操作</a><a class="headerlink" href="#id29" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id59"><span class="section-number">6.7. </span>インデックス操作</a><a class="headerlink" href="#id29" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>NumPyのインデックス操作は基本的にFortranの配列操作と似ているのでFortranユーザーには馴染みやすいだろう．</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -632,44 +678,193 @@
  7
  8
  9
-10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>                 <span class="c1"># 3番目の要素</span>
 <span class="go">2</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>               <span class="c1"># 3, 4, 5番目の要素(結果もNumPy配列)</span>
 <span class="go">array([2, 3, 4])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[:</span><span class="mi">8</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>         <span class="c1"># 0, 2, 4, 6番目の要素に-1を代入</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span>                    <span class="c1"># 確認</span>
 <span class="go">array([-1,  1, -1,  3, -1,  5, -1,  7,  8,  9])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>              <span class="c1"># 順番を反転</span>
 <span class="go">array([ 9,  8,  7, -1,  5, -1,  3, -1,  1, -1])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>                <span class="c1"># 最後の要素</span>
+<span class="go">9</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>                <span class="c1"># 最後から2番目の要素</span>
+<span class="go">8</span>
 </pre></div>
 </td></tr></table></div>
+<p>Fortranとの違いは負のインデックスを指定すると後ろから順に数えた要素を返すところである．また，インデックスを配列で渡すことも可能である．例えば</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">i</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># インデックス配列を作成</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">i</span>                       <span class="c1"># 確認</span>
+<span class="go">array([1, 3, 5, 7, 9])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*=</span> <span class="mi">2</span>               <span class="c1"># 2倍にする</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span>                       <span class="c1"># 確認</span>
+<span class="go">array([-1,  2, -1,  6, -1, 10, -1, 14,  8, 18])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>                  <span class="c1"># インデックスを一つずらす</span>
+<span class="go">array([-1, -1, -1, -1,  8])</span>
+</pre></div>
+</td></tr></table></div>
+<p>のように使うことができる．(これは差分法に使うときなどに便利である．)</p>
+<p>多次元配列のインデックス操作についても例を見てみよう．</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span> <span class="c1"># 長さ20の配列をreshapeで2次元配列に変換</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span>
+<span class="go">array([[ 0,  1,  2,  3,  4],</span>
+<span class="go">       [ 5,  6,  7,  8,  9],</span>
+<span class="go">       [10, 11, 12, 13, 14],</span>
+<span class="go">       [15, 16, 17, 18, 19]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span>                            <span class="c1"># 1次元目は0，2次元目は全て</span>
+<span class="go">array([0, 1, 2, 3, 4])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span>                            <span class="c1"># 1次元目は全て，2次元目は1</span>
+<span class="go">array([ 1,  6, 11, 16])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>                        <span class="c1"># 両次元とも1, 2番目の要素</span>
+<span class="go">array([[ 6,  7],</span>
+<span class="go">       [11, 12]])</span>
+</pre></div>
+</td></tr></table></div>
+<p>より高次元の配列を扱う際には <code class="docutils literal notranslate"><span class="pre">...</span></code> が便利である <a class="footnote-reference brackets" href="#ellipsis" id="id30">10</a> ．</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> <span class="c1"># 3次元配列</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span>
+<span class="go">array([[[ 0,  1,  2],</span>
+<span class="go">        [ 3,  4,  5],</span>
+<span class="go">        [ 6,  7,  8]],</span>
+
+<span class="go">       [[ 9, 10, 11],</span>
+<span class="go">        [12, 13, 14],</span>
+<span class="go">        [15, 16, 17]]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span><span class="p">[</span><span class="o">...</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>                             <span class="c1"># z[:,:,0]と同じ</span>
+<span class="go">array([[ 0,  3,  6],</span>
+<span class="go">       [ 9, 12, 15]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="o">...</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>                           <span class="c1"># z[1,:,0]と同じ</span>
+<span class="go">array([ 9, 12, 15])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>                                 <span class="c1"># z[1,:,:]と同じ</span>
+<span class="go">array([[ 9, 10, 11],</span>
+<span class="go">       [12, 13, 14],</span>
+<span class="go">       [15, 16, 17]])</span>
+</pre></div>
+</td></tr></table></div>
+<p>他にも色々と便利なのだがあまりにも機能が沢山あるので，これ以上は <a class="reference external" href="https://numpy.org/doc/stable/reference/arrays.indexing.html#arrays-indexing">公式ドキュメント</a> を参照して欲しい．一つだけ配列の代入について注意しておこう．</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[:]</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># 配列の全要素に10を代入</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span>         <span class="c1"># 確認</span>
+<span class="go">array([10, 10, 10, 10, 10, 10, 10, 10, 10, 10])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>    <span class="c1"># 整数10をxに代入</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span>         <span class="c1"># xはスカラー</span>
+<span class="go">10</span>
+</pre></div>
+</td></tr></table></div>
+<p>このように1行目と4行目では動作が異なる．Fortranでは4行目のように記述しても配列の全要素に10を代入してくれるが，Pythonでは <strong>新しい変数を作り，そこに整数10を代入</strong> する．これは動的型付け言語のPythonならではの動作である．配列の全要素にスカラー値を代入する際にはインデックスに <code class="docutils literal notranslate"><span class="pre">:</span></code> (もしくは <code class="docutils literal notranslate"><span class="pre">...</span></code> )を指定しなければならない．</p>
 </div>
-<div class="section" id="id30">
-<h2><a class="toc-backref" href="#id48"><span class="section-number">6.8. </span>形状操作</a><a class="headerlink" href="#id30" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="id32">
+<h2><a class="toc-backref" href="#id60"><span class="section-number">6.8. </span>形状操作</a><a class="headerlink" href="#id32" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>To be written.</p>
 </div>
-<div class="section" id="id31">
-<h2><a class="toc-backref" href="#id49"><span class="section-number">6.9. </span>第6章 演習課題</a><a class="headerlink" href="#id31" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>以下の課題はPythonスクリプトで実行してもJupyter Notebook上で実行してもどちらでもよい．</p>
-<div class="section" id="id32">
-<h3><span class="section-number">6.9.1. </span>課題1<a class="headerlink" href="#id32" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>サンプルノートブックを実行して動作を確認せよ．</p>
-</div>
 <div class="section" id="id33">
-<h3><span class="section-number">6.9.2. </span>課題2<a class="headerlink" href="#id33" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>3章の <a class="reference internal" href="kadai/chap03_kadai.html#label-chap03-kadai3"><span class="std std-ref">課題3</span></a> と同等の処理をNumPy配列を用いて実装せよ．ただし，必ずしも図示はしなくてもよい．</p>
+<h2><a class="toc-backref" href="#id61"><span class="section-number">6.9. </span>第6章 演習課題</a><a class="headerlink" href="#id33" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>以下の課題はJupyter Notebookの仕様を前提としているが，もちろん他の実行環境でも同等の処理を実現出来ていれば問題ない．なお，以下では</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pylab</span> <span class="k">as</span> <span class="n">plt</span>
+</pre></div>
+</td></tr></table></div>
+<p>のように必要なモジュールが <code class="docutils literal notranslate"><span class="pre">import</span></code> されているものとする．</p>
+<div class="admonition seealso">
+<p class="admonition-title">参考</p>
+<p><a class="reference external" href="sample/chap06/kadai.html">解答例</a> (<a class="reference external" href="sample/chap06/kadai.ipynb">ダウンロード</a>)</p>
 </div>
-<div class="section" id="id34">
-<h3><span class="section-number">6.9.3. </span>課題3<a class="headerlink" href="#id34" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>3章の <a class="reference internal" href="kadai/chap03_kadai.html#label-chap03-kadai4"><span class="std std-ref">課題4</span></a> では級数展開の公式</p>
+<div class="section" id="id36">
+<h3><span class="section-number">6.9.1. </span>課題1<a class="headerlink" href="#id36" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>サンプルを実行して動作を確認せよ．</p>
+</div>
+<div class="section" id="id37">
+<h3><span class="section-number">6.9.2. </span>課題2<a class="headerlink" href="#id37" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>整数 <code class="docutils literal notranslate"><span class="pre">N</span></code> を引数として受け取り， <span class="math notranslate nohighlight">\(0^{\circ} \leq \theta \leq 180^{\circ}\)</span> をN分割した点(端点を含むのでN+1点)，およびそれらの点における <span class="math notranslate nohighlight">\(\sin \theta\)</span> ， <span class="math notranslate nohighlight">\(\cos \theta\)</span> の値をそれぞれ配列として返す関数</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">trigonometric</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="s2">&quot;θ, sinθ, cosθの値を出力する&quot;</span>
+    <span class="k">pass</span>
+</pre></div>
+</td></tr></table></div>
+<p>を作成せよ．これを呼び出し，例えば以下のようにプロットして結果を確認しよう．</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="n">trigonometric</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="s1">&#39;ro&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="s1">&#39;bo&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span> <span class="s1">&#39;r-&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span> <span class="s1">&#39;b-&#39;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<div class="figure align-center" id="id47">
+<img alt="_images/chap06_trigonometric.png" src="_images/chap06_trigonometric.png" />
+<p class="caption"><span class="caption-text">課題2</span><a class="headerlink" href="#id47" title="この画像へのパーマリンク">¶</a></p>
+</div>
+</div>
+<div class="section" id="id38">
+<h3><span class="section-number">6.9.3. </span>課題3<a class="headerlink" href="#id38" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>以下の級数展開</p>
 <div class="math notranslate nohighlight">
 \[e \simeq \sum_{n=0}^{N} \frac{1}{n !}. \quad (0! = 1に注意せよ)\]</div>
-<p>を用いて自然対数の底 <span class="math notranslate nohighlight">\(e\)</span> の近似値をループを用いて求めた．ここでは代わりに適当な整数 <span class="math notranslate nohighlight">\(N\)</span> に対して，NumPy配列を使ってループを使わずに(できれば一行で)この近似値を求めよ．</p>
-<p>ただし，階乗とガンマ関数の関係式</p>
+<p>により自然対数の底 <span class="math notranslate nohighlight">\(e\)</span> の近似値を求める関数 <code class="docutils literal notranslate"><span class="pre">approx_e</span></code></p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">approx_e</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="s2">&quot;自然対数の底を級数展開を用いて求める&quot;</span>
+    <span class="k">pass</span>
+</pre></div>
+</td></tr></table></div>
+<p>を作成しよう．ただし整数 <code class="docutils literal notranslate"><span class="pre">N</span></code> を引数として受け取り，内部ではNumPy配列を使うことでループを用いない実装とせよ．</p>
+<p>ここで，階乗とガンマ関数の関係式</p>
 <div class="math notranslate nohighlight">
 \[\Gamma(n) = (n-1)!\]</div>
-<p>を用いてよい．ここでガンマ関数は <code class="docutils literal notranslate"><span class="pre">scipy.special.gamma</span></code> を用いればよい．以下はその使用例である．</p>
+<p>を用いてよい．ガンマ関数は <code class="docutils literal notranslate"><span class="pre">scipy.special.gamma</span></code> を用いればよい．以下はその使用例である．</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -681,16 +876,117 @@
 <span class="go">6.0</span>
 </pre></div>
 </td></tr></table></div>
-<p>結果は例えば以下のようになるであろう．</p>
+<p>この関数を用いると例えば以下のような結果が得られる．</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">approximated</span> <span class="p">(</span><span class="n">N</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span> <span class="o">=</span>    <span class="mf">2.718281525573192</span>
-<span class="n">exact</span>               <span class="o">=</span>    <span class="mf">2.718281828459045</span>
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:20}</span><span class="s1"> : </span><span class="si">{:&gt;20.14e}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Approximated&#39;</span><span class="p">,</span> <span class="n">approx_e</span><span class="p">(</span><span class="mi">10</span><span class="p">)))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:20}</span><span class="s1"> : </span><span class="si">{:&gt;20.14e}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Exact&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">e</span><span class="p">))</span>
+<span class="go">Approximated         : 2.71828152557319e+00</span>
+<span class="go">Exact                : 2.71828182845905e+00</span>
 </pre></div>
 </td></tr></table></div>
 </div>
-<div class="section" id="id35">
-<h3><span class="section-number">6.9.4. </span>課題4<a class="headerlink" href="#id35" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>データファイル <a class="reference external" href="data/score1.dat">score1.dat</a> に格納されている学生のテスト点数リストから，最高点，最大点，平均点，標準偏差を求めよ．それぞれ対応するユニバーサル関数( <code class="docutils literal notranslate"><span class="pre">np.max</span></code> ， <code class="docutils literal notranslate"><span class="pre">np.min</span></code> ， <code class="docutils literal notranslate"><span class="pre">np.mean</span></code> ， <code class="docutils literal notranslate"><span class="pre">np.std</span></code> )またはNumPy配列のメソッドを用いること．ただし，以下のようにscore1.datの最初の行にはデータ数，次の行は空行，以降に実際のデータが格納されている．</p>
+<div class="section" id="id39">
+<h3><span class="section-number">6.9.4. </span>課題4<a class="headerlink" href="#id39" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>以下の漸化式</p>
+<div class="math notranslate nohighlight">
+\[p_{n+1} = p_n + \alpha p_n (1 - p_n)\]</div>
+<p>で定義される数列 <span class="math notranslate nohighlight">\(p_n (n=0, 1, \ldots)\)</span> を考える．<span class="math notranslate nohighlight">\(1 &lt; \alpha &lt; 3\)</span> を <span class="math notranslate nohighlight">\(m\)</span> 分割し，各 <span class="math notranslate nohighlight">\(\alpha\)</span> について初期値 <span class="math notranslate nohighlight">\(p_0 = 0.9\)</span> から数列を生成し，そのうち <span class="math notranslate nohighlight">\(n=100, \ldots, 200\)</span> を <span class="math notranslate nohighlight">\(\alpha\)</span> の関数としてプロットしよう．</p>
+<p>これには，整数 <code class="docutils literal notranslate"><span class="pre">m</span></code> を引数にとり，<span class="math notranslate nohighlight">\(\alpha\)</span> と <span class="math notranslate nohighlight">\(p_n (n=100, \ldots, 200)\)</span> の組を返す関数 <code class="docutils literal notranslate"><span class="pre">logistic</span></code></p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">logistic</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+    <span class="s2">&quot;0 &lt; α &lt; 1 をm分割して，それぞれに対してロジスティック写像を計算&quot;</span>
+    <span class="k">pass</span>
+</pre></div>
+</td></tr></table></div>
+<p>を作成し，この関数を用いて</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">logistic</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>とすればよい．結果は以下の通りである．</p>
+<div class="figure align-center" id="id48">
+<img alt="_images/chap06_logistic.png" src="_images/chap06_logistic.png" />
+<p class="caption"><span class="caption-text">課題4</span><a class="headerlink" href="#id48" title="この画像へのパーマリンク">¶</a></p>
+</div>
+<p>このような写像はロジスティック写像と呼ばれ，非常に単純な式ながら一定の条件を満たすときにはカオスを生み出すことが知られている．</p>
+</div>
+<div class="section" id="id40">
+<h3><span class="section-number">6.9.5. </span>課題5<a class="headerlink" href="#id40" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>以下の積分</p>
+<div class="math notranslate nohighlight">
+\[\int_{0}^{1} \frac{4}{\pi} \frac{1}{1 + x^2} dx\]</div>
+<p>を台形公式およびSimpsonの公式を使って求める関数をそれぞれ作成しよう．ここで作成する関数は分割数 <code class="docutils literal notranslate"><span class="pre">n</span></code> を引数にとり，</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">trapezoid</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="s2">&quot;分割数nの台形公式で関数を積分&quot;</span>
+    <span class="k">pass</span>
+
+<span class="k">def</span> <span class="nf">simpson</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="s2">&quot;分割数nのSimpson公式で関数を積分&quot;</span>
+    <span class="k">pass</span>
+</pre></div>
+</td></tr></table></div>
+<p>のような形になるものとする．ただし関数内ではループを使わずに実装すること．これらの積分公式の誤差の分割数依存性は次のようにすれば調べることができる．</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">M</span> <span class="o">=</span> <span class="mi">16</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">M</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">err1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">err2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">M</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">err1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">trapezoid</span><span class="p">(</span><span class="n">n</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">err2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">simpson</span><span class="p">(</span><span class="n">n</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 結果をプロット</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">err1</span><span class="p">,</span> <span class="s1">&#39;rx-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;trapezoid&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">err2</span><span class="p">,</span> <span class="s1">&#39;bx-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;simpson&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">loglog</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p>これによって得られる図は以下の通りである．</p>
+<div class="figure align-center" id="id49">
+<img alt="_images/chap06_integration.png" src="_images/chap06_integration.png" />
+<p class="caption"><span class="caption-text">課題5</span><a class="headerlink" href="#id49" title="この画像へのパーマリンク">¶</a></p>
+</div>
+</div>
+<div class="section" id="id41">
+<h3><span class="section-number">6.9.6. </span>課題6<a class="headerlink" href="#id41" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>データファイルに格納されている学生のテスト点数リストから，最高点，最大点，平均点，標準偏差を求めて返す関数 <code class="docutils literal notranslate"><span class="pre">analyze_score</span></code> を作成しよう．ただし，</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">analyze_score</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="s2">&quot;filenameからデータを読んで最高点，最低点，平均点，標準偏差を返す&quot;</span>
+    <span class="k">pass</span>
+</pre></div>
+</td></tr></table></div>
+<p>のようにファイル名を引数にとるものとする．ここで，それぞれ対応する関数( <code class="docutils literal notranslate"><span class="pre">np.max</span></code> ， <code class="docutils literal notranslate"><span class="pre">np.min</span></code> ， <code class="docutils literal notranslate"><span class="pre">np.mean</span></code> ， <code class="docutils literal notranslate"><span class="pre">np.std</span></code> )またはNumPy配列のメソッドを用いること．</p>
+<p>なお，データファイルは <a class="reference external" href="sample/chap06/score1.dat">score1.dat</a> および <a class="reference external" href="sample/chap06/score2.dat">score2.dat</a> とし，以下のようにこのファイルの最初の行にはデータ数，次の行は空行，以降に実際のデータが格納されている．</p>
 <div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -707,25 +1003,69 @@
 </pre></div>
 </td></tr></table></div>
 <p>したがって， <code class="docutils literal notranslate"><span class="pre">np.loadtxt</span></code> のオプション <code class="docutils literal notranslate"><span class="pre">skiprows</span></code> を用いて最初の2行を無視して読み込めばよい．</p>
-<p>結果は例えば以下のようになるであろう．</p>
+<p>例えばscore1.datを読み込んだ場合には以下のような結果が得られる．</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">smax</span><span class="p">,</span> <span class="n">smin</span><span class="p">,</span> <span class="n">savg</span><span class="p">,</span> <span class="n">sstd</span> <span class="o">=</span> <span class="n">analyze_score</span><span class="p">(</span><span class="s1">&#39;score1.dat&#39;</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:20}</span><span class="s1"> : </span><span class="si">{:10}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Best&#39;</span><span class="p">,</span> <span class="n">smax</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:20}</span><span class="s1"> : </span><span class="si">{:10}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Worst&#39;</span><span class="p">,</span> <span class="n">smin</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:20}</span><span class="s1"> : </span><span class="si">{:10.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Average&#39;</span><span class="p">,</span> <span class="n">savg</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:20}</span><span class="s1"> : </span><span class="si">{:10.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Standard deviation&#39;</span><span class="p">,</span> <span class="n">sstd</span><span class="p">))</span>
+<span class="go">Best                 :         98</span>
+<span class="go">Worst                :          6</span>
+<span class="go">Average              :     46.400</span>
+<span class="go">Standard deviation   :     25.115</span>
+</pre></div>
+</td></tr></table></div>
+<p>同様にscore2.datについても試してみること．</p>
+</div>
+<div class="section" id="id42">
+<h3><span class="section-number">6.9.7. </span>課題7<a class="headerlink" href="#id42" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>前問のscore1.datおよびscore2.datのようなデータファイルを読み込みヒストグラムを作成する関数 <code class="docutils literal notranslate"><span class="pre">hist_score</span></code></p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hist_score</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">nbin</span><span class="p">):</span>
+    <span class="s2">&quot;filenameからデータを読んでヒストグラムを作成する&quot;</span>
+    <span class="k">pass</span>
+</pre></div>
+</td></tr></table></div>
+<p>を作成しよう．ここで引数 <code class="docutils literal notranslate"><span class="pre">nbin</span></code> はビンの数である．関数 <code class="docutils literal notranslate"><span class="pre">np.histogram</span></code> を用いること．</p>
+<p>実行例は以下のようになる．</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
-4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Best</span>               <span class="p">:</span>           <span class="mi">98</span>
-<span class="n">Worst</span>              <span class="p">:</span>            <span class="mi">6</span>
-<span class="n">Average</span>            <span class="p">:</span>    <span class="mf">46.399999999999999</span>
-<span class="n">Standard</span> <span class="n">deviation</span> <span class="p">:</span>    <span class="mf">25.115201240152015</span>
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nbin</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bins</span><span class="p">,</span> <span class="n">hist</span> <span class="o">=</span> <span class="n">hist_score</span><span class="p">(</span><span class="s1">&#39;score2.dat&#39;</span><span class="p">,</span> <span class="n">nbin</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">binw</span> <span class="o">=</span> <span class="n">bins</span><span class="p">[</span><span class="o">+</span><span class="mi">1</span><span class="p">:]</span> <span class="o">-</span> <span class="n">bins</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">bins</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">hist</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">binw</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s1">&#39;edge&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
-<p>同様に <a class="reference external" href="data/score2.dat">score2.dat</a> についても計算してみること．</p>
+<div class="figure align-center" id="id50">
+<img alt="_images/chap06_score.png" src="_images/chap06_score.png" />
+<p class="caption"><span class="caption-text">課題7</span><a class="headerlink" href="#id50" title="この画像へのパーマリンク">¶</a></p>
 </div>
-<div class="section" id="id36">
-<h3><span class="section-number">6.9.5. </span>課題5<a class="headerlink" href="#id36" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>前問とどうようにscore1.datおよびscore2.datのデータを読み込みヒストグラムを作成せよ．ユニバーサル関数 <code class="docutils literal notranslate"><span class="pre">np.histogram</span></code> を用いること．</p>
 </div>
-<div class="section" id="id37">
-<h3><span class="section-number">6.9.6. </span>課題6<a class="headerlink" href="#id37" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>データファイル <a class="reference external" href="data/vector.dat">vector.dat</a> に格納されている2つのベクトルを読み込み内積を求めよ．ユニバーサル関数 <code class="docutils literal notranslate"><span class="pre">np.dot</span></code> を用いること．ただし，以下のようにvector.datの最初の行にはベクトルの長さ，次の行は空白，ベクトル1の各要素，空白行，ベクトル2の各要素，のようにデータが格納されている．</p>
+<div class="section" id="id43">
+<h3><span class="section-number">6.9.8. </span>課題8<a class="headerlink" href="#id43" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>データファイル <a class="reference external" href="sample/chap06/vector.dat">vector.dat</a> に格納されている2つのベクトルを読み込み，それらの内積を求める関数 <code class="docutils literal notranslate"><span class="pre">dot_file</span></code></p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dot_file</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="s2">&quot;filenameから2つのベクトルを読み込み，それらの内積を返す&quot;</span>
+    <span class="k">pass</span>
+</pre></div>
+</td></tr></table></div>
+<p>を作成しよう．関数 <code class="docutils literal notranslate"><span class="pre">np.dot</span></code> を用いること．ただし，以下のようにvector.datの最初の行にはベクトルの長さ，次の行は空白，ベクトル1の各要素，空白行，ベクトル2の各要素，のようにデータが格納されている．</p>
 <div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -753,15 +1093,121 @@
 -3.090169943749476e-01
 </pre></div>
 </td></tr></table></div>
-<p>ここで， <code class="docutils literal notranslate"><span class="pre">np.loadtxt</span></code> のオプション <code class="docutils literal notranslate"><span class="pre">skiprows</span></code> を用いて最初の2行を無視して読み込むと長さが40の1次元配列が得られる(区切りの空白行は無視される)．この前半と後半をそれぞれ別のベクトルとして処理すればよい．</p>
+<p><code class="docutils literal notranslate"><span class="pre">np.loadtxt</span></code> のオプション <code class="docutils literal notranslate"><span class="pre">skiprows</span></code> を用いて最初の2行を無視して読み込むと以降のデータが全て1次元配列として返される(区切りの空白行は無視される)ので，この前半と後半をそれぞれ別のベクトルとして処理すればよい．</p>
 </div>
-<div class="section" id="id38">
-<h3><span class="section-number">6.9.7. </span>課題7<a class="headerlink" href="#id38" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>乱数，ソート，探索</p>
+<div class="section" id="id44">
+<h3><span class="section-number">6.9.9. </span>課題9<a class="headerlink" href="#id44" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>任意の長さの1次元整数型配列に与えられた整数が含まれているかどうかを調べ，含まれていた時には真 ( <code class="docutils literal notranslate"><span class="pre">True</span></code> ，そうでなければ偽 <code class="docutils literal notranslate"><span class="pre">False</span></code> )を返す関数 <code class="docutils literal notranslate"><span class="pre">find_var</span></code> を作成しよう．また同様に，値が含まれていた時にはその要素のインデックスを返し，そうでなければ-1を返す関数 <code class="docutils literal notranslate"><span class="pre">find_var_index</span></code> を作成しよう．実装は色々考えられるが， <code class="docutils literal notranslate"><span class="pre">np.any</span></code> や <code class="docutils literal notranslate"><span class="pre">np.nonzero</span></code> または <code class="docutils literal notranslate"><span class="pre">np.where</span></code> などを使うとよい．</p>
+<p>これらの関数を</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_var</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">var</span><span class="p">):</span>
+    <span class="s2">&quot;varが配列xに含まれているかどうかを調べる&quot;</span>
+    <span class="k">pass</span>
+
+<span class="k">def</span> <span class="nf">find_var_index</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">var</span><span class="p">):</span>
+    <span class="s2">&quot;varが配列xに含まれている時にはそのインデックスを，そうでない場合は-1を返す&quot;</span>
+    <span class="k">pass</span>
+</pre></div>
+</td></tr></table></div>
+<p>のように定義し，以下のように動作を確かめよう．</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span>
+<span class="go">array([17, 75, 28, 83, 93, 20, 19, 94, 62, 61])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">find_var</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">28</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">find_var</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">find_var_index</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">28</span><span class="p">)</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">find_var_index</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+<span class="go">-1</span>
+</pre></div>
+</td></tr></table></div>
+<p>さらに， <code class="docutils literal notranslate"><span class="pre">np.random.randint</span></code> を用いて適当な長さの1次元整数配列を作成し，値を探索してみよう．</p>
 </div>
-<div class="section" id="id39">
-<h3><span class="section-number">6.9.8. </span>課題8<a class="headerlink" href="#id39" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>乱数，逆関数法，モンテカルロ</p>
+<div class="section" id="id45">
+<h3><span class="section-number">6.9.10. </span>課題10<a class="headerlink" href="#id45" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>逆関数法を使って指数分布</p>
+<div class="math notranslate nohighlight">
+\[P(x) = \lambda \exp ( - \lambda x )\]</div>
+<p>に従う乱数を返す関数 <code class="docutils literal notranslate"><span class="pre">randexp</span></code></p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">randexp</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="s2">&quot;指数分布に従う乱数をn個作成する&quot;</span>
+    <span class="k">pass</span>
+</pre></div>
+</td></tr></table></div>
+<p>を作成しよう．(実用上は指数分布に従う乱数は <code class="docutils literal notranslate"><span class="pre">numpy.random.exponential</span></code> を用いればよい．）</p>
+<p>この関数を用いて発生させた乱数と解析的な確率分布を以下のように比較しよう．</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">l</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">randexp</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="mi">60000</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># ヒストグラム</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hist</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">33</span><span class="p">),</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">bins</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">hist</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="s1">&#39;post&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 解析的な分布</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">bins</span><span class="p">[</span><span class="o">+</span><span class="mi">1</span><span class="p">:]</span> <span class="o">+</span> <span class="n">bins</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">l</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">l</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;k--&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p>この結果は以下のようになる．</p>
+<div class="figure align-center" id="id51">
+<img alt="_images/chap06_exponential.png" src="_images/chap06_exponential.png" />
+<p class="caption"><span class="caption-text">課題10</span><a class="headerlink" href="#id51" title="この画像へのパーマリンク">¶</a></p>
+</div>
+</div>
+<div class="section" id="id46">
+<h3><span class="section-number">6.9.11. </span>課題11<a class="headerlink" href="#id46" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>モンテカルロ法を用いてN次元超球の体積を求める関数 <code class="docutils literal notranslate"><span class="pre">mc_hypersphere</span></code></p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mc_hypersphere</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">nrand</span><span class="p">):</span>
+    <span class="s2">&quot;n次元超球の体積をモンテカルロ法で求める&quot;</span>
+    <span class="k">pass</span>
+</pre></div>
+</td></tr></table></div>
+<p>を作成しよう．ここで <code class="docutils literal notranslate"><span class="pre">nrand</span></code> は各次元について発生させる乱数の個数である．</p>
+<p>この関数を使って近似値と解析的な値を以下のように比較しよう．</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nrand</span> <span class="o">=</span> <span class="mi">100000</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:20}</span><span class="s1"> : </span><span class="si">{:&lt;20.14e}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Monte-Carlo&#39;</span><span class="p">,</span> <span class="n">mc_hypersphere</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">nrand</span><span class="p">)))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:20}</span><span class="s1"> : </span><span class="si">{:&lt;20.14e}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Exact&#39;</span><span class="p">,</span> <span class="n">hypersphere</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span>
+<span class="go">Monte-Carlo          : 4.18304000000000e+00</span>
+<span class="go">Exact                : 4.18879020478639e+00</span>
+</pre></div>
+</td></tr></table></div>
+<p>ただし，解析的な値を返す関数 <code class="docutils literal notranslate"><span class="pre">hypersphere</span></code> を別途定義するものとする．</p>
 <hr class="docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="numpylib"><span class="brackets"><a class="fn-backref" href="#id4">1</a></span></dt>
@@ -790,6 +1236,9 @@
 </dd>
 <dt class="label" id="objectmethod"><span class="brackets"><a class="fn-backref" href="#id27">9</a></span></dt>
 <dd><p>オブジェクト指向プログラミングの用語である．ここではとりあえず深いことは考えないことにしよう．</p>
+</dd>
+<dt class="label" id="ellipsis"><span class="brackets"><a class="fn-backref" href="#id30">10</a></span></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">...</span></code> は <code class="docutils literal notranslate"><span class="pre">Ellipsis</span></code> Pythonのオブジェクトというものであり，何かが省略されていることを意味する．</p>
 </dd>
 </dl>
 </div>
