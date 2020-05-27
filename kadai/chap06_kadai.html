@@ -49,7 +49,7 @@
 <li><a class="reference internal" href="#id11">課題8</a></li>
 <li><a class="reference internal" href="#id12">課題9</a></li>
 <li><a class="reference internal" href="#id13">課題10</a></li>
-<li><a class="reference internal" href="#id14">課題11</a></li>
+<li><a class="reference internal" href="#id15">課題11</a></li>
 </ul>
 </li>
 </ul>
@@ -74,7 +74,7 @@
             
   <div class="section" id="id1">
 <h1>第6章 演習課題<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>以下の課題はJupyter Notebookの仕様を前提としているが，もちろん他の実行環境でも同等の処理を実現出来ていれば問題ない．なお，以下では</p>
+<p>以下の課題はJupyter Notebookの使用を前提としているが，もちろん他の実行環境でも同等の処理を実現出来ていれば問題ない．なお，以下では</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pylab</span> <span class="k">as</span> <span class="n">plt</span>
 </pre></div>
@@ -104,9 +104,9 @@
 <span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span> <span class="s1">&#39;b-&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="figure align-center" id="id15">
+<div class="figure align-center" id="id17">
 <img alt="kadai/figure/chap06_trigonometric.png" src="kadai/figure/chap06_trigonometric.png" />
-<p class="caption"><span class="caption-text">課題2</span><a class="headerlink" href="#id15" title="この画像へのパーマリンク">¶</a></p>
+<p class="caption"><span class="caption-text">課題2</span><a class="headerlink" href="#id17" title="この画像へのパーマリンク">¶</a></p>
 </div>
 </div>
 <div class="section" id="id6">
@@ -160,9 +160,9 @@
 </pre></div>
 </div>
 <p>とすればよい．結果は以下の通りである．</p>
-<div class="figure align-center" id="id16">
+<div class="figure align-center" id="id18">
 <img alt="kadai/figure/chap06_logistic.png" src="kadai/figure/chap06_logistic.png" />
-<p class="caption"><span class="caption-text">課題4</span><a class="headerlink" href="#id16" title="この画像へのパーマリンク">¶</a></p>
+<p class="caption"><span class="caption-text">課題4</span><a class="headerlink" href="#id18" title="この画像へのパーマリンク">¶</a></p>
 </div>
 <p>このような写像はロジスティック写像と呼ばれ，非常に単純な式ながら一定の条件を満たすときにはカオスを生み出すことが知られている．</p>
 </div>
@@ -171,7 +171,7 @@
 <p>以下の積分</p>
 <div class="math notranslate nohighlight">
 \[\int_{0}^{1} \frac{4}{\pi} \frac{1}{1 + x^2} dx\]</div>
-<p>を台形公式およびSimpsonの公式を使って求める関数をそれぞれ作成しよう．ここで作成する関数は分割数 <code class="docutils literal notranslate"><span class="pre">n</span></code> を引数にとり，</p>
+<p>を台形公式およびSimpsonの公式( <a class="reference external" href="https://amanotk.github.io/fortran-resume-public/chap08.html#c8-numerical-integration">参考URL</a> )を使って求める関数をそれぞれ作成しよう．ここで作成する関数は分割数 <code class="docutils literal notranslate"><span class="pre">n</span></code> を引数にとり，</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">trapezoid</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="s2">&quot;分割数nの台形公式で関数を積分&quot;</span>
     <span class="k">pass</span>
@@ -199,9 +199,9 @@
 </pre></div>
 </div>
 <p>これによって得られる図は以下の通りである．</p>
-<div class="figure align-center" id="id17">
+<div class="figure align-center" id="id19">
 <img alt="kadai/figure/chap06_integration.png" src="kadai/figure/chap06_integration.png" />
-<p class="caption"><span class="caption-text">課題5</span><a class="headerlink" href="#id17" title="この画像へのパーマリンク">¶</a></p>
+<p class="caption"><span class="caption-text">課題5</span><a class="headerlink" href="#id19" title="この画像へのパーマリンク">¶</a></p>
 </div>
 </div>
 <div class="section" id="id9">
@@ -256,9 +256,9 @@
 <span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="figure align-center" id="id18">
+<div class="figure align-center" id="id20">
 <img alt="kadai/figure/chap06_score.png" src="kadai/figure/chap06_score.png" />
-<p class="caption"><span class="caption-text">課題7</span><a class="headerlink" href="#id18" title="この画像へのパーマリンク">¶</a></p>
+<p class="caption"><span class="caption-text">課題7</span><a class="headerlink" href="#id20" title="この画像へのパーマリンク">¶</a></p>
 </div>
 </div>
 <div class="section" id="id11">
@@ -318,7 +318,7 @@
 </div>
 <div class="section" id="id13">
 <h2>課題10<a class="headerlink" href="#id13" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>逆関数法を使って指数分布</p>
+<p>逆関数法( <a class="reference external" href="https://amanotk.github.io/fortran-resume-public/chap08.html#id18">参考URL</a> )を使って指数分布</p>
 <div class="math notranslate nohighlight">
 \[P(x) = \lambda \exp ( - \lambda x )\]</div>
 <p>に従う乱数を返す関数 <code class="docutils literal notranslate"><span class="pre">randexp</span></code></p>
@@ -342,20 +342,20 @@
 </pre></div>
 </div>
 <p>この結果は以下のようになる．</p>
-<div class="figure align-center" id="id19">
+<div class="figure align-center" id="id21">
 <img alt="kadai/figure/chap06_exponential.png" src="kadai/figure/chap06_exponential.png" />
-<p class="caption"><span class="caption-text">課題10</span><a class="headerlink" href="#id19" title="この画像へのパーマリンク">¶</a></p>
+<p class="caption"><span class="caption-text">課題10</span><a class="headerlink" href="#id21" title="この画像へのパーマリンク">¶</a></p>
 </div>
 </div>
-<div class="section" id="id14">
-<h2>課題11<a class="headerlink" href="#id14" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="id15">
+<h2>課題11<a class="headerlink" href="#id15" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>モンテカルロ法を用いてN次元超球の体積を求める関数 <code class="docutils literal notranslate"><span class="pre">mc_hypersphere</span></code></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mc_hypersphere</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">nrand</span><span class="p">):</span>
     <span class="s2">&quot;n次元超球の体積をモンテカルロ法で求める&quot;</span>
     <span class="k">pass</span>
 </pre></div>
 </div>
-<p>を作成しよう．ここで <code class="docutils literal notranslate"><span class="pre">nrand</span></code> は各次元について発生させる乱数の個数である．</p>
+<p>を作成しよう．ここで <code class="docutils literal notranslate"><span class="pre">nrand</span></code> は各次元について発生させる乱数の個数である．(アルゴリズムについては <a class="reference external" href="https://amanotk.github.io/fortran-resume-public/chap08.html#id19">ここ</a> を参考にせよ．)</p>
 <p>この関数を使って近似値と解析的な値を以下のように比較しよう．</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">nrand</span> <span class="o">=</span> <span class="mi">100000</span>

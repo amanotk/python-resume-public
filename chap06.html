@@ -88,7 +88,7 @@
 <li><a class="reference internal" href="#id43">6.9.8. 課題8</a></li>
 <li><a class="reference internal" href="#id44">6.9.9. 課題9</a></li>
 <li><a class="reference internal" href="#id45">6.9.10. 課題10</a></li>
-<li><a class="reference internal" href="#id46">6.9.11. 課題11</a></li>
+<li><a class="reference internal" href="#id47">6.9.11. 課題11</a></li>
 </ul>
 </li>
 </ul>
@@ -117,7 +117,7 @@
           <div class="body" role="main">
             
   <div class="section" id="numpy">
-<h1><a class="toc-backref" href="#id52"><span class="section-number">6. </span>NumPy配列の基本</a><a class="headerlink" href="#numpy" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<h1><a class="toc-backref" href="#id54"><span class="section-number">6. </span>NumPy配列の基本</a><a class="headerlink" href="#numpy" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <p>NumPyと呼ばれるライブラリの存在はPythonが広く科学技術計算に用いられるようになった最も大きな要因の一つであろう．ここでは科学技術計算で用いられる大規模データの効率的な扱いを可能にするNumPyの多次元配列オブジェクトについて学ぼう．なお，以降はこの多次元配列オブジェクトを便宜的にNumPy配列と呼ぶことにする．</p>
 <div class="admonition seealso">
 <p class="admonition-title">参考</p>
@@ -126,23 +126,23 @@
 <div class="contents topic" id="id2">
 <p class="topic-title">この章の内容</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#numpy" id="id52">NumPy配列の基本</a></p>
+<li><p><a class="reference internal" href="#numpy" id="id54">NumPy配列の基本</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id3" id="id53">NumPyについて</a></p></li>
-<li><p><a class="reference internal" href="#id8" id="id54">基本的な使い方</a></p></li>
-<li><p><a class="reference internal" href="#id11" id="id55">配列オブジェクト</a></p></li>
-<li><p><a class="reference internal" href="#id15" id="id56">生成</a></p></li>
-<li><p><a class="reference internal" href="#id17" id="id57">入出力</a></p></li>
-<li><p><a class="reference internal" href="#id21" id="id58">各種演算</a></p></li>
-<li><p><a class="reference internal" href="#id29" id="id59">インデックス操作</a></p></li>
-<li><p><a class="reference internal" href="#id32" id="id60">形状操作</a></p></li>
-<li><p><a class="reference internal" href="#id33" id="id61">第6章 演習課題</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id55">NumPyについて</a></p></li>
+<li><p><a class="reference internal" href="#id8" id="id56">基本的な使い方</a></p></li>
+<li><p><a class="reference internal" href="#id11" id="id57">配列オブジェクト</a></p></li>
+<li><p><a class="reference internal" href="#id15" id="id58">生成</a></p></li>
+<li><p><a class="reference internal" href="#id17" id="id59">入出力</a></p></li>
+<li><p><a class="reference internal" href="#id21" id="id60">各種演算</a></p></li>
+<li><p><a class="reference internal" href="#id29" id="id61">インデックス操作</a></p></li>
+<li><p><a class="reference internal" href="#id32" id="id62">形状操作</a></p></li>
+<li><p><a class="reference internal" href="#id33" id="id63">第6章 演習課題</a></p></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="section" id="id3">
-<h2><a class="toc-backref" href="#id53"><span class="section-number">6.1. </span>NumPyについて</a><a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id55"><span class="section-number">6.1. </span>NumPyについて</a><a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p><a class="reference external" href="https://numpy.org/">NumPy</a> はPythonによる科学技術計算の根幹をなすライブラリである <a class="footnote-reference brackets" href="#numpylib" id="id5">1</a> ．このライブラリが提供する <code class="docutils literal notranslate"><span class="pre">numpy</span></code> というモジュール <a class="footnote-reference brackets" href="#module" id="id6">2</a> を使うためには</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
@@ -151,7 +151,7 @@
 <p>NumPy配列(NumPyが提供する多次元配列オブジェクト)は正確には <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code> オブジェクトである <a class="footnote-reference brackets" href="#np-ndarray" id="id7">3</a>．一般にPythonはスクリプト言語に分類される動作の遅い言語であるが，NumPy配列を用いることで非常に高速な数値演算が可能である．これはNumPy配列がCで実装されており，NumPy配列の演算は「うまく」使えばほとんどが(内部的には)Cのコードとして実行されるからである．詳細は以下で追々見ていくことにしよう．</p>
 </div>
 <div class="section" id="id8">
-<h2><a class="toc-backref" href="#id54"><span class="section-number">6.2. </span>基本的な使い方</a><a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id56"><span class="section-number">6.2. </span>基本的な使い方</a><a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>まずは基礎の基礎を抑えよう．例えば配列を作る最も簡単な方法の一つとして</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
@@ -179,7 +179,7 @@
 <p>Pythonは様々なことが手軽に実現できる非常に便利な言語であるが，ネックとなるのはその処理の遅さである．(したがって，何も考えずに書くといとも簡単に遅いコードが出来上がってしまう．）NumPy配列を使うことで重たい処理だけを他の言語で書かれた高速なライブラリに押し付けることができ，手軽さと計算速度の速さを両立しているわけである．したがって， <strong>Pythonではループ処理をするのは可能な限り避け，可能な限り配列演算を利用するのが鉄則</strong> である．</p>
 </div>
 <div class="section" id="id11">
-<h2><a class="toc-backref" href="#id55"><span class="section-number">6.3. </span>配列オブジェクト</a><a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id57"><span class="section-number">6.3. </span>配列オブジェクト</a><a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>NumPy配列オブジェクト <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code> は多次元配列データを格納し効率的な演算を実現する．</p>
 <div class="section" id="id12">
 <h3><span class="section-number">6.3.1. </span>属性<a class="headerlink" href="#id12" title="このヘッドラインへのパーマリンク">¶</a></h3>
@@ -318,7 +318,7 @@
 </div>
 </div>
 <div class="section" id="id15">
-<h2><a class="toc-backref" href="#id56"><span class="section-number">6.4. </span>生成</a><a class="headerlink" href="#id15" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id58"><span class="section-number">6.4. </span>生成</a><a class="headerlink" href="#id15" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>配列を生成するにはいくつかの方法があるが，以下に何もないところから配列を作るための典型的な例をいくつか示そう．</p>
 <div class="section" id="id16">
 <h3><span class="section-number">6.4.1. </span>シーケンス型からの生成<a class="headerlink" href="#id16" title="このヘッドラインへのパーマリンク">¶</a></h3>
@@ -433,7 +433,34 @@
 </div>
 <div class="section" id="geomspace-logspace">
 <h3><span class="section-number">6.4.6. </span>geomspace / logspace<a class="headerlink" href="#geomspace-logspace" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>To be written.</p>
+<p><code class="docutils literal notranslate"><span class="pre">np.linspace</span></code> によってある区間 <span class="math notranslate nohighlight">\([a, b]\)</span> を線形に均等に区切ることができた．同様に与えられた区間を対数スケールで等間隔に区切るために <code class="docutils literal notranslate"><span class="pre">np.geomspace</span></code> と <code class="docutils literal notranslate"><span class="pre">np.logspaace</span></code> が提供されている．この両者の違いは <code class="docutils literal notranslate"><span class="pre">np.geomspace</span></code> には区間の端点の値をそのまま引数として指定するのに対して， <code class="docutils literal notranslate"><span class="pre">np.logspace</span></code> には <span class="math notranslate nohighlight">\(\log_{10}(a)\)</span> および <span class="math notranslate nohighlight">\(\log_{10}(b)\)</span> を引数として渡すことである．</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">geomspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>  <span class="c1"># [0.1,10]をlogで等間隔に区切る</span>
+<span class="go">array([ 0.1       ,  0.15848932,  0.25118864,  0.39810717,  0.63095734,</span>
+<span class="go">        1.        ,  1.58489319,  2.51188643,  3.98107171,  6.30957344,</span>
+<span class="go">       10.        ])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>      <span class="c1"># 全く同じ(log10(0.1) = -1, log10(10) = +1)</span>
+<span class="go">array([ 0.1       ,  0.15848932,  0.25118864,  0.39810717,  0.63095734,</span>
+<span class="go">        1.        ,  1.58489319,  2.51188643,  3.98107171,  6.30957344,</span>
+<span class="go">       10.        ])</span>
+</pre></div>
+</td></tr></table></div>
+<p>上の2つの例は丸め誤差を除いて以下と全く同一の結果を与える．</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">10</span><span class="o">**</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mf">0.1</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mf">10.0</span><span class="p">),</span> <span class="mi">11</span><span class="p">)</span>
+<span class="go">array([ 0.1       ,  0.15848932,  0.25118864,  0.39810717,  0.63095734,</span>
+<span class="go">        1.        ,  1.58489319,  2.51188643,  3.98107171,  6.30957344,</span>
+<span class="go">       10.        ])</span>
+</pre></div>
+</td></tr></table></div>
 </div>
 <div class="section" id="random">
 <h3><span class="section-number">6.4.7. </span>random<a class="headerlink" href="#random" title="このヘッドラインへのパーマリンク">¶</a></h3>
@@ -459,7 +486,7 @@
 </div>
 </div>
 <div class="section" id="id17">
-<h2><a class="toc-backref" href="#id57"><span class="section-number">6.5. </span>入出力</a><a class="headerlink" href="#id17" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id59"><span class="section-number">6.5. </span>入出力</a><a class="headerlink" href="#id17" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>NumPyは配列の入出力用に便利な関数が用意されており，非常に簡単に使うことができる．</p>
 <div class="section" id="id18">
 <h3><span class="section-number">6.5.1. </span>テキスト入出力<a class="headerlink" href="#id18" title="このヘッドラインへのパーマリンク">¶</a></h3>
@@ -580,7 +607,7 @@
 </div>
 </div>
 <div class="section" id="id21">
-<h2><a class="toc-backref" href="#id58"><span class="section-number">6.6. </span>各種演算</a><a class="headerlink" href="#id21" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id60"><span class="section-number">6.6. </span>各種演算</a><a class="headerlink" href="#id21" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="section" id="id22">
 <h3><span class="section-number">6.6.1. </span>算術演算<a class="headerlink" href="#id22" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>以下の例を見れば一目瞭然であろう．基本的にFortranの配列と同様な演算ができると思ってよい．</p>
@@ -671,7 +698,7 @@
 </div>
 </div>
 <div class="section" id="id29">
-<h2><a class="toc-backref" href="#id59"><span class="section-number">6.7. </span>インデックス操作</a><a class="headerlink" href="#id29" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id61"><span class="section-number">6.7. </span>インデックス操作</a><a class="headerlink" href="#id29" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>NumPyのインデックス操作は基本的にFortranの配列操作と似ているのでFortranユーザーには馴染みやすいだろう．</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -804,12 +831,12 @@
 <p>このように1行目と4行目では動作が異なる．Fortranでは4行目のように記述しても配列の全要素に10を代入してくれるが，Pythonでは <strong>新しい変数を作り，そこに整数10を代入</strong> する．これは動的型付け言語のPythonならではの動作である．配列の全要素にスカラー値を代入する際にはインデックスに <code class="docutils literal notranslate"><span class="pre">:</span></code> (もしくは <code class="docutils literal notranslate"><span class="pre">...</span></code> )を指定しなければならない．</p>
 </div>
 <div class="section" id="id32">
-<h2><a class="toc-backref" href="#id60"><span class="section-number">6.8. </span>形状操作</a><a class="headerlink" href="#id32" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id62"><span class="section-number">6.8. </span>形状操作</a><a class="headerlink" href="#id32" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>To be written.</p>
 </div>
 <div class="section" id="id33">
-<h2><a class="toc-backref" href="#id61"><span class="section-number">6.9. </span>第6章 演習課題</a><a class="headerlink" href="#id33" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>以下の課題はJupyter Notebookの仕様を前提としているが，もちろん他の実行環境でも同等の処理を実現出来ていれば問題ない．なお，以下では</p>
+<h2><a class="toc-backref" href="#id63"><span class="section-number">6.9. </span>第6章 演習課題</a><a class="headerlink" href="#id33" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>以下の課題はJupyter Notebookの使用を前提としているが，もちろん他の実行環境でも同等の処理を実現出来ていれば問題ない．なお，以下では</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pylab</span> <span class="k">as</span> <span class="n">plt</span>
@@ -846,9 +873,9 @@
 <span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span> <span class="s1">&#39;b-&#39;</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
-<div class="figure align-center" id="id47">
+<div class="figure align-center" id="id49">
 <img alt="_images/chap06_trigonometric.png" src="_images/chap06_trigonometric.png" />
-<p class="caption"><span class="caption-text">課題2</span><a class="headerlink" href="#id47" title="この画像へのパーマリンク">¶</a></p>
+<p class="caption"><span class="caption-text">課題2</span><a class="headerlink" href="#id49" title="この画像へのパーマリンク">¶</a></p>
 </div>
 </div>
 <div class="section" id="id38">
@@ -916,9 +943,9 @@
 </pre></div>
 </td></tr></table></div>
 <p>とすればよい．結果は以下の通りである．</p>
-<div class="figure align-center" id="id48">
+<div class="figure align-center" id="id50">
 <img alt="_images/chap06_logistic.png" src="_images/chap06_logistic.png" />
-<p class="caption"><span class="caption-text">課題4</span><a class="headerlink" href="#id48" title="この画像へのパーマリンク">¶</a></p>
+<p class="caption"><span class="caption-text">課題4</span><a class="headerlink" href="#id50" title="この画像へのパーマリンク">¶</a></p>
 </div>
 <p>このような写像はロジスティック写像と呼ばれ，非常に単純な式ながら一定の条件を満たすときにはカオスを生み出すことが知られている．</p>
 </div>
@@ -927,7 +954,7 @@
 <p>以下の積分</p>
 <div class="math notranslate nohighlight">
 \[\int_{0}^{1} \frac{4}{\pi} \frac{1}{1 + x^2} dx\]</div>
-<p>を台形公式およびSimpsonの公式を使って求める関数をそれぞれ作成しよう．ここで作成する関数は分割数 <code class="docutils literal notranslate"><span class="pre">n</span></code> を引数にとり，</p>
+<p>を台形公式およびSimpsonの公式( <a class="reference external" href="https://amanotk.github.io/fortran-resume-public/chap08.html#c8-numerical-integration">参考URL</a> )を使って求める関数をそれぞれ作成しよう．ここで作成する関数は分割数 <code class="docutils literal notranslate"><span class="pre">n</span></code> を引数にとり，</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -974,9 +1001,9 @@
 </pre></div>
 </td></tr></table></div>
 <p>これによって得られる図は以下の通りである．</p>
-<div class="figure align-center" id="id49">
+<div class="figure align-center" id="id51">
 <img alt="_images/chap06_integration.png" src="_images/chap06_integration.png" />
-<p class="caption"><span class="caption-text">課題5</span><a class="headerlink" href="#id49" title="この画像へのパーマリンク">¶</a></p>
+<p class="caption"><span class="caption-text">課題5</span><a class="headerlink" href="#id51" title="この画像へのパーマリンク">¶</a></p>
 </div>
 </div>
 <div class="section" id="id41">
@@ -1054,9 +1081,9 @@
 <span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
-<div class="figure align-center" id="id50">
+<div class="figure align-center" id="id52">
 <img alt="_images/chap06_score.png" src="_images/chap06_score.png" />
-<p class="caption"><span class="caption-text">課題7</span><a class="headerlink" href="#id50" title="この画像へのパーマリンク">¶</a></p>
+<p class="caption"><span class="caption-text">課題7</span><a class="headerlink" href="#id52" title="この画像へのパーマリンク">¶</a></p>
 </div>
 </div>
 <div class="section" id="id43">
@@ -1146,7 +1173,7 @@
 </div>
 <div class="section" id="id45">
 <h3><span class="section-number">6.9.10. </span>課題10<a class="headerlink" href="#id45" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>逆関数法を使って指数分布</p>
+<p>逆関数法( <a class="reference external" href="https://amanotk.github.io/fortran-resume-public/chap08.html#id18">参考URL</a> )を使って指数分布</p>
 <div class="math notranslate nohighlight">
 \[P(x) = \lambda \exp ( - \lambda x )\]</div>
 <p>に従う乱数を返す関数 <code class="docutils literal notranslate"><span class="pre">randexp</span></code></p>
@@ -1181,13 +1208,13 @@
 </pre></div>
 </td></tr></table></div>
 <p>この結果は以下のようになる．</p>
-<div class="figure align-center" id="id51">
+<div class="figure align-center" id="id53">
 <img alt="_images/chap06_exponential.png" src="_images/chap06_exponential.png" />
-<p class="caption"><span class="caption-text">課題10</span><a class="headerlink" href="#id51" title="この画像へのパーマリンク">¶</a></p>
+<p class="caption"><span class="caption-text">課題10</span><a class="headerlink" href="#id53" title="この画像へのパーマリンク">¶</a></p>
 </div>
 </div>
-<div class="section" id="id46">
-<h3><span class="section-number">6.9.11. </span>課題11<a class="headerlink" href="#id46" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="id47">
+<h3><span class="section-number">6.9.11. </span>課題11<a class="headerlink" href="#id47" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>モンテカルロ法を用いてN次元超球の体積を求める関数 <code class="docutils literal notranslate"><span class="pre">mc_hypersphere</span></code></p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -1196,7 +1223,7 @@
     <span class="k">pass</span>
 </pre></div>
 </td></tr></table></div>
-<p>を作成しよう．ここで <code class="docutils literal notranslate"><span class="pre">nrand</span></code> は各次元について発生させる乱数の個数である．</p>
+<p>を作成しよう．ここで <code class="docutils literal notranslate"><span class="pre">nrand</span></code> は各次元について発生させる乱数の個数である．(アルゴリズムについては <a class="reference external" href="https://amanotk.github.io/fortran-resume-public/chap08.html#id19">ここ</a> を参考にせよ．)</p>
 <p>この関数を使って近似値と解析的な値を以下のように比較しよう．</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
