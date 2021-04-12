@@ -11,6 +11,14 @@ table.highlighttable td.linenos div.linenodiv {
     text-align: right;
 }
 
+/* contents for each page */
+div.topic {
+    background: #efefef;
+    border: solid 1px #dddddd;
+    padding: 12px 12px 2px 12px;
+    margin-bottom: 2ex;
+}
+
 /* -*- customize pygments monokai style -*- */
 div.document div.highlight {
     background-color: #272822;
