@@ -175,6 +175,26 @@ Jupyter Notebook
 とオプションを付けて起動をすればよい．デフォルトではブラウザで http://localhost:8888/ にアクセスすればJupyterのサーバーに接続することができる．8888はデフォルトのポート番号であるが ``--port`` オプションで変更することもできる．
 
 
+JupyterLab
+==========
+
+JupyterLabはJupyter Notebookの次世代版という位置付けのウェブベースの統合開発･解析環境と呼べるものである．起動するにはJupyer Notebookと同じように
+
+.. code-block:: bash
+
+  $ jupyter-lab
+
+とすればよい．
+
+.. figure:: figure/jupyterlab1.png
+   :align: center
+   :width: 600px
+
+   JupyterLabの画面
+
+デフォルトでJupyer Notebookはもちろん，シェルのコンソール，Python(正確にはIPython)のコンソール，テキストエディタ，ファイルブラウザなどが使えるようである．タブを分割することもできるなど非常に高機能な環境である．
+
+
 様々なIDE
 =========
 

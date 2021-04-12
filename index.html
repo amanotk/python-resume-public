@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>FortranユーザーのためのPython入門 &mdash; FortranユーザーのためのPython入門</title>
+  <title>Python演習 (地球惑星物理学演習) &mdash; Python演習(地球惑星物理学演習)</title>
   
 
   
@@ -50,7 +50,7 @@
           
 
           
-            <a href="#" class="icon icon-home"> Python for Fortran Users
+            <a href="#" class="icon icon-home"> Python演習
           
 
           
@@ -85,7 +85,7 @@
 <li class="toctree-l1"><a class="reference internal" href="chap02.html">2. Pythonの基本</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chap03.html">3. 対話型の実行方法</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chap04.html">4. 制御構造と関数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap05.html">5. 便利な組み込みオブジェクト</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap05.html">5. 便利な組み込み型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chap06.html">6. NumPy配列の基本</a></li>
 </ul>
 
@@ -101,7 +101,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">Python for Fortran Users</a>
+          <a href="#">Python演習</a>
         
       </nav>
 
@@ -132,7 +132,7 @@
     
       <li><a href="#">Docs</a> &raquo;</li>
         
-      <li>FortranユーザーのためのPython入門</li>
+      <li>Python演習 (地球惑星物理学演習)</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -149,17 +149,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="fortranpython">
-<h1>FortranユーザーのためのPython入門<a class="headerlink" href="#fortranpython" title="このヘッドラインへのパーマリンク">¶</a></h1>
+  <div class="section" id="python">
+<h1>Python演習 (地球惑星物理学演習)<a class="headerlink" href="#python" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
 <p>この文書について</p>
-<p>この文書は東京大学理学部地球惑星物理学科3年生向けの演習科目「地球惑星物理学演習」用に書かれたものです．それ以外の用途に使用することを妨げるものではありませんが，必ずしも万人向けのものではありませんのでご注意下さい．特に演習課題はUnix系のコマンドラインでの実行を前提としています．</p>
+<p>この文書は東京大学理学部地球惑星物理学科3年生向けの演習科目「地球惑星物理学演習」用に書かれたものです．姉妹版として <a class="reference external" href="https://amanotk.github.io/fortran-resume-public/">Fortran演習</a> があります．これ以外の用途に使用することを妨げるものではありませんが，必ずしも万人向けのものではありませんのでご注意下さい．特に演習課題はUnix系のコマンドラインでの実行を前提としています．</p>
 <p>なお，当然のことながらこの文書の利用は自己責任でお願いします．</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">警告</p>
-<p>この文書はまだ書き殴り状態です！</p>
 </div>
 <div class="toctree-wrapper compound">
 <ul>
@@ -182,9 +178,10 @@
 <li class="toctree-l2"><a class="reference internal" href="chap03.html#ipython">3.2. IPython</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap03.html#jupyter-qt-console">3.3. Jupyter Qt Console</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap03.html#jupyter-notebook">3.4. Jupyter Notebook</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap03.html#ide">3.5. 様々なIDE</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap03.html#id6">3.6. プロット</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap03.html#id8">3.7. 第3章 演習課題</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap03.html#jupyterlab">3.5. JupyterLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap03.html#ide">3.6. 様々なIDE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap03.html#id6">3.7. プロット</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap03.html#id8">3.8. 第3章 演習課題</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="chap04.html">4. 制御構造と関数</a><ul>
@@ -196,10 +193,11 @@
 <li class="toctree-l2"><a class="reference internal" href="chap04.html#id15">4.6. 第4章 演習課題</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="chap05.html">5. 便利な組み込みオブジェクト</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="chap05.html">5. 便利な組み込み型</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="chap05.html#tuple">5.1. tuple</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap05.html#list">5.2. list</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap05.html#dict">5.3. dict</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap05.html#range">5.3. range</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap05.html#dict">5.4. dict</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="chap06.html">6. NumPy配列の基本</a><ul>

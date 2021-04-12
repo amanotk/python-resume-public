@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>1. はじめに &mdash; FortranユーザーのためのPython入門</title>
+  <title>1. はじめに &mdash; Python演習(地球惑星物理学演習)</title>
   
 
   
@@ -37,7 +37,7 @@
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="検索" href="search.html" />
     <link rel="next" title="2. Pythonの基本" href="chap02.html" />
-    <link rel="prev" title="FortranユーザーのためのPython入門" href="index.html" /> 
+    <link rel="prev" title="Python演習 (地球惑星物理学演習)" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -51,7 +51,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> Python for Fortran Users
+            <a href="index.html" class="icon icon-home"> Python演習
           
 
           
@@ -89,7 +89,7 @@
 <li class="toctree-l1"><a class="reference internal" href="chap02.html">2. Pythonの基本</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chap03.html">3. 対話型の実行方法</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chap04.html">4. 制御構造と関数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap05.html">5. 便利な組み込みオブジェクト</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap05.html">5. 便利な組み込み型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chap06.html">6. NumPy配列の基本</a></li>
 </ul>
 
@@ -105,7 +105,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Python for Fortran Users</a>
+          <a href="index.html">Python演習</a>
         
       </nav>
 
@@ -156,7 +156,7 @@
   <div class="section" id="id1">
 <h1><span class="section-number">1. </span>はじめに<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <p>地球惑星物理学演習ではプログラミング言語として伝統的にFortranのみを教えてきたわけであるが，昨今の事情を考えるとこれは必ずしも時代に合っているとは言えないかもしれない．Fortranが必ずしも悪い言語というわけではないものの，科学技術計算に用いられる言語として最もポピュラーな言語の一つになったPythonを学んでおくことがプラスとなることは間違いないであろう．少なくとも筆者にとってはPythonは普段の研究で触れている時間が最も長い言語である．ここでは実験的な試みとして <strong>Fortranをある程度使えるようになったユーザー向け</strong> にPythonの演習用の解説および課題を用意した <a class="footnote-reference brackets" href="#otherlang" id="id2">1</a> ．</p>
-<p>まずは <a class="reference internal" href="chap02.html"><span class="doc">Pythonの基本</span></a> ではコマンドラインでのPythonスクリプトの実行方法などPythonの基礎の基礎を， <a class="reference internal" href="chap03.html"><span class="doc">対話型の実行方法</span></a> ではPythonの強みの一つである様々な対話型の実行方法を簡単に紹介する． <a class="reference internal" href="chap04.html"><span class="doc">制御構造と関数</span></a> ではプログラミング言語としてのPythonの基礎的な文法などを解説するが，Pythonに関する書籍やウェブは既に多数存在するため，ここではあえて詳細には立ち入らないこととする． <a class="reference internal" href="chap05.html"><span class="doc">便利な組み込みオブジェクト</span></a> ではtupleやlist，dictなどの便利なPythonの組み込みオブジェクトについて簡単に学ぶ．これらを理解した上で，<a class="reference internal" href="chap06.html"><span class="doc">NumPy配列の基本</span></a> でNumPyと呼ばれるライブラリが提供する多次元配列オブジェクトの基本的な使い方を身につけよう．</p>
+<p>まずは <a class="reference internal" href="chap02.html"><span class="doc">Pythonの基本</span></a> ではコマンドラインでのPythonスクリプトの実行方法などPythonの基礎の基礎を， <a class="reference internal" href="chap03.html"><span class="doc">対話型の実行方法</span></a> ではPythonの強みの一つである様々な対話型の実行方法を簡単に紹介する． <a class="reference internal" href="chap04.html"><span class="doc">制御構造と関数</span></a> ではプログラミング言語としてのPythonの基礎的な文法などを解説するが，Pythonに関する書籍やウェブは既に多数存在するため，ここではあえて詳細には立ち入らないこととする． <a class="reference internal" href="chap05.html"><span class="doc">便利な組み込み型</span></a> ではtupleやlist，dictなどの便利なPythonの組み込みオブジェクトについて簡単に学ぶ．これらを理解した上で，<a class="reference internal" href="chap06.html"><span class="doc">NumPy配列の基本</span></a> でNumPyと呼ばれるライブラリが提供する多次元配列オブジェクトの基本的な使い方を身につけよう．</p>
 <div class="section" id="id3">
 <h2><span class="section-number">1.1. </span>参考<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <blockquote>
@@ -193,7 +193,7 @@
         <a href="chap02.html" class="btn btn-neutral float-right" title="2. Pythonの基本" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral float-left" title="FortranユーザーのためのPython入門" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Python演習 (地球惑星物理学演習)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
