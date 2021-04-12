@@ -24,7 +24,6 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
         <script src="_static/translations.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
@@ -201,10 +200,10 @@
 <p>お決まりの&quot;Hello, world !&quot;を標準出力に表示するサンプルプログラム( <a class="reference internal" href="chap02_hello_py.html"><span class="doc">hello.py</span></a> )は以下の通りである．単純に <code class="docutils literal notranslate"><span class="pre">print</span></code> 関数に表示したい文字列を渡せばよい <a class="footnote-reference brackets" href="#print" id="id3">1</a>．</p>
 <div class="literal-block-wrapper docutils container" id="id17">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="chap02_hello_py.html"><span class="doc">hello.py</span></a></span><a class="headerlink" href="#id17" title="このコードへのパーマリンク">¶</a></div>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
 <span class="c1"># -*- coding: utf-8 -*-</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, world !&#39;</span><span class="p">)</span>
@@ -212,16 +211,16 @@
 </td></tr></table></div>
 </div>
 <p>これを実行するにはコマンドラインで</p>
-<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ python ./hello.py
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ python ./hello.py
 </pre></div>
 </td></tr></table></div>
 <p>または</p>
-<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ ./hello.py
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ ./hello.py
 </pre></div>
 </td></tr></table></div>
 <p>とすればよい．2番めの実行方法は <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> が実行権限を持っていなければならない <a class="footnote-reference brackets" href="#cmdexec" id="id4">2</a>．
 実行権限を与えるには例えば</p>
-<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ chmod <span class="m">755</span> hello.py
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ chmod <span class="m">755</span> hello.py
 </pre></div>
 </td></tr></table></div>
 <p>とすればよい．</p>
@@ -234,28 +233,28 @@
 <p>Pythonの大きな特徴は <strong>構文ブロックがインデント（字下げ）で区別される</strong> という点である．まずは以下のサンプルを見てみよう．</p>
 <div class="literal-block-wrapper docutils container" id="id18">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="chap02_sample1_py.html"><span class="doc">sample1.py</span></a></span><a class="headerlink" href="#id18" title="このコードへのパーマリンク">¶</a></div>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
 <span class="c1"># -*- coding: utf-8 -*-</span>
 
 <span class="c1"># これはコメント行</span>
@@ -281,12 +280,12 @@
 </td></tr></table></div>
 </div>
 <p>5-11行目が <code class="docutils literal notranslate"><span class="pre">if-else</span></code> による分岐である．これについては後述するが，その意味は明らかであろう．同じような分岐はCでは</p>
-<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span> <span class="mi">1</span> <span class="p">)</span> <span class="p">{</span>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span> <span class="mi">1</span> <span class="p">)</span> <span class="p">{</span>
   <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">);</span>
   <span class="n">printf</span><span class="p">(</span><span class="s">&quot;This will be printed out&quot;</span><span class="p">);</span>
 <span class="k">else</span> <span class="p">{</span>
@@ -295,12 +294,12 @@
 </pre></div>
 </td></tr></table></div>
 <p>Fortranでは</p>
-<div class="highlight-fortran notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span> <span class="p">.</span><span class="n">true</span><span class="p">.</span> <span class="p">)</span> <span class="k">then</span>
+<div class="highlight-fortran notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span> <span class="p">.</span><span class="n">true</span><span class="p">.</span> <span class="p">)</span> <span class="k">then</span>
 <span class="k">  print</span> <span class="o">*</span><span class="p">,</span> <span class="s1">&#39;Hello&#39;</span>
   <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s1">&#39;This will be printed out&#39;</span>
 <span class="k">else</span>
@@ -309,12 +308,12 @@
 </pre></div>
 </td></tr></table></div>
 <p>のように記述することになる．多くの言語では何らかのキーワードや記号(Fortranならば <code class="docutils literal notranslate"><span class="pre">end</span> <span class="pre">if</span></code> など，Cならば <code class="docutils literal notranslate"><span class="pre">{</span></code> および <code class="docutils literal notranslate"><span class="pre">}</span></code>)を用いて制御構造の区切りを表しているのに対して，Pythonではインデントで区切りを付けることになっている．したがって，例えば次のような書き方はエラーとなる．</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="mi">1</span><span class="p">:</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="mi">1</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">)</span>
   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;error !&#39;</span><span class="p">)</span>  <span class="c1"># インデントがあっていない</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;error !&#39;</span><span class="p">)</span>    <span class="c1"># 次に続くelseと整合しない</span>
@@ -332,11 +331,11 @@
 <p>スクリプト言語であるPythonにおける変数の扱いはコンパイル型言語とは大きく異なり，変数を使う際に型宣言をする必要がない．例えば以下のように変数を使うことができる．</p>
 <div class="literal-block-wrapper docutils container" id="id19">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="chap02_sample2_py.html"><span class="doc">sample2.py</span></a> 抜粋</span><a class="headerlink" href="#id19" title="このコードへのパーマリンク">¶</a></div>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>4
-5
-6
-7
-8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>           <span class="c1"># nは整数 (4byte = 32bit)</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>           <span class="c1"># nは整数 (4byte = 32bit)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="mf">3.14</span>         <span class="c1"># xは実数 (8byte = 64bit)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;n = &#39;</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
@@ -346,14 +345,14 @@
 </div>
 <p>ここで変数 <code class="docutils literal notranslate"><span class="pre">n</span></code> や <code class="docutils literal notranslate"><span class="pre">x</span></code> の型を指定していないことに注意しよう．Pythonでは明示的にデータ型を指定しなくても， <code class="docutils literal notranslate"><span class="pre">=</span></code> で数値を代入する際に（実行時に）右辺値に応じて自動的に変数の型が選択されることになっている．したがって <code class="docutils literal notranslate"><span class="pre">n</span></code> は整数， <code class="docutils literal notranslate"><span class="pre">x</span></code> は実数となる．なお，Python3では実数型（浮動小数点数）はデフォルトで8byte(Cの <code class="docutils literal notranslate"><span class="pre">double</span></code> ，Fortranの <code class="docutils literal notranslate"><span class="pre">double</span> <span class="pre">precision</span></code> または <code class="docutils literal notranslate"><span class="pre">real(8)</span></code>)となる．一方で，整数型には決まったサイズは存在しない（値が大きくなると，必要に応じてサイズが大きくなる）．</p>
 <p>CやFortranではプログラムや関数・サブルーチンの先頭で変数を宣言してから使う必要があったのに対して，いつでも好きなときに変数を定義して使うことができるので大変便利である．しかし，まだ定義していない変数を参照するとエラーが発生する．例えば先ほどの例の後に</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y = &#39;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y = &#39;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
 <p>としても，変数 <code class="docutils literal notranslate"><span class="pre">y</span></code> が定義されていないので実行時にエラーが発生する．例えば <code class="docutils literal notranslate"><span class="pre">sample2.py</span></code> の10行目のコメントアウトを外して実行すると，</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
   <span class="n">File</span> <span class="s2">&quot;sample/chap02/sample2.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">10</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y = &#39;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 <span class="ne">NameError</span><span class="p">:</span> <span class="n">name</span> <span class="s1">&#39;y&#39;</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span>
@@ -367,13 +366,13 @@
 <p>数学的な演算はCやFortranと共通の点が多いが，多少注意が必要である．以下に算術演算演算の使用例を示す．</p>
 <div class="literal-block-wrapper docutils container" id="id20">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="chap02_sample3_py.html"><span class="doc">sample3.py</span></a> 抜粋</span><a class="headerlink" href="#id20" title="このコードへのパーマリンク">¶</a></div>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 5
- 6
- 7
- 8
- 9
-10
-11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">12</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span>  <span class="c1"># 和 =&gt; 17</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">12</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span>  <span class="c1"># 和 =&gt; 17</span>
 <span class="nb">print</span><span class="p">(</span><span class="mi">12</span> <span class="o">-</span> <span class="mi">5</span><span class="p">)</span>  <span class="c1"># 差 =&gt; 7</span>
 <span class="nb">print</span><span class="p">(</span><span class="mi">12</span> <span class="o">*</span> <span class="mi">5</span><span class="p">)</span>  <span class="c1"># 積 =&gt; 60</span>
 <span class="nb">print</span><span class="p">(</span><span class="mi">12</span> <span class="o">//</span> <span class="mi">5</span><span class="p">)</span> <span class="c1"># 商 =&gt; 2</span>
@@ -389,11 +388,11 @@
 <div class="section" id="id10">
 <h2><a class="toc-backref" href="#id28"><span class="section-number">2.5. </span>数学関数</a><a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>数学関数を使うには <code class="docutils literal notranslate"><span class="pre">math</span></code> というモジュールを <code class="docutils literal notranslate"><span class="pre">import</span></code> すればよい．</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 </pre></div>
 </td></tr></table></div>
 <p>その上で，例えば <span class="math notranslate nohighlight">\(\exp(x)\)</span> を計算するには</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
 <p>のように関数 <code class="docutils literal notranslate"><span class="pre">math.exp</span></code> を用いればよい．それ以外にもCやFortranに組み込みで用意されているような数学関数はPythonにも用意されていると考えてよいだろう．</p>
@@ -407,9 +406,9 @@
 <p>ここでコマンドラインでPythonプログラムを実行する際にキーボードからの入力を受け取る方法を一つ紹介しておこう．これには組み込み関数の <code class="docutils literal notranslate"><span class="pre">input</span></code> を使う．</p>
 <div class="literal-block-wrapper docutils container" id="id21">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="chap02_sample4_py.html"><span class="doc">sample4.py</span></a> 抜粋</span><a class="headerlink" href="#id21" title="このコードへのパーマリンク">¶</a></div>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>4
-5
-6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># キーボード入力を読み込む</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># キーボード入力を読み込む</span>
 <span class="n">s</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Input something: &#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Your input is : &#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
 </pre></div>
@@ -418,14 +417,14 @@
 <p><code class="docutils literal notranslate"><span class="pre">input</span></code> によってキーボード入力は文字列として読み込まれるので，整数や実数として用いたい場合には文字列から型を変換する関数 <code class="docutils literal notranslate"><span class="pre">int</span></code> もしくは <code class="docutils literal notranslate"><span class="pre">float</span></code> を用いる必要がある．変換された後は以下の例のように通常の整数，実数の変数として扱えば良い．</p>
 <div class="literal-block-wrapper docutils container" id="id22">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="chap02_sample4_py.html"><span class="doc">sample4.py</span></a> 抜粋</span><a class="headerlink" href="#id22" title="このコードへのパーマリンク">¶</a></div>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 8
- 9
-10
-11
-12
-13
-14
-15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># 整数に変換</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># 整数に変換</span>
 <span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Input integer 1: &#39;</span><span class="p">))</span>
 <span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Input integer 2: &#39;</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sum of two integers : &#39;</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
@@ -451,10 +450,10 @@
 <div class="section" id="id15">
 <h3><span class="section-number">2.7.3. </span>課題3<a class="headerlink" href="#id15" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>標準入力から三角形の底辺 <span class="math notranslate nohighlight">\(l\)</span> と高さ <span class="math notranslate nohighlight">\(h\)</span> を読み込み，三角形の面積を表示するプログラムを作成しよう．</p>
-<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ python kadai3.py
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ python kadai3.py
 Input l : <span class="m">5</span>.0       <span class="c1"># キーボード入力</span>
 Input h : <span class="m">3</span>.0       <span class="c1"># キーボード入力</span>
 Area of triangle :  <span class="m">7</span>.5
@@ -468,13 +467,13 @@ Area of triangle :  <span class="m">7</span>.5
 \[\sin x = x - \frac{x^3}{3 !} + \frac{x^5}{5 !} - \frac{x^7}{7 !} \cdots\]</div>
 <p>を適当な次数(例えば2次とか3次)で打ち切りることで <span class="math notranslate nohighlight">\(\sin x\)</span> の近似値を求め，組み込み関数 <code class="docutils literal notranslate"><span class="pre">sin(x)</span></code> で求めた値と比較するプログラムを作成しよう．例えば <span class="math notranslate nohighlight">\(x = 0.01，0.1，0.2\)</span> などについて，実行して結果を確かめること．</p>
 <p>例えば以下のような結果が得られればよい</p>
-<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ python kadai4.py
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ python kadai4.py
 Input x : <span class="m">0</span>.2                     <span class="c1"># キーボード入力</span>
 1st <span class="nv">order</span> <span class="o">=</span>  <span class="m">0</span>.2
 3rd <span class="nv">order</span> <span class="o">=</span>  <span class="m">0</span>.19866666666666669
@@ -487,7 +486,7 @@ Input x : <span class="m">0</span>.2                     <span class="c1"># キ�
 <dl class="footnote brackets">
 <dt class="label" id="print"><span class="brackets"><a class="fn-backref" href="#id3">1</a></span></dt>
 <dd><p>Python-2.xでは <code class="docutils literal notranslate"><span class="pre">print</span></code> の形式が違っていたので古い情報を参照する場合には注意が必要．他にも細かいところに少しずつ違いがある．なお，以下のように <code class="docutils literal notranslate"><span class="pre">print</span></code> 関数にはカンマ区切りで複数の文字列や変数を渡すことができる．</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hi, &#39;</span><span class="p">,</span> <span class="s1">&#39;I &#39;</span><span class="p">,</span> <span class="s1">&#39;Love &#39;</span><span class="p">,</span> <span class="s1">&#39;Python !&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hi, &#39;</span><span class="p">,</span> <span class="s1">&#39;I &#39;</span><span class="p">,</span> <span class="s1">&#39;Love &#39;</span><span class="p">,</span> <span class="s1">&#39;Python !&#39;</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
 </dd>

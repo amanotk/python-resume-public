@@ -24,9 +24,7 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
         <script src="_static/translations.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -176,20 +174,20 @@
 <h2><a class="toc-backref" href="#id5"><span class="section-number">5.1. </span>tuple</a><a class="headerlink" href="#tuple" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>tuple(タプル)と呼ばれるオブジェクトは配列のように複数の値をひとまとめにしたものである．後述のlistと同様に，とりあえずはCやFortranの配列と同じようなものとして考えてもらって構わない．</p>
 <p>tupleは複数の値を <code class="docutils literal notranslate"><span class="pre">()</span></code> と <code class="docutils literal notranslate"><span class="pre">,</span></code> (カンマ)で以下のように表される</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="go">(1, 2, 3)</span>
 </pre></div>
 </td></tr></table></div>
 <p>これは3つの整数要素から成るtupleを表す．</p>
 <p>配列とは異なり，tupleの要素として任意のPythonオブジェクトを格納できる．また <code class="docutils literal notranslate"><span class="pre">()</span></code> は空の(要素が何もない)tupleを表す．なお，tupleの各要素は <code class="docutils literal notranslate"><span class="pre">[]</span></code> で参照することができる．これらを以下の例で確かめてみよう．</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">()</span>                           <span class="c1"># 空のtuple</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">()</span>                           <span class="c1"># 空のtuple</span>
 <span class="go">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;this&#39;</span><span class="p">,</span> <span class="s1">&#39;is&#39;</span><span class="p">,</span> <span class="s1">&#39;tuple&#39;</span><span class="p">)</span>  <span class="c1"># tupleオブジェクトを変数aに格納</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>             <span class="c1"># 異なる型のオブジェクトも格納できる</span>
@@ -199,22 +197,22 @@
 </pre></div>
 </td></tr></table></div>
 <p>tupleの大きな特徴は <strong>要素の値を変更することができない</strong> という点である．要素の値を書き換えようとすると以下のようなエラーとなる．</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;that&#39;</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;that&#39;</span>
 <span class="go">TypeError: &#39;tuple&#39; object does not support item assignment</span>
 </pre></div>
 </td></tr></table></div>
 <p>tupleは複数の値を一時的にまとめて扱いたいときによく使われるものなので，その要素を書き換えることは想定されていないのである．典型的な使い方の一つとして，関数から複数の値を返したいときなどに使われる．例えば以下の <code class="docutils literal notranslate"><span class="pre">test_tuple</span></code> は与えられた2つの引数の和と差を返す関数である．</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">test_tuple</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">test_tuple</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="o">-</span><span class="n">b</span>
 <span class="gp">...</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">test_tuple</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
@@ -231,16 +229,16 @@
 <div class="section" id="list">
 <h2><a class="toc-backref" href="#id6"><span class="section-number">5.2. </span>list</a><a class="headerlink" href="#list" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>基本的にはlistは要素の書き換えができるtupleと考えてよい．tupleの例をそのままlistに置き換えてみよう．</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">[]</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">[]</span>
 <span class="go">[]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;this&#39;</span><span class="p">,</span> <span class="s1">&#39;is&#39;</span><span class="p">,</span> <span class="s1">&#39;list&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">]</span>
@@ -253,26 +251,26 @@
 </pre></div>
 </td></tr></table></div>
 <p>listはCやFortranの配列と異なり値の挿入，追加，削除などが自在にできる．使い方は以下の例を見れば明らかだろう．</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>             <span class="c1"># 初期化</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>             <span class="c1"># 初期化</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>               <span class="c1"># 最後に新しい要素を追加</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
 <span class="go">[1, 2, 3, 4]</span>
@@ -296,8 +294,8 @@
 </td></tr></table></div>
 <p>注意すべきはlistの長さを伸ばす <code class="docutils literal notranslate"><span class="pre">append</span></code>, <code class="docutils literal notranslate"><span class="pre">extend</span></code> を多用すると一般的には遅くなる可能性が高いということである．基本的には大規模なデータの格納にはlistは使わない <a class="footnote-reference brackets" href="#usenumpy" id="id3">1</a> ，また何らかの理由で使わざるを得ないときにはサイズが予め分かっているのであれば最初にその長さのリストを作っておく(サイズを変更しない)，という方針にすべきである．</p>
 <p>なお，任意のサイズの初期化されたlistはかんたんに作ることができる．例えば以下の例は0で初期化されたサイズ10のlistを作る例である．</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">10</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">10</span>
 <span class="go">[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]</span>
 </pre></div>
 </td></tr></table></div>

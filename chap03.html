@@ -24,9 +24,7 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
         <script src="_static/translations.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -193,11 +191,11 @@
 <div class="section" id="python">
 <h2><a class="toc-backref" href="#id18"><span class="section-number">3.1. </span>Pythonの対話モード</a><a class="headerlink" href="#python" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>ターミナルで <code class="docutils literal notranslate"><span class="pre">python</span></code> とだけ打ってみると以下のように表示され，キーボード入力待ちの状態になるであろう．</p>
-<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ python
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ python
 Python <span class="m">3</span>.7.6 <span class="o">(</span>default, Jan  <span class="m">8</span> <span class="m">2020</span>, <span class="m">19</span>:59:22<span class="o">)</span>
 <span class="o">[</span>GCC <span class="m">7</span>.3.0<span class="o">]</span> :: Anaconda, Inc. on linux
 Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&quot;</span>, <span class="s2">&quot;credits&quot;</span> or <span class="s2">&quot;license&quot;</span> <span class="k">for</span> more information.
@@ -205,22 +203,22 @@ Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&
 </pre></div>
 </td></tr></table></div>
 <p>Pythonはインタープリター型の言語であり，一行ずつ順に実行されることは既に紹介した通りである．したがって，対話的(interactive)に任意のPythonコードを入力して実行させることができるのである．試しに <code class="docutils literal notranslate"><span class="pre">print('Hello,</span> <span class="pre">World</span> <span class="pre">!')</span></code> と入力してEnterしてみると</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, World !&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, World !&#39;</span><span class="p">)</span>
 <span class="go">Hello, World !</span>
 </pre></div>
 </td></tr></table></div>
 <p>のようになる．1行目のPythonのコードが実行され，2行目の出力が得られたということである．</p>
 <p>このような対話的なPython実行環境をPythonシェルとかコンソールと呼ぶことがある．Python関係のドキュメントでは対話モードのデフォルトのプロンプト <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code> (または <code class="docutils literal notranslate"><span class="pre">...</span></code> )に続く行がPythonのコードを意味し，そうでない行は実行結果を意味することになっている．この文書でも特に断りのない限りはこの慣習に従うことにする．</p>
 <p>もちろん1行では完結しない構文ブロックも入力が可能である．以下の例を見てみよう．</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>            <span class="c1"># 字下げ</span>
 <span class="gp">... </span>                        <span class="c1"># 空行(字下げなしでEnter)</span>
 <span class="go">0</span>
@@ -232,22 +230,22 @@ Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&
 </td></tr></table></div>
 <p>2行目は <code class="docutils literal notranslate"><span class="pre">for</span></code> ループの中にあるため，スペースやTabキーで字下げをする．3行目は字下げをせずに空白行とすることでこの構文ブロックの終端と解釈され，ループが実行されることになる．</p>
 <p>対話モードの便利な機能としてヒストリの利用や，ドキュメントの参照が上げられる．対話モードではbashなどのシェルと同様に過去のコマンドヒストリが記録されており，矢印キーや <code class="docutils literal notranslate"><span class="pre">Ctrl-p</span></code> ， <code class="docutils literal notranslate"><span class="pre">Ctrl-n</span></code> で行き来することができる．ドキュメントの参照については，例えば <code class="docutils literal notranslate"><span class="pre">print</span></code> 関数のドキュメントを参照するには</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">help</span><span class="p">(</span><span class="nb">print</span><span class="p">)</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">help</span><span class="p">(</span><span class="nb">print</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
 <p>と入力すると</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Help</span> <span class="n">on</span> <span class="n">built</span><span class="o">-</span><span class="ow">in</span> <span class="n">function</span> <span class="nb">print</span> <span class="ow">in</span> <span class="n">module</span> <span class="n">builtins</span><span class="p">:</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Help</span> <span class="n">on</span> <span class="n">built</span><span class="o">-</span><span class="ow">in</span> <span class="n">function</span> <span class="nb">print</span> <span class="ow">in</span> <span class="n">module</span> <span class="n">builtins</span><span class="p">:</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -266,12 +264,12 @@ Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&
 <div class="section" id="ipython">
 <span id="label-ipython"></span><h2><a class="toc-backref" href="#id19"><span class="section-number">3.2. </span>IPython</a><a class="headerlink" href="#ipython" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>実際にはデフォルトの対話モードをより高機能ににしたIPythonが非常に便利である．ターミナルで <code class="docutils literal notranslate"><span class="pre">ipython</span></code> と打つと，今度は以下のように表示されるであろう．</p>
-<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ ipython
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ ipython
 Python <span class="m">3</span>.7.6 <span class="o">(</span>default, Jan  <span class="m">8</span> <span class="m">2020</span>, <span class="m">19</span>:59:22<span class="o">)</span>
 Type <span class="s1">&#39;copyright&#39;</span>, <span class="s1">&#39;credits&#39;</span> or <span class="s1">&#39;license&#39;</span> <span class="k">for</span> more information
 IPython <span class="m">7</span>.12.0 -- An enhanced Interactive Python. Type <span class="s1">&#39;?&#39;</span> <span class="k">for</span> help.
@@ -297,7 +295,7 @@ In <span class="o">[</span><span class="m">1</span><span class="o">]</span>:
 <div class="section" id="jupyter-qt-console">
 <h2><a class="toc-backref" href="#id20"><span class="section-number">3.3. </span>Jupyter Qt Console</a><a class="headerlink" href="#jupyter-qt-console" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>IPythonのコンソールと機能的にはほぼ同じであるが，専用のGUIを持つJupyter Qt Consoleというアプリケーションも存在する．ターミナルで</p>
-<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ jupyter-qtconsole
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ jupyter-qtconsole
 </pre></div>
 </td></tr></table></div>
 <p>のようにコマンドを実行するとこのアプリケーションが起動する．</p>
@@ -310,7 +308,7 @@ In <span class="o">[</span><span class="m">1</span><span class="o">]</span>:
 <div class="section" id="jupyter-notebook">
 <span id="label-jupyternotebook"></span><h2><a class="toc-backref" href="#id21"><span class="section-number">3.4. </span>Jupyter Notebook</a><a class="headerlink" href="#jupyter-notebook" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>ターミナルで</p>
-<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ jupyter-notebook
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ jupyter-notebook
 </pre></div>
 </td></tr></table></div>
 <p>を実行してみよう．デフォルトのブラウザが新しく立ち上がり，下のようなページが表示されるだろう．ここで右側の「New」から「Python 3」を選択してみよう．</p>
@@ -328,7 +326,7 @@ In <span class="o">[</span><span class="m">1</span><span class="o">]</span>:
 <p>Jupyter Notebookは手軽にPythonコードを実行できる非常に便利な環境である．近年になってこの環境があまりにも普及したので，「Pythonの実行環境 = Jupyter Notebook」と考えている人もいるかもしれない．しかし，noteook上で試行錯誤しながらデータの解析作業などをしていると，セルの実行順序や変数や関数の定義などの関係が分かりづらくなってしまう（というかほとんど分からなくなる）．「出来た」と思っても次に開いた時には（変数が宣言されていなかったり，セルの順序がバラバラだったり）同じ結果が再現できないということが多々発生する．こうならないためには， <strong>メニューの 「Kernel」 → 「Restart &amp; Run All」で結果が変わらないこと</strong> を確認するのが大変重要である．また，ある程度のまとまった処理はPythonのソースコード( <code class="docutils literal notranslate"><span class="pre">.py</span></code> ファイル）として分離して，notebookからは <code class="docutils literal notranslate"><span class="pre">import</span></code> して使うようにする方が読みやすく，スッキリとするであろう <a class="footnote-reference brackets" href="#module" id="id4">1</a> ．</p>
 </div>
 <p>なお，新たにブラウザを立ち上げたくない場合 <a class="footnote-reference brackets" href="#jupyternobrowser" id="id5">2</a> には</p>
-<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ jupyter-notebook --no-browser
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ jupyter-notebook --no-browser
 </pre></div>
 </td></tr></table></div>
 <p>とオプションを付けて起動をすればよい．デフォルトではブラウザで <a class="reference external" href="http://localhost:8888/">http://localhost:8888/</a> にアクセスすればJupyterのサーバーに接続することができる．8888はデフォルトのポート番号であるが <code class="docutils literal notranslate"><span class="pre">--port</span></code> オプションで変更することもできる．</p>
@@ -357,15 +355,15 @@ In <span class="o">[</span><span class="m">1</span><span class="o">]</span>:
 <div class="section" id="id6">
 <h2><a class="toc-backref" href="#id23"><span class="section-number">3.6. </span>プロット</a><a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>IPythonやJupyter Notebookを使うと対話的にデータのプロットができる．matplotlibというデファクトスタンダードに近いライブラリを使って図をプロットするには以下のようにすればよい <a class="footnote-reference brackets" href="#matplotlib" id="id7">3</a> ．</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># numpy</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># numpy</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># matplotlibのおまじない</span>
