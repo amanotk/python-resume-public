@@ -1,0 +1,381 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>第5章 演習課題 &mdash; Python演習(地球惑星物理学演習)</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python演習
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../chap01.html">1. はじめに</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap02.html">2. Pythonの基本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap03.html">3. 対話型の実行方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap04.html">4. 制御構造と関数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap05.html">5. 便利な組み込み型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap06.html">6. NumPy配列の基本</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python演習</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>第5章 演習課題</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>第5章 演習課題<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>以下の課題はJupyter Notebookの使用を前提としているが，もちろん他の実行環境でも同等の処理を実現出来ていれば問題ない．</p>
+<div class="admonition seealso">
+<p class="admonition-title">参考</p>
+<p><a class="reference external" href="sample/chap05/kadai.html">解答例</a> (<a class="reference external" href="sample/chap05/kadai.ipynb">ダウンロード</a>)</p>
+</div>
+<div class="section" id="id4">
+<h2>課題1<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>サンプルを実行して動作を確認しよう．</p>
+</div>
+<div class="section" id="id5">
+<h2>課題2<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>tupleの便利な使い方として関数の引数の扱いが挙げられる．</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="c1"># 全ての引数を出力</span>
+</pre></div>
+</div>
+<p>のように引数に <code class="docutils literal notranslate"><span class="pre">*</span></code> を指定すると，それ以降に与えた引数は全てtupleとして引数(この場合は <code class="docutils literal notranslate"><span class="pre">args</span></code> )に格納される．これは多数のあらかじめ個数の分からない引数を受け取るために使われる．これは位置指定引数(positional argument)などと呼ばれる．</p>
+<p>任意の個数･任意の型の引数を受け取り，受け取った全ての引数を出力する <code class="docutils literal notranslate"><span class="pre">print_args</span></code> 関数を作成せよ．例えば以下のような結果が得られればよい．Pythonの任意のオブジェクトを文字列表現に変換する <code class="docutils literal notranslate"><span class="pre">str</span></code> 関数を用いること．</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">print_args</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">[],</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span> <span class="p">:</span> <span class="s1">&#39;val&#39;</span><span class="p">},</span> <span class="kc">None</span><span class="p">)</span>
+<span class="go">args[  0] = hello</span>
+<span class="go">args[  1] = (1, 2, 3)</span>
+<span class="go">args[  2] = []</span>
+<span class="go">args[  3] = {&#39;key&#39;: &#39;val&#39;}</span>
+<span class="go">args[  4] = None</span>
+</pre></div>
+</div>
+<p>なお，あらかじめ定義されているtupleを関数に渡すときに <code class="docutils literal notranslate"><span class="pre">*</span></code> を使って</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">print_args</span><span class="p">(</span><span class="o">*</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>のように渡すこともできる．これも使えるようになると便利である．</p>
+</div>
+<div class="section" id="id6">
+<h2>課題3<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>任意のlistを受け取りそこから重複するものを除いた新たなlistオブジェクトを返す関数 <code class="docutils literal notranslate"><span class="pre">unique</span></code> を作成せよ．ただし重複するもの以外の順番は保持するものとする．例えば以下のような結果が得られればよい．(やり方は色々あるが素直にループで処理する方法を考えてみよう．)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">unique</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="go">[&#39;a&#39;, 1, &#39;b&#39;, 2, &#39;c&#39;, 3, &#39;d&#39;]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>課題4<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>dictは関数のキーワード引数を受け取るときに用いると便利である．</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>のように引数に <code class="docutils literal notranslate"><span class="pre">**</span></code> を指定すると，それ以降の任意のキーワード引数がdictとして引数(この場合 <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> )に格納される．</p>
+<p>任意個数のキーワード引数の引数名(キー)とその値を出力する関数 <code class="docutils literal notranslate"><span class="pre">process_kwargs</span></code> を作成せよ．ただし，引数 <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code> は必ず与えられるものとし，もし与えられなかった場合にはデフォルトでNoneを出力するものとせよ．また引数名で辞書順にソートして出力せよ．</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">process_kwargs</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="s1">&#39;hi&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;chao&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="go">a hi</span>
+<span class="go">b None</span>
+<span class="go">c chao</span>
+<span class="go">x 10</span>
+<span class="go">y 20</span>
+<span class="go">z 30</span>
+</pre></div>
+</div>
+<p>なお，あらかじめ定義されているdictを関数に渡すときに <code class="docutils literal notranslate"><span class="pre">**</span></code> を使って</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span> <span class="p">:</span> <span class="s1">&#39;hi&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span> <span class="p">:</span> <span class="s1">&#39;chao&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span> <span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span> <span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span> <span class="p">:</span> <span class="mi">30</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">print_kwargs</span><span class="p">(</span><span class="o">**</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>のように渡すこともできる．さらに，位置指定引数と合わせて</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>のように使うことも可能である．注意すべきは必ず <strong>位置指定引数の方がキーワード引数より先になければならない</strong> という点である．</p>
+</div>
+<div class="section" id="id8">
+<h2>課題5<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>JSON(JavaScript Object Notation)は特にウェブを介したデータのやり取りによく使われるデータの記述形式である．例えば以下は <a class="reference external" href="https://next.json-generator.com/">JSON GENERATOR</a> というサイトで作ったダミーのJSONデータの抜粋である．このようにJSONはPythonのlistとdictを組み合わせたような形式で書かれている．</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;index&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;first&quot;</span><span class="p">:</span> <span class="s2">&quot;Merritt&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;last&quot;</span><span class="p">:</span> <span class="s2">&quot;Russell&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;company&quot;</span><span class="p">:</span> <span class="s2">&quot;RUGSTARS&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;merritt.russell@rugstars.us&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;phone&quot;</span><span class="p">:</span> <span class="s2">&quot;+1 (910) 457-2069&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;757 Tennis Court, Summerset, West Virginia, 2179&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;greeting&quot;</span><span class="p">:</span> <span class="s2">&quot;Hello, Merritt! You have 6 unread messages.&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;favoriteFruit&quot;</span><span class="p">:</span> <span class="s2">&quot;strawberry&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;index&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;first&quot;</span><span class="p">:</span> <span class="s2">&quot;Vasquez&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;last&quot;</span><span class="p">:</span> <span class="s2">&quot;Mccormick&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;company&quot;</span><span class="p">:</span> <span class="s2">&quot;METROZ&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;vasquez.mccormick@metroz.me&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;phone&quot;</span><span class="p">:</span> <span class="s2">&quot;+1 (951) 563-3161&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;488 Taaffe Place, Boyd, Washington, 5543&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;greeting&quot;</span><span class="p">:</span> <span class="s2">&quot;Hello, Vasquez! You have 5 unread messages.&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;favoriteFruit&quot;</span><span class="p">:</span> <span class="s2">&quot;banana&quot;</span>
+  <span class="p">},</span>
+  <span class="o">//</span> <span class="n">省略</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>完全なJSON文字列はウェブから以下のように取得することができる．(以下の例は <code class="docutils literal notranslate"><span class="pre">json_string</span></code> に文字列を格納している．)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlopen</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://next.json-generator.com/api/json/get/Ey8u2QAH9&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">json_string</span> <span class="o">=</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>このように得られたJSONデータはPython標準の <code class="docutils literal notranslate"><span class="pre">json</span></code> モジュールを用いることで非常に簡単に扱うことができる．ここでは実際にこのJSON文字列データからfirst nameとlast nameおよびemailを取り出して表示する関数 <code class="docutils literal notranslate"><span class="pre">process_json1</span></code> を作成せよ．例えば以下のような結果が得られればよい．</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">process_json1</span><span class="p">(</span><span class="n">json_string</span><span class="p">)</span>
+<span class="go">Merritt RUSSELL &lt;merritt.russell@rugstars.us&gt;</span>
+<span class="go">Vasquez MCCORMICK &lt;vasquez.mccormick@metroz.me&gt;</span>
+<span class="go">Leon VALENZUELA &lt;leon.valenzuela@visalia.biz&gt;</span>
+<span class="go">Christina MCCARTHY &lt;christina.mccarthy@zytrex.ca&gt;</span>
+<span class="go">Lula HOUSTON &lt;lula.houston@wrapture.co.uk&gt;</span>
+<span class="go">Wallace COCHRAN &lt;wallace.cochran@ohmnet.biz&gt;</span>
+<span class="go">Ortiz SHEPHERD &lt;ortiz.shepherd@gynk.io&gt;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p><code class="docutils literal notranslate"><span class="pre">json.loads(json_string)</span></code> によってJSON文字列をlistに変換することができる．listの各要素がdictオブジェクトになっているので，それらを逐一処理していけばよい．</p>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>課題6<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>課題5で扱ったJSON文字列から個人を特定できる情報を削除したJSON文字列を返す関数 <code class="docutils literal notranslate"><span class="pre">process_json2</span></code> を作成せよ．例えば以下のような結果が得られればよい．</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">process_json2</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+<span class="go">[</span>
+<span class="go">  {</span>
+<span class="go">    &quot;index&quot;: 0,</span>
+<span class="go">    &quot;age&quot;: 26,</span>
+<span class="go">    &quot;company&quot;: &quot;RUGSTARS&quot;,</span>
+<span class="go">    &quot;favoriteFruit&quot;: &quot;strawberry&quot;</span>
+<span class="go">  },</span>
+<span class="go">  {</span>
+<span class="go">    &quot;index&quot;: 1,</span>
+<span class="go">    &quot;age&quot;: 24,</span>
+<span class="go">    &quot;company&quot;: &quot;METROZ&quot;,</span>
+<span class="go">    &quot;favoriteFruit&quot;: &quot;banana&quot;</span>
+<span class="go">  },</span>
+<span class="go">  {</span>
+<span class="go">    &quot;index&quot;: 2,</span>
+<span class="go">    &quot;age&quot;: 38,</span>
+<span class="go">    &quot;company&quot;: &quot;VISALIA&quot;,</span>
+<span class="go">    &quot;favoriteFruit&quot;: &quot;strawberry&quot;</span>
+<span class="go">  },</span>
+<span class="go">  {</span>
+<span class="go">    &quot;index&quot;: 3,</span>
+<span class="go">    &quot;age&quot;: 36,</span>
+<span class="go">    &quot;company&quot;: &quot;ZYTREX&quot;,</span>
+<span class="go">    &quot;favoriteFruit&quot;: &quot;apple&quot;</span>
+<span class="go">  },</span>
+<span class="go">  {</span>
+<span class="go">    &quot;index&quot;: 4,</span>
+<span class="go">    &quot;age&quot;: 39,</span>
+<span class="go">    &quot;company&quot;: &quot;WRAPTURE&quot;,</span>
+<span class="go">    &quot;favoriteFruit&quot;: &quot;strawberry&quot;</span>
+<span class="go">  },</span>
+<span class="go">  {</span>
+<span class="go">    &quot;index&quot;: 5,</span>
+<span class="go">    &quot;age&quot;: 22,</span>
+<span class="go">    &quot;company&quot;: &quot;OHMNET&quot;,</span>
+<span class="go">    &quot;favoriteFruit&quot;: &quot;strawberry&quot;</span>
+<span class="go">  },</span>
+<span class="go">  {</span>
+<span class="go">    &quot;index&quot;: 6,</span>
+<span class="go">    &quot;age&quot;: 36,</span>
+<span class="go">    &quot;company&quot;: &quot;GYNK&quot;,</span>
+<span class="go">    &quot;favoriteFruit&quot;: &quot;apple&quot;</span>
+<span class="go">  }</span>
+<span class="go">]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p><code class="docutils literal notranslate"><span class="pre">json.dumps(object,</span> <span class="pre">indent=2)</span></code> によって与えられたオブジェクトをJSON文字列に変換することができる．ここで引数indentに与える数値は文字列にしたときのインデント数である．</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, Takanobu Amano
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

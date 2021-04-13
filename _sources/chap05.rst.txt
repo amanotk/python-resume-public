@@ -274,7 +274,7 @@ dict全体を順番に操作する処理には ``.keys()`` ， ``.values()`` ，
 .. 課題
 ..
 
-.. .. include:: kadai/chap04_kadai.rst
+.. include:: kadai/chap05_kadai.rst
 
 -----
 
