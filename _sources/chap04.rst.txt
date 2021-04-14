@@ -26,12 +26,12 @@ Pythonでも基本的な考え方は他の多くのプログラミング言語�
 ::
 
   >>> status = True
-  >>>
+  >>> 
   >>> # ifによる分岐
   >>> if status:
-  >>>     print('status is True')  # インデントが１段下がる
-  >>> else:
-  >>>     print('status is False') # ここも１段下がる
+  ...     print('status is True')  # インデントが１段下がる
+  ... else:
+  ...     print('status is False') # ここも１段下がる
   status is True
 
 のように記述すればよい．ここでインデントが構文ブロックの区切りであったことを思い出して欲しい． ``if`` に限らず至るところでインデントが必要になるので注意しよう．
@@ -46,21 +46,21 @@ Pythonでも基本的な考え方は他の多くのプログラミング言語�
   >>> c = 3
   >>> 
   >>> if a:
-  >>>     print('a = ', a)
-  >>>     # ifを入れ子にする
-  >>>     if a + b > c:
-  >>>         print('a + b > c')
-  >>>     elif a + b < c:
-  >>>         print('a + b < c')
-  >>>     elif a + b == c:
-  >>>         # さらに入れ子にする
-  >>>         if c >= 0:
-  >>>             print('a + b = c and c >= 0')
-  >>>         else:
-  >>>             print('a + b = c and c <  0')
-  >>>     else:
-  >>>         # passを使って「何もしない」ことを明示することもできる
-  >>>         pass
+  ...     print('a = ', a)
+  ...     # ifを入れ子にする
+  ...     if a + b > c:
+  ...         print('a + b > c')
+  ...     elif a + b < c:
+  ...         print('a + b < c')
+  ...     elif a + b == c:
+  ...         # さらに入れ子にする
+  ...         if c >= 0:
+  ...             print('a + b = c and c >= 0')
+  ...         else:
+  ...             print('a + b = c and c <  0')
+  ...     else:
+  ...         # passを使って「何もしない」ことを明示することもできる
+  ...         pass
   >>> # トップレベルのifに対応するelseは省略
   a =  1
   a + b = c and c >= 0
@@ -123,15 +123,15 @@ Pythonでも基本的な考え方は他の多くのプログラミング言語�
 ::
 
   >>> if a < b and a < c:
-  >>>     print('a is smaller than both b and c')
+  ...     print('a is smaller than both b and c')
   a is smaller than both b and c
 
   >>> if a < b or a < c:
-  >>>     print('a is smaller than either b or c')
+  ...     print('a is smaller than either b or c')
   a is smaller than either b or c
 
   >>> if (a == 1 and a + b == c) or not (a == 1 and b == 2 and c == 3):
-  >>>     print('example of complex conditional')
+  ...     print('example of complex conditional')
   example of complex conditional
 
 ちなみにPythonにはCの ``switch`` ，Fortranの ``select`` に対応する構文は存在しないので， ``if`` と ``elif`` で地道に条件判定をつないでいくことになる．
@@ -147,7 +147,7 @@ Pythonにおける反復処理（ループ）の最も基本的な形は以下�
 ::
 
   >>> for i in range(5):
-  >>>     print(i)
+  ...     print(i)
   0
   1
   2
@@ -182,8 +182,8 @@ Fortranなら
 ::
 
   >>> for i in range(0, 5, 2):
-  >>>     print('i     = ', i)
-  >>>     print('i + 1 = ', i+1)
+  ...     print('i     = ', i)
+  ...     print('i + 1 = ', i+1)
   i     =  0
   i + 1 =  1
   i     =  2
@@ -198,8 +198,8 @@ Fortranなら
 ::
 
   >>> for i in range(1, 3):
-  >>>     for j in range(1, 5):
-  >>>         print('i = ', i, ', j = ', j, ', i*j = ', i*j)
+  ...     for j in range(1, 5):
+  ...         print('i = ', i, ', j = ', j, ', i*j = ', i*j)
   i =  1 , j =  1 , i*j =  1
   i =  1 , j =  2 , i*j =  2
   i =  1 , j =  3 , i*j =  3
@@ -226,9 +226,9 @@ Fortranなら
   >>> print('i = ', i, ' --- sin(x) = ', y)
   >>> 
   >>> for i in range(3, 10, 2):
-  >>>     a = -a / ((i-1)*i) * x**2
-  >>>     y = y + a
-  >>>     print('i = ', i, ' --- sin(x) = ', y)
+  ...     a = -a / ((i-1)*i) * x**2
+  ...     y = y + a
+  ...     print('i = ', i, ' --- sin(x) = ', y)
   >>> 
   >>> print('exact   --- sin(x) = ', math.sin(x))
   *** Taylor expansion of sin(x) ***
@@ -250,8 +250,8 @@ Fortranなら
 
   >>> i = 0
   >>> while i < 5:
-  >>>     print(i)
-  >>>     i += 1
+  ...     print(i)
+  ...     i += 1
   0
   1
   2
@@ -266,8 +266,8 @@ Fortranなら
 
   >>> x = 1.0
   >>> while abs(x) > 1.0e-10:
-  >>>    print('x is not small enough')
-  >>>    # xがゼロに近づくまで何かの計算をする
+  ...    print('x is not small enough')
+  ...    # xがゼロに近づくまで何かの計算をする
 
 のような処理を行なうことになる．この例もCなら
 
@@ -302,10 +302,10 @@ Fortranなら
   >>> print('i = ', i, ' --- sin(x) = ', y)
   >>> 
   >>> while abs((ytrue - y)/ytrue) > 1.0e-10:
-  >>>     i += 2
-  >>>     a = -a / ((i-1)*i) * x**2
-  >>>     y = y + a
-  >>>     print('i = ', i, ' --- sin(x) = ', y)
+  ...     i += 2
+  ...     a = -a / ((i-1)*i) * x**2
+  ...     y = y + a
+  ...     print('i = ', i, ' --- sin(x) = ', y)
   >>> 
   >>> print('approximated = ', y)
   >>> print('exact        = ', ytrue)
@@ -345,20 +345,20 @@ Fortranなら
 
   >>> i = 1
   >>> while True:
-  >>>     i += 1
-  >>>     if   i%2 == 0:
-  >>>         print('Multiple of 2 --- ', i)
-  >>>         continue
-  >>>     elif i%3 == 0:
-  >>>         print('Multiple of 3 --- ', i)
-  >>>         continue
-  >>>     elif i%5 == 0:
-  >>>         print('Multiple of 5 --- ', i)
-  >>>         continue
-  >>>     elif i >= 10:
-  >>>         print('Exit')
-  >>>         break
-  >>>     print('Not a multiple of 2, 3, 5 --- ', i)
+  ...     i += 1
+  ...     if   i%2 == 0:
+  ...         print('Multiple of 2 --- ', i)
+  ...         continue
+  ...     elif i%3 == 0:
+  ...         print('Multiple of 3 --- ', i)
+  ...         continue
+  ...     elif i%5 == 0:
+  ...         print('Multiple of 5 --- ', i)
+  ...         continue
+  ...     elif i >= 10:
+  ...         print('Exit')
+  ...         break
+  ...     print('Not a multiple of 2, 3, 5 --- ', i)
   Multiple of 2 ---  2
   Multiple of 3 ---  3
   Multiple of 2 ---  4
@@ -386,7 +386,7 @@ Fortranなら
 
   >>> # 関数定義
   >>> def square(x):
-  >>>     return x**2
+  ...     return x**2
   >>> 
   >>> # 関数呼び出し
   >>> square(2.0)
@@ -415,14 +415,14 @@ Pythonにおける関数定義は以下のように ``def`` を用いて行え�
   >>> #hello1()
   >>> 
   >>> def hello2(name):
-  >>>     hello1() # 実行時にhello1が定義済みであればOK
-  >>>     print('I am', name)
+  ...     hello1() # 実行時にhello1が定義済みであればOK
+  ...     print('I am', name)
   >>> 
   >>> # 以下の呼び出しもエラー(この時点ではhello2が呼び出すhello1は定義されていない)
   >>> #hello2('John')
   >>> 
   >>> def hello1():
-  >>>     print('Hello')
+  ...     print('Hello')
   >>> 
   >>> hello1()
   >>> hello2('John')
@@ -430,7 +430,7 @@ Pythonにおける関数定義は以下のように ``def`` を用いて行え�
   Hello
   I am John
 
-コメントアウトされている2行目の ``hello1`` ，9行目の ``hello2`` の呼び出しはどちらもれエラーとなる．2行目は，この時点で ``hello1`` が定義されていないので明らかである．一方で9行目については，この時点で ``hello2`` が定義されているので一見問題ないように見えるが， ``hello2`` の内部(5行目)で呼び出される ``hello1`` がまだ定義されていないのでエラーになるのである．
+コメントアウトされている2行目の ``hello1`` ，9行目の ``hello2`` の呼び出しはどちらもれエラーとなる．2行目は，この時点で ``hello1`` が定義されていないので明らかである．一方で9行目については，この時点で ``hello2`` が定義されているので一見問題ないように見えるが， ``hello2`` の内部(5行目)で呼び出される ``hello1`` がまだ定義されていないのでエラーになるのである．これはJupyter Notebookを常用しているとセルの評価順序がバラバラになってしまうので曖昧になりやすい点なので注意しておこう．
 
 
 返値
@@ -450,12 +450,12 @@ Pythonにおける関数定義は以下のように ``def`` を用いて行え�
   >>> 
   >>> # approximation of exp(x) via taylor expansion up to order n
   >>> def exp_taylor(x, n):
-  >>>     c = 1.0
-  >>>     f = 1.0
-  >>>     for i in range(n):
-  >>>         c /= (i+1)
-  >>>         f += c * x**(i+1)
-  >>>     return f
+  ...     c = 1.0
+  ...     f = 1.0
+  ...     for i in range(n):
+  ...         c /= (i+1)
+  ...         f += c * x**(i+1)
+  ...     return f
   >>> 
   >>> print('--- exp_taylor ---')
   >>> x = 0.5
@@ -492,16 +492,16 @@ Pythonにおける関数定義は以下のように ``def`` を用いて行え�
   >>> b = 1
   >>> 
   >>> def fibonacci():
-  >>>     # a and b refer to the global variables
-  >>>     global a, b
-  >>>     c = a + b
-  >>>     a = b
-  >>>     b = c
-  >>>     return c
+  ...     # a and b refer to the global variables
+  ...     global a, b
+  ...     c = a + b
+  ...     a = b
+  ...     b = c
+  ...     return c
   >>> 
   >>> print('--- fibonacci ---')
   >>> for i in range(20):
-  >>>     print(fibonacci())
+  ...     print(fibonacci())
   --- fibonacci ---
   0
   1
@@ -527,6 +527,47 @@ Pythonにおける関数定義は以下のように ``def`` を用いて行え�
 ここでは ``a`` ， ``b`` という変数は関数の外(トップレベル)で定義された変数であり，これらに以前の数列の値を保持している．このような変数をグローバル変数と呼ぶ．関数 ``fibonacci`` からこれらの変数にアクセスするには22行目のように ``global`` を用いて，グローバル変数を用いることを明示する．この例では ``a`` および ``b`` は関数内で値が更新されているが，これによってグローバル変数の値も更新される．
 
 このように関数内では基本的に関数内部でのみ有効なローカル変数を用い，グローバル変数へのアクセスが必要なときのみ，それを ``global`` によって明示すればよい [#]_．ただし，グローバル変数は気をつけて使わないとバグの原因となりやすいため推奨できない．引数を使って明示的に値を渡すか，場合によってはクラスを用いて実装する方がよいことが多い．
+
+
+オブジェクト
+============
+
+ここまではあえて曖昧にしてきたが，実はPythonでは全て(変数，関数，モジュールなど)がオブジェクト(正確には組み込みの ``object`` クラスのインスタンス)である．このことを正確に理解するにはオブジェクト指向の考え方が必要になるので，ここでは詳細には立ち入らない．Pythonはオブジェクト指向についての知識がなくても｢なんとなく｣使えるという意味で簡単な言語であるが，本格的に使うには，オブジェクト指向やクラス，インスタンス，イテレータなどの少々難解な概念を理解する必要が出てくる．そういう意味ではPythonを本当に使いこなすのは少し難しいかもしれない．Pythonのいいところは初心者でもある程度簡単に使えるのに加えて，上級者には強力な機能を提供しているところと言えるかもしれない．ここではPythonを使うにあたって必要最低限の知識だけを身につけておこう．
+
+属性
+----
+
+一般にオブジェクトは属性(attribute)と呼ばれるオブジェクトに紐付けられた変数を持つ．例えば｢人間｣には｢名前｣という属性があるし，｢学生｣には｢学生証番号｣という属性がある，といった具合にそれぞれのオブジェクトの実体が固有の変数を持っていると考えればよい．
+
+オブジェクトに紐付けられた属性にアクセスするには ``.`` を用いる．例えば ``sys`` というモジュールもオブジェクトなので，いくつかの属性を持っている．以下の例を見てみよう．
+
+::
+
+  >>> import sys
+  >>> sys.version
+  '3.7.10 (default, Feb 26 2021, 18:47:35) \n[GCC 7.3.0]'
+
+ここでは ``sys.version`` で ``sys`` オブジェクトの ``version`` という属性にアクセスしている．属性は普通の変数と全く同じように用いることができる．
+
+
+メソッド
+--------
+
+属性が変数であったのに対して，メソッド(method)はオブジェクトに紐付けられた関数と考えればよい．例えば｢人間｣には｢走る｣という動作があり，｢学生｣には｢学校に行く｣という動作がある．メソッドはこのようなオブジェクトの動きを表すものと考えるとよい．ただし，必ずしもオブジェクトの動きを表すようなメソッドでなくてもよく，単にオブジェクトに紐付けられた関数と考えることも多い．
+
+例えばPythonプログラムを終了するには ``sys.exit()`` 関数を使うことは :doc:`chap02` で見た通りであるが，これは ``sys`` オブジェクトの ``exit()`` メソッドを呼び出していると考えればよい．他の例も見てみよう．
+
+::
+
+  >>> s = 'python'
+  >>> s.upper()
+  'PYTHON'
+  >>> s.lower()
+  'python'
+  >>> s.capitalize()
+  'Python'
+
+この例では文字列 ``s`` の メソッド ``upper()`` ， ``lower()`` ， ``capitalize()`` をそれぞれ呼び出している．その名前と実行結果から明らかなように，それぞれ大文字に変換，小文字に変換，先頭だけ大文字で以降は小文字に変換した文字列を返す関数である．
 
 
 ..

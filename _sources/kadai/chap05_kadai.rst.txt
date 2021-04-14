@@ -176,7 +176,7 @@ JSON(JavaScript Object Notation)は特にウェブを介したデータのやり
 
 ::
 
-  >>> print(process_json2(s))
+  >>> print(process_json2(json_string))
   [
     {
       "index": 0,
