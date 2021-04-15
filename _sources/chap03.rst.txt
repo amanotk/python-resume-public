@@ -227,7 +227,7 @@ IPythonやJupyter Notebookを使うと対話的にデータのプロットがで
   y = np.cos(x)**2
   plt.plot(x, y)
 
-これをJupyter Notebookで実行すると以下のように図がNotebookに埋め込まれた形で表示される．なおNumPyについては :doc:`chap06` で紹介する．
+これをJupyter Notebookで実行すると以下のように図がNotebookに埋め込まれた形で表示される．なお，ここで用いている ``numpy`` モジュールについては :doc:`chap06` で紹介する．
 
 .. figure:: figure/notebook3.png
    :align: center
