@@ -37,7 +37,7 @@
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="検索" href="search.html" />
     <link rel="next" title="6. NumPy配列の基本" href="chap06.html" />
-    <link rel="prev" title="4. 制御構造と関数" href="chap04.html" /> 
+    <link rel="prev" title="4. 制御構造と関数･オブジェクト" href="chap04.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -85,7 +85,7 @@
 <li class="toctree-l1"><a class="reference internal" href="chap01.html">1. はじめに</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chap02.html">2. Pythonの基本</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chap03.html">3. 対話型の実行方法</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap04.html">4. 制御構造と関数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap04.html">4. 制御構造と関数･オブジェクト</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">5. 便利な組み込み型</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#tuple">5.1. tuple</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#list">5.2. list</a></li>
@@ -95,7 +95,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#id8">5.5.1. 課題1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id9">5.5.2. 課題2</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id10">5.5.3. 課題3</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id11">5.5.4. 課題4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#label-chap05-kadai04">5.5.4. 課題4</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id12">5.5.5. 課題5</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id13">5.5.6. 課題6</a></li>
 </ul>
@@ -187,7 +187,7 @@
 </ul>
 </div>
 <div class="section" id="tuple">
-<h2><a class="toc-backref" href="#id15"><span class="section-number">5.1. </span>tuple</a><a class="headerlink" href="#tuple" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<span id="label-chap05-tuple"></span><h2><a class="toc-backref" href="#id15"><span class="section-number">5.1. </span>tuple</a><a class="headerlink" href="#tuple" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>tupleと呼ばれるオブジェクトは配列のように複数の値をひとまとめにしたものである．後述のlistと同様に，とりあえずはCやFortranの配列と同じようなものとして考えてもらって構わない．</p>
 <p>tupleは複数の値を <code class="docutils literal notranslate"><span class="pre">()</span></code> と <code class="docutils literal notranslate"><span class="pre">,</span></code> (カンマ)で以下のように表される</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
@@ -253,7 +253,7 @@
 <p>この例のように，実はtupleを作成するときの <code class="docutils literal notranslate"><span class="pre">()</span></code> は省略することができる． ここでは <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">a+b,</span> <span class="pre">a-b</span></code> でサイズ2のtuple <code class="docutils literal notranslate"><span class="pre">(a+b,</span> <span class="pre">a-b)</span></code> を関数の返値としている．また，関数の返値としてtupleが返されるときは，その要素をそれぞれ別の変数に代入して使うことができる(この例では <code class="docutils literal notranslate"><span class="pre">c</span></code>, <code class="docutils literal notranslate"><span class="pre">d</span></code>)．なお，これらの変数はtupleではないので，当然変更も可能である．</p>
 </div>
 <div class="section" id="list">
-<h2><a class="toc-backref" href="#id16"><span class="section-number">5.2. </span>list</a><a class="headerlink" href="#list" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<span id="label-chap05-list"></span><h2><a class="toc-backref" href="#id16"><span class="section-number">5.2. </span>list</a><a class="headerlink" href="#list" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>基本的にはlistは要素の書き換えができるtupleと考えてよい．tupleの例をそのままlistに置き換えてみよう．</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -339,7 +339,7 @@
 </td></tr></table></div>
 </div>
 <div class="section" id="range">
-<h2><a class="toc-backref" href="#id17"><span class="section-number">5.3. </span>range</a><a class="headerlink" href="#range" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<span id="label-chap05-range"></span><h2><a class="toc-backref" href="#id17"><span class="section-number">5.3. </span>range</a><a class="headerlink" href="#range" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>これまでも <code class="docutils literal notranslate"><span class="pre">for</span></code> ループで繰り返し回数を指定するときに <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">range(10)</span></code> のような書き方をしてきた．rangeは整数列を表すという点を除けば，listやtupleと同じように値の列を表すオブジェクトである．(従ってtuple, list, rangeを総称してシーケンス型と呼ぶ．)</p>
 <p>rangeは規則的な数列を表すオブジェクトであるため実際にはメモリ上に値を保持せず，必要に応じて値を計算する．すなわち，tupleやlistと異なり，常に使用するメモリは一定であるという特徴がある．(したがって <code class="docutils literal notranslate"><span class="pre">for</span></code> ループなどでの使用に向いている．)</p>
 <p>必要であれば，以下のようにlistやtupleに簡単に変換することが可能である．</p>
@@ -354,7 +354,7 @@
 </td></tr></table></div>
 </div>
 <div class="section" id="dict">
-<h2><a class="toc-backref" href="#id18"><span class="section-number">5.4. </span>dict</a><a class="headerlink" href="#dict" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<span id="label-chap05-dict"></span><h2><a class="toc-backref" href="#id18"><span class="section-number">5.4. </span>dict</a><a class="headerlink" href="#dict" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>dictは辞書(dictionary)や連想配列(ハッシュ)などと呼ばれるオブジェクトである．複数の値を保持するという意味ではlistなどのオブジェクトと同様である．大きな違いは，listを始めとするシーケンス型は要素が順番を持ち，整数添字で各要素を指定するのに対して，dictの要素は順番を持たない．その変わりに文字列の｢キー｣と対応する｢値｣のペアで要素を記憶するのがdictオブジェクトである．dictは多くの値を保持しなければいけないときにも配列やリストのように｢順番｣を気にせず使うことができるので大変便利である．</p>
 <p>以下で簡単な使い方を見てみよう．まずはキーと値のペアからdictオブジェクトを作成する．</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
@@ -549,8 +549,8 @@
 </pre></div>
 </td></tr></table></div>
 </div>
-<div class="section" id="id11">
-<h3><span class="section-number">5.5.4. </span>課題4<a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="label-chap05-kadai04">
+<span id="id11"></span><h3><span class="section-number">5.5.4. </span>課題4<a class="headerlink" href="#label-chap05-kadai04" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>dictは関数のキーワード引数を受け取るときに用いると便利である．</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -808,7 +808,7 @@
         <a href="chap06.html" class="btn btn-neutral float-right" title="6. NumPy配列の基本" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="chap04.html" class="btn btn-neutral float-left" title="4. 制御構造と関数" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="chap04.html" class="btn btn-neutral float-left" title="4. 制御構造と関数･オブジェクト" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

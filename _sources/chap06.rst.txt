@@ -453,7 +453,100 @@ savetxt
 バイナリ入出力
 --------------
 
-To be written.
+NPY形式とNPZ形式
+~~~~~~~~~~~~~~~~
+
+単一のNumPy配列をバイナリのまま(メモリ上のバイト列をそのまま)ファイルに保存するファイル形式がNPY形式である．これはNumPyの独自フォーマットであるが，その形式は `公開 <https://numpy.org/doc/stable/reference/generated/numpy.lib.format.html#module-numpy.lib.format>`_ されている．さらに，複数のNumPy配列を単一のファイルに書き込む形式がNPZ形式である．まずはNumPy配列をこれらの形式で保存する例を見てみよう．NPY形式には ``np.save()`` ， またNPZ形式には ``np.savez()`` をそれぞれ用いる．例として，
+
+::
+
+  >>> x = np.linspace(0.0, np.pi, 100)
+  >>> y = np.cos(x)
+
+によって作成した配列を保存してみよう．
+
+NPY形式で保存するには
+
+::
+
+  >>> np.save('binary1.npy', x)
+
+とすればよい．最初の引数がファイル名，2番目の引数が保存する配列である．また，NPZ形式で複数の配列を保存するには
+
+::
+
+  >>> np.savez('binary1.npz', x_name=x, y_name=y)
+
+のようにすればよい．ここで ``np.savez()`` には複数の配列を与えることになるため，それぞれに名前(この例では ``x_name`` および ``y_name`` )を与えていることに注意しよう．なお，ここではそれぞれ拡張子を ``.npy`` ， ``.npz`` としたファイル名を与えたが，そうでない場合には自動的にこれらの拡張子が付与される．
+
+どちらの形式でもファイルを読み込むときには ``np.load()`` を用いればよい．NPY形式の場合は ``np.load()`` は読み込んだデータを直接NumPy配列として返すので，
+
+::
+
+  >>> xx = np.load("binary1.npy")
+
+のように使えばよい．ここでは ``xx`` に読み込まれた配列が代入される．NPZ形式の場合には ``np.load()`` はdict-likeなオブジェクトを返す．すなわち，
+
+::
+
+  >>> data = np.load("binary2.npz")
+
+のように読み込むと ``data`` はdictのように振る舞うオブジェクトが代入される．したがって，
+
+::
+
+  >>> xx = data['x_name']
+  >>> yy = data['y_name']
+
+によってそれぞれNumPy配列が得られる．ここで ``x_name`` や ``y_name`` は ``np.savez()`` に与えた配列の名前である．
+
+
+生のバイナリファイル
+~~~~~~~~~~~~~~~~~~~~
+C言語の ``fwrite()`` 関数やFortranのストリーム出力で作成されたバイナリファイルは他の情報が何も付与されていない｢生｣のバイナリファイルである．このような生のバイナリファイルは ``np.fromfile()`` で読み込むことができる．基本的にはPython組み込みの ``open()`` 関数でファイルを開き， ``np.fromfile()`` でデータを読めばよい．
+
+::
+
+  >>> # 読み込み専用(r)でファイルを開く
+  >>> fp = open('cbinary.dat', 'r')
+  >>> # np.float64のデータを10個読み込みNumPy配列としてzに代入
+  >>> z = np.fromfile(fp, np.float64, 10)
+  >>> # ファイルを閉じる
+  >>> fp.close()
+
+生のバイナリファイルには余計な情報は一切付与されていないので，データの形式や個数をあらかじめ知っていなければ正しく読み込むことができないことに注意しよう．逆に言えば，それさえ理解してあれば自由自在にファイルを扱うことができる．基本的にファイルの操作は `公式ドキュメント <https://docs.python.org/ja/3/tutorial/inputoutput.html#reading-and-writing-files>`_ に従って行えばよく，読み込んだバイト列をNumPy配列として評価したいときにだけ ``np.fromfile()`` を使えばよい．
+
+unformatted形式(Fortran)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Fortranの `unformatted形式 <https://amanotk.github.io/fortran-resume-public/chap06.html#id10>`_ は，生のバイナリファイルに近いが，ヘッダとフッタが前後に付与されることが多い [#unformatted]_ ．ここでは ``scipy.io.FortranFile`` オブジェクトを用いた読み込み方法を紹介しておこう．
+
+ここでは `Fortran演習 <https://amanotk.github.io/fortran-resume-public/chap06.html#id27>`_  で用いたunformatted形式のバイナリファイル ``helix2.dat`` を読み込んでみよう． ``FortranFile`` オブジェクトの ``read_record()`` メソッドはFortranの1回の ``write`` 文に対応するデータを読み込み，NumPy配列を返す．このファイルには3つの倍精度実数の配列が3回の ``write`` 文で保存されているので，
+
+::
+
+  >>> from scipy.io import FortranFile
+  >>> # ファイルを開く
+  >>> fp = FortranFile('helix2.dat')
+  >>> # 3回のread_recordでそれぞれNumPy配列として読み込み
+  >>> x = fp.read_record(np.float64)
+  >>> y = fp.read_record(np.float64)
+  >>> z = fp.read_record(np.float64)
+  >>> # ファイルを閉じる．
+  >>> fp.close()
+
+のように3回の ``read_record()`` メソッド呼び出しでそれぞれ読み込めばよい．倍精度実数データを読み込むので ``np.float64`` を引数に与えていることに注意しよう．なお，1行目は ``scipy.io`` モジュールから ``FortranFile`` オブジェクトを読み込むことを意味する．
+
+
+HDF5とnetCDF
+~~~~~~~~~~~~
+
+バイナリファイルは高速に読み書きができ，またテキストへの変換がないため，情報が失われることが無いという利点がある．その一方で，可搬性に欠けるという欠点があり，ある計算機で生成したデータが他の計算機ではそのままでは読めないという問題が起こることがある．また，データ読み込みの際にはあらかじめ何が，どのような形式で書かれているかが分からなければデータの読み込みができない．このような欠点を補うファイルフォーマットとして比較的広く使われているのがHDF5である．C言語やFortranでHDF5を扱うのは少々面倒であるが，Pythonであれば `h5py <https://www.h5py.org/>`_ というモジュールを使うことで簡単に操作できる．
+
+また同じような目的でnetCDFというデータ形式もあり，気象などの分野で使われているようである．最近のnetCDFは実は中身はHDF5で書かれているようなので，pythonであればやはりh5pyで操作が出来るし，netCDF専用のPythonモジュール( `netcdf4-python <http://unidata.github.io/netcdf4-python/>`_ )も存在する．
+
+数値シミュレーションにはC/C++やFortranなどの高速な言語が用いられることが多いが，シミュレーションの結果をこれらの形式で出力しておけば，Pythonを用いた結果の解析が非常にやりやすくなるのである．
+
 
 各種演算
 ========
@@ -725,9 +818,13 @@ Fortranとの違いは負のインデックスを指定すると後ろから順�
 
   疑り深い人はもっと直接的に確かめてみよう． ``shares_memory()`` 関数は与えられた2つのNumPy配列が同じメモリ領域を指しているかどうかをチェックする．これを使うと
 
-::
+  ::
 
-  >>> np.shares_memory(x, y)
-  True
+    >>> np.shares_memory(x, y)
+    True
 
-のように，確かに ``x`` と ``y`` が同じメモリ領域を指していることがわかる．
+  のように，確かに ``x`` と ``y`` が同じメモリ領域を指していることがわかる．
+
+.. [#unformatted]
+
+  ただし，unformatted形式は標準化されておらず，コンパイラやエンディアン(CPUの種類)などに依存する形式なので，可能な限りその使用を避けた方が無難である．(比較的新しいストリーム入出力を使えばよい．)

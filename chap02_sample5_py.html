@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>chap02/sample1.py &mdash; Python演習(地球惑星物理学演習)</title>
+  <title>chap02/sample5.py &mdash; Python演習(地球惑星物理学演習)</title>
   
 
   
@@ -131,7 +131,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>chap02/sample1.py</li>
+      <li>chap02/sample5.py</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -148,9 +148,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="chap02-sample1-py">
-<h1>chap02/sample1.py<a class="headerlink" href="#chap02-sample1-py" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p><a class="reference external" href="sample/chap02/sample1.py">サンプルコードのダウンロード</a></p>
+  <div class="section" id="chap02-sample5-py">
+<h1>chap02/sample5.py<a class="headerlink" href="#chap02-sample5-py" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p><a class="reference external" href="sample/chap02/sample5.py">サンプルコードのダウンロード</a></p>
 <div class="highlight-py notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -172,28 +172,44 @@
 <span class="normal">19</span>
 <span class="normal">20</span>
 <span class="normal">21</span>
-<span class="normal">22</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
 <span class="c1"># -*- coding: utf-8 -*-</span>
 
-<span class="c1"># これはコメント行</span>
-<span class="k">if</span> <span class="mi">1</span><span class="p">:</span>
-    <span class="c1"># pythonでは構文ブロックは全てインデント（字下げ）によって区切られる</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This will be printed out&#39;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="c1"># ここには到達しない</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This will be ignored&#39;</span><span class="p">)</span>
+<span class="c1">###</span>
+<span class="c1">### printf形式</span>
+<span class="c1">###</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> is more powerful than </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="s1">&#39;Python&#39;</span><span class="p">,</span> <span class="s1">&#39;Fortran&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 
+<span class="n">i</span> <span class="o">=</span> <span class="mi">2021</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mf">3.1415</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">2.7182</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;i  = </span><span class="si">%-5d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">i</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;pi = </span><span class="si">%4.2f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;e  = </span><span class="si">%5.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">b</span><span class="p">))</span>
 
-<span class="c1"># ここでは sys という名前のモジュールを import する</span>
-<span class="c1"># プログラムを実行途中で終了するには sys.exit を呼ぶ</span>
-<span class="c1"># sys.exitに与える整数は終了コード（通常は0が正常終了でそれ以外は異常終了）</span>
-<span class="kn">import</span> <span class="nn">sys</span>
+<span class="c1">###</span>
+<span class="c1">### format()</span>
+<span class="c1">###</span>
+<span class="c1"># &quot;Python is more powerful than Fortran&quot; が出力される</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> is more powerful than </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Python&#39;</span><span class="p">,</span> <span class="s1">&#39;Fortran&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 
-<span class="k">if</span> <span class="mi">1</span><span class="p">:</span>
-    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># &quot;Fortran is more powerful than Python&quot; が出力される</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{1}</span><span class="s2"> is more powerful than </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Python&#39;</span><span class="p">,</span> <span class="s1">&#39;Fortran&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;i  = </span><span class="si">{:-5d}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;pi = </span><span class="si">{:4.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;e  = </span><span class="si">{:5.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
 </pre></div>
 </td></tr></table></div>
 </div>

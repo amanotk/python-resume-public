@@ -198,6 +198,64 @@ CやFortranでは整数同士で割り算( ``/`` 演算子)をすると返値も
 
 プログラムに入力を与える方法は他にも色々と考えられるが，まずはこの一番簡単な方法を使うことにしよう．
 
+
+文字列フォーマット
+==================
+
+Pythonの文字列のフォーマットの仕方について簡単に触れておこう．ここではよく使われるprintf形式と ``format()`` の使い方について最低限の情報を述べるにとどめる．printf形式はC言語とほぼ同じで，また古いPythonでも使えたことから慣れている人(筆者のことである)が好んで使う傾向がある． ``format()`` はprintf形式の問題を解決するために導入されたという経緯があるようなので，今から覚えるのであればこちらの方がよいかもしれない．いずれにせよ，一気に全て覚えるようなものではなく，必要に応じてPythonの公式ドキュメント等を参照して少しずつ慣れていけば十分である．
+
+printf形式
+----------
+
+C言語のprintfで用いられるのとほぼ同じ要領で文字列のフォーマットができる．これには ``%`` を用いて，例えば以下のように用いる．
+
+.. literalinclude:: sample/chap02/sample5.py
+  :lines: 7-8
+  :lineno-match:
+  :caption: :doc:`sample5.py <chap02_sample5_py>` 抜粋
+
+ここで4行目の文字列中の ``%s`` はフォーマットを指定子の一種で，ここでは与えられた変数を文字列としてフォーマットすることを指定している．ここでは与えられた ``'Python'`` および ``'Fortran'`` をそれぞれ文字列としてフォーマットし，フォーマットされた結果の文字列を変数 ``s`` に代入している．
+
+C言語を知っている人はC言語のprintfと基本的に同じフォーマット指定子が使えると考えてよい．例えば以下のように用いることができる．
+
+.. literalinclude:: sample/chap02/sample5.py
+  :lines: 10-15
+  :lineno-match:
+  :caption: :doc:`sample5.py <chap02_sample5_py>` 抜粋
+
+
+フォーマット指定子の詳細については `公式ドキュメント <https://docs.python.org/ja/3/library/stdtypes.html#old-string-formatting>`_ を参照のこと．なお， ``%`` に続く ``()`` は :ref:`tupleオブジェクト <label_chap05_tuple>` である．ここに :ref:`dictオブジェクト <label_chap05_dict>` を与えることも可能であるがここでは省略する．
+
+format()
+--------
+
+Pythonの文字列は ``format()`` というメソッド [#method]_ を持ち，これを用いることで文字列のフォーマットができる．以下に例を見てみよう．
+
+.. literalinclude:: sample/chap02/sample5.py
+  :lines: 21-22
+  :lineno-match:
+  :caption: :doc:`sample5.py <chap02_sample5_py>` 抜粋
+
+のように ``{}`` が埋め込まれた文字列の ``format()`` メソッドに渡した値が順に ``{}`` にフォーマットされる．デフォルトでは ``{}`` の出現順と ``format()`` の引数の位置(順番)が対応しているので，この例では"Python is more powerful than Fortran"が出力される．
+
+実際には ``{}`` には引数の位置を指定することができる．以下の例ではこれを陽に指定したもので，この結果"Fortran is more powerful than Python"が出力されることになる．
+
+.. literalinclude:: sample/chap02/sample5.py
+  :lines: 25-26
+  :lineno-match:
+  :caption: :doc:`sample5.py <chap02_sample5_py>` 抜粋
+
+引数位置に加えて， ``{引数の位置:フォーマット}`` のような形で出力のフォーマットを指定することもできる指定の仕方はprintf形式に似ているが，細かいところが少し違っている．以下の例はprintf形式の例と全く同じフォーマットで値を出力している．
+
+.. literalinclude:: sample/chap02/sample5.py
+  :lines: 28-30
+  :lineno-match:
+  :caption: :doc:`sample5.py <chap02_sample5_py>` 抜粋
+
+なお，ここで｢引数の位置｣は省略されていることに注意して欲しい．
+
+また ``{}`` に与える引数指定には，引数の順番だけでなく ``format()`` メソッドに与えられた引数名( :ref:`キーワード引数 <label_chap05_kadai04>` 参照)で指定することも可能である．詳細なフォーマット指定の方法とあわせて `公式ドキュメント <https://docs.python.org/ja/3/library/string.html#formatstrings>`_ を参照して欲しい．
+
 ..
 .. 課題
 ..
@@ -226,3 +284,8 @@ CやFortranでは整数同士で割り算( ``/`` 演算子)をすると返値も
 .. [#readability]
 
    もちろんこれは程度の問題である．Pythonであっても読みにくいコードが絶対にできないわけではない．
+
+
+.. [#method]
+
+   とりあえず関数と同じ意味だと思ってよい．:ref:`ここ <label_chap04_object>` で紹介する．
