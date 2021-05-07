@@ -185,9 +185,9 @@
 <span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span> <span class="s1">&#39;b-&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="figure align-center" id="id18">
+<div class="figure align-center" id="id19">
 <img alt="kadai/figure/chap06_trigonometric.png" src="kadai/figure/chap06_trigonometric.png" />
-<p class="caption"><span class="caption-text">課題2</span><a class="headerlink" href="#id18" title="この画像へのパーマリンク">¶</a></p>
+<p class="caption"><span class="caption-text">課題2</span><a class="headerlink" href="#id19" title="この画像へのパーマリンク">¶</a></p>
 </div>
 </div>
 <div class="section" id="id6">
@@ -241,9 +241,9 @@
 </pre></div>
 </div>
 <p>とすればよい．結果は以下の通りである．</p>
-<div class="figure align-center" id="id19">
+<div class="figure align-center" id="id20">
 <img alt="kadai/figure/chap06_logistic.png" src="kadai/figure/chap06_logistic.png" />
-<p class="caption"><span class="caption-text">課題4</span><a class="headerlink" href="#id19" title="この画像へのパーマリンク">¶</a></p>
+<p class="caption"><span class="caption-text">課題4</span><a class="headerlink" href="#id20" title="この画像へのパーマリンク">¶</a></p>
 </div>
 <p>このような写像はロジスティック写像と呼ばれ，非常に単純な式ながら一定の条件を満たすときにはカオスを生み出すことが知られている．</p>
 </div>
@@ -284,9 +284,9 @@
 </pre></div>
 </div>
 <p>これによって得られる図は以下の通りである．</p>
-<div class="figure align-center" id="id20">
+<div class="figure align-center" id="id21">
 <img alt="kadai/figure/chap06_integration.png" src="kadai/figure/chap06_integration.png" />
-<p class="caption"><span class="caption-text">課題5</span><a class="headerlink" href="#id20" title="この画像へのパーマリンク">¶</a></p>
+<p class="caption"><span class="caption-text">課題5</span><a class="headerlink" href="#id21" title="この画像へのパーマリンク">¶</a></p>
 </div>
 </div>
 <div class="section" id="id10">
@@ -341,9 +341,9 @@
 <span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="figure align-center" id="id21">
+<div class="figure align-center" id="id22">
 <img alt="kadai/figure/chap06_score.png" src="kadai/figure/chap06_score.png" />
-<p class="caption"><span class="caption-text">課題7</span><a class="headerlink" href="#id21" title="この画像へのパーマリンク">¶</a></p>
+<p class="caption"><span class="caption-text">課題7</span><a class="headerlink" href="#id22" title="この画像へのパーマリンク">¶</a></p>
 </div>
 </div>
 <div class="section" id="id12">
@@ -405,6 +405,34 @@
 <h2>課題10<a class="headerlink" href="#id14" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="admonition seealso">
 <p class="admonition-title">参考</p>
+<p>1次元のセル・オートマトンについては <a class="reference external" href="https://ja.wikipedia.org/wiki/%E3%82%BB%E3%83%AB%E3%83%BB%E3%82%AA%E3%83%BC%E3%83%88%E3%83%9E%E3%83%88%E3%83%B3#1%E6%AC%A1%E5%85%83%E3%82%BB%E3%83%AB%E3%83%BB%E3%82%AA%E3%83%BC%E3%83%88%E3%83%9E%E3%83%88%E3%83%B3">Wikipedia</a> を参照．</p>
+</div>
+<p>1次元のセル・オートマトンを実装しよう．具体的には，以下のような関数を作成し，10進数で与えられたルール <code class="docutils literal notranslate"><span class="pre">decrule</span></code> に基づいて，一次元配列 <code class="docutils literal notranslate"><span class="pre">x</span></code> を初期値とし， <code class="docutils literal notranslate"><span class="pre">step</span></code> 数だけ状態遷移を求めよう．関数の返値は2次元配列で，各ステップ，各セルの状態を表すものとする．ただし，境界の値は初期値のまま固定でよい．</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cellular_automaton</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="n">decrule</span><span class="p">):</span>
+    <span class="s2">&quot;初期値xからstep数だけセル・オートマトンによる状態遷移を求める&quot;</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>例えば以下の例ではルール90を採用し，初期値として中央のセルのみを1とし，それ以外は0を与えている．</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="mi">256</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">n</span><span class="o">//</span><span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xzero</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xzero</span><span class="p">[</span><span class="n">m</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">cellular_automaton</span><span class="p">(</span><span class="n">xzero</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">gray_r</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>これはシェルピンスキーのギャスケット（下図）を生成することが知られている．</p>
+<div class="figure align-center" id="id23">
+<img alt="kadai/figure/chap06_rule90.png" src="kadai/figure/chap06_rule90.png" />
+<p class="caption"><span class="caption-text">課題10</span><a class="headerlink" href="#id23" title="この画像へのパーマリンク">¶</a></p>
+</div>
+</div>
+<div class="section" id="id15">
+<h2>課題11<a class="headerlink" href="#id15" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="admonition seealso">
+<p class="admonition-title">参考</p>
 <p>アルゴリズムについては <a class="reference external" href="https://amanotk.github.io/fortran-resume-public/chap08.html#id18">こちら</a> を参照．</p>
 </div>
 <p>逆関数法を使って指数分布</p>
@@ -431,13 +459,13 @@
 </pre></div>
 </div>
 <p>この結果は以下のようになる．</p>
-<div class="figure align-center" id="id22">
+<div class="figure align-center" id="id24">
 <img alt="kadai/figure/chap06_exponential.png" src="kadai/figure/chap06_exponential.png" />
-<p class="caption"><span class="caption-text">課題10</span><a class="headerlink" href="#id22" title="この画像へのパーマリンク">¶</a></p>
+<p class="caption"><span class="caption-text">課題11</span><a class="headerlink" href="#id24" title="この画像へのパーマリンク">¶</a></p>
 </div>
 </div>
-<div class="section" id="id16">
-<h2>課題11<a class="headerlink" href="#id16" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="id17">
+<h2>課題12<a class="headerlink" href="#id17" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="admonition seealso">
 <p class="admonition-title">参考</p>
 <p>アルゴリズムについては <a class="reference external" href="https://amanotk.github.io/fortran-resume-public/chap08.html#id19">こちら</a> を参照．</p>

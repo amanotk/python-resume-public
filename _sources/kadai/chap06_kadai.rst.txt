@@ -338,6 +338,41 @@
 
 .. seealso::
 
+  1次元のセル・オートマトンについては `Wikipedia <https://ja.wikipedia.org/wiki/%E3%82%BB%E3%83%AB%E3%83%BB%E3%82%AA%E3%83%BC%E3%83%88%E3%83%9E%E3%83%88%E3%83%B3#1%E6%AC%A1%E5%85%83%E3%82%BB%E3%83%AB%E3%83%BB%E3%82%AA%E3%83%BC%E3%83%88%E3%83%9E%E3%83%88%E3%83%B3>`_ を参照．
+
+1次元のセル・オートマトンを実装しよう．具体的には，以下のような関数を作成し，10進数で与えられたルール ``decrule`` に基づいて，一次元配列 ``x`` を初期値とし， ``step`` 数だけ状態遷移を求めよう．関数の返値は2次元配列で，各ステップ，各セルの状態を表すものとする．ただし，境界の値は初期値のまま固定でよい．
+
+::
+
+  def cellular_automaton(x, step, decrule):
+      "初期値xからstep数だけセル・オートマトンによる状態遷移を求める"
+      pass
+
+例えば以下の例ではルール90を採用し，初期値として中央のセルのみを1とし，それ以外は0を与えている．
+
+::
+
+  >>> n = 256
+  >>> m = n//2
+  >>> xzero = np.zeros((n,), dtype=np.int32)
+  >>> xzero[m] = 1
+  >>> 
+  >>> y = cellular_automaton(xzero, m, 90)
+  >>> plt.imshow(y, origin='lower', cmap=plt.cm.gray_r)
+
+
+これはシェルピンスキーのギャスケット（下図）を生成することが知られている．
+
+.. figure:: figure/chap06_rule90.png
+    :align: center
+
+    課題10
+
+課題11
+------
+
+.. seealso::
+
   アルゴリズムについては `こちら <https://amanotk.github.io/fortran-resume-public/chap08.html#id18>`_ を参照．
 
 逆関数法を使って指数分布
@@ -376,10 +411,10 @@
 .. figure:: figure/chap06_exponential.png
     :align: center
 
-    課題10
+    課題11
 
 
-課題11
+課題12
 ------
 
 .. seealso::

@@ -139,7 +139,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#id46">6.9.8. 課題8</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id47">6.9.9. 課題9</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id48">6.9.10. 課題10</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id50">6.9.11. 課題11</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id49">6.9.11. 課題11</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id51">6.9.12. 課題12</a></li>
 </ul>
 </li>
 </ul>
@@ -207,7 +208,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="numpy">
-<h1><a class="toc-backref" href="#id58"><span class="section-number">6. </span>NumPy配列の基本</a><a class="headerlink" href="#numpy" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<h1><a class="toc-backref" href="#id60"><span class="section-number">6. </span>NumPy配列の基本</a><a class="headerlink" href="#numpy" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <p>NumPyと呼ばれるライブラリの存在はPythonが広く科学技術計算に用いられるようになった最も大きな要因の一つであろう．ここでは科学技術計算で用いられる大規模データの効率的な扱いを可能にするNumPyの多次元配列オブジェクトについて学ぼう．なお，以降はこの多次元配列オブジェクトを便宜的にNumPy配列と呼ぶことにする．</p>
 <div class="admonition seealso">
 <p class="admonition-title">参考</p>
@@ -216,23 +217,23 @@
 <div class="contents topic" id="id2">
 <p class="topic-title">この章の内容</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#numpy" id="id58">NumPy配列の基本</a></p>
+<li><p><a class="reference internal" href="#numpy" id="id60">NumPy配列の基本</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id3" id="id59">NumPyについて</a></p></li>
-<li><p><a class="reference internal" href="#id7" id="id60">基本的な使い方</a></p></li>
-<li><p><a class="reference internal" href="#id10" id="id61">配列オブジェクト</a></p></li>
-<li><p><a class="reference internal" href="#id13" id="id62">生成</a></p></li>
-<li><p><a class="reference internal" href="#id15" id="id63">入出力</a></p></li>
-<li><p><a class="reference internal" href="#id23" id="id64">各種演算</a></p></li>
-<li><p><a class="reference internal" href="#id30" id="id65">インデックス操作</a></p></li>
-<li><p><a class="reference internal" href="#id33" id="id66">形状操作</a></p></li>
-<li><p><a class="reference internal" href="#id35" id="id67">第6章 演習課題</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id61">NumPyについて</a></p></li>
+<li><p><a class="reference internal" href="#id7" id="id62">基本的な使い方</a></p></li>
+<li><p><a class="reference internal" href="#id10" id="id63">配列オブジェクト</a></p></li>
+<li><p><a class="reference internal" href="#id13" id="id64">生成</a></p></li>
+<li><p><a class="reference internal" href="#id15" id="id65">入出力</a></p></li>
+<li><p><a class="reference internal" href="#id23" id="id66">各種演算</a></p></li>
+<li><p><a class="reference internal" href="#id30" id="id67">インデックス操作</a></p></li>
+<li><p><a class="reference internal" href="#id33" id="id68">形状操作</a></p></li>
+<li><p><a class="reference internal" href="#id35" id="id69">第6章 演習課題</a></p></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="section" id="id3">
-<h2><a class="toc-backref" href="#id59"><span class="section-number">6.1. </span>NumPyについて</a><a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id61"><span class="section-number">6.1. </span>NumPyについて</a><a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p><a class="reference external" href="https://numpy.org/">NumPy</a> はPythonによる科学技術計算の根幹をなすライブラリである <a class="footnote-reference brackets" href="#numpylib" id="id5">1</a> ．このライブラリが提供する <code class="docutils literal notranslate"><span class="pre">numpy</span></code> というモジュールを使うためには</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
@@ -241,7 +242,7 @@
 <p>NumPy配列(NumPyが提供する多次元配列オブジェクト)は正確には <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code> オブジェクトである <a class="footnote-reference brackets" href="#np-ndarray" id="id6">2</a>．一般にPythonはスクリプト言語に分類される動作の遅い言語であるが，NumPy配列を用いることで非常に高速な数値演算が可能となる．これはNumPy配列がCで実装されており，NumPy配列の演算は「うまく」使えばほとんどが内部的にはCのコードとして実行されるからである．詳細は以下で追々見ていくことにしよう．</p>
 </div>
 <div class="section" id="id7">
-<h2><a class="toc-backref" href="#id60"><span class="section-number">6.2. </span>基本的な使い方</a><a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id62"><span class="section-number">6.2. </span>基本的な使い方</a><a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>まずは基礎の基礎を抑えよう．例えば配列を作る最も簡単な方法の一つとして</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
@@ -269,7 +270,7 @@
 <p>Pythonは様々なことが手軽に実現できる非常に便利な言語であるが，ネックとなるのはその処理の遅さである．(したがって，何も考えずに書くといとも簡単に遅いコードが出来上がってしまう．）NumPy配列を使うことで重たい処理だけを他の言語で書かれた高速なライブラリに押し付けることができ，手軽さと計算速度の速さを両立しているわけである．したがって， <strong>Pythonではループ処理をするのは可能な限り避け，可能な限り配列演算を利用するのが鉄則</strong> である．</p>
 </div>
 <div class="section" id="id10">
-<h2><a class="toc-backref" href="#id61"><span class="section-number">6.3. </span>配列オブジェクト</a><a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id63"><span class="section-number">6.3. </span>配列オブジェクト</a><a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>NumPy配列オブジェクト <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code> は多次元配列データを格納し効率的な演算を実現する．</p>
 <div class="section" id="id11">
 <h3><span class="section-number">6.3.1. </span>属性<a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク">¶</a></h3>
@@ -408,7 +409,7 @@
 </div>
 </div>
 <div class="section" id="id13">
-<h2><a class="toc-backref" href="#id62"><span class="section-number">6.4. </span>生成</a><a class="headerlink" href="#id13" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id64"><span class="section-number">6.4. </span>生成</a><a class="headerlink" href="#id13" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>配列を生成するにはいくつかの方法があるが，以下に何もないところから配列を作るための典型的な例をいくつか示そう．</p>
 <div class="section" id="id14">
 <h3><span class="section-number">6.4.1. </span>シーケンス型からの生成<a class="headerlink" href="#id14" title="このヘッドラインへのパーマリンク">¶</a></h3>
@@ -576,7 +577,7 @@
 </div>
 </div>
 <div class="section" id="id15">
-<h2><a class="toc-backref" href="#id63"><span class="section-number">6.5. </span>入出力</a><a class="headerlink" href="#id15" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id65"><span class="section-number">6.5. </span>入出力</a><a class="headerlink" href="#id15" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>NumPyは配列の入出力用に便利な関数が用意されており，非常に簡単に使うことができる．</p>
 <div class="section" id="id16">
 <h3><span class="section-number">6.5.1. </span>テキスト入出力<a class="headerlink" href="#id16" title="このヘッドラインへのパーマリンク">¶</a></h3>
@@ -747,7 +748,7 @@
 </div>
 <div class="section" id="unformatted-fortran">
 <h4><span class="section-number">6.5.2.3. </span>unformatted形式(Fortran)<a class="headerlink" href="#unformatted-fortran" title="このヘッドラインへのパーマリンク">¶</a></h4>
-<p>Fortranの <a class="reference external" href="https://amanotk.github.io/fortran-resume-public/chap06.html#id10">unformatted形式</a> は，生のバイナリファイルに近いが，ヘッダとフッタが前後に付与されることが多い <a class="footnote-reference brackets" href="#id52" id="id22">8</a> ．ここでは <code class="docutils literal notranslate"><span class="pre">scipy.io.FortranFile</span></code> オブジェクトを用いた読み込み方法を紹介しておこう．</p>
+<p>Fortranの <a class="reference external" href="https://amanotk.github.io/fortran-resume-public/chap06.html#id10">unformatted形式</a> は，生のバイナリファイルに近いが，ヘッダとフッタが前後に付与されることが多い <a class="footnote-reference brackets" href="#id53" id="id22">8</a> ．ここでは <code class="docutils literal notranslate"><span class="pre">scipy.io.FortranFile</span></code> オブジェクトを用いた読み込み方法を紹介しておこう．</p>
 <p>ここでは <a class="reference external" href="https://amanotk.github.io/fortran-resume-public/chap06.html#id27">Fortran演習</a>  で用いたunformatted形式のバイナリファイル <code class="docutils literal notranslate"><span class="pre">helix2.dat</span></code> を読み込んでみよう． <code class="docutils literal notranslate"><span class="pre">FortranFile</span></code> オブジェクトの <code class="docutils literal notranslate"><span class="pre">read_record()</span></code> メソッドはFortranの1回の <code class="docutils literal notranslate"><span class="pre">write</span></code> 文に対応するデータを読み込み，NumPy配列を返す．このファイルには3つの倍精度実数の配列が3回の <code class="docutils literal notranslate"><span class="pre">write</span></code> 文で保存されているので，</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
@@ -779,7 +780,7 @@
 </div>
 </div>
 <div class="section" id="id23">
-<h2><a class="toc-backref" href="#id64"><span class="section-number">6.6. </span>各種演算</a><a class="headerlink" href="#id23" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id66"><span class="section-number">6.6. </span>各種演算</a><a class="headerlink" href="#id23" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="section" id="id24">
 <h3><span class="section-number">6.6.1. </span>算術演算<a class="headerlink" href="#id24" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>以下の例を見れば一目瞭然であろう．基本的にFortranの配列と同様な演算ができると思ってよい．</p>
@@ -871,7 +872,7 @@
 </div>
 </div>
 <div class="section" id="id30">
-<h2><a class="toc-backref" href="#id65"><span class="section-number">6.7. </span>インデックス操作</a><a class="headerlink" href="#id30" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id67"><span class="section-number">6.7. </span>インデックス操作</a><a class="headerlink" href="#id30" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>NumPyのインデックス操作は基本的にFortranの配列操作と似ているのでFortranユーザーには馴染みやすいだろう．</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -1004,7 +1005,7 @@
 <p>このように1行目と4行目では動作が異なる．Fortranでは4行目のように記述しても配列の全要素に10を代入してくれるが，Pythonでは <strong>新しい変数を作り，そこに整数10を代入</strong> する．これは動的型付け言語のPythonならではの動作である．配列の全要素にスカラー値を代入する際にはインデックスに <code class="docutils literal notranslate"><span class="pre">:</span></code> (もしくは <code class="docutils literal notranslate"><span class="pre">...</span></code> )を指定しなければならない．</p>
 </div>
 <div class="section" id="id33">
-<h2><a class="toc-backref" href="#id66"><span class="section-number">6.8. </span>形状操作</a><a class="headerlink" href="#id33" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id68"><span class="section-number">6.8. </span>形状操作</a><a class="headerlink" href="#id33" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>配列の形状は決して固定のものではない．実はこれまでの例にも既に出てきたが，</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
@@ -1077,7 +1078,7 @@
 <p>なお，ここで紹介した形状操作はあくまでも初級編である．NumPyの演算速度を最大限に活かそうと思うと，このような配列形状の変更には思いのほか頻繁に出くわすことになるので少しずつ慣れていこう．</p>
 </div>
 <div class="section" id="id35">
-<h2><a class="toc-backref" href="#id67"><span class="section-number">6.9. </span>第6章 演習課題</a><a class="headerlink" href="#id35" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id69"><span class="section-number">6.9. </span>第6章 演習課題</a><a class="headerlink" href="#id35" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
 <p>以下の課題はJupyter Notebookの使用を前提としているが，もちろん他の実行環境でも同等の処理を実現出来ていれば問題ない．ただし，この章の目的はNumPy配列の使い方の習得なので，以下の課題では <strong>可能な限りループを使わず</strong> NumPyの機能を活かした実装を目指そう．</p>
@@ -1119,9 +1120,9 @@
 <span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span> <span class="s1">&#39;b-&#39;</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
-<div class="figure align-center" id="id53">
+<div class="figure align-center" id="id54">
 <img alt="_images/chap06_trigonometric.png" src="_images/chap06_trigonometric.png" />
-<p class="caption"><span class="caption-text">課題2</span><a class="headerlink" href="#id53" title="この画像へのパーマリンク">¶</a></p>
+<p class="caption"><span class="caption-text">課題2</span><a class="headerlink" href="#id54" title="この画像へのパーマリンク">¶</a></p>
 </div>
 </div>
 <div class="section" id="id40">
@@ -1189,9 +1190,9 @@
 </pre></div>
 </td></tr></table></div>
 <p>とすればよい．結果は以下の通りである．</p>
-<div class="figure align-center" id="id54">
+<div class="figure align-center" id="id55">
 <img alt="_images/chap06_logistic.png" src="_images/chap06_logistic.png" />
-<p class="caption"><span class="caption-text">課題4</span><a class="headerlink" href="#id54" title="この画像へのパーマリンク">¶</a></p>
+<p class="caption"><span class="caption-text">課題4</span><a class="headerlink" href="#id55" title="この画像へのパーマリンク">¶</a></p>
 </div>
 <p>このような写像はロジスティック写像と呼ばれ，非常に単純な式ながら一定の条件を満たすときにはカオスを生み出すことが知られている．</p>
 </div>
@@ -1251,9 +1252,9 @@
 </pre></div>
 </td></tr></table></div>
 <p>これによって得られる図は以下の通りである．</p>
-<div class="figure align-center" id="id55">
+<div class="figure align-center" id="id56">
 <img alt="_images/chap06_integration.png" src="_images/chap06_integration.png" />
-<p class="caption"><span class="caption-text">課題5</span><a class="headerlink" href="#id55" title="この画像へのパーマリンク">¶</a></p>
+<p class="caption"><span class="caption-text">課題5</span><a class="headerlink" href="#id56" title="この画像へのパーマリンク">¶</a></p>
 </div>
 </div>
 <div class="section" id="id44">
@@ -1331,9 +1332,9 @@
 <span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
-<div class="figure align-center" id="id56">
+<div class="figure align-center" id="id57">
 <img alt="_images/chap06_score.png" src="_images/chap06_score.png" />
-<p class="caption"><span class="caption-text">課題7</span><a class="headerlink" href="#id56" title="この画像へのパーマリンク">¶</a></p>
+<p class="caption"><span class="caption-text">課題7</span><a class="headerlink" href="#id57" title="この画像へのパーマリンク">¶</a></p>
 </div>
 </div>
 <div class="section" id="id46">
@@ -1425,6 +1426,42 @@
 <h3><span class="section-number">6.9.10. </span>課題10<a class="headerlink" href="#id48" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <div class="admonition seealso">
 <p class="admonition-title">参考</p>
+<p>1次元のセル・オートマトンについては <a class="reference external" href="https://ja.wikipedia.org/wiki/%E3%82%BB%E3%83%AB%E3%83%BB%E3%82%AA%E3%83%BC%E3%83%88%E3%83%9E%E3%83%88%E3%83%B3#1%E6%AC%A1%E5%85%83%E3%82%BB%E3%83%AB%E3%83%BB%E3%82%AA%E3%83%BC%E3%83%88%E3%83%9E%E3%83%88%E3%83%B3">Wikipedia</a> を参照．</p>
+</div>
+<p>1次元のセル・オートマトンを実装しよう．具体的には，以下のような関数を作成し，10進数で与えられたルール <code class="docutils literal notranslate"><span class="pre">decrule</span></code> に基づいて，一次元配列 <code class="docutils literal notranslate"><span class="pre">x</span></code> を初期値とし， <code class="docutils literal notranslate"><span class="pre">step</span></code> 数だけ状態遷移を求めよう．関数の返値は2次元配列で，各ステップ，各セルの状態を表すものとする．ただし，境界の値は初期値のまま固定でよい．</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cellular_automaton</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="n">decrule</span><span class="p">):</span>
+    <span class="s2">&quot;初期値xからstep数だけセル・オートマトンによる状態遷移を求める&quot;</span>
+    <span class="k">pass</span>
+</pre></div>
+</td></tr></table></div>
+<p>例えば以下の例ではルール90を採用し，初期値として中央のセルのみを1とし，それ以外は0を与えている．</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="mi">256</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">n</span><span class="o">//</span><span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xzero</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xzero</span><span class="p">[</span><span class="n">m</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">cellular_automaton</span><span class="p">(</span><span class="n">xzero</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">gray_r</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>これはシェルピンスキーのギャスケット（下図）を生成することが知られている．</p>
+<div class="figure align-center" id="id58">
+<img alt="_images/chap06_rule90.png" src="_images/chap06_rule90.png" />
+<p class="caption"><span class="caption-text">課題10</span><a class="headerlink" href="#id58" title="この画像へのパーマリンク">¶</a></p>
+</div>
+</div>
+<div class="section" id="id49">
+<h3><span class="section-number">6.9.11. </span>課題11<a class="headerlink" href="#id49" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="admonition seealso">
+<p class="admonition-title">参考</p>
 <p>アルゴリズムについては <a class="reference external" href="https://amanotk.github.io/fortran-resume-public/chap08.html#id18">こちら</a> を参照．</p>
 </div>
 <p>逆関数法を使って指数分布</p>
@@ -1462,13 +1499,13 @@
 </pre></div>
 </td></tr></table></div>
 <p>この結果は以下のようになる．</p>
-<div class="figure align-center" id="id57">
+<div class="figure align-center" id="id59">
 <img alt="_images/chap06_exponential.png" src="_images/chap06_exponential.png" />
-<p class="caption"><span class="caption-text">課題10</span><a class="headerlink" href="#id57" title="この画像へのパーマリンク">¶</a></p>
+<p class="caption"><span class="caption-text">課題11</span><a class="headerlink" href="#id59" title="この画像へのパーマリンク">¶</a></p>
 </div>
 </div>
-<div class="section" id="id50">
-<h3><span class="section-number">6.9.11. </span>課題11<a class="headerlink" href="#id50" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="id51">
+<h3><span class="section-number">6.9.12. </span>課題12<a class="headerlink" href="#id51" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <div class="admonition seealso">
 <p class="admonition-title">参考</p>
 <p>アルゴリズムについては <a class="reference external" href="https://amanotk.github.io/fortran-resume-public/chap08.html#id19">こちら</a> を参照．</p>
@@ -1526,7 +1563,7 @@
 </td></tr></table></div>
 <p>のように，確かに <code class="docutils literal notranslate"><span class="pre">x</span></code> と <code class="docutils literal notranslate"><span class="pre">y</span></code> が同じメモリ領域を指していることがわかる．</p>
 </dd>
-<dt class="label" id="id52"><span class="brackets"><a class="fn-backref" href="#id22">8</a></span></dt>
+<dt class="label" id="id53"><span class="brackets"><a class="fn-backref" href="#id22">8</a></span></dt>
 <dd><p>ただし，unformatted形式は標準化されておらず，コンパイラやエンディアン(CPUの種類)などに依存する形式なので，可能な限りその使用を避けた方が無難である．(比較的新しいストリーム入出力を使えばよい．)</p>
 </dd>
 </dl>
