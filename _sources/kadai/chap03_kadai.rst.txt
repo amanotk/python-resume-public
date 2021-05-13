@@ -12,13 +12,13 @@
 課題2
 -----
 
-ターミナルでIPythonを起動し，補完機能や複数行の編集(ループ処理など)などを実際に試してみよう．Pythonのデフォルトの対話モードと比べて便利なことが実感できるであろう．またJupyter Qt Consoleとの使用感の違いや，IPythonの便利な機能を各自で調べてみよう．
+ターミナルからIPythonを起動し，補完機能や複数行の編集(ループ処理など)などを実際に試してみよう．Pythonのデフォルトの対話モードと比べて便利なことが実感できるであろう．またJupyter Qt Consoleとの使用感の違いや，IPythonの便利な機能を各自で調べてみよう．
 
 
 課題3
 -----
 
-JupyterLabまたはJupyter Notebookでサンプルを開き，実際に動作を確認しよう．デフォルトの対話モードやIPythonと比べて使用感の違いを実感しよう．
+JupyterLabまたはJupyter Notebookでサンプルを開き，実際に動作を確認しよう．デフォルトの対話モードやIPythonと比べて使用感の違いを実感しよう．また，JupyterLabのConsoleでもIPythonを使ってみよう．
 
 
 課題4 :sup:`†`
