@@ -252,7 +252,7 @@ Pythonの文字列は ``format()`` というメソッド [#method]_ を持ち，
   :lineno-match:
   :caption: :doc:`sample5.py <chap02_sample5_py>` 抜粋
 
-なお，ここで｢引数の位置｣は省略されていることに注意して欲しい．
+なお，ここで「引数の位置」は省略されていることに注意して欲しい．
 
 また ``{}`` に与える引数指定には，引数の順番だけでなく ``format()`` メソッドに与えられた引数名( :ref:`キーワード引数 <label_chap05_kadai04>` 参照)で指定することも可能である．詳細なフォーマット指定の方法とあわせて `公式ドキュメント <https://docs.python.org/ja/3/library/string.html#formatstrings>`_ を参照して欲しい．
 

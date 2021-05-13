@@ -41,7 +41,7 @@
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="検索" href="search.html" />
     <link rel="next" title="6. NumPy配列の基本" href="chap06.html" />
-    <link rel="prev" title="4. 制御構造と関数･オブジェクト" href="chap04.html" /> 
+    <link rel="prev" title="4. 制御構造と関数・オブジェクト" href="chap04.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -90,7 +90,7 @@
 <li class="toctree-l1"><a class="reference internal" href="chap01.html">1. はじめに</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chap02.html">2. Pythonの基本</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chap03.html">3. 対話型の実行方法</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap04.html">4. 制御構造と関数･オブジェクト</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap04.html">4. 制御構造と関数・オブジェクト</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">5. 便利な組み込み型</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#tuple">5.1. tuple</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#list">5.2. list</a></li>
@@ -339,7 +339,7 @@
 <span class="go">[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]</span>
 </pre></div>
 </td></tr></table></div>
-<p>listを生成するときに｢内包表記｣を使うと便利なことも多い．例えば以下のように用いる．ただし，慣れるまでは難しいかもしれないので無理して使う必要はない．</p>
+<p>listを生成するときに「内包表記」を使うと便利なことも多い．例えば以下のように用いる．ただし，慣れるまでは難しいかもしれないので無理して使う必要はない．</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
 <span class="go">[0, 1, 4, 9, 16]</span>
@@ -363,7 +363,7 @@
 </div>
 <div class="section" id="dict">
 <span id="label-chap05-dict"></span><h2><a class="toc-backref" href="#id18"><span class="section-number">5.4. </span>dict</a><a class="headerlink" href="#dict" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>dictは辞書(dictionary)や連想配列(ハッシュ)などと呼ばれるオブジェクトである．複数の値を保持するという意味ではlistなどのオブジェクトと同様である．大きな違いは，listを始めとするシーケンス型は要素が順番を持ち，整数添字で各要素を指定するのに対して，dictの要素は順番を持たない．その変わりに文字列の｢キー｣と対応する｢値｣のペアで要素を記憶するのがdictオブジェクトである．dictは多くの値を保持しなければいけないときにも配列やリストのように｢順番｣を気にせず使うことができるので大変便利である．</p>
+<p>dictは辞書(dictionary)や連想配列(ハッシュ)などと呼ばれるオブジェクトである．複数の値を保持するという意味ではlistなどのオブジェクトと同様である．大きな違いは，listを始めとするシーケンス型は要素が順番を持ち，整数添字で各要素を指定するのに対して，dictの要素は順番を持たない．その変わりに文字列の「キー」と対応する「値」のペアで要素を記憶するのがdictオブジェクトである．dictは多くの値を保持しなければいけないときにも配列やリストのように「順番」を気にせず使うことができるので大変便利である．</p>
 <p>以下で簡単な使い方を見てみよう．まずはキーと値のペアからdictオブジェクトを作成する．</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
@@ -419,7 +419,7 @@
 <span class="go">KeyError: &#39;key1&#39;</span>
 </pre></div>
 </td></tr></table></div>
-<p>実際にはエラーとならないように処理が必要である．キーが存在するかどうかは <code class="docutils literal notranslate"><span class="pre">in</span></code> 演算子でチェックすることができるし，キーが存在しない要素にアクセスした時に｢デフォルト値｣を返すような処理も有効である．以下で例を見てみよう．</p>
+<p>実際にはエラーとならないように処理が必要である．キーが存在するかどうかは <code class="docutils literal notranslate"><span class="pre">in</span></code> 演算子でチェックすることができるし，キーが存在しない要素にアクセスした時に「デフォルト値」を返すような処理も有効である．以下で例を見てみよう．</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -438,7 +438,7 @@
 </pre></div>
 </td></tr></table></div>
 <p>1行目と3行目はそれぞれキーがあるかどうかをチェックしている．5行目および7行目は <code class="docutils literal notranslate"><span class="pre">get()</span></code> メソッドを使ってキーに対応する値にアクセスしているが， このとき2番目の引数にデフォルト値を指定することができる(指定しない場合は <code class="docutils literal notranslate"><span class="pre">None</span></code>)． <code class="docutils literal notranslate"><span class="pre">get()</span></code> でアクセスした場合には <code class="docutils literal notranslate"><span class="pre">[]</span></code> とは異なり，キーが見つからなかったときにエラーを出さずに，デフォルト値を返す．これによりエラーチェック処理を省いたり簡単にすることができる．</p>
-<p>dict全体を順番に操作する処理には <code class="docutils literal notranslate"><span class="pre">keys()</span></code> ， <code class="docutils literal notranslate"><span class="pre">values()</span></code> ， <code class="docutils literal notranslate"><span class="pre">items()</span></code> といったメソッドを用いることになる．それぞれキー，値，キーと値のペアの｢メモリビュー｣オブジェクトを返す．</p>
+<p>dict全体を順番に操作する処理には <code class="docutils literal notranslate"><span class="pre">keys()</span></code> ， <code class="docutils literal notranslate"><span class="pre">values()</span></code> ， <code class="docutils literal notranslate"><span class="pre">items()</span></code> といったメソッドを用いることになる．それぞれキー，値，キーと値のペアの「メモリビュー」オブジェクトを返す．</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -452,7 +452,7 @@
 <span class="go">dict_items([(&#39;key2&#39;, &#39;value2&#39;), (&#39;key3&#39;, &#39;value3&#39;), (&#39;key0&#39;, &#39;value0&#39;)])</span>
 </pre></div>
 </td></tr></table></div>
-<p>ここでは｢メモリビュー｣が何かといった細かいことは置いておいて，具体的な使い方の例を見てみよう．これらは以下のようにループで用いることになるだろう．</p>
+<p>ここでは「メモリビュー」が何かといった細かいことは置いておいて，具体的な使い方の例を見てみよう．これらは以下のようにループで用いることになるだろう．</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -526,7 +526,7 @@
 </pre></div>
 </td></tr></table></div>
 <p>のように引数に <code class="docutils literal notranslate"><span class="pre">*</span></code> を指定すると，それ以降に与えた引数は全てtupleとして引数(この場合は <code class="docutils literal notranslate"><span class="pre">args</span></code> )に格納される．これは多数のあらかじめ個数の分からない引数を受け取るために使われる．これは位置指定引数(positional argument)などと呼ばれる．</p>
-<p>任意の個数･任意の型の引数を受け取り，受け取った全ての引数を出力する <code class="docutils literal notranslate"><span class="pre">print_args</span></code> 関数を作成せよ．例えば以下のような結果が得られればよい．Pythonの任意のオブジェクトを文字列表現に変換する <code class="docutils literal notranslate"><span class="pre">str</span></code> 関数を用いること．</p>
+<p>任意の個数・任意の型の引数を受け取り，受け取った全ての引数を出力する <code class="docutils literal notranslate"><span class="pre">print_args</span></code> 関数を作成せよ．例えば以下のような結果が得られればよい．Pythonの任意のオブジェクトを文字列表現に変換する <code class="docutils literal notranslate"><span class="pre">str</span></code> 関数を用いること．</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -812,7 +812,7 @@
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="chap06.html" class="btn btn-neutral float-right" title="6. NumPy配列の基本" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="chap04.html" class="btn btn-neutral float-left" title="4. 制御構造と関数･オブジェクト" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="chap04.html" class="btn btn-neutral float-left" title="4. 制御構造と関数・オブジェクト" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

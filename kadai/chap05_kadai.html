@@ -88,7 +88,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../chap01.html">1. はじめに</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chap02.html">2. Pythonの基本</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chap03.html">3. 対話型の実行方法</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../chap04.html">4. 制御構造と関数･オブジェクト</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chap04.html">4. 制御構造と関数・オブジェクト</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chap05.html">5. 便利な組み込み型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chap06.html">6. NumPy配列の基本</a></li>
 </ul>
@@ -178,7 +178,7 @@
 </pre></div>
 </div>
 <p>のように引数に <code class="docutils literal notranslate"><span class="pre">*</span></code> を指定すると，それ以降に与えた引数は全てtupleとして引数(この場合は <code class="docutils literal notranslate"><span class="pre">args</span></code> )に格納される．これは多数のあらかじめ個数の分からない引数を受け取るために使われる．これは位置指定引数(positional argument)などと呼ばれる．</p>
-<p>任意の個数･任意の型の引数を受け取り，受け取った全ての引数を出力する <code class="docutils literal notranslate"><span class="pre">print_args</span></code> 関数を作成せよ．例えば以下のような結果が得られればよい．Pythonの任意のオブジェクトを文字列表現に変換する <code class="docutils literal notranslate"><span class="pre">str</span></code> 関数を用いること．</p>
+<p>任意の個数・任意の型の引数を受け取り，受け取った全ての引数を出力する <code class="docutils literal notranslate"><span class="pre">print_args</span></code> 関数を作成せよ．例えば以下のような結果が得られればよい．Pythonの任意のオブジェクトを文字列表現に変換する <code class="docutils literal notranslate"><span class="pre">str</span></code> 関数を用いること．</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">print_args</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">[],</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span> <span class="p">:</span> <span class="s1">&#39;val&#39;</span><span class="p">},</span> <span class="kc">None</span><span class="p">)</span>
 <span class="go">args[  0] = hello</span>
 <span class="go">args[  1] = (1, 2, 3)</span>

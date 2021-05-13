@@ -180,7 +180,7 @@ Jupyter Notebook
 JupyterLab
 ==========
 
-JupyterLabはJupyter Notebookの次世代版という位置付けのウェブベースの統合開発･解析環境と呼べるものである．起動するにはJupyer Notebookと同じように
+JupyterLabはJupyter Notebookの次世代版という位置付けのウェブベースの統合開発・解析環境と呼べるものである．起動するにはJupyer Notebookと同じように
 
 .. code-block:: bash
 
