@@ -110,62 +110,20 @@ dictは関数のキーワード引数を受け取るときに用いると便利�
 
 JSON(JavaScript Object Notation)は特にウェブを介したデータのやり取りによく使われるデータの記述形式である．例えば以下は `JSON GENERATOR <https://next.json-generator.com/>`_ というサイトで作ったダミーのJSONデータの抜粋である．このようにJSONはPythonのlistとdictを組み合わせたような形式で書かれている．
 
-::
+.. literalinclude:: data/dummy.json
+ :language: json
 
-  [
-    {
-      "index": 0,
-      "age": 26,
-      "name": {
-        "first": "Merritt",
-        "last": "Russell"
-      },
-      "company": "RUGSTARS",
-      "email": "merritt.russell@rugstars.us",
-      "phone": "+1 (910) 457-2069",
-      "address": "757 Tennis Court, Summerset, West Virginia, 2179",
-      "greeting": "Hello, Merritt! You have 6 unread messages.",
-      "favoriteFruit": "strawberry"
-    },
-    {
-      "index": 1,
-      "age": 24,
-      "name": {
-        "first": "Vasquez",
-        "last": "Mccormick"
-      },
-      "company": "METROZ",
-      "email": "vasquez.mccormick@metroz.me",
-      "phone": "+1 (951) 563-3161",
-      "address": "488 Taaffe Place, Boyd, Washington, 5543",
-      "greeting": "Hello, Vasquez! You have 5 unread messages.",
-      "favoriteFruit": "banana"
-    },
-    // 省略
-  ]
+このようなJSON形式のデータはPython標準の ``json`` モジュールを用いることで非常に簡単に扱うことができる．ここでは実際にこのJSON文字列データからfirst nameとlast nameおよびemailを取り出して表示する関数 ``process_json1`` を作成せよ．この例のJSON文字列をコピーアンドペーストで ``json_string`` という変数に格納し，実行すると以下のような結果が得られる．
 
-
-完全なJSON文字列はウェブから以下のように取得することができる．(以下の例は ``json_string`` に文字列を格納している．)
-
-::
-
-  >>> from urllib.request import urlopen
-  >>>
-  >>> url = "https://next.json-generator.com/api/json/get/Ey8u2QAH9"
-  >>> json_string = urlopen(url).read().decode('utf-8')
-
-このように得られたJSONデータはPython標準の ``json`` モジュールを用いることで非常に簡単に扱うことができる．ここでは実際にこのJSON文字列データからfirst nameとlast nameおよびemailを取り出して表示する関数 ``process_json1`` を作成せよ．例えば以下のような結果が得られればよい．
 
 ::
 
   >>> process_json1(json_string)
-  Merritt RUSSELL <merritt.russell@rugstars.us>
-  Vasquez MCCORMICK <vasquez.mccormick@metroz.me>
-  Leon VALENZUELA <leon.valenzuela@visalia.biz>
-  Christina MCCARTHY <christina.mccarthy@zytrex.ca>
-  Lula HOUSTON <lula.houston@wrapture.co.uk>
-  Wallace COCHRAN <wallace.cochran@ohmnet.biz>
-  Ortiz SHEPHERD <ortiz.shepherd@gynk.io>
+  Hickman MORALES <hickman.morales@electonic.cg>
+  Emerson NORRIS <emerson.norris@recrisys.sj>
+  Shelly GARZA <shelly.garza@signity.mw>
+  Rhoda OWENS <rhoda.owens@kidgrease.cn>
+  Florence DODSON <florence.dodson@musanpoly.cy>
 
 .. note::
 
@@ -182,46 +140,34 @@ JSON(JavaScript Object Notation)は特にウェブを介したデータのやり
   >>> print(process_json2(json_string))
   [
     {
+      "age": 28,
       "index": 0,
-      "age": 26,
-      "company": "RUGSTARS",
-      "favoriteFruit": "strawberry"
+      "company": "Electonic",
+      "favoriteFruit": "apple"
     },
     {
+      "age": 59,
       "index": 1,
-      "age": 24,
-      "company": "METROZ",
-      "favoriteFruit": "banana"
+      "company": "Recrisys",
+      "favoriteFruit": "strawberry"
     },
     {
+      "age": 47,
       "index": 2,
-      "age": 38,
-      "company": "VISALIA",
-      "favoriteFruit": "strawberry"
+      "company": "Signity",
+      "favoriteFruit": "orange"
     },
     {
+      "age": 30,
       "index": 3,
-      "age": 36,
-      "company": "ZYTREX",
-      "favoriteFruit": "apple"
+      "company": "Kidgrease",
+      "favoriteFruit": "strawberry"
     },
     {
+      "age": 18,
       "index": 4,
-      "age": 39,
-      "company": "WRAPTURE",
-      "favoriteFruit": "strawberry"
-    },
-    {
-      "index": 5,
-      "age": 22,
-      "company": "OHMNET",
-      "favoriteFruit": "strawberry"
-    },
-    {
-      "index": 6,
-      "age": 36,
-      "company": "GYNK",
-      "favoriteFruit": "apple"
+      "company": "Musanpoly",
+      "favoriteFruit": "banana"
     }
   ]
 

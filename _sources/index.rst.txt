@@ -24,3 +24,4 @@ Python演習 (地球惑星物理学演習)
    chap04
    chap05
    chap06
+   chap07
