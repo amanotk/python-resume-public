@@ -1,0 +1,412 @@
+.. -*- coding: utf-8 -*-
+
+.. highlight:: python
+  :linenothreshold: 1
+
+========================
+スクリプトとしてのPython
+========================
+
+これまで見てきたようにPythonの大きな強みは対話的に実行ができることである．一方で対話的な実行では，毎回必ず人間が何らかの操作をしなければならない．Pythonでも最低限の人間の操作でまとまった処理を自動化することができると大変便利である．Pythonではbashなどを用いたシェルスクリプトの代替のような使い方から，GUIアプリケーションや，より高度なプログラム開発まで様々なことができる．ここではコマンドラインで実行できるPythonスクリプト開発の基本を学ぼう．
+
+
+.. seealso::
+
+  - :doc:`sample1.py <chap07_sample1_py>` : スクリプトの基本
+  - :doc:`sample2.py <chap07_sample2_py>` : ファイルの読み書きと文字列処理
+  - :doc:`sample3.py <chap07_sample3_py>` : システムインターフェース
+  - :doc:`sample4.py <chap07_sample4_py>` : コマンドライン引数の処理
+
+
+.. contents:: この章の内容
+    :depth: 2
+
+
+スクリプトの基本
+================
+
+実行方法（復習）
+----------------
+
+:doc:`ここ<chap02>` で既に見たように， ``*.py`` という名前で保存したPythonのソースコード（スクリプト）はコマンドラインで実行することができる．ここではもう一度 :doc:`hello.py <chap02_hello_py>` を見直してみよう．
+
+.. literalinclude:: sample/chap02/hello.py
+  :linenos:
+  :caption: :doc:`hello.py <chap02_hello_py>` （再掲）
+
+この一行目の ``#!/usr/bin/env python`` はUnix-likeなOSで
+
+.. code-block:: bash
+
+  $ ./hello.py
+
+のように実行するときにこのスクリプトをPythonで解釈するためのオマジナイである．最近は諸々の事情でシステム内にPython環境が複数存在することも多いので，混乱を避けるために以下では
+
+.. code-block:: bash
+
+  $ python hello.py
+
+のように実行することにしよう．例えばバージョンの違う複数のPython環境がシステムに存在するときには陽に自分が使いたいPythonのコマンドを指定すればよい．例えば，最近では流石に少なくなったが，古いPython-2.xでしか動かないコードを実行するときには，明示的にそれを指定する必要がある．Python-2.xのパスが ``/usr/local/bin/python2`` であるときに，これを用いてスクリプトを実行したい場合には
+
+.. code-block:: bash
+
+  $ /usr/local/bin/python2 hello.py
+
+のように実行すればよい．
+
+
+作法
+----
+
+Pythonのスクリプトでは以下のような書き方がよく見られる．
+
+.. literalinclude:: sample/chap07/sample1.py
+  :linenos:
+  :caption: :doc:`sample1.py <chap07_sample1_py>`
+
+12行目以降の ``if`` ブロックはこのプログラムがスクリプトとして実行された場合にのみ実行される．これは，このファイルがスクリプトとして実行されたとき（トップレベルスクリプトと呼ぶ）のみ ``__name__`` という特殊な変数に ``__main__`` という名前が（Pythonによって自動的に）与えられるようになっているためである．したがって，このファイルを実行すると以下のような結果が得られる．
+
+.. code-block:: bash
+
+  $ python sample1.py
+  This will be printed only if run as a script
+  main() is called
+  n = 10
+  x = 3.14
+
+11行目までのコードは変数や関数の宣言のみであり，実行は12行目以降で行われていることが分かる．このような書き方がよく用いられるのは，このファイルが他のファイルや，Jupyter Notebookなどの対話的環境から ``import`` される可能性を考慮しているからである．例えばコマンドラインで以下のように実行してみよう．
+
+.. code-block:: bash
+
+  $ python -c 'import sample1; sample1.main();'
+  main() is called
+  n = 10
+  x = 3.14
+
+ここで ``-c`` オプションで与えられた文字列をPythonが解釈して実行している．まず ``import sample1`` でこのファイルをモジュールとして ``import`` し，このモジュールで定義された関数 ``sample1.main()`` を実行している．この場合は12行目以降の ``if`` ブロックは実行されていないことが分かる．このように単なるスクリプトとしての実行だけでなく，自分が ``import`` されたときの場合も考えて
+
+::
+
+  if __name__ == '__main__':
+      # トップレベルスクリプトとして実行される
+
+のような形でトップレベルスクリプトとしての実行文とそれ以外を分離しておくのが作法になっている．
+
+.. note::
+
+  スクリプトを開発している際にも対話型の環境を用いると便利である．例えば，ある機能を実装する関数を実装するときにも，対話型の実行環境で簡単に動作確認をしながら実装すると効率が良い．ここで紹介した作法でスクリプトに関数を実装していれば，ソースコードを修正し，その都度Jupyter Notebookなどで ``import`` や ``importlib.reload`` しながら関数単体の動作確認ができる（トップレベルスクリプトとしては実行されない）．
+  例えばJupyter Notebookのセルで
+
+  ::
+
+    >>> import sample1
+    >>> sample1.main()
+
+  した後に ``sample1.py`` を修正したとき，同じJupyterセッション中であっても
+
+  ::
+
+    >>> import importlib
+    >>> importlib.reload(sample1)
+    >>> sample1.main()
+
+  のように ``importlib.reaload`` することで，その修正を反映させることができる．
+  ``importlib.reload`` については `公式ドキュメント <https://docs.python.org/ja/3/library/importlib.html#importlib.reload>`_ を参照のこと．
+
+
+ファイルの読み書きと文字列処理
+==============================
+
+ファイルの読み書き
+------------------
+
+Pythonによるファイル読み書きはC言語によるものと非常に似ている．まずファイルを開くには以下のように ``open()`` を使う．
+
+::
+
+  >>> f = open('testfile.txt', 'w')
+  >>> f.write('hello')
+  5
+  >>> f.close()
+
+ここで ``open()`` には開きたいファイル名および読み書きのモードを与える．この例では書き込み ``w`` モードでファイルを開く．これによってファイルオブジェクトが返されるので，``write()`` メソッドを呼び出してで文字列を書き込み， ``close()`` で最後にファイルを閉じる．次にこのファイルの中身を読み込んでみよう．これにはモードを ``r`` としてファイルを開き， ``read()`` メソッドを呼び出せばよい．
+
+::
+
+  >>> f = open('testfile.txt', 'r')
+  >>> f.read()
+  'hello'
+  >>> f.close()
+
+ここで ``read()`` はデフォルトでファイルの中身を全て読み込むが，引数で読み込むデータサイズ（バイト単位）を指定することもできる．また ``readline()`` は1行を読み込み， ``readlines()`` はファイルの中身を全て読み込み，各行をlistとして返す．
+
+また，一度開いたファイルは必要が無くなったら閉じるのが作法であるが，これを忘れるのを防ぐために ``with`` が使われることが多い．以下の例を見てみよう．
+
+::
+
+  >>> # 書き込み
+  >>> with open('testfile.txt', 'w') as f:
+  >>>     f.write('hello\npython')
+  >>> # 読み込み
+  >>> with open('testfile.txt', 'r') as f:
+  >>>     print(f.readlines())
+  ['hello\n', 'python']
+
+ここでは ``with`` で開いたファイルを ``f`` として，ファイルの読み書きを行っているが ``with`` のブロックを抜けると，自動的に ``close()`` が呼ばれるので，閉じ忘れの心配がない． ``open()`` については `公式ドキュメント <https://docs.python.org/ja/3/library/functions.html#open>`_ も参照しよう．
+
+
+``str``
+-------
+
+Pythonによる文字列処理には組み込みの文字列オブジェクトである ``str`` の種々なメソッドを駆使して行えばよい．例えば ``split()`` は引数で与えられた文字（デフォルトではホワイトスペース）を区切りとして，元の文字列を分割したlistを返す．また， ``join()`` は引数で与えられた文字列のシーケンス(listやtuple)を結合する．使い方は以下の例を見れば明らかであろう．
+
+::
+
+  >>> 'I love python'.split()
+  ['I', 'love', 'python']
+  >>> '_'.join(['I', 'hate', 'fortran'])
+  'I_hate_fortran'
+
+他にも以下の例のように ``find()`` メソッドを使って文字列を検索したり，配列のように添字 ``[]`` を用いて部分文字列を取り出したりすることができる．
+
+::
+
+  >>> text = 'Earth and Planetary Physics'
+  >>> text.find('Planet')
+  10
+  >>> text[10:]
+  'Planetary Physics'
+
+より詳細については `公式ドキュメント <https://docs.python.org/ja/3/library/stdtypes.html#textseq>`_ を参照のこと．
+
+
+``re``
+------
+
+先の例の ``find()`` は厳密に一致する文字列を検索するのには十分であるが，より柔軟な文字列の検索・置換には正規表現が用いられる．Pythonでは標準ライブラリの ``re`` (regular expression)が正規表現を扱うためのモジュールになっている．正規表現そのものの詳細についてはここでは立ち入らないが，ツールによって微妙に正規表現のシンタックス（文法）が異なることがあるので注意しよう．Pythonの正規表現については `公式ドキュメント <https://docs.python.org/ja/3/library/re.html>`_ を参照して欲しい．
+
+ここでは ``re`` モジュールの使い方を簡単に見てみよう．
+
+::
+
+  >>> url1 = 'https://www.eps.s.u-tokyo.ac.jp'
+  >>> url2 = 'https://www.eps.s.u-tokyo.ac.jp/epp/'
+  >>> https_pattern = r'https://([a-zA-Z0-9\-\.]+)/?.*'
+  >>> # 検索
+  >>> re.search(https_pattern, url1)
+  <re.Match object; span=(0, 31), match='https://www.eps.s.u-tokyo.ac.jp'>
+  >>> re.search(https_pattern, url2)
+  <re.Match object; span=(0, 36), match='https://www.eps.s.u-tokyo.ac.jp/epp/'>
+  >>> # グループを取り出す
+  >>> re.search(https_pattern, url1).groups()
+  >>> ('www.eps.s.u-tokyo.ac.jp',)
+  >>> re.search(https_pattern, url2).groups()
+  >>> ('www.eps.s.u-tokyo.ac.jp',)
+
+上のコードでは ``re.saerch()`` を使って文字列 ``url1`` および ``url2`` からhttpsプロトコルのURLを表すパターン ``https_pattern`` を検索している．パターンが見つかると ``re.search()`` は ``re.Match`` オブジェクトを返す．ここで謎の呪文のようにも見える ``https_pattern`` が正規表現である．ここで ``[a-zA-Z0-9\-\.]+`` がアルファベット（大文字・小文字），数字， ``-`` および ``.`` の1回以上の繰り返しを意味している．このパターンが ``()`` で囲まれているが，これはグループ化することを意味しており， ``re.Match`` オブジェクトの ``groups()`` メソッドを呼ぶことでグループを取り出すことができる． ``re.Match`` そのものはURL全体にマッチしているが，この場合はグループの最初の要素が ``/`` で区切られる前のURLのドメイン部分だけを示している．
+
+以下の例では ``re.sub()`` を用いてURLの ``https`` を ``http`` に置換している．
+
+::
+
+  >>> re.sub(r'https://([a-zA-Z0-9\-\.]/?.*)', r'http://\1', url1)
+  >>> 'http://www.eps.s.u-tokyo.ac.jp'
+  >>> re.sub(r'https://([a-zA-Z0-9\-\.]/?.*)', r'http://\1', url2)
+  >>> 'http://www.eps.s.u-tokyo.ac.jp/epp/'
+
+ここで ``re.sub()`` の第2引数の ``\1`` は第1引数で指定したパターンの ``()`` で囲まれたグループが代入される．
+
+``re.finditer()`` は検索したパターンを順に処理するループを記述するのに便利である． :doc:`sample2.py <chap07_sample2_py>` はPythonのソースコードから関数定義を検索するサンプルで，以下には ``re.finditer()`` を用いたループを抜粋している．第1引数 ``patern`` にマッチする部分を第2引数 ``text`` から検索して，見つかった順にループ内で処理をしている．
+
+.. literalinclude:: sample/chap07/sample2.py
+  :lines: 13-23
+  :lineno-match:
+  :caption: :doc:`sample2.py <chap07_sample2_py>` （抜粋）
+
+このように ``re`` モジュールを使うことで柔軟な検索や置換処理が実装できる．
+
+
+システムインターフェース
+========================
+
+
+ファイルやディレクトリの操作
+----------------------------
+
+ファイルやディレクトリの操作をするための便利な関数群がPythonの標準ライブラリで提供されている．bashなどのシェルスクリプトは基本的にはUnix-likeなOSでの動作が前提となるが，Pythonのライブラリをうまく使うことでOSなどの環境に依らないプログラムを作ることが可能である [#crossplatform]_ ．
+
+これには標準ライブラリの ``os`` モジュール（およびそのサブモジュール）を ``import`` して使えばよい．例えば ``os.listdir()`` は与えられたパス内の全てのファイルとディレクトリをlistオブジェクトとして返す．例えばシェルで
+
+.. code-block:: bash
+
+  $ ls
+  test.txt  testdir/
+
+となる環境であれば，
+
+::
+
+  >>> os.listdir('.')
+  ['testdir', 'test.txt']
+
+なる結果が得られる．例えばこの結果として返されるlistの各要素がファイルかディレクトリか調べるには ``os.path.isfile()`` や ``os.path.isdir()`` を使えばよい．例えば
+
+::
+
+  >>> for f in os.listdir('.'):
+  >>>     if os.path.isfile(f):
+  >>>         print('"{}" is a file'.format(f))
+  >>>     if os.path.isdir(f):
+  >>>         print('"{}" is a directory'.format(f))
+  "testdir" is a directory
+  "test.txt" is a file
+
+のような結果が得られる．また，以下は指定されたディレクトリのファイルのうちPythonのソースコードだけを抽出し，各ファイルの行数を数える関数 ``count_py_lines1()`` の実装例である．
+
+.. literalinclude:: sample/chap07/sample3.py
+  :lines: 12-22
+  :lineno-match:
+  :caption: :doc:`sample3.py <chap07_sample3_py>` （抜粋）
+
+
+ファイルやディレクトリの操作で注意しなければならないのはパスの区切り文字である．Windowsではパスの区切り文字として ``\`` が使われているのに対してMacやLinuxなどでは ``/`` が使われているので，どちらの環境でも動くスクリプトにするためにはプログラム側でこの違いを吸収してやらなければならない．Pythonでは ``os.sep`` （または ``os.path.sep`` ）がパスの区切り文字として定義されているので，これを使うことでプラットフォームに依存しないプログラムとすることができる．例えば ``os.getcwd()`` で現在の作業ディレクトリを取得し，これにファイル名を文字列として結合して絶対パスとするには ``os.path.join()`` を用いて
+
+::
+
+  >>> os.path.join(os.getcwd(), 'test.txt')
+  /home/hoge/test.txt
+
+のようにすればよい．ここでは ``os.getcwd()`` で得られる ``/home/hoge`` と ``test.txt`` が区切り文字 ``/`` で結合されているが，同じコードをWindowsで実行すれば自動的に区切り文字として ``\`` が選ばれる．同じことが
+
+::
+
+  >>> os.sep.join([os.getcwd(), 'test.txt'])
+  /home/hoge/test.txt
+
+でも可能である．これは ``str`` オブジェクトである ``os.sep`` の ``join`` メソッドを使った例である．
+
+他にもファイルの作成やファイル名変更，削除などの一通りの作業ができる．詳細については `公式ドキュメント <https://docs.python.org/ja/3/library/os.html>`_ を確認して欲しい．ただし，ファイルのコピーや削除などのより高レベルの（より簡単な）ファイル操作には標準ライブラリの ``shutil`` モジュール（ `公式ドキュメント <https://docs.python.org/ja/3/library/shutil.html>`_ ）を用いる方が便利である．
+
+
+
+シェルコマンドの実行
+--------------------
+
+``os`` モジュールの ``os.system()`` を使うとPythonプログラムからシェルコマンド（例えば ``ls`` や ``cat`` など）を実行することができる．使い方は以下の通りである．
+
+::
+
+  >>> r = os.system('echo "hello shell"')
+  hello shell
+  >>> print(r)
+  0
+
+ここでシェルで実行されたコマンドの終了ステータスが返値となる．
+
+単にコマンドを実行するだけであればこれでも十分だが，実用的にはシェルコマンドに何らかの入力を与えたり，また実行結果を受け取って処理をしたくなってくる．これには ``subprocess`` モジュールを使うのがよい．例えば，先ほどの例と同じことは ``subprocess.run()`` を使って
+
+
+::
+
+  >>> r = subprocess.run('echo "hello shell"', shell=True)
+  hello shell
+  >>> print(r.returncode)
+  0
+
+のように実現できる．ここで ``subprocess.run()`` に ``shell=True`` としているのは第1引数で与えた文字列をシェルで解釈するという意味である．このオプションを指定しないときには
+
+::
+
+  >>> r = subprocess.run(['echo', 'hello shell'])
+  hello shell
+
+のようにlistとしてコマンドラインに与える引数を与える必要がある．（シェルとして解釈させるのはセキュリティ的にあまり好ましくないので注意する必要がある．）
+
+シェルのパイプ（ ``|`` ）のように標準出力をPythonで受け取って処理をするには ``capture_output=True`` と ``text=True`` を指定すればよい [#versionnote]_ ．
+
+::
+
+  >>> r = subprocess.run(['echo', 'hello shell'], capture_output=True, text=True)
+  >>> print(r.stdout)
+  hello shell
+
+基本的にはシェルコマンドを使わないでもPythonだけで実現できることがほとんどであるが，シェルなら簡単にできるようなことであれば，このようにその実行結果を受け取って処理する方が話が早いこともあるだろう．例えば以下は先に示した関数 ``count_py_lines1()`` と全く同じ機能をシェルコマンドで実現する関数 ``count_py_lines2()`` の実装例である．
+
+.. literalinclude:: sample/chap07/sample3.py
+  :lines: 25-36
+  :lineno-match:
+  :caption: :doc:`sample3.py <chap07_sample3_py>` （抜粋）
+
+
+
+コマンドライン引数の処理
+========================
+
+Unixのコマンドは多くの引数やオプションを受け取り，それに応じて異なる処理を実行する．Pythonでは標準ライブラリの ``argparse`` を使うことで，コマンドラインで与えられた引数を簡単に処理することができる．使い方は簡単で， ``argparse.ArgumentParser()`` でオブジェクトを生成し， ``add_argument()`` でオプションを順次定義していけばよい．以下の例は :doc:`sample4.py <chap07_sample4_py>` の抜粋である．
+
+.. literalinclude:: sample/chap07/sample4.py
+  :lines: 8-21
+  :lineno-match:
+  :caption: :doc:`sample4.py <chap07_sample4_py>` （抜粋）
+
+このサンプルでは ``--integer`` で指定された回数だけ ``--greeting`` で指定された文字列を出力する．また ``--capitalize`` を指定されると，指定された文字列の各単語の先頭文字を大文字に変換する．以下はコマンドの具体的な実行例である．
+
+.. code-block:: bash
+
+  $ python sample4.py --integer 3 -c -g 'hello python scripting'
+  *** command-line arguments
+  ['sample4.py', '--integer', '3', '-c', '-g', 'hello python scripting']
+  
+  *** parse results
+  option: integer => 3
+  option: greeting => hello python scripting
+  option: capitalize => True
+  
+  *** show greetings
+  Hello Python Scripting
+  Hello Python Scripting
+  Hello Python Scripting
+
+
+Unixの多くのコマンドでは長いオプションと，その省略形のオプションを使うことができるが，それはこの例でも同様である．例えば，11-12行目は ``--integer`` とその省略形 ``-i`` を ``type=int`` で整数型として定義している．また17-18行目は ``--capitalize`` で指定される真偽値のオプションを定義しており，デフォルトでは ``False`` だが，オプションが指定されると ``True`` となるよう ``action='store_true'`` で指定されている．オプションの指定が終わった後にパーサーオブジェクトの ``parse_args()`` メソッドを呼ぶと自動的に ``sys.argv`` に格納されているコマンドラインオプションがパースされるので，後はこれを適宜用いればよい． ``parse_args()`` で返されるオブジェクトにはそれぞれのオプションがアトリビュートとして保存されているので，例えば ``--integer`` オプションであれば ``.integer`` アトリビュートを参照すればよい．
+
+なお，この ``argparse`` を使うと自動的にヘルプメッセージが生成され，オプションとして ``-h`` や ``--help`` を指定すると以下のようにヘルプメッセージが表示される．
+
+.. code-block:: bash
+
+  $ python sample4.py -h
+  usage: sample4.py [-h] [-i INTEGER] [-g GREETING] [-c]
+  
+  Print Greetings
+  
+  optional arguments:
+    -h, --help            show this help message and exit
+    -i INTEGER, --integer INTEGER
+                          number of output
+    -g GREETING, --greeting GREETING
+                          greeting
+    -c, --capitalize      capitalize or not
+
+
+..
+.. 課題
+..
+
+.. include:: kadai/chap07_kadai.rst
+
+-----
+
+.. [#crossplatform]
+
+   もちろん色々な環境で動くように注意してプログラムを作れば，の話である．
+
+.. [#versionnote]
+
+   Pythonのバージョン3.7以上が必要．それ以前であれば
+
+  .. code-block:: python
+
+    >>> r = subprocess.run(['echo', 'hello shell'], \
+    ...         stdout=subprocess.PIPE, stderr=subprocess.PIPE, encoding='utf-8')
+
+  などとする必要がある．

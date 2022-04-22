@@ -1,0 +1,58 @@
+.. -*- coding: utf-8 -*-
+
+第7章 演習課題
+==============
+
+.. seealso::
+
+  - :doc:`課題2解答例 <chap07_kadai2_py>`
+  - :doc:`課題3解答例 <chap07_kadai3_py>`
+  - :doc:`課題4解答例 <chap07_kadai4_py>`
+
+課題1
+-----
+
+サンプルを実行して動作を確認せよ．
+
+
+課題2
+-----
+
+コマンドラインで与えられた（HTTPまたはHTTPSプロトコルの）URLにアクセスして得られた結果（html）からtitleタグの内容を抽出して表示するプログラムを作成せよ． ``urllib.request.urlopen()`` を使って得られたバイト列を文字列に変換（デコード）し，正規表現を用いてtitleタグの中身を抽出すればよい．サイトによって様々な文字コードが使われているので， ``chardet.detect()`` で推測したエンコーディングでデコードするのがよいだろう．例えば，以下のような実行結果が得られればよい．
+
+.. code-block:: bash
+
+  $ python kadai2.py https://www.eps.s.u-tokyo.ac.jp/
+  東京大学 理学部 地球惑星物理学科・地球惑星環境学科／大学院理学系研究科 地球惑星科学専攻 |
+  $ python kadai2.py https://www.yahoo.co.jp/
+  Yahoo! JAPAN
+
+課題3
+-----
+
+シェルの ``ls`` コマンドのようにカレントディレクトリに存在するファイルやディレクトリのリストを表示するプログラムを作成せよ．ただし，デフォルトではファイル名のアルファベット順（ ``ls`` のデフォルト）で， ``-S`` オプションが指定された場合はファイルサイズの降順で（ ``ls -S`` と同じ順で）表示するものとする．また，どちらの場合も ``-r`` が指定された場合には表示順を逆にせよ（ ``ls`` と同じ仕様である）．例えば以下のような実行結果が得られればよい．
+
+.. code-block:: bash
+
+  $ python kadai3.py -S
+      2844 Fri Apr 22 13:42:47 2022 kadai4.py
+      1707 Fri Apr 22 13:42:47 2022 kadai3.py
+       763 Fri Apr 22 13:42:47 2022 kadai2.py
+  $ python kadai3.py -Sr
+       763 Fri Apr 22 13:42:47 2022 kadai2.py
+      1707 Fri Apr 22 13:42:47 2022 kadai3.py
+      2844 Fri Apr 22 13:42:47 2022 kadai4.py
+
+なお，この例ではファイル名だけでなく，ファイルサイズや更新日付も表示している．
+
+
+課題4
+-----
+
+`Open-Meteo <https://open-meteo.com/en>`_ というサイトが，無料で天気予報データをダウンロードできるサービスを提供している．決められた形式でHTTPSアクセスをするとデータがJSON形式でダウンロードされる仕組みである．このサイトの東京の天気予報データにアクセスする `URL <https://api.open-meteo.com/v1/forecast?latitude=35.6785&longitude=139.6823&hourly=temperature_2m,precipitation,windspeed_10m,winddirection_10m&windspeed_unit=ms&timezone=Asia%2FTokyo&past_days=1>`_ を使って，ダウンロードしたデータを自動でプロットするプログラムを作成せよ．ただし，オプション無しで実行した場合には画面にプロットを表示し， ``--save`` オプションでファイル名を指定した場合には，指定されたファイル名（例えばpng形式など）でプロットをファイルに保存するようにせよ．例えば以下のようなプロットが得られればよい．この例のURLでは温度，降水量，風速と風向きをプロットしている．（Open-Meteoのサイトではダウンロードするデータを自分でカスタマイズすることができる．）
+
+.. figure:: figure/chap07_openmeteo.png
+    :align: center
+    :width: 80%
+
+ここで， ``matplotlib`` を使うのであれば，時間が ``numpy.datetime64`` 形式の配列になっていれば，横軸は自動でこの例のようにフォーマットされる．なお，このようなスクリプトで実行する際にはプロットした後に ``matplotlib.pyplot.show()`` を呼ぶと画面にウインドウが表示される．画面に表示せずにファイルに保存したい場合は ``matplotlib.pyplot.savefig()`` を使えばよい．

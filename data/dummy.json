@@ -1,0 +1,57 @@
+[
+  {
+    "age": 28,
+    "name": {
+      "last": "Morales",
+      "first": "Hickman"
+    },
+    "email": "hickman.morales@electonic.cg",
+    "index": 0,
+    "company": "Electonic",
+    "favoriteFruit": "apple"
+  },
+  {
+    "age": 59,
+    "name": {
+      "last": "Norris",
+      "first": "Emerson"
+    },
+    "email": "emerson.norris@recrisys.sj",
+    "index": 1,
+    "company": "Recrisys",
+    "favoriteFruit": "strawberry"
+  },
+  {
+    "age": 47,
+    "name": {
+      "last": "Garza",
+      "first": "Shelly"
+    },
+    "email": "shelly.garza@signity.mw",
+    "index": 2,
+    "company": "Signity",
+    "favoriteFruit": "orange"
+  },
+  {
+    "age": 30,
+    "name": {
+      "last": "Owens",
+      "first": "Rhoda"
+    },
+    "email": "rhoda.owens@kidgrease.cn",
+    "index": 3,
+    "company": "Kidgrease",
+    "favoriteFruit": "strawberry"
+  },
+  {
+    "age": 18,
+    "name": {
+      "last": "Dodson",
+      "first": "Florence"
+    },
+    "email": "florence.dodson@musanpoly.cy",
+    "index": 4,
+    "company": "Musanpoly",
+    "favoriteFruit": "banana"
+  }
+]

@@ -1,0 +1,11 @@
+.. -*- coding: utf-8 -*-
+
+=====================================================
+chap03/kadai5.py
+=====================================================
+
+`サンプルコードのダウンロード <answer/chap03/kadai5.py>`_
+
+.. literalinclude:: answer/chap03/kadai5.py
+  :language: py
+  :linenos:
