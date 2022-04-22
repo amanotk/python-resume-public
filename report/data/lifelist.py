@@ -9,6 +9,7 @@ DIR  = 'life'
 
 if __name__ == '__main__':
     ff = glob.glob(os.path.join(DIR, '*.lif'))
+    ff.sort()
     html =\
 '''\
 <html>
