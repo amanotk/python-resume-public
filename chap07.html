@@ -272,7 +272,7 @@
 </pre></div>
 </td></tr></table></div>
 </div>
-<p>12行目以降の <code class="docutils literal notranslate"><span class="pre">if</span></code> ブロックはこのプログラムがスクリプトとして実行された場合にのみ実行される．これは，このファイルがスクリプトとして実行されたとき（トップレベルスクリプトと呼ぶ）のみ <code class="docutils literal notranslate"><span class="pre">__name__</span></code> という特殊な変数に <code class="docutils literal notranslate"><span class="pre">__main__</span></code> という名前が（Pythonによって自動的に）与えられるようになっているためである．したがって，このファイルを実行すると以下のような結果が得られる．</p>
+<p>14行目以降の <code class="docutils literal notranslate"><span class="pre">if</span></code> ブロックはこのプログラムがスクリプトとして実行された場合にのみ実行される．これは，このファイルがスクリプトとして実行されたとき（トップレベルスクリプトと呼ぶ）のみ <code class="docutils literal notranslate"><span class="pre">__name__</span></code> という特殊な変数に <code class="docutils literal notranslate"><span class="pre">__main__</span></code> という名前が（Pythonによって自動的に）与えられるようになっているためである．したがって，このファイルを実行すると以下のような結果が得られる．</p>
 <div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -284,7 +284,7 @@ main<span class="o">()</span> is called
 <span class="nv">x</span> <span class="o">=</span> <span class="m">3</span>.14
 </pre></div>
 </td></tr></table></div>
-<p>11行目までのコードは変数や関数の宣言のみであり，実行は12行目以降で行われていることが分かる．このような書き方がよく用いられるのは，このファイルが他のファイルや，Jupyter Notebookなどの対話的環境から <code class="docutils literal notranslate"><span class="pre">import</span></code> される可能性を考慮しているからである．例えばコマンドラインで以下のように実行してみよう．</p>
+<p>11行目までのコードは変数や関数の宣言のみであり，実行は14行目以降で行われていることが分かる．このような書き方がよく用いられるのは，このファイルが他のファイルや，Jupyter Notebookなどの対話的環境から <code class="docutils literal notranslate"><span class="pre">import</span></code> される可能性を考慮しているからである．例えばコマンドラインで以下のように実行してみよう．</p>
 <div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -294,16 +294,16 @@ main<span class="o">()</span> is called
 <span class="nv">x</span> <span class="o">=</span> <span class="m">3</span>.14
 </pre></div>
 </td></tr></table></div>
-<p>ここで <code class="docutils literal notranslate"><span class="pre">-c</span></code> オプションで与えられた文字列をPythonが解釈して実行している．まず <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">sample1</span></code> でこのファイルをモジュールとして <code class="docutils literal notranslate"><span class="pre">import</span></code> し，このモジュールで定義された関数 <code class="docutils literal notranslate"><span class="pre">sample1.main()</span></code> を実行している．この場合は12行目以降の <code class="docutils literal notranslate"><span class="pre">if</span></code> ブロックは実行されていないことが分かる．このように単なるスクリプトとしての実行だけでなく，自分が <code class="docutils literal notranslate"><span class="pre">import</span></code> されたときの場合も考えて</p>
+<p>ここで <code class="docutils literal notranslate"><span class="pre">-c</span></code> オプションで与えられた文字列をPythonが解釈して実行している．まず <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">sample1</span></code> でこのファイルをモジュールとして <code class="docutils literal notranslate"><span class="pre">import</span></code> し，このモジュールで定義された関数 <code class="docutils literal notranslate"><span class="pre">sample1.main()</span></code> を実行している．この場合は14行目以降の <code class="docutils literal notranslate"><span class="pre">if</span></code> ブロックは実行されていないことが分かる．このように単なるスクリプトとしての実行だけでなく，自分が <code class="docutils literal notranslate"><span class="pre">import</span></code> されたときの場合も考えて</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="c1"># トップレベルスクリプトとして実行される</span>
+    <span class="c1"># トップレベルスクリプトとして実行される処理</span>
 </pre></div>
 </td></tr></table></div>
 <p>のような形でトップレベルスクリプトとしての実行文とそれ以外を分離しておくのが作法になっている．</p>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>スクリプトを開発している際にも対話型の環境を用いると便利である．例えば，ある機能を実装する関数を実装するときにも，対話型の実行環境で簡単に動作確認をしながら実装すると効率が良い．ここで紹介した作法でスクリプトに関数を実装していれば，ソースコードを修正し，その都度Jupyter Notebookなどで <code class="docutils literal notranslate"><span class="pre">import</span></code> や <code class="docutils literal notranslate"><span class="pre">importlib.reload</span></code> しながら関数単体の動作確認ができる（トップレベルスクリプトとしては実行されない）．
+<p>スクリプトを開発している際にも対話型の環境を用いると便利である．例えば，ある機能を実装する関数を実装するときにも，対話型の実行環境でその都度動作確認をしながら実装すると効率が良い．ここで紹介した作法でスクリプトに関数を実装していれば，ソースコードを修正し，その都度Jupyter Notebookなどで <code class="docutils literal notranslate"><span class="pre">import</span></code> や <code class="docutils literal notranslate"><span class="pre">importlib.reload</span></code> しながら関数単体の動作確認ができる（トップレベルスクリプトとしては実行されない）．
 例えばJupyter Notebookのセルで</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sample1</span>
@@ -327,7 +327,7 @@ main<span class="o">()</span> is called
 <h2><a class="toc-backref" href="#id32"><span class="section-number">7.2. </span>ファイルの読み書きと文字列処理</a><a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="section" id="id7">
 <h3><span class="section-number">7.2.1. </span>ファイルの読み書き<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>Pythonによるファイル読み書きはC言語によるものと非常に似ている．まずファイルを開くには以下のように <code class="docutils literal notranslate"><span class="pre">open()</span></code> を使う．</p>
+<p><a class="reference internal" href="chap06.html"><span class="doc">NumPy配列の基本</span></a>  ではすでにバイナリファイルの読み書きについて扱ったが，テキストファイルの扱いもほとんど同様である．例えば以下の例を見てみよう．</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -348,7 +348,7 @@ main<span class="o">()</span> is called
 </pre></div>
 </td></tr></table></div>
 <p>ここで <code class="docutils literal notranslate"><span class="pre">read()</span></code> はデフォルトでファイルの中身を全て読み込むが，引数で読み込むデータサイズ（バイト単位）を指定することもできる．また <code class="docutils literal notranslate"><span class="pre">readline()</span></code> は1行を読み込み， <code class="docutils literal notranslate"><span class="pre">readlines()</span></code> はファイルの中身を全て読み込み，各行をlistとして返す．</p>
-<p>また，一度開いたファイルは必要が無くなったら閉じるのが作法であるが，これを忘れるのを防ぐために <code class="docutils literal notranslate"><span class="pre">with</span></code> が使われることが多い．以下の例を見てみよう．</p>
+<p>また，一度開いたファイルは必要が無くなったら閉じるのが作法であるが，これを忘れるのを防ぐために最近では <code class="docutils literal notranslate"><span class="pre">with</span></code> が使われることが多い．以下の例を見てみよう．</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -423,7 +423,7 @@ main<span class="o">()</span> is called
 <span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="s1">&#39;www.eps.s.u-tokyo.ac.jp&#39;</span><span class="p">,)</span>
 </pre></div>
 </td></tr></table></div>
-<p>上のコードでは <code class="docutils literal notranslate"><span class="pre">re.saerch()</span></code> を使って文字列 <code class="docutils literal notranslate"><span class="pre">url1</span></code> および <code class="docutils literal notranslate"><span class="pre">url2</span></code> からhttpsプロトコルのURLを表すパターン <code class="docutils literal notranslate"><span class="pre">https_pattern</span></code> を検索している．パターンが見つかると <code class="docutils literal notranslate"><span class="pre">re.search()</span></code> は <code class="docutils literal notranslate"><span class="pre">re.Match</span></code> オブジェクトを返す．ここで謎の呪文のようにも見える <code class="docutils literal notranslate"><span class="pre">https_pattern</span></code> が正規表現である．ここで <code class="docutils literal notranslate"><span class="pre">[a-zA-Z0-9\-\.]+</span></code> がアルファベット（大文字・小文字），数字， <code class="docutils literal notranslate"><span class="pre">-</span></code> および <code class="docutils literal notranslate"><span class="pre">.</span></code> の1回以上の繰り返しを意味している．このパターンが <code class="docutils literal notranslate"><span class="pre">()</span></code> で囲まれているが，これはグループ化することを意味しており， <code class="docutils literal notranslate"><span class="pre">re.Match</span></code> オブジェクトの <code class="docutils literal notranslate"><span class="pre">groups()</span></code> メソッドを呼ぶことでグループを取り出すことができる． <code class="docutils literal notranslate"><span class="pre">re.Match</span></code> そのものはURL全体にマッチしているが，この場合はグループの最初の要素が <code class="docutils literal notranslate"><span class="pre">/</span></code> で区切られる前のURLのドメイン部分だけを示している．</p>
+<p>上のコードでは <code class="docutils literal notranslate"><span class="pre">re.saerch()</span></code> を使って文字列 <code class="docutils literal notranslate"><span class="pre">url1</span></code> および <code class="docutils literal notranslate"><span class="pre">url2</span></code> からhttpsプロトコルのURLを表すパターン <code class="docutils literal notranslate"><span class="pre">https_pattern</span></code> を検索している．パターンが見つかると <code class="docutils literal notranslate"><span class="pre">re.search()</span></code> は <code class="docutils literal notranslate"><span class="pre">re.Match</span></code> オブジェクトを返す．ここで謎の呪文のようにも見える <code class="docutils literal notranslate"><span class="pre">https_pattern</span></code> が正規表現である．ここで <code class="docutils literal notranslate"><span class="pre">[a-zA-Z0-9\-\.]+</span></code> がアルファベット（大文字・小文字），数字， <code class="docutils literal notranslate"><span class="pre">-</span></code> および <code class="docutils literal notranslate"><span class="pre">.</span></code> の1回以上の繰り返しを意味している．このパターンが <code class="docutils literal notranslate"><span class="pre">()</span></code> で囲まれているが，これによって囲まれた範囲がグループ化され， <code class="docutils literal notranslate"><span class="pre">re.Match</span></code> オブジェクトの <code class="docutils literal notranslate"><span class="pre">groups()</span></code> メソッドを呼ぶことで各グループにアクセスすることができる． <code class="docutils literal notranslate"><span class="pre">re.Match</span></code> そのものはURL全体にマッチしているが，この場合はグループの最初の要素がURLのドメイン部分だけを示している．</p>
 <p>以下の例では <code class="docutils literal notranslate"><span class="pre">re.sub()</span></code> を用いてURLの <code class="docutils literal notranslate"><span class="pre">https</span></code> を <code class="docutils literal notranslate"><span class="pre">http</span></code> に置換している．</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
@@ -434,8 +434,8 @@ main<span class="o">()</span> is called
 <span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;http://www.eps.s.u-tokyo.ac.jp/epp/&#39;</span>
 </pre></div>
 </td></tr></table></div>
-<p>ここで <code class="docutils literal notranslate"><span class="pre">re.sub()</span></code> の第2引数の <code class="docutils literal notranslate"><span class="pre">\1</span></code> は第1引数で指定したパターンの <code class="docutils literal notranslate"><span class="pre">()</span></code> で囲まれたグループが代入される．</p>
-<p><code class="docutils literal notranslate"><span class="pre">re.finditer()</span></code> は検索したパターンを順に処理するループを記述するのに便利である． <a class="reference internal" href="chap07_sample2_py.html"><span class="doc">sample2.py</span></a> はPythonのソースコードから関数定義を検索するサンプルで，以下には <code class="docutils literal notranslate"><span class="pre">re.finditer()</span></code> を用いたループを抜粋している．第1引数 <code class="docutils literal notranslate"><span class="pre">patern</span></code> にマッチする部分を第2引数 <code class="docutils literal notranslate"><span class="pre">text</span></code> から検索して，見つかった順にループ内で処理をしている．</p>
+<p>ここで <code class="docutils literal notranslate"><span class="pre">re.sub()</span></code> の第2引数の <code class="docutils literal notranslate"><span class="pre">\1</span></code> には第1引数で指定したパターンの <code class="docutils literal notranslate"><span class="pre">()</span></code> で囲まれたグループが代入される．複数のグループがある場合には <code class="docutils literal notranslate"><span class="pre">\1</span></code>， <code class="docutils literal notranslate"><span class="pre">\2</span></code>，...のように各グループを指定すればよい．</p>
+<p><code class="docutils literal notranslate"><span class="pre">re.finditer()</span></code> は検索したパターンを順に処理するループを記述するのに便利である． <a class="reference internal" href="chap07_sample2_py.html"><span class="doc">sample2.py</span></a> はPythonのソースコードから関数定義を検索するサンプルで，以下には <code class="docutils literal notranslate"><span class="pre">re.finditer()</span></code> を用いたループを抜粋している．第1引数 <code class="docutils literal notranslate"><span class="pre">pattern</span></code> にマッチする部分を第2引数 <code class="docutils literal notranslate"><span class="pre">text</span></code> から検索して，見つかった順にループ内で処理をしている．</p>
 <div class="literal-block-wrapper docutils container" id="id26">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="chap07_sample2_py.html"><span class="doc">sample2.py</span></a> （抜粋）</span><a class="headerlink" href="#id26" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">13</span>
@@ -470,7 +470,7 @@ main<span class="o">()</span> is called
 <div class="section" id="id12">
 <h3><span class="section-number">7.3.1. </span>ファイルやディレクトリの操作<a class="headerlink" href="#id12" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>ファイルやディレクトリの操作をするための便利な関数群がPythonの標準ライブラリで提供されている．bashなどのシェルスクリプトは基本的にはUnix-likeなOSでの動作が前提となるが，Pythonのライブラリをうまく使うことでOSなどの環境に依らないプログラムを作ることが可能である <a class="footnote-reference brackets" href="#crossplatform" id="id13">1</a> ．</p>
-<p>これには標準ライブラリの <code class="docutils literal notranslate"><span class="pre">os</span></code> モジュール（およびそのサブモジュール）を <code class="docutils literal notranslate"><span class="pre">import</span></code> して使えばよい．例えば <code class="docutils literal notranslate"><span class="pre">os.listdir()</span></code> は与えられたパス内の全てのファイルとディレクトリをlistオブジェクトとして返す．例えばシェルで</p>
+<p>これには標準ライブラリの <code class="docutils literal notranslate"><span class="pre">os</span></code> モジュール（およびそのサブモジュール）を <code class="docutils literal notranslate"><span class="pre">import</span></code> して使えばよい．例えば <code class="docutils literal notranslate"><span class="pre">os.listdir()</span></code> は与えられたパス内の全てのファイルとディレクトリをlistオブジェクトとして返す．したがって，シェルで</p>
 <div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ ls
 test.txt  testdir/
@@ -482,7 +482,7 @@ test.txt  testdir/
 <span class="go">[&#39;testdir&#39;, &#39;test.txt&#39;]</span>
 </pre></div>
 </td></tr></table></div>
-<p>なる結果が得られる．例えばこの結果として返されるlistの各要素がファイルかディレクトリか調べるには <code class="docutils literal notranslate"><span class="pre">os.path.isfile()</span></code> や <code class="docutils literal notranslate"><span class="pre">os.path.isdir()</span></code> を使えばよい．例えば</p>
+<p>なる結果が得られる．この結果として返されるlistの各要素がファイルかディレクトリか調べるには <code class="docutils literal notranslate"><span class="pre">os.path.isfile()</span></code> や <code class="docutils literal notranslate"><span class="pre">os.path.isdir()</span></code> を使えばよい．例えば</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -538,7 +538,7 @@ test.txt  testdir/
 </pre></div>
 </td></tr></table></div>
 <p>でも可能である．これは <code class="docutils literal notranslate"><span class="pre">str</span></code> オブジェクトである <code class="docutils literal notranslate"><span class="pre">os.sep</span></code> の <code class="docutils literal notranslate"><span class="pre">join</span></code> メソッドを使った例である．</p>
-<p>他にもファイルの作成やファイル名変更，削除などの一通りの作業ができる．詳細については <a class="reference external" href="https://docs.python.org/ja/3/library/os.html">公式ドキュメント</a> を確認して欲しい．ただし，ファイルのコピーや削除などのより高レベルの（より簡単な）ファイル操作には標準ライブラリの <code class="docutils literal notranslate"><span class="pre">shutil</span></code> モジュール（ <a class="reference external" href="https://docs.python.org/ja/3/library/shutil.html">公式ドキュメント</a> ）を用いる方が便利である．</p>
+<p>他にもファイルの作成やファイル名変更，削除などの一通りの作業ができる．詳細については <a class="reference external" href="https://docs.python.org/ja/3/library/os.html">公式ドキュメント</a> を確認して欲しい．ただし，ファイルのコピーや削除などのより高レベルの（より簡単な）ファイル操作には標準ライブラリの <code class="docutils literal notranslate"><span class="pre">shutil</span></code> モジュール（ <a class="reference external" href="https://docs.python.org/ja/3/library/shutil.html">公式ドキュメント</a> ）を用いる方が便利であろう．</p>
 </div>
 <div class="section" id="id16">
 <h3><span class="section-number">7.3.2. </span>シェルコマンドの実行<a class="headerlink" href="#id16" title="このヘッドラインへのパーマリンク">¶</a></h3>
@@ -751,7 +751,7 @@ $ python kadai3.py -Sr
 </div>
 <div class="section" id="id23">
 <h3><span class="section-number">7.5.4. </span>課題4<a class="headerlink" href="#id23" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p><a class="reference external" href="https://open-meteo.com/en">Open-Meteo</a> というサイトが，無料で天気予報データをダウンロードできるサービスを提供している．決められた形式でHTTPSアクセスをするとデータがJSON形式でダウンロードされる仕組みである．このサイトの東京の天気予報データにアクセスする <a class="reference external" href="https://api.open-meteo.com/v1/forecast?latitude=35.6785&amp;longitude=139.6823&amp;hourly=temperature_2m,precipitation,windspeed_10m,winddirection_10m&amp;windspeed_unit=ms&amp;timezone=Asia%2FTokyo&amp;past_days=1">URL</a> を使って，ダウンロードしたデータを自動でプロットするプログラムを作成せよ．ただし，オプション無しで実行した場合には画面にプロットを表示し， <code class="docutils literal notranslate"><span class="pre">--save</span></code> オプションでファイル名を指定した場合には，指定されたファイル名（例えばpng形式など）でプロットをファイルに保存するようにせよ．例えば以下のようなプロットが得られればよい．この例のURLでは温度，降水量，風速と風向きをプロットしている．（Open-Meteoのサイトではダウンロードするデータを自分でカスタマイズすることができる．）</p>
+<p><a class="reference external" href="https://open-meteo.com/en">Open-Meteo</a> というサイトは，無料で天気予報データをダウンロードできるサービスを提供している．決められた形式でサイトにHTTPSアクセスをすると，データがJSON形式でダウンロードされる仕組みである．このサイトの東京の天気予報データにアクセスする <a class="reference external" href="https://api.open-meteo.com/v1/forecast?latitude=35.6785&amp;longitude=139.6823&amp;hourly=temperature_2m,precipitation,windspeed_10m,winddirection_10m&amp;windspeed_unit=ms&amp;timezone=Asia%2FTokyo&amp;past_days=1">URL</a> を使おう．実行すると自動的にこのURLにアクセスし，ダウンロードしたデータ（プログラムを実行した時点での最新のデータ）を自動でプロットするプログラムを作成せよ．ただし，オプション無しで実行した場合には画面にプロットを表示し， <code class="docutils literal notranslate"><span class="pre">--save</span></code> オプションでファイル名を指定した場合には，指定されたファイル名（例えばpng形式など）でプロットをファイルに保存するようにせよ．例えば以下のようなプロットが得られればよい．この例のURLでは温度，降水量，風速と風向きをプロットしている．（Open-Meteoのサイトではダウンロードするデータを自分でカスタマイズすることができる．）</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="_images/chap07_openmeteo.png"><img alt="_images/chap07_openmeteo.png" src="_images/chap07_openmeteo.png" style="width: 80%;" /></a>
 </div>

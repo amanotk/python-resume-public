@@ -231,7 +231,7 @@
 </pre></div>
 </td></tr></table></div>
 <p>とすればよい．</p>
-<p>ここでCやFortranでは必須であったコンパイル作業が必要なかったことに注意しよう．Pythonはこれらのコンパイル型言語とは異なりインタープリター型の言語に分類される．すなわち，コンパイルによって全てが一旦機械語に変換されてから実行されるのではなく，プログラムの実行時に一文ずつ読み込まれて，解釈され(interpret)，実行される．したがって，一般にインタープリター型言語の実行速度はコンパイル型言語に比べて非常に遅い．Pythonにおいてもこれは正しいが，この問題は多くの場合（少なくともある程度は）回避することが可能である．その代わりに変数の型宣言などを事前にすることなく使うことができたりと，比較的お手軽に使えるのが大きな利点である．このようにソースコードを(コンパイルすることなく)そのまま実行する言語をスクリプト言語と呼んだりもする．bashなどのシェルも一種のスクリプト言語である．</p>
+<p>ここでCやFortranでは必須であったコンパイル作業が必要なかったことに注意しよう．Pythonはこれらのコンパイル型言語とは異なりインタープリター型の言語に分類される．すなわち，コンパイルによって全てが一旦機械語に変換されてから実行されるのではなく，プログラムの実行時に一文ずつ読み込まれて，解釈され(interpret)，実行される．したがって，一般にインタープリター型言語の実行速度はコンパイル型言語に比べて非常に遅い．Pythonにおいてもこれは正しいが，この問題は多くの場合（少なくともある程度は）回避することが可能である．その代わりに変数の型宣言などを事前にすることなく使うことができたりと，比較的お手軽に使えるのが大きな利点である．このようにソースコードを(コンパイルすることなく)そのまま実行することができる言語をスクリプト言語と呼んだりもする．bashなどのシェルも一種のスクリプト言語である．</p>
 <p>また，Pythonはインタープリターとしての特徴を生かして対話的な使い方も可能である．これについては <a class="reference internal" href="chap03.html"><span class="doc">対話型の実行方法</span></a> で別途紹介するが，ここではまずはコマンドラインでの実行方法に慣れておこう <a class="footnote-reference brackets" href="#interactive" id="id5">3</a> ．</p>
 </div>
 <div class="section" id="id6">
@@ -446,7 +446,7 @@
 </div>
 <div class="section" id="id12">
 <h2><a class="toc-backref" href="#id39"><span class="section-number">2.7. </span>文字列フォーマット</a><a class="headerlink" href="#id12" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Pythonの文字列のフォーマットの仕方について簡単に触れておこう．ここではよく使われるprintf形式と <code class="docutils literal notranslate"><span class="pre">format()</span></code> の使い方について最低限の情報を述べるにとどめる．printf形式はC言語とほぼ同じで，また古いPythonでも使えたことから慣れている人(筆者のことである)が好んで使う傾向がある． <code class="docutils literal notranslate"><span class="pre">format()</span></code> はprintf形式の問題を解決するために導入されたという経緯があるようなので，今から覚えるのであればこちらの方がよいかもしれない．いずれにせよ，一気に全て覚えるようなものではなく，必要に応じてPythonの公式ドキュメント等を参照して少しずつ慣れていけば十分である．</p>
+<p>Pythonの文字列のフォーマットの仕方について簡単に触れておこう．ここではよく使われるprintf形式と <code class="docutils literal notranslate"><span class="pre">format()</span></code> の使い方について最低限の情報を述べるにとどめる．printf形式はC言語とほぼ同じで，また古いPythonでも使えたことから慣れている人(筆者のことである)が好んで使う傾向がある． <code class="docutils literal notranslate"><span class="pre">format()</span></code> はprintf形式の問題を解決するために導入されたという経緯があるようなので，今から覚えるのであればこちらの方がよいだろう．いずれにせよ，一気に全て覚えるようなものではなく，必要に応じてPythonの公式ドキュメント等を参照して少しずつ慣れていけば十分である．</p>
 <div class="section" id="printf">
 <h3><span class="section-number">2.7.1. </span>printf形式<a class="headerlink" href="#printf" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>C言語のprintfで用いられるのとほぼ同じ要領で文字列のフォーマットができる．これには <code class="docutils literal notranslate"><span class="pre">%</span></code> を用いて，例えば以下のように用いる．</p>
@@ -571,7 +571,7 @@ Input x : <span class="m">0</span>.2                     <span class="c1"># キ�
 <dd><p>実は <a class="reference internal" href="chap02_hello_py.html"><span class="doc">hello.py</span></a> の1行目がPythonで実行せよという意味なので，実行権限さえ与えてあればこのように実行することができるのである．</p>
 </dd>
 <dt class="label" id="interactive"><span class="brackets"><a class="fn-backref" href="#id5">3</a></span></dt>
-<dd><p>最近ではPythonに関する情報の多くがJupyter Notebookと呼ばれる環境での実行を前提としており，Pythonスクリプトとしての実行方法についてあまり紹介してくれていない．実際にそのような使い方を知らない人も多いようなので，ここではあえてコマンドラインでの実行方法から先に紹介する．</p>
+<dd><p>最近ではPythonに関する情報の多くがJupyter Notebookと呼ばれる環境での実行を前提としており，Pythonスクリプトとしての実行方法についてあまり紹介してくれていない．実際にそのような使い方を知らない人も多いようなので，ここではあえてコマンドラインでの実行方法から先に紹介する．より詳細については <a class="reference internal" href="chap07.html"><span class="doc">スクリプトとしてのPython</span></a> で扱う．</p>
 </dd>
 <dt class="label" id="readability"><span class="brackets"><a class="fn-backref" href="#id7">4</a></span></dt>
 <dd><p>もちろんこれは程度の問題である．Pythonであっても読みにくいコードが絶対にできないわけではない．</p>

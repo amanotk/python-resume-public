@@ -87,7 +87,7 @@ Pythonはインタープリター型の言語であり，一行ずつ順に実�
 IPython
 =======
 
-実際にはデフォルトの対話モードをより高機能ににしたIPythonが非常に便利である．ターミナルで ``ipython`` と打つと，今度は以下のように表示されるであろう．
+対話モードを常用するのであれば，デフォルトの対話モードをより高機能にしたIPythonを使うのが非常に便利である．ターミナルで ``ipython`` と打つと，今度は以下のように表示されるであろう．
 
 .. code-block:: bash
 
@@ -213,7 +213,7 @@ JupyterLabはJupyter Notebookの次世代版という位置付けのウェブベ
 プロット
 ========
 
-IPythonやJupyter Notebookを使うと対話的にデータのプロットができる．matplotlibというデファクトスタンダードに近いライブラリを使って図をプロットするには以下のようにすればよい [#matplotlib]_ ．
+IPythonやJupyter Notebookを使うと対話的にデータのプロットができる．Pythonではmatplotlibというデファクトスタンダードに近いライブラリを使ってプロットをすることが多い．例えば以下のようにすればよい [#matplotlib]_ ．
 
 ::
 
@@ -221,7 +221,7 @@ IPythonやJupyter Notebookを使うと対話的にデータのプロットがで
   import numpy as np
   
   # matplotlibのおまじない
-  from matplotlib import pylab as plt
+  from matplotlib import pyplot as plt
   
   x = np.linspace(0.0, np.pi, 100)
   y = np.cos(x)**2

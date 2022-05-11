@@ -12,7 +12,7 @@
   ::
 
     >>> import numpy as np
-    >>> from matplotlib import pylab as plt
+    >>> from matplotlib import pyplot as plt
 
   のように必要なモジュールが ``import`` されているものとする．
 
