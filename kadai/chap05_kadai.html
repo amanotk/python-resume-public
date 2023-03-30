@@ -17,6 +17,7 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/translations.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
@@ -79,7 +80,7 @@
            <div itemprop="articleBody">
              
   <section id="id1">
-<h1>第5章 演習課題<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
+<h1>第5章 演習課題<a class="headerlink" href="#id1" title="この見出しへのパーマリンク"></a></h1>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
 <p>以下の課題はJupyter Notebookの使用を前提としているが，もちろん他の実行環境でも同等の処理を実現出来ていれば問題ない．</p>
@@ -89,11 +90,11 @@
 <p><a class="reference external" href="sample/chap05/kadai.html">解答例</a> (<a class="reference external" href="sample/chap05/kadai.ipynb">ダウンロード</a>)</p>
 </div>
 <section id="id4">
-<h2>課題1<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
+<h2>課題1<a class="headerlink" href="#id4" title="この見出しへのパーマリンク"></a></h2>
 <p>サンプルを実行して動作を確認しよう．</p>
 </section>
 <section id="id5">
-<h2>課題2<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h2>
+<h2>課題2<a class="headerlink" href="#id5" title="この見出しへのパーマリンク"></a></h2>
 <p>tupleの便利な使い方として関数の引数の扱いが挙げられる．</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="c1"># 全ての引数を出力</span>
@@ -117,7 +118,7 @@
 <p>のように渡すこともできる．これも使えるようになると便利である．</p>
 </section>
 <section id="id6">
-<h2>課題3<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h2>
+<h2>課題3<a class="headerlink" href="#id6" title="この見出しへのパーマリンク"></a></h2>
 <p>任意のlistを受け取りそこから重複するものを除いた新たなlistオブジェクトを返す関数 <code class="docutils literal notranslate"><span class="pre">unique</span></code> を作成せよ．ただし重複するもの以外の順番は保持するものとする．例えば以下のような結果が得られればよい．(やり方は色々あるが素直にループで処理する方法を考えてみよう．)</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">unique</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 <span class="go">[&#39;a&#39;, 1, &#39;b&#39;, 2, &#39;c&#39;, 3, &#39;d&#39;]</span>
@@ -125,7 +126,7 @@
 </div>
 </section>
 <section id="label-chap05-kadai04">
-<span id="id7"></span><h2>課題4<a class="headerlink" href="#label-chap05-kadai04" title="Permalink to this heading"></a></h2>
+<span id="id7"></span><h2>課題4<a class="headerlink" href="#label-chap05-kadai04" title="この見出しへのパーマリンク"></a></h2>
 <p>dictは関数のキーワード引数を受け取るときに用いると便利である．</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
@@ -156,7 +157,7 @@
 <p>のように使うことも可能である．注意すべきは必ず <strong>位置指定引数の方がキーワード引数より先になければならない</strong> という点である．</p>
 </section>
 <section id="id8">
-<h2>課題5<a class="headerlink" href="#id8" title="Permalink to this heading"></a></h2>
+<h2>課題5<a class="headerlink" href="#id8" title="この見出しへのパーマリンク"></a></h2>
 <p>JSON(JavaScript Object Notation)は特にウェブを介したデータのやり取りによく使われるデータの記述形式である．例えば以下は <a class="reference external" href="https://next.json-generator.com/">JSON GENERATOR</a> というサイトで作ったダミーのJSONデータの抜粋である．このようにJSONはPythonのlistとdictを組み合わせたような形式で書かれている．</p>
 <p>このようなJSON形式のデータはPython標準の <code class="docutils literal notranslate"><span class="pre">json</span></code> モジュールを用いることで非常に簡単に扱うことができる．ここでは実際にこのJSON文字列データからfirst nameとlast nameおよびemailを取り出して表示する関数 <code class="docutils literal notranslate"><span class="pre">process_json1</span></code> を作成せよ．この例のJSON文字列をコピーアンドペーストで <code class="docutils literal notranslate"><span class="pre">json_string</span></code> という変数に格納し，実行すると以下のような結果が得られる．</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">process_json1</span><span class="p">(</span><span class="n">json_string</span><span class="p">)</span>
@@ -173,7 +174,7 @@
 </div>
 </section>
 <section id="id9">
-<h2>課題6<a class="headerlink" href="#id9" title="Permalink to this heading"></a></h2>
+<h2>課題6<a class="headerlink" href="#id9" title="この見出しへのパーマリンク"></a></h2>
 <p>課題5で扱ったJSON文字列から個人を特定できる情報を削除したJSON文字列を返す関数 <code class="docutils literal notranslate"><span class="pre">process_json2</span></code> を作成せよ．例えば以下のような結果が得られればよい．</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">process_json2</span><span class="p">(</span><span class="n">json_string</span><span class="p">))</span>
 <span class="go">[</span>

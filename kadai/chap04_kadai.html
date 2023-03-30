@@ -17,6 +17,7 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/translations.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -80,7 +81,7 @@
            <div itemprop="articleBody">
              
   <section id="id1">
-<h1>第4章 演習課題<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
+<h1>第4章 演習課題<a class="headerlink" href="#id1" title="この見出しへのパーマリンク"></a></h1>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
 <p>以下の課題はJupyter Notebookの使用を前提としているが，もちろん他の実行環境でも同等の処理を実現出来ていれば問題ない．</p>
@@ -90,11 +91,11 @@
 <p><a class="reference external" href="sample/chap04/kadai.html">解答例</a> (<a class="reference external" href="sample/chap04/kadai.ipynb">ダウンロード</a>)</p>
 </div>
 <section id="id4">
-<h2>課題1<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
+<h2>課題1<a class="headerlink" href="#id4" title="この見出しへのパーマリンク"></a></h2>
 <p>サンプルを実行して動作を確認しよう．</p>
 </section>
 <section id="id5">
-<h2>課題2<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h2>
+<h2>課題2<a class="headerlink" href="#id5" title="この見出しへのパーマリンク"></a></h2>
 <p>2つの整数 <code class="docutils literal notranslate"><span class="pre">m</span></code> および <code class="docutils literal notranslate"><span class="pre">n</span></code> を引数として受け取り，その大小を比較する関数 <code class="docutils literal notranslate"><span class="pre">compare</span></code></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compare</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
     <span class="s2">&quot;mとnを比較する&quot;</span>
@@ -113,7 +114,7 @@
 <p>などと出力するようにすること．</p>
 </section>
 <section id="id6">
-<h2>課題3<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h2>
+<h2>課題3<a class="headerlink" href="#id6" title="この見出しへのパーマリンク"></a></h2>
 <p>西暦(整数)を引数として受け取り，うるう年かどうか判定する関数 <code class="docutils literal notranslate"><span class="pre">is_leapyear</span></code></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_leapyear</span><span class="p">(</span><span class="n">year</span><span class="p">):</span>
     <span class="s2">&quot;うるう年の判定&quot;</span>
@@ -135,7 +136,7 @@
 </div>
 </section>
 <section id="id7">
-<h2>課題4<a class="headerlink" href="#id7" title="Permalink to this heading"></a></h2>
+<h2>課題4<a class="headerlink" href="#id7" title="この見出しへのパーマリンク"></a></h2>
 <p>整数 <code class="docutils literal notranslate"><span class="pre">N</span></code> を引数として受け取り， <span class="math notranslate nohighlight">\(0^{\circ} \leq \theta \leq 180^{\circ}\)</span> をN分割した点(端点を含むのでN+1点)，およびそれらの点における <span class="math notranslate nohighlight">\(\sin \theta\)</span> ， <span class="math notranslate nohighlight">\(\cos \theta\)</span> の値を出力する関数</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">trigonometric</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="s2">&quot;θ, sinθ, cosθの値を出力する&quot;</span>
@@ -173,7 +174,7 @@
 <p>としている．</p>
 </section>
 <section id="id8">
-<h2>課題5<a class="headerlink" href="#id8" title="Permalink to this heading"></a></h2>
+<h2>課題5<a class="headerlink" href="#id8" title="この見出しへのパーマリンク"></a></h2>
 <p>引数として与えられた2つの整数 <code class="docutils literal notranslate"><span class="pre">m</span></code> および <code class="docutils literal notranslate"><span class="pre">n</span></code> の最大公約数を求める関数 <code class="docutils literal notranslate"><span class="pre">gcd</span></code></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
     <span class="s2">&quot;mとnの最大公倍数を求める&quot;</span>
@@ -195,7 +196,7 @@
 </div></blockquote>
 </section>
 <section id="id9">
-<h2>課題6<a class="headerlink" href="#id9" title="Permalink to this heading"></a></h2>
+<h2>課題6<a class="headerlink" href="#id9" title="この見出しへのパーマリンク"></a></h2>
 <p>以下の級数展開</p>
 <div class="math notranslate nohighlight">
 \[e \simeq \sum_{n=0}^{N} \frac{1}{n !}. \quad (0! = 1に注意せよ)\]</div>
@@ -234,7 +235,7 @@
 </div>
 </section>
 <section id="id10">
-<h2>課題7<a class="headerlink" href="#id10" title="Permalink to this heading"></a></h2>
+<h2>課題7<a class="headerlink" href="#id10" title="この見出しへのパーマリンク"></a></h2>
 <p>与えられた実数 <span class="math notranslate nohighlight">\(a (&gt; 0)\)</span> の平方根の近似値を以下のような逐次近似</p>
 <div class="math notranslate nohighlight">
 \[x_{n+1} = \frac{1}{2} \left( \frac{a}{x_{n}} + x_{n} \right)\]</div>
