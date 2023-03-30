@@ -1,86 +1,52 @@
-
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<html class="writer-html5" lang="ja" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>3. 対話型の実行方法 &mdash; Python演習(地球惑星物理学演習)</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-
-  
-  
-  
-  
-
-  
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/translations.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="検索" href="search.html" />
     <link rel="next" title="4. 制御構造と関数・オブジェクト" href="chap04.html" />
     <link rel="prev" title="2. Pythonの基本" href="chap02.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
 
           
-            <a href="index.html" class="icon icon-home"> Python演習
           
-
-          
+          <a href="index.html" class="icon icon-home">
+            Python演習
           </a>
-
-          
-            
-            
-          
-
-          
+              <div class="version">
+                2023
+              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="chap01.html">1. はじめに</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chap02.html">2. Pythonの基本</a></li>
@@ -89,14 +55,15 @@
 <li class="toctree-l2"><a class="reference internal" href="#ipython">3.2. IPython</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#jupyter-qt-console">3.3. Jupyter Qt Console</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#jupyter-notebook">3.4. Jupyter Notebook</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#jupyterlab">3.5. JupyterLab</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ide">3.6. 様々なIDE</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id6">3.7. プロット</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id8">3.8. 第3章 演習課題</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id9">3.8.1. 課題1</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id10">3.8.2. 課題2</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id11">3.8.3. 課題3</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id12">3.8.4. 課題4 <sup>†</sup></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#jupyter-lab">3.5. Jupyter Lab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#visual-studio-code">3.6. Visual Studio Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ide">3.7. 様々なIDE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">3.8. プロット</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">3.9. 第3章 演習課題</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id9">3.9.1. 課題1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">3.9.2. 課題2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">3.9.3. 課題3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">3.9.4. 課題4 <sup>†</sup></a></li>
 </ul>
 </li>
 </ul>
@@ -107,69 +74,32 @@
 <li class="toctree-l1"><a class="reference internal" href="chap07.html">7. スクリプトとしてのPython</a></li>
 </ul>
 
-            
-          
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">Python演習</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html">Docs</a> &raquo;</li>
-        
-      <li><span class="section-number">3. </span>対話型の実行方法</li>
-    
-    
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">3. </span>対話型の実行方法</li>
       <li class="wy-breadcrumbs-aside">
-        
-            
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="id1">
-<h1><a class="toc-backref" href="#id18"><span class="section-number">3. </span>対話型の実行方法</a><a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>これまではコマンドラインで完結した一つのPythonスクリプトを実行する方法を用いてきた．ここではPythonの大きな強みの一つである対話的な実行方法について紹介しよう．ただし，対話的と一口で言っても環境は様々なので，あくまでもいくつかの代表的な実行環境を紹介するにとどめる．なお，筆者のおすすめは一昔前まで <a class="reference internal" href="#label-ipython"><span class="std std-ref">IPython</span></a> と <a class="reference internal" href="#label-jupyternotebook"><span class="std std-ref">Jupyter Notebook</span></a> であった．今では <a class="reference internal" href="#label-jupyterlab"><span class="std std-ref">JupyterLab</span></a> が両者を同時に使える大変便利な環境なので，こちらをおすすめするべきかもしれない．</p>
+             
+  <section id="id1">
+<h1><a class="toc-backref" href="#id18"><span class="section-number">3. </span>対話型の実行方法</a><a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
+<p>これまではコマンドラインで完結した一つのPythonスクリプトを実行する方法を用いてきた．ここではPythonの大きな強みの一つである対話的な実行方法について紹介しよう．ただし，対話的と一口で言っても環境は様々なので，あくまでもいくつかの代表的な実行環境を紹介するにとどめる．筆者のおすすめは一昔前まで <a class="reference internal" href="#label-ipython"><span class="std std-ref">IPython</span></a> と <a class="reference internal" href="#label-jupyternotebook"><span class="std std-ref">Jupyter Notebook</span></a> であったが， <a class="reference internal" href="#label-jupyterlab"><span class="std std-ref">Jupyter Lab</span></a> が両者を同時に使える大変便利な環境なので，今ではこちらをおすすめするべきかもしれない．（ただし筆者は <a class="reference internal" href="#label-jupyterlab"><span class="std std-ref">Jupyter Lab</span></a> から <a class="reference internal" href="#label-vscode"><span class="std std-ref">Visual Studio Code</span></a> に改宗したクチである．）</p>
 <div class="admonition seealso">
 <p class="admonition-title">参考</p>
 <p><a class="reference external" href="sample/chap03/sample.html">sample.ipynb</a> (<a class="reference external" href="sample/chap03/sample.ipynb">ダウンロード</a>)</p>
@@ -183,103 +113,76 @@
 <li><p><a class="reference internal" href="#ipython" id="id20">IPython</a></p></li>
 <li><p><a class="reference internal" href="#jupyter-qt-console" id="id21">Jupyter Qt Console</a></p></li>
 <li><p><a class="reference internal" href="#jupyter-notebook" id="id22">Jupyter Notebook</a></p></li>
-<li><p><a class="reference internal" href="#jupyterlab" id="id23">JupyterLab</a></p></li>
-<li><p><a class="reference internal" href="#ide" id="id24">様々なIDE</a></p></li>
-<li><p><a class="reference internal" href="#id6" id="id25">プロット</a></p></li>
-<li><p><a class="reference internal" href="#id8" id="id26">第3章 演習課題</a></p></li>
+<li><p><a class="reference internal" href="#jupyter-lab" id="id23">Jupyter Lab</a></p></li>
+<li><p><a class="reference internal" href="#visual-studio-code" id="id24">Visual Studio Code</a></p></li>
+<li><p><a class="reference internal" href="#ide" id="id25">様々なIDE</a></p></li>
+<li><p><a class="reference internal" href="#id6" id="id26">プロット</a></p></li>
+<li><p><a class="reference internal" href="#id8" id="id27">第3章 演習課題</a></p></li>
 </ul>
 </li>
 </ul>
 </div>
-<div class="section" id="python">
-<h2><a class="toc-backref" href="#id19"><span class="section-number">3.1. </span>Pythonの対話モード</a><a class="headerlink" href="#python" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<section id="python">
+<h2><a class="toc-backref" href="#id19"><span class="section-number">3.1. </span>Pythonの対話モード</a><a class="headerlink" href="#python" title="Permalink to this heading"></a></h2>
 <p>ターミナルで <code class="docutils literal notranslate"><span class="pre">python</span></code> とだけ打ってみると以下のように表示され，キーボード入力待ちの状態になるであろう．</p>
-<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ python
-Python <span class="m">3</span>.7.6 <span class="o">(</span>default, Jan  <span class="m">8</span> <span class="m">2020</span>, <span class="m">19</span>:59:22<span class="o">)</span>
-<span class="o">[</span>GCC <span class="m">7</span>.3.0<span class="o">]</span> :: Anaconda, Inc. on linux
-Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&quot;</span>, <span class="s2">&quot;credits&quot;</span> or <span class="s2">&quot;license&quot;</span> <span class="k">for</span> more information.
-&gt;&gt;&gt;
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>$ python
+<span class="linenos">2</span>Python <span class="m">3</span>.7.6 <span class="o">(</span>default, Jan  <span class="m">8</span> <span class="m">2020</span>, <span class="m">19</span>:59:22<span class="o">)</span>
+<span class="linenos">3</span><span class="o">[</span>GCC <span class="m">7</span>.3.0<span class="o">]</span> :: Anaconda, Inc. on linux
+<span class="linenos">4</span>Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&quot;</span>, <span class="s2">&quot;credits&quot;</span> or <span class="s2">&quot;license&quot;</span> <span class="k">for</span> more information.
+<span class="linenos">5</span>&gt;&gt;&gt;
 </pre></div>
-</td></tr></table></div>
+</div>
 <p>Pythonはインタープリター型の言語であり，一行ずつ順に実行されることは既に紹介した通りである．したがって，対話的(interactive)に任意のPythonコードを入力して実行させることができるのである．試しに <code class="docutils literal notranslate"><span class="pre">print('Hello,</span> <span class="pre">World</span> <span class="pre">!')</span></code> と入力してEnterしてみると</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, World !&#39;</span><span class="p">)</span>
-<span class="go">Hello, World !</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, World !&#39;</span><span class="p">)</span>
+<span class="linenos">2</span><span class="go">Hello, World !</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 <p>のようになる．1行目のPythonのコードが実行され，2行目の出力が得られたということである．</p>
 <p>このような対話的なPython実行環境をPythonシェルとかコンソールと呼ぶことがある．Python関係のドキュメントでは対話モードのデフォルトのプロンプト <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code> (または <code class="docutils literal notranslate"><span class="pre">...</span></code> )に続く行がPythonのコードを意味し，そうでない行は実行結果を意味することになっている．この文書でも特に断りのない限りはこの慣習に従うことにする．</p>
 <p>もちろん1行では完結しない構文ブロックも入力が可能である．以下の例を見てみよう．</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>            <span class="c1"># 字下げ</span>
-<span class="gp">... </span>                        <span class="c1"># 空行(字下げなしでEnter)</span>
-<span class="go">0</span>
-<span class="go">1</span>
-<span class="go">2</span>
-<span class="go">3</span>
-<span class="go">4</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+<span class="linenos">2</span><span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>            <span class="c1"># 字下げ</span>
+<span class="linenos">3</span><span class="gp">... </span>                        <span class="c1"># 空行(字下げなしでEnter)</span>
+<span class="linenos">4</span><span class="go">0</span>
+<span class="linenos">5</span><span class="go">1</span>
+<span class="linenos">6</span><span class="go">2</span>
+<span class="linenos">7</span><span class="go">3</span>
+<span class="linenos">8</span><span class="go">4</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 <p>2行目は <code class="docutils literal notranslate"><span class="pre">for</span></code> ループの中にあるため，スペースやTabキーで字下げをする．3行目は字下げをせずに空白行とすることでこの構文ブロックの終端と解釈され，ループが実行されることになる．</p>
 <p>対話モードの便利な機能としてヒストリの利用や，ドキュメントの参照が上げられる．対話モードではbashなどのシェルと同様に過去のコマンドヒストリが記録されており，矢印キーや <code class="docutils literal notranslate"><span class="pre">Ctrl-p</span></code> ， <code class="docutils literal notranslate"><span class="pre">Ctrl-n</span></code> で行き来することができる．ドキュメントの参照については，例えば <code class="docutils literal notranslate"><span class="pre">print</span></code> 関数のドキュメントを参照するには</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">help</span><span class="p">(</span><span class="nb">print</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="gp">&gt;&gt;&gt; </span><span class="n">help</span><span class="p">(</span><span class="nb">print</span><span class="p">)</span>
 </pre></div>
-</td></tr></table></div>
-<p>と入力すると</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Help</span> <span class="n">on</span> <span class="n">built</span><span class="o">-</span><span class="ow">in</span> <span class="n">function</span> <span class="nb">print</span> <span class="ow">in</span> <span class="n">module</span> <span class="n">builtins</span><span class="p">:</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-    <span class="n">Prints</span> <span class="n">the</span> <span class="n">values</span> <span class="n">to</span> <span class="n">a</span> <span class="n">stream</span><span class="p">,</span> <span class="ow">or</span> <span class="n">to</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="n">by</span> <span class="n">default</span><span class="o">.</span>
-    <span class="n">Optional</span> <span class="n">keyword</span> <span class="n">arguments</span><span class="p">:</span>
-    <span class="n">file</span><span class="p">:</span>  <span class="n">a</span> <span class="n">file</span><span class="o">-</span><span class="n">like</span> <span class="nb">object</span> <span class="p">(</span><span class="n">stream</span><span class="p">);</span> <span class="n">defaults</span> <span class="n">to</span> <span class="n">the</span> <span class="n">current</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span>
-    <span class="n">sep</span><span class="p">:</span>   <span class="n">string</span> <span class="n">inserted</span> <span class="n">between</span> <span class="n">values</span><span class="p">,</span> <span class="n">default</span> <span class="n">a</span> <span class="n">space</span><span class="o">.</span>
-    <span class="n">end</span><span class="p">:</span>   <span class="n">string</span> <span class="n">appended</span> <span class="n">after</span> <span class="n">the</span> <span class="n">last</span> <span class="n">value</span><span class="p">,</span> <span class="n">default</span> <span class="n">a</span> <span class="n">newline</span><span class="o">.</span>
-    <span class="n">flush</span><span class="p">:</span> <span class="n">whether</span> <span class="n">to</span> <span class="n">forcibly</span> <span class="n">flush</span> <span class="n">the</span> <span class="n">stream</span><span class="o">.</span>
-<span class="p">(</span><span class="n">END</span><span class="p">)</span>
-</pre></div>
-</td></tr></table></div>
-<p>のようにドキュメントが適当なページャ(Unixコマンドのlessやmoreなど）で表示されることになる．(大抵の場合終了するには <code class="docutils literal notranslate"><span class="pre">q</span></code> と入力すればよい．)このように，ちょっと使い方を調べたい時には対話モードのドキュメントを参照するのが便利である．</p>
 </div>
-<div class="section" id="ipython">
-<span id="label-ipython"></span><h2><a class="toc-backref" href="#id20"><span class="section-number">3.2. </span>IPython</a><a class="headerlink" href="#ipython" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>対話モードを常用するのであれば，デフォルトの対話モードをより高機能にしたIPythonを使うのが非常に便利である．ターミナルで <code class="docutils literal notranslate"><span class="pre">ipython</span></code> と打つと，今度は以下のように表示されるであろう．</p>
-<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ ipython
-Python <span class="m">3</span>.7.6 <span class="o">(</span>default, Jan  <span class="m">8</span> <span class="m">2020</span>, <span class="m">19</span>:59:22<span class="o">)</span>
-Type <span class="s1">&#39;copyright&#39;</span>, <span class="s1">&#39;credits&#39;</span> or <span class="s1">&#39;license&#39;</span> <span class="k">for</span> more information
-IPython <span class="m">7</span>.12.0 -- An enhanced Interactive Python. Type <span class="s1">&#39;?&#39;</span> <span class="k">for</span> help.
-
-In <span class="o">[</span><span class="m">1</span><span class="o">]</span>:
+<p>と入力すると</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">Help</span> <span class="n">on</span> <span class="n">built</span><span class="o">-</span><span class="ow">in</span> <span class="n">function</span> <span class="nb">print</span> <span class="ow">in</span> <span class="n">module</span> <span class="n">builtins</span><span class="p">:</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="nb">print</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="linenos"> 4</span>    <span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span>    <span class="n">Prints</span> <span class="n">the</span> <span class="n">values</span> <span class="n">to</span> <span class="n">a</span> <span class="n">stream</span><span class="p">,</span> <span class="ow">or</span> <span class="n">to</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="n">by</span> <span class="n">default</span><span class="o">.</span>
+<span class="linenos"> 7</span>    <span class="n">Optional</span> <span class="n">keyword</span> <span class="n">arguments</span><span class="p">:</span>
+<span class="linenos"> 8</span>    <span class="n">file</span><span class="p">:</span>  <span class="n">a</span> <span class="n">file</span><span class="o">-</span><span class="n">like</span> <span class="nb">object</span> <span class="p">(</span><span class="n">stream</span><span class="p">);</span> <span class="n">defaults</span> <span class="n">to</span> <span class="n">the</span> <span class="n">current</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span>
+<span class="linenos"> 9</span>    <span class="n">sep</span><span class="p">:</span>   <span class="n">string</span> <span class="n">inserted</span> <span class="n">between</span> <span class="n">values</span><span class="p">,</span> <span class="n">default</span> <span class="n">a</span> <span class="n">space</span><span class="o">.</span>
+<span class="linenos">10</span>    <span class="n">end</span><span class="p">:</span>   <span class="n">string</span> <span class="n">appended</span> <span class="n">after</span> <span class="n">the</span> <span class="n">last</span> <span class="n">value</span><span class="p">,</span> <span class="n">default</span> <span class="n">a</span> <span class="n">newline</span><span class="o">.</span>
+<span class="linenos">11</span>    <span class="n">flush</span><span class="p">:</span> <span class="n">whether</span> <span class="n">to</span> <span class="n">forcibly</span> <span class="n">flush</span> <span class="n">the</span> <span class="n">stream</span><span class="o">.</span>
+<span class="linenos">12</span><span class="p">(</span><span class="n">END</span><span class="p">)</span>
 </pre></div>
-</td></tr></table></div>
+</div>
+<p>のようにドキュメントが適当なページャ(Unixコマンドのlessやmoreなど）で表示されることになる．(大抵の場合終了するには <code class="docutils literal notranslate"><span class="pre">q</span></code> と入力すればよい．)このように，ちょっと使い方を調べたい時には対話モードのドキュメントを参照するのが便利である．</p>
+</section>
+<section id="ipython">
+<span id="label-ipython"></span><h2><a class="toc-backref" href="#id20"><span class="section-number">3.2. </span>IPython</a><a class="headerlink" href="#ipython" title="Permalink to this heading"></a></h2>
+<p>実際にはデフォルトの対話モードをより高機能ににしたIPythonが非常に便利である．ターミナルで <code class="docutils literal notranslate"><span class="pre">ipython</span></code> と打つと，今度は以下のように表示されるであろう．</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>$ ipython
+<span class="linenos">2</span>Python <span class="m">3</span>.7.6 <span class="o">(</span>default, Jan  <span class="m">8</span> <span class="m">2020</span>, <span class="m">19</span>:59:22<span class="o">)</span>
+<span class="linenos">3</span>Type <span class="s1">&#39;copyright&#39;</span>, <span class="s1">&#39;credits&#39;</span> or <span class="s1">&#39;license&#39;</span> <span class="k">for</span> more information
+<span class="linenos">4</span>IPython <span class="m">7</span>.12.0 -- An enhanced Interactive Python. Type <span class="s1">&#39;?&#39;</span> <span class="k">for</span> help.
+<span class="linenos">5</span>
+<span class="linenos">6</span>In <span class="o">[</span><span class="m">1</span><span class="o">]</span>:
+</pre></div>
+</div>
 <p>今度は <code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[1]:</span></code> がプロンプトとなり，入力待ちの状態になる．</p>
 <p>基本的な使い方はデフォルトの対話モードと同じであるが，多くの便利な機能が利用できる．あまりに多いのでここでは簡単に機能を紹介するにとどめておこう．</p>
 <ul class="simple">
@@ -294,61 +197,78 @@ In <span class="o">[</span><span class="m">1</span><span class="o">]</span>:
 <li><p>様々なマジックコマンド</p></li>
 </ul>
 <p>便利なマジックコマンドが多数存在するが，これについて紹介し始めるときりがないので各自で調べてほしい．特に <code class="docutils literal notranslate"><span class="pre">%edit</span></code> や <code class="docutils literal notranslate"><span class="pre">%hist</span></code> などが便利である．</p>
-</div>
-<div class="section" id="jupyter-qt-console">
-<h2><a class="toc-backref" href="#id21"><span class="section-number">3.3. </span>Jupyter Qt Console</a><a class="headerlink" href="#jupyter-qt-console" title="このヘッドラインへのパーマリンク">¶</a></h2>
+</section>
+<section id="jupyter-qt-console">
+<h2><a class="toc-backref" href="#id21"><span class="section-number">3.3. </span>Jupyter Qt Console</a><a class="headerlink" href="#jupyter-qt-console" title="Permalink to this heading"></a></h2>
 <p>IPythonのコンソールと機能的にはほぼ同じであるが，専用のGUIを持つJupyter Qt Consoleというアプリケーションも存在する．ターミナルで</p>
-<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ jupyter-qtconsole
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>$ jupyter-qtconsole
 </pre></div>
-</td></tr></table></div>
+</div>
 <p>のようにコマンドを実行するとこのアプリケーションが起動する．</p>
-<div class="figure align-center" id="id13">
+<figure class="align-center" id="id13">
 <a class="reference internal image-reference" href="_images/qtconsole.png"><img alt="_images/qtconsole.png" src="_images/qtconsole.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-text">Jupyter Qt Console</span><a class="headerlink" href="#id13" title="この画像へのパーマリンク">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Jupyter Qt Console</span><a class="headerlink" href="#id13" title="この画像へのパーマリンク"></a></p>
+</figcaption>
+</figure>
 <p>筆者は個人的にはIPythonのコンソールの方が使いやすいと感じるが，こちらの方が好みの人もいるかもしれない．図をプロットする場合に別ウインドウでなく，このウインドウ内に埋め込むことができるというIPythonにはない利点がある．(しかし，そのような使い方であれば次に紹介する <a class="reference internal" href="#label-jupyternotebook"><span class="std std-ref">Jupyter Notebook</span></a> の方が使いやすい．)</p>
-</div>
-<div class="section" id="jupyter-notebook">
-<span id="label-jupyternotebook"></span><h2><a class="toc-backref" href="#id22"><span class="section-number">3.4. </span>Jupyter Notebook</a><a class="headerlink" href="#jupyter-notebook" title="このヘッドラインへのパーマリンク">¶</a></h2>
+</section>
+<section id="jupyter-notebook">
+<span id="label-jupyternotebook"></span><h2><a class="toc-backref" href="#id22"><span class="section-number">3.4. </span>Jupyter Notebook</a><a class="headerlink" href="#jupyter-notebook" title="Permalink to this heading"></a></h2>
 <p>ターミナルで</p>
-<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ jupyter-notebook
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>$ jupyter-notebook
 </pre></div>
-</td></tr></table></div>
+</div>
 <p>を実行してみよう．デフォルトのブラウザが新しく立ち上がり，下のようなページが表示されるだろう．ここで右側の「New」から「Python 3」を選択してみよう．</p>
-<div class="figure align-center" id="id14">
+<figure class="align-center" id="id14">
 <a class="reference internal image-reference" href="_images/notebook1.png"><img alt="_images/notebook1.png" src="_images/notebook1.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-text">Jupyter Notebookの起動画面</span><a class="headerlink" href="#id14" title="この画像へのパーマリンク">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Jupyter Notebookの起動画面</span><a class="headerlink" href="#id14" title="この画像へのパーマリンク"></a></p>
+</figcaption>
+</figure>
 <p>この状態で表示されるのが下の図のようなnotebookと呼ばれるページで，各セルにPythonのコードを入力して実行することができる．セルにフォーカスがあたった状態でShift+Enterを入力すると，そのセルのコードを実行し，出力があればそれがセルの下に表示される．なお，セルにはMarkdownと呼ばれる形式で任意のテキストや数式などを入力し表示することができる．</p>
-<div class="figure align-center" id="id15">
+<figure class="align-center" id="id15">
 <a class="reference internal image-reference" href="_images/notebook2.png"><img alt="_images/notebook2.png" src="_images/notebook2.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-text">Jupyter Notebookの使用例</span><a class="headerlink" href="#id15" title="この画像へのパーマリンク">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Jupyter Notebookの使用例</span><a class="headerlink" href="#id15" title="この画像へのパーマリンク"></a></p>
+</figcaption>
+</figure>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
 <p>Jupyter Notebookは手軽にPythonコードを実行できる非常に便利な環境である．近年になってこの環境があまりにも普及したので，「Pythonの実行環境 = Jupyter Notebook」と考えている人もいるかもしれない．しかし，Notebook上で試行錯誤しながらデータの解析作業などをしていると，セルの実行順序や変数や関数の定義などの関係が分かりづらくなってしまう（というかほとんど分からなくなる）．「出来た」と思っても次に開いた時には（変数が宣言されていなかったり，セルの順序がバラバラだったり）同じ結果が再現できないということが多々発生する．こうならないためには， <strong>メニューの 「Kernel」 → 「Restart &amp; Run All」で結果が変わらないこと</strong> を確認するのが大変重要である．また，ある程度のまとまった処理はPythonのソースコード( <code class="docutils literal notranslate"><span class="pre">.py</span></code> ファイル）として分離して，Notebookからは <code class="docutils literal notranslate"><span class="pre">import</span></code> して使うようにする方が読みやすく，スッキリとするであろう <a class="footnote-reference brackets" href="#module" id="id4">1</a> ．</p>
 </div>
 <p>なお，新たにブラウザを立ち上げたくない場合 <a class="footnote-reference brackets" href="#jupyternobrowser" id="id5">2</a> には</p>
-<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ jupyter-notebook --no-browser
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>$ jupyter-notebook --no-browser
 </pre></div>
-</td></tr></table></div>
+</div>
 <p>とオプションを付けて起動をすればよい．デフォルトではブラウザで <a class="reference external" href="http://localhost:8888/">http://localhost:8888/</a> にアクセスすればJupyterのサーバーに接続することができる．8888はデフォルトのポート番号であるが <code class="docutils literal notranslate"><span class="pre">--port</span></code> オプションで変更することもできる．</p>
-</div>
-<div class="section" id="jupyterlab">
-<span id="label-jupyterlab"></span><h2><a class="toc-backref" href="#id23"><span class="section-number">3.5. </span>JupyterLab</a><a class="headerlink" href="#jupyterlab" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>JupyterLabはJupyter Notebookの次世代版という位置付けのウェブベースの統合開発・解析環境と呼べるものである．起動するにはJupyer Notebookと同じように</p>
-<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ jupyter-lab
+</section>
+<section id="jupyter-lab">
+<span id="label-jupyterlab"></span><h2><a class="toc-backref" href="#id23"><span class="section-number">3.5. </span>Jupyter Lab</a><a class="headerlink" href="#jupyter-lab" title="Permalink to this heading"></a></h2>
+<p>Jupyter LabはJupyter Notebookの次世代版という位置付けのウェブベースの統合開発・解析環境と呼べるものである．起動するにはJupyer Notebookと同じように</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>$ jupyter-lab
 </pre></div>
-</td></tr></table></div>
+</div>
 <p>とすればよい．</p>
-<div class="figure align-center" id="id16">
+<figure class="align-center" id="id16">
 <a class="reference internal image-reference" href="_images/jupyterlab1.png"><img alt="_images/jupyterlab1.png" src="_images/jupyterlab1.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-text">JupyterLabの画面</span><a class="headerlink" href="#id16" title="この画像へのパーマリンク">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Jupyter Labの画面</span><a class="headerlink" href="#id16" title="この画像へのパーマリンク"></a></p>
+</figcaption>
+</figure>
 <p>デフォルトでJupyer Notebookはもちろん，シェルのコンソール，IPythonコンソール，テキストエディタ，ファイルブラウザなどが使えるようである．タブを分割することもできるなど非常に高機能な環境である．今から使い始める人は最初からこれを使ってもよいかもしれない．</p>
-</div>
-<div class="section" id="ide">
-<h2><a class="toc-backref" href="#id24"><span class="section-number">3.6. </span>様々なIDE</a><a class="headerlink" href="#ide" title="このヘッドラインへのパーマリンク">¶</a></h2>
+</section>
+<section id="visual-studio-code">
+<span id="label-vscode"></span><h2><a class="toc-backref" href="#id24"><span class="section-number">3.6. </span>Visual Studio Code</a><a class="headerlink" href="#visual-studio-code" title="Permalink to this heading"></a></h2>
+<p>Visual Studio Code(VSCode)は非常に高機能なエディタ・開発環境であり，Python extension(拡張機能)をインストールすることで，VSCode内でJupyter Notebookを使うことができるようになっている．個人的に考えるVSCodeの利点としては以下が挙げられる．</p>
+<ul class="simple">
+<li><p>元々がエディタなのでブラウザよりもコード編集の補助機能に長けている．</p></li>
+<li><p>sshでリモートマシン上で通常のファイル編集はもちろんJupyter Notebookの編集・実行がシームレスにできる．</p></li>
+</ul>
+<p>詳細な情報はGoogleでいくらでも見つかるのでここでは述べないが，本格的にPythonソースコード( <code class="docutils literal notranslate"><span class="pre">.py</span></code> )やJupyter Notebook( <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> )の編集・開発をするときや，リモートマシンでの作業が必須になったときにはVSCodeの利用も検討すると良いだろう．</p>
+</section>
+<section id="ide">
+<h2><a class="toc-backref" href="#id25"><span class="section-number">3.7. </span>様々なIDE</a><a class="headerlink" href="#ide" title="Permalink to this heading"></a></h2>
 <p>多くのPythonの統合開発環境(IDE)でも対話的な実行方法を備えているようだ．内部的にIPythonのシェルを使っていたり，Jupyter Notebookのようにセル単位で実行できたりする．変数ブラウザや補完，デバッガ機能などもあり，使いこなすことができればかなり有用そうなので，興味のある人はぜひトライしてみて欲しい．以下にいくつか例を挙げておこう．</p>
 <ul>
 <li><div class="line-block">
@@ -361,57 +281,46 @@ In <span class="o">[</span><span class="m">1</span><span class="o">]</span>:
 <div class="line">高機能なIDEらしい．有償版と無償版が存在する．</div>
 </div>
 </li>
-<li><div class="line-block">
-<div class="line">Visual Studio Code</div>
-<div class="line">エディタでもあり，開発環境でもある．Python extensionにJupyter Notebookを使える機能が追加されている．</div>
-</div>
-</li>
 </ul>
-</div>
-<div class="section" id="id6">
-<h2><a class="toc-backref" href="#id25"><span class="section-number">3.7. </span>プロット</a><a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>IPythonやJupyter Notebookを使うと対話的にデータのプロットができる．Pythonではmatplotlibというデファクトスタンダードに近いライブラリを使ってプロットをすることが多い．例えば以下のようにすればよい <a class="footnote-reference brackets" href="#matplotlib" id="id7">3</a> ．</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># numpy</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="c1"># matplotlibのおまじない</span>
-<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</section>
+<section id="id6">
+<h2><a class="toc-backref" href="#id26"><span class="section-number">3.8. </span>プロット</a><a class="headerlink" href="#id6" title="Permalink to this heading"></a></h2>
+<p>IPythonやJupyter Notebookを使うと対話的にデータのプロットができる．matplotlibというデファクトスタンダードに近いライブラリを使って図をプロットするには以下のようにすればよい <a class="footnote-reference brackets" href="#matplotlib" id="id7">3</a> ．</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># numpy</span>
+<span class="linenos">2</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="linenos">3</span>
+<span class="linenos">4</span><span class="c1"># matplotlibのおまじない</span>
+<span class="linenos">5</span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pylab</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="linenos">6</span>
+<span class="linenos">7</span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="linenos">8</span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+<span class="linenos">9</span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 <p>これをJupyter Notebookで実行すると以下のように図がNotebookに埋め込まれた形で表示される．なお，ここで用いている <code class="docutils literal notranslate"><span class="pre">numpy</span></code> モジュールについては <a class="reference internal" href="chap06.html"><span class="doc">NumPy配列の基本</span></a> で紹介する．</p>
-<div class="figure align-center" id="id17">
+<figure class="align-center" id="id17">
 <a class="reference internal image-reference" href="_images/notebook3.png"><img alt="_images/notebook3.png" src="_images/notebook3.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-text">Jupyter Notebookでのプロット</span><a class="headerlink" href="#id17" title="この画像へのパーマリンク">¶</a></p>
-</div>
-</div>
-<div class="section" id="id8">
-<h2><a class="toc-backref" href="#id26"><span class="section-number">3.8. </span>第3章 演習課題</a><a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<div class="section" id="id9">
-<h3><span class="section-number">3.8.1. </span>課題1<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<figcaption>
+<p><span class="caption-text">Jupyter Notebookでのプロット</span><a class="headerlink" href="#id17" title="この画像へのパーマリンク"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id8">
+<h2><a class="toc-backref" href="#id27"><span class="section-number">3.9. </span>第3章 演習課題</a><a class="headerlink" href="#id8" title="Permalink to this heading"></a></h2>
+<section id="id9">
+<h3><span class="section-number">3.9.1. </span>課題1<a class="headerlink" href="#id9" title="Permalink to this heading"></a></h3>
 <p>ターミナルからPythonの対話モードを起動し，変数の定義や四則演算， <code class="docutils literal notranslate"><span class="pre">print()</span></code> 関数を使った出力，ヒストリ機能などを実際に試してみよう．</p>
-</div>
-<div class="section" id="id10">
-<h3><span class="section-number">3.8.2. </span>課題2<a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h3>
+</section>
+<section id="id10">
+<h3><span class="section-number">3.9.2. </span>課題2<a class="headerlink" href="#id10" title="Permalink to this heading"></a></h3>
 <p>ターミナルからIPythonを起動し，補完機能や複数行の編集(ループ処理など)などを実際に試してみよう．Pythonのデフォルトの対話モードと比べて便利なことが実感できるであろう．またJupyter Qt Consoleとの使用感の違いや，IPythonの便利な機能を各自で調べてみよう．</p>
-</div>
-<div class="section" id="id11">
-<h3><span class="section-number">3.8.3. </span>課題3<a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>JupyterLabまたはJupyter Notebookでサンプルを開き，実際に動作を確認しよう．デフォルトの対話モードやIPythonと比べて使用感の違いを実感しよう．また，JupyterLabのConsoleでもIPythonを使ってみよう．</p>
-</div>
-<div class="section" id="id12">
-<h3><span class="section-number">3.8.4. </span>課題4 <sup>†</sup><a class="headerlink" href="#id12" title="このヘッドラインへのパーマリンク">¶</a></h3>
+</section>
+<section id="id11">
+<h3><span class="section-number">3.9.3. </span>課題3<a class="headerlink" href="#id11" title="Permalink to this heading"></a></h3>
+<p>Jupyter LabまたはJupyter Notebookでサンプルを開き，実際に動作を確認しよう．デフォルトの対話モードやIPythonと比べて使用感の違いを実感しよう．また，Jupyter LabのConsoleでもIPythonを使ってみよう．</p>
+</section>
+<section id="id12">
+<h3><span class="section-number">3.9.4. </span>課題4 <sup>†</sup><a class="headerlink" href="#id12" title="Permalink to this heading"></a></h3>
 <p>各種IDEについて調べ，興味のあるものを実際にインストールし使ってみよう．なお，SpyderはanacondaによってPythonをインストールした場合にはデフォルトでインストールされている．</p>
 <hr class="docutils" />
 <dl class="footnote brackets">
@@ -425,57 +334,39 @@ In <span class="o">[</span><span class="m">1</span><span class="o">]</span>:
 <dd><p>matplotlibの使い方を説明し始めると長くなるのでここでは割愛する．なお，Pythonから使えるプロットライブラリはこれ以外にも多数存在し群雄割拠状態である．matplotlibが最も広く使われていることは間違いないので，まずはこれを使ってみることをオススメするが，興味のある人はplotly，bokeh，holoviewsなどについても調べてみると面白い．</p>
 </dd>
 </dl>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="chap04.html" class="btn btn-neutral float-right" title="4. 制御構造と関数・オブジェクト" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="chap02.html" class="btn btn-neutral float-left" title="2. Pythonの基本" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="chap02.html" class="btn btn-neutral float-left" title="2. Pythonの基本" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="chap04.html" class="btn btn-neutral float-right" title="4. 制御構造と関数・オブジェクト" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &copy; Copyright 2022, Takanobu Amano
-
-    </p>
+    <p>&#169; Copyright 2023, Takanobu Amano.</p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

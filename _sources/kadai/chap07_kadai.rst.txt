@@ -49,7 +49,7 @@
 課題4
 -----
 
-`Open-Meteo <https://open-meteo.com/en>`_ というサイトは，無料で天気予報データをダウンロードできるサービスを提供している．決められた形式でサイトにHTTPSアクセスをすると，データがJSON形式でダウンロードされる仕組みである．このサイトの東京の天気予報データにアクセスする `URL <https://api.open-meteo.com/v1/forecast?latitude=35.6785&longitude=139.6823&hourly=temperature_2m,precipitation,windspeed_10m,winddirection_10m&windspeed_unit=ms&timezone=Asia%2FTokyo&past_days=1>`_ を使おう．実行すると自動的にこのURLにアクセスし，ダウンロードしたデータ（プログラムを実行した時点での最新のデータ）を自動でプロットするプログラムを作成せよ．ただし，オプション無しで実行した場合には画面にプロットを表示し， ``--save`` オプションでファイル名を指定した場合には，指定されたファイル名（例えばpng形式など）でプロットをファイルに保存するようにせよ．例えば以下のようなプロットが得られればよい．この例のURLでは温度，降水量，風速と風向きをプロットしている．（Open-Meteoのサイトではダウンロードするデータを自分でカスタマイズすることができる．）
+`Open-Meteo <https://open-meteo.com/en>`_ というサイトが，無料で天気予報データをダウンロードできるサービスを提供している．決められた形式でHTTPSアクセスをするとデータがJSON形式でダウンロードされる仕組みである．このサイトの東京の天気予報データにアクセスする `URL <https://api.open-meteo.com/v1/forecast?latitude=35.6785&longitude=139.6823&hourly=temperature_2m,precipitation,windspeed_10m,winddirection_10m&windspeed_unit=ms&timezone=Asia%2FTokyo&past_days=1>`_ を使って，ダウンロードしたデータを自動でプロットするプログラムを作成せよ．ただし，オプション無しで実行した場合には画面にプロットを表示し， ``--save`` オプションでファイル名を指定した場合には，指定されたファイル名（例えばpng形式など）でプロットをファイルに保存するようにせよ．例えば以下のようなプロットが得られればよい．この例のURLでは温度，降水量，風速と風向きをプロットしている．（Open-Meteoのサイトではダウンロードするデータを自分でカスタマイズすることができる．）
 
 .. figure:: figure/chap07_openmeteo.png
     :align: center

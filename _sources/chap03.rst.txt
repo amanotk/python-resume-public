@@ -7,7 +7,7 @@
 対話型の実行方法
 ================
 
-これまではコマンドラインで完結した一つのPythonスクリプトを実行する方法を用いてきた．ここではPythonの大きな強みの一つである対話的な実行方法について紹介しよう．ただし，対話的と一口で言っても環境は様々なので，あくまでもいくつかの代表的な実行環境を紹介するにとどめる．なお，筆者のおすすめは一昔前まで :ref:`label_ipython` と :ref:`label_jupyternotebook` であった．今では :ref:`label_jupyterlab` が両者を同時に使える大変便利な環境なので，こちらをおすすめするべきかもしれない．
+これまではコマンドラインで完結した一つのPythonスクリプトを実行する方法を用いてきた．ここではPythonの大きな強みの一つである対話的な実行方法について紹介しよう．ただし，対話的と一口で言っても環境は様々なので，あくまでもいくつかの代表的な実行環境を紹介するにとどめる．筆者のおすすめは一昔前まで :ref:`label_ipython` と :ref:`label_jupyternotebook` であったが， :ref:`label_jupyterlab` が両者を同時に使える大変便利な環境なので，今ではこちらをおすすめするべきかもしれない．（ただし筆者は :ref:`label_jupyterlab` から :ref:`label_vscode` に改宗したクチである．）
 
 .. seealso::
 
@@ -87,7 +87,7 @@ Pythonはインタープリター型の言語であり，一行ずつ順に実�
 IPython
 =======
 
-対話モードを常用するのであれば，デフォルトの対話モードをより高機能にしたIPythonを使うのが非常に便利である．ターミナルで ``ipython`` と打つと，今度は以下のように表示されるであろう．
+実際にはデフォルトの対話モードをより高機能ににしたIPythonが非常に便利である．ターミナルで ``ipython`` と打つと，今度は以下のように表示されるであろう．
 
 .. code-block:: bash
 
@@ -177,10 +177,10 @@ Jupyter Notebook
 
 .. _label_jupyterlab:
 
-JupyterLab
-==========
+Jupyter Lab
+===========
 
-JupyterLabはJupyter Notebookの次世代版という位置付けのウェブベースの統合開発・解析環境と呼べるものである．起動するにはJupyer Notebookと同じように
+Jupyter LabはJupyter Notebookの次世代版という位置付けのウェブベースの統合開発・解析環境と呼べるものである．起動するにはJupyer Notebookと同じように
 
 .. code-block:: bash
 
@@ -192,9 +192,21 @@ JupyterLabはJupyter Notebookの次世代版という位置付けのウェブベ
    :align: center
    :width: 600px
 
-   JupyterLabの画面
+   Jupyter Labの画面
 
 デフォルトでJupyer Notebookはもちろん，シェルのコンソール，IPythonコンソール，テキストエディタ，ファイルブラウザなどが使えるようである．タブを分割することもできるなど非常に高機能な環境である．今から使い始める人は最初からこれを使ってもよいかもしれない．
+
+.. _label_vscode:
+
+Visual Studio Code
+===================
+
+Visual Studio Code(VSCode)は非常に高機能なエディタ・開発環境であり，Python extension(拡張機能)をインストールすることで，VSCode内でJupyter Notebookを使うことができるようになっている．個人的に考えるVSCodeの利点としては以下が挙げられる．
+
+- 元々がエディタなのでブラウザよりもコード編集の補助機能に長けている．
+- sshでリモートマシン上で通常のファイル編集はもちろんJupyter Notebookの編集・実行がシームレスにできる．
+
+詳細な情報はGoogleでいくらでも見つかるのでここでは述べないが，本格的にPythonソースコード( ``.py`` )やJupyter Notebook( ``.ipynb`` )の編集・開発をするときや，リモートマシンでの作業が必須になったときにはVSCodeの利用も検討すると良いだろう．
 
 
 様々なIDE
@@ -206,14 +218,12 @@ JupyterLabはJupyter Notebookの次世代版という位置付けのウェブベ
   | Anacondaに付属するIDE．使いこなせれば便利そう．
 - | PyCharm
   | 高機能なIDEらしい．有償版と無償版が存在する．
-- | Visual Studio Code
-  | エディタでもあり，開発環境でもある．Python extensionにJupyter Notebookを使える機能が追加されている．
 
 
 プロット
 ========
 
-IPythonやJupyter Notebookを使うと対話的にデータのプロットができる．Pythonではmatplotlibというデファクトスタンダードに近いライブラリを使ってプロットをすることが多い．例えば以下のようにすればよい [#matplotlib]_ ．
+IPythonやJupyter Notebookを使うと対話的にデータのプロットができる．matplotlibというデファクトスタンダードに近いライブラリを使って図をプロットするには以下のようにすればよい [#matplotlib]_ ．
 
 ::
 
@@ -221,7 +231,7 @@ IPythonやJupyter Notebookを使うと対話的にデータのプロットがで
   import numpy as np
   
   # matplotlibのおまじない
-  from matplotlib import pyplot as plt
+  from matplotlib import pylab as plt
   
   x = np.linspace(0.0, np.pi, 100)
   y = np.cos(x)**2
