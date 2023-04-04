@@ -9,7 +9,12 @@
 
 .. seealso::
 
-  `解答例 <sample/chap04/kadai.html>`_ (`ダウンロード <sample/chap04/kadai.ipynb>`_)
+  .. raw:: html
+
+    <a href="sample/chap04/kadai.html"> 解答例 </a>
+    <a href="https://colab.research.google.com/github/amanotk/python-resume-sample/blob/main/chap04/kadai.ipynb">
+    <img src="https://colab.research.google.com/assets/colab-badge.svg" style="vertical-align: text-top;">
+    </a>
 
 
 課題1

@@ -11,7 +11,12 @@ Pythonの強みは言語そのものよりも，その強力なライブラリ�
 
 .. seealso::
 
-  `sample.ipynb <sample/chap05/sample.html>`_ (`ダウンロード <sample/chap05/sample.ipynb>`_)
+  .. raw:: html
+
+    <a href="sample/chap05/sample.html"> サンプルコード </a>
+    <a href="https://colab.research.google.com/github/amanotk/python-resume-sample/blob/main/chap05/sample.ipynb">
+    <img src="https://colab.research.google.com/assets/colab-badge.svg" style="vertical-align: text-top;">
+    </a>
 
 .. contents:: この章の内容
     :depth: 2

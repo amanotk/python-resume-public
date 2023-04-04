@@ -11,7 +11,13 @@
 
 .. seealso::
 
-  `sample.ipynb <sample/chap04/sample.html>`_ (`ダウンロード <sample/chap04/sample.ipynb>`_)
+  .. raw:: html
+
+    <a href="sample/chap04/sample.html"> サンプルコード </a>
+    <a href="https://colab.research.google.com/github/amanotk/python-resume-sample/blob/main/chap04/sample.ipynb">
+    <img src="https://colab.research.google.com/assets/colab-badge.svg" style="vertical-align: text-top;">
+    </a>
+
 
 .. contents:: この章の内容
     :depth: 2

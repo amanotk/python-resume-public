@@ -11,7 +11,12 @@ NumPyと呼ばれるライブラリの存在はPythonが広く科学技術計算
 
 .. seealso::
 
-  `sample.ipynb <sample/chap06/sample.html>`_ (`ダウンロード <sample/chap06/sample.ipynb>`_)
+  .. raw:: html
+
+    <a href="sample/chap06/sample.html"> サンプルコード </a>
+    <a href="https://colab.research.google.com/github/amanotk/python-resume-sample/blob/main/chap06/sample.ipynb">
+    <img src="https://colab.research.google.com/assets/colab-badge.svg" style="vertical-align: text-top;">
+    </a>
 
 .. contents:: この章の内容
     :depth: 2

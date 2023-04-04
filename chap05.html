@@ -58,13 +58,13 @@
 <li class="toctree-l2"><a class="reference internal" href="#list">5.2. list</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#range">5.3. range</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#dict">5.4. dict</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id5">5.5. 第5章 演習課題</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id8">5.5.1. 課題1</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id9">5.5.2. 課題2</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id10">5.5.3. 課題3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">5.5. 第5章 演習課題</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">5.5.1. 課題1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">5.5.2. 課題2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">5.5.3. 課題3</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#label-chap05-kadai04">5.5.4. 課題4</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id12">5.5.5. 課題5</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id13">5.5.6. 課題6</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">5.5.5. 課題5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">5.5.6. 課題6</a></li>
 </ul>
 </li>
 </ul>
@@ -97,28 +97,30 @@
            <div itemprop="articleBody">
              
   <section id="id1">
-<h1><a class="toc-backref" href="#id14"><span class="section-number">5. </span>便利な組み込み型</a><a class="headerlink" href="#id1" title="この見出しへのパーマリンク"></a></h1>
+<h1><a class="toc-backref" href="#id11"><span class="section-number">5. </span>便利な組み込み型</a><a class="headerlink" href="#id1" title="この見出しへのパーマリンク"></a></h1>
 <p>Pythonの強みは言語そのものよりも，その強力なライブラリ群にあると言える．ここではPython本体に組み込まれているオブジェクト(データ型)の中でも最も頻繁にお目にかかるであろうもののうちいくつかを簡単に紹介する．ここで紹介するのはあくまで基本中の基本なので，本格的に使うにはこれだけでは少々心もとないが，これをマスターしておけばあとは各自で調べることができるであろう．</p>
 <div class="admonition seealso">
 <p class="admonition-title">参考</p>
-<p><a class="reference external" href="sample/chap05/sample.html">sample.ipynb</a> (<a class="reference external" href="sample/chap05/sample.ipynb">ダウンロード</a>)</p>
-</div>
-<div class="contents topic" id="id3">
+<a href="sample/chap05/sample.html"> サンプルコード </a>
+<a href="https://colab.research.google.com/github/amanotk/python-resume-sample/blob/main/chap05/sample.ipynb">
+<img src="https://colab.research.google.com/assets/colab-badge.svg" style="vertical-align: text-top;">
+</a></div>
+<div class="contents topic" id="id2">
 <p class="topic-title">この章の内容</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#id1" id="id14">便利な組み込み型</a></p>
+<li><p><a class="reference internal" href="#id1" id="id11">便利な組み込み型</a></p>
 <ul>
-<li><p><a class="reference internal" href="#tuple" id="id15">tuple</a></p></li>
-<li><p><a class="reference internal" href="#list" id="id16">list</a></p></li>
-<li><p><a class="reference internal" href="#range" id="id17">range</a></p></li>
-<li><p><a class="reference internal" href="#dict" id="id18">dict</a></p></li>
-<li><p><a class="reference internal" href="#id5" id="id19">第5章 演習課題</a></p></li>
+<li><p><a class="reference internal" href="#tuple" id="id12">tuple</a></p></li>
+<li><p><a class="reference internal" href="#list" id="id13">list</a></p></li>
+<li><p><a class="reference internal" href="#range" id="id14">range</a></p></li>
+<li><p><a class="reference internal" href="#dict" id="id15">dict</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id16">第5章 演習課題</a></p></li>
 </ul>
 </li>
 </ul>
 </div>
 <section id="tuple">
-<span id="label-chap05-tuple"></span><h2><a class="toc-backref" href="#id15"><span class="section-number">5.1. </span>tuple</a><a class="headerlink" href="#tuple" title="この見出しへのパーマリンク"></a></h2>
+<span id="label-chap05-tuple"></span><h2><a class="toc-backref" href="#id12"><span class="section-number">5.1. </span>tuple</a><a class="headerlink" href="#tuple" title="この見出しへのパーマリンク"></a></h2>
 <p>tupleと呼ばれるオブジェクトは配列のように複数の値をひとまとめにしたものである．後述のlistと同様に，とりあえずはCやFortranの配列と同じようなものとして考えてもらって構わない．</p>
 <p>tupleは複数の値を <code class="docutils literal notranslate"><span class="pre">()</span></code> と <code class="docutils literal notranslate"><span class="pre">,</span></code> (カンマ)で以下のように表される</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
@@ -162,7 +164,7 @@
 <p>この例のように，実はtupleを作成するときの <code class="docutils literal notranslate"><span class="pre">()</span></code> は省略することができる． ここでは <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">a+b,</span> <span class="pre">a-b</span></code> でサイズ2のtuple <code class="docutils literal notranslate"><span class="pre">(a+b,</span> <span class="pre">a-b)</span></code> を関数の返値としている．また，関数の返値としてtupleが返されるときは，その要素をそれぞれ別の変数に代入して使うことができる(この例では <code class="docutils literal notranslate"><span class="pre">c</span></code>, <code class="docutils literal notranslate"><span class="pre">d</span></code>)．なお，これらの変数はtupleではないので，当然変更も可能である．</p>
 </section>
 <section id="list">
-<span id="label-chap05-list"></span><h2><a class="toc-backref" href="#id16"><span class="section-number">5.2. </span>list</a><a class="headerlink" href="#list" title="この見出しへのパーマリンク"></a></h2>
+<span id="label-chap05-list"></span><h2><a class="toc-backref" href="#id13"><span class="section-number">5.2. </span>list</a><a class="headerlink" href="#list" title="この見出しへのパーマリンク"></a></h2>
 <p>基本的にはlistは要素の書き換えができるtupleと考えてよい．tupleの例をそのままlistに置き換えてみよう．</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="gp">&gt;&gt;&gt; </span><span class="p">[]</span>
 <span class="linenos"> 2</span><span class="go">[]</span>
@@ -199,7 +201,7 @@
 <span class="linenos">20</span><span class="go">[]</span>
 </pre></div>
 </div>
-<p>注意すべきはlistのサイズを伸ばす <code class="docutils literal notranslate"><span class="pre">append()</span></code>, <code class="docutils literal notranslate"><span class="pre">extend()</span></code> を多用すると一般的には遅くなる可能性が高いということである．基本的には大規模なデータの格納にはlistは使わない <a class="footnote-reference brackets" href="#usenumpy" id="id4">1</a> ，また何らかの理由で使わざるを得ないときにはサイズが予め分かっているのであれば最初にそのサイズのlistを作っておく(サイズを変更しない)，という方針にすべきである．</p>
+<p>注意すべきはlistのサイズを伸ばす <code class="docutils literal notranslate"><span class="pre">append()</span></code>, <code class="docutils literal notranslate"><span class="pre">extend()</span></code> を多用すると一般的には遅くなる可能性が高いということである．基本的には大規模なデータの格納にはlistは使わない <a class="footnote-reference brackets" href="#usenumpy" id="id3">1</a> ，また何らかの理由で使わざるを得ないときにはサイズが予め分かっているのであれば最初にそのサイズのlistを作っておく(サイズを変更しない)，という方針にすべきである．</p>
 <p>また，以下のようにtupleをlistに変換することもできる．</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span> <span class="c1"># tuple (3, 4, 5) をlistに変換</span>
 <span class="linenos">2</span><span class="go">[3, 4, 5]</span>
@@ -217,7 +219,7 @@
 </div>
 </section>
 <section id="range">
-<span id="label-chap05-range"></span><h2><a class="toc-backref" href="#id17"><span class="section-number">5.3. </span>range</a><a class="headerlink" href="#range" title="この見出しへのパーマリンク"></a></h2>
+<span id="label-chap05-range"></span><h2><a class="toc-backref" href="#id14"><span class="section-number">5.3. </span>range</a><a class="headerlink" href="#range" title="この見出しへのパーマリンク"></a></h2>
 <p>これまでも <code class="docutils literal notranslate"><span class="pre">for</span></code> ループで繰り返し回数を指定するときに <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">range(10)</span></code> のような書き方をしてきた．rangeは整数列を表すという点を除けば，listやtupleと同じように値の列を表すオブジェクトである．(従ってtuple, list, rangeを総称してシーケンス型と呼ぶ．)</p>
 <p>rangeは規則的な数列を表すオブジェクトであるため実際にはメモリ上に値を保持せず，必要に応じて値を計算する．すなわち，tupleやlistと異なり，常に使用するメモリは一定であるという特徴がある．(したがって <code class="docutils literal notranslate"><span class="pre">for</span></code> ループなどでの使用に向いている．)</p>
 <p>必要であれば，以下のようにlistやtupleに簡単に変換することが可能である．</p>
@@ -229,7 +231,7 @@
 </div>
 </section>
 <section id="dict">
-<span id="label-chap05-dict"></span><h2><a class="toc-backref" href="#id18"><span class="section-number">5.4. </span>dict</a><a class="headerlink" href="#dict" title="この見出しへのパーマリンク"></a></h2>
+<span id="label-chap05-dict"></span><h2><a class="toc-backref" href="#id15"><span class="section-number">5.4. </span>dict</a><a class="headerlink" href="#dict" title="この見出しへのパーマリンク"></a></h2>
 <p>dictは辞書(dictionary)や連想配列(ハッシュ)などと呼ばれるオブジェクトである．複数の値を保持するという意味ではlistなどのオブジェクトと同様である．大きな違いは，listを始めとするシーケンス型は要素が順番を持ち，整数添字で各要素を指定するのに対して，dictの要素は順番を持たない．その変わりに文字列の「キー」と対応する「値」のペアで要素を記憶するのがdictオブジェクトである．dictは多くの値を保持しなければいけないときにも配列やリストのように「順番」を気にせず使うことができるので大変便利である．</p>
 <p>以下で簡単な使い方を見てみよう．まずはキーと値のペアからdictオブジェクトを作成する．</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;key1&#39;</span> <span class="p">:</span> <span class="s1">&#39;value1&#39;</span><span class="p">,</span> <span class="s1">&#39;key2&#39;</span> <span class="p">:</span> <span class="s1">&#39;value2&#39;</span><span class="p">,</span> <span class="s1">&#39;key3&#39;</span> <span class="p">:</span> <span class="s1">&#39;value3&#39;</span><span class="p">}</span>
@@ -316,22 +318,24 @@
 </pre></div>
 </div>
 </section>
-<section id="id5">
-<h2><a class="toc-backref" href="#id19"><span class="section-number">5.5. </span>第5章 演習課題</a><a class="headerlink" href="#id5" title="この見出しへのパーマリンク"></a></h2>
+<section id="id4">
+<h2><a class="toc-backref" href="#id16"><span class="section-number">5.5. </span>第5章 演習課題</a><a class="headerlink" href="#id4" title="この見出しへのパーマリンク"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
 <p>以下の課題はJupyter Notebookの使用を前提としているが，もちろん他の実行環境でも同等の処理を実現出来ていれば問題ない．</p>
 </div>
 <div class="admonition seealso">
 <p class="admonition-title">参考</p>
-<p><a class="reference external" href="sample/chap05/kadai.html">解答例</a> (<a class="reference external" href="sample/chap05/kadai.ipynb">ダウンロード</a>)</p>
-</div>
-<section id="id8">
-<h3><span class="section-number">5.5.1. </span>課題1<a class="headerlink" href="#id8" title="この見出しへのパーマリンク"></a></h3>
+<a href="sample/chap05/kadai.html"> 解答例 </a>
+<a href="https://colab.research.google.com/github/amanotk/python-resume-sample/blob/main/chap05/kadai.ipynb">
+<img src="https://colab.research.google.com/assets/colab-badge.svg" style="vertical-align: text-top;">
+</a></div>
+<section id="id5">
+<h3><span class="section-number">5.5.1. </span>課題1<a class="headerlink" href="#id5" title="この見出しへのパーマリンク"></a></h3>
 <p>サンプルを実行して動作を確認しよう．</p>
 </section>
-<section id="id9">
-<h3><span class="section-number">5.5.2. </span>課題2<a class="headerlink" href="#id9" title="この見出しへのパーマリンク"></a></h3>
+<section id="id6">
+<h3><span class="section-number">5.5.2. </span>課題2<a class="headerlink" href="#id6" title="この見出しへのパーマリンク"></a></h3>
 <p>tupleの便利な使い方として関数の引数の扱いが挙げられる．</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
 <span class="linenos">2</span><span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="c1"># 全ての引数を出力</span>
@@ -354,8 +358,8 @@
 </div>
 <p>のように渡すこともできる．これも使えるようになると便利である．</p>
 </section>
-<section id="id10">
-<h3><span class="section-number">5.5.3. </span>課題3<a class="headerlink" href="#id10" title="この見出しへのパーマリンク"></a></h3>
+<section id="id7">
+<h3><span class="section-number">5.5.3. </span>課題3<a class="headerlink" href="#id7" title="この見出しへのパーマリンク"></a></h3>
 <p>任意のlistを受け取りそこから重複するものを除いた新たなlistオブジェクトを返す関数 <code class="docutils literal notranslate"><span class="pre">unique</span></code> を作成せよ．ただし重複するもの以外の順番は保持するものとする．例えば以下のような結果が得られればよい．(やり方は色々あるが素直にループで処理する方法を考えてみよう．)</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="gp">&gt;&gt;&gt; </span><span class="n">unique</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 <span class="linenos">2</span><span class="go">[&#39;a&#39;, 1, &#39;b&#39;, 2, &#39;c&#39;, 3, &#39;d&#39;]</span>
@@ -363,7 +367,7 @@
 </div>
 </section>
 <section id="label-chap05-kadai04">
-<span id="id11"></span><h3><span class="section-number">5.5.4. </span>課題4<a class="headerlink" href="#label-chap05-kadai04" title="この見出しへのパーマリンク"></a></h3>
+<span id="id8"></span><h3><span class="section-number">5.5.4. </span>課題4<a class="headerlink" href="#label-chap05-kadai04" title="この見出しへのパーマリンク"></a></h3>
 <p>dictは関数のキーワード引数を受け取るときに用いると便利である．</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="linenos">2</span><span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
@@ -393,8 +397,8 @@
 </div>
 <p>のように使うことも可能である．注意すべきは必ず <strong>位置指定引数の方がキーワード引数より先になければならない</strong> という点である．</p>
 </section>
-<section id="id12">
-<h3><span class="section-number">5.5.5. </span>課題5<a class="headerlink" href="#id12" title="この見出しへのパーマリンク"></a></h3>
+<section id="id9">
+<h3><span class="section-number">5.5.5. </span>課題5<a class="headerlink" href="#id9" title="この見出しへのパーマリンク"></a></h3>
 <p>JSON(JavaScript Object Notation)は特にウェブを介したデータのやり取りによく使われるデータの記述形式である．例えば以下は <a class="reference external" href="https://next.json-generator.com/">JSON GENERATOR</a> というサイトで作ったダミーのJSONデータの抜粋である．このようにJSONはPythonのlistとdictを組み合わせたような形式で書かれている．</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="p">[</span>
 <span class="linenos"> 2</span><span class="w">  </span><span class="p">{</span>
@@ -469,8 +473,8 @@
 <p><code class="docutils literal notranslate"><span class="pre">json.loads(json_string)</span></code> によってJSON文字列をlistに変換することができる．listの各要素がdictオブジェクトになっているので，それらを逐一処理していけばよい．</p>
 </div>
 </section>
-<section id="id13">
-<h3><span class="section-number">5.5.6. </span>課題6<a class="headerlink" href="#id13" title="この見出しへのパーマリンク"></a></h3>
+<section id="id10">
+<h3><span class="section-number">5.5.6. </span>課題6<a class="headerlink" href="#id10" title="この見出しへのパーマリンク"></a></h3>
 <p>課題5で扱ったJSON文字列から個人を特定できる情報を削除したJSON文字列を返す関数 <code class="docutils literal notranslate"><span class="pre">process_json2</span></code> を作成せよ．例えば以下のような結果が得られればよい．</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">process_json2</span><span class="p">(</span><span class="n">json_string</span><span class="p">))</span>
 <span class="linenos"> 2</span><span class="go">[</span>
@@ -513,7 +517,7 @@
 </div>
 <hr class="docutils" />
 <dl class="footnote brackets">
-<dt class="label" id="usenumpy"><span class="brackets"><a class="fn-backref" href="#id4">1</a></span></dt>
+<dt class="label" id="usenumpy"><span class="brackets"><a class="fn-backref" href="#id3">1</a></span></dt>
 <dd><p>ほとんどの場合はNumPy配列を使えば十分なハズである． <a class="reference internal" href="chap06.html"><span class="doc">NumPy配列の基本</span></a> 参照．</p>
 </dd>
 </dl>
