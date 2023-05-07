@@ -7,14 +7,14 @@
 対話型の実行方法
 ================
 
-これまではコマンドラインで完結した一つのPythonスクリプトを実行する方法を用いてきた．ここではPythonの大きな強みの一つである対話的な実行方法について紹介しよう．ただし，対話的と一口で言っても環境は様々なので，あくまでもいくつかの代表的な実行環境を紹介するにとどめる．筆者のおすすめは一昔前まで :ref:`label_ipython` と :ref:`label_jupyternotebook` であったが， :ref:`label_jupyterlab` が両者を同時に使える大変便利な環境なので，今ではこちらをおすすめするべきかもしれない．（ただし筆者は :ref:`label_jupyterlab` から :ref:`label_vscode` に改宗したクチである．）
+これまではコマンドラインで完結した一つのPythonスクリプトを実行する方法を用いてきた．ここではPythonの大きな強みの一つである対話的な実行方法について紹介しよう．ただし，対話的と一口で言っても環境は様々なので，あくまでもいくつかの代表的な実行環境を紹介するにとどめる．筆者のおすすめは一昔前まで :ref:`label_ipython` と :ref:`label_jupyternotebook` であったが， :ref:`label_jupyterlab` が両者を同時に使える大変便利な環境なので，今ではこちらをおすすめするべきかもしれない．（ただし筆者は :ref:`label_jupyterlab` から :ref:`label_vscode` に改宗したクチである．）とりあえず試したいだけのときにはブラウザ以外には何もインストールが必要ない :ref:`google_colab` が便利である．
 
 .. seealso::
 
   .. raw:: html
 
     <a href="sample/chap03/sample.html"> サンプルコード </a>
-    <a href="https://colab.research.google.com/github/amanotk/python-resume-sample/blob/main/chap03/sample.ipynb">
+    <a href="https://colab.research.google.com/github/amanotk/python-resume-sample/blob/main/chap03/sample.ipynb" target="_blank">
     <img src="https://colab.research.google.com/assets/colab-badge.svg" style="vertical-align: text-top;">
     </a>
 
@@ -206,13 +206,26 @@ Jupyter LabはJupyter Notebookの次世代版という位置付けのウェブ�
 Visual Studio Code
 ===================
 
-Visual Studio Code(VSCode)は非常に高機能なエディタ・開発環境であり，Python extension(拡張機能)をインストールすることで，VSCode内でJupyter Notebookを使うことができるようになっている．個人的に考えるVSCodeの利点としては以下が挙げられる．
+Visual Studio Code(VSCode)は非常に高機能なエディタ・開発環境であり，VSCode内のターミナルでpython scriptを実行することもできる．また，Python extension(拡張機能)をインストールすることで，VSCode内でJupyter Notebookを使うことができるようになっている．
+
+通常のソースコード編集はもちろん，Jupyter Notebookの実行環境としてもVSCodeは非常に便利である．個人的に考えるVSCodeの利点としては以下が挙げられる．
 
 - 元々がエディタなのでブラウザよりもコード編集の補助機能に長けている．
 - sshでリモートマシン上で通常のファイル編集はもちろんJupyter Notebookの編集・実行がシームレスにできる．
 
 詳細な情報はGoogleでいくらでも見つかるのでここでは述べないが，本格的にPythonソースコード( ``.py`` )やJupyter Notebook( ``.ipynb`` )の編集・開発をするときや，リモートマシンでの作業が必須になったときにはVSCodeの利用も検討すると良いだろう．
 
+.. _google_colab:
+
+Google Colaboratory (Colab)
+===========================
+
+`Google Colaboratory <https://colab.research.google.com/>`_ はブラウザ上でPythonのコードを実行できる環境である．計算資源に制限はあるものの，Googleアカウントがあれば誰でも無料で利用できる．ほぼJupyter Notebookと同じ環境なので，まずはこれで慣れてからローカルに環境を構築しても良いだろう．
+
+このウェブページ上のサンプルについても， 右側に表示されている |colab-badge| をクリックすることで，Google Colaboratory上で開くことができる．
+
+.. |colab-badge| image:: https://colab.research.google.com/assets/colab-badge.png
+    :alt: colab
 
 様々なIDE
 =========

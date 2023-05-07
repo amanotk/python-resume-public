@@ -14,7 +14,7 @@ NumPyと呼ばれるライブラリの存在はPythonが広く科学技術計算
   .. raw:: html
 
     <a href="sample/chap06/sample.html"> サンプルコード </a>
-    <a href="https://colab.research.google.com/github/amanotk/python-resume-sample/blob/main/chap06/sample.ipynb">
+    <a href="https://colab.research.google.com/github/amanotk/python-resume-sample/blob/main/chap06/sample.ipynb" target="_blank">
     <img src="https://colab.research.google.com/assets/colab-badge.svg" style="vertical-align: text-top;">
     </a>
 

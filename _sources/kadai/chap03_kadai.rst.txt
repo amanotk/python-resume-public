@@ -18,7 +18,7 @@
 課題3
 -----
 
-Jupyter LabまたはJupyter Notebookでサンプルを開き，実際に動作を確認しよう．デフォルトの対話モードやIPythonと比べて使用感の違いを実感しよう．また，Jupyter LabのConsoleでもIPythonを使ってみよう．
+様々な環境でサンプルのJupyter Notebookを開いて，実際に使用感を確認しよう．
 
 
 課題4 :sup:`†`

@@ -58,13 +58,14 @@
 <li class="toctree-l2"><a class="reference internal" href="#jupyter-notebook">3.4. Jupyter Notebook</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#jupyter-lab">3.5. Jupyter Lab</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#visual-studio-code">3.6. Visual Studio Code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ide">3.7. 様々なIDE</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id5">3.8. プロット</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id7">3.9. 第3章 演習課題</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id8">3.9.1. 課題1</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id9">3.9.2. 課題2</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id10">3.9.3. 課題3</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id11">3.9.4. 課題4 <sup>†</sup></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#google-colaboratory-colab">3.7. Google Colaboratory (Colab)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ide">3.8. 様々なIDE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">3.9. プロット</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">3.10. 第3章 演習課題</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id8">3.10.1. 課題1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">3.10.2. 課題2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">3.10.3. 課題3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">3.10.4. 課題4 <sup>†</sup></a></li>
 </ul>
 </li>
 </ul>
@@ -100,11 +101,11 @@
              
   <section id="id1">
 <h1><a class="toc-backref" href="#id17"><span class="section-number">3. </span>対話型の実行方法</a><a class="headerlink" href="#id1" title="この見出しへのパーマリンク"></a></h1>
-<p>これまではコマンドラインで完結した一つのPythonスクリプトを実行する方法を用いてきた．ここではPythonの大きな強みの一つである対話的な実行方法について紹介しよう．ただし，対話的と一口で言っても環境は様々なので，あくまでもいくつかの代表的な実行環境を紹介するにとどめる．筆者のおすすめは一昔前まで <a class="reference internal" href="#label-ipython"><span class="std std-ref">IPython</span></a> と <a class="reference internal" href="#label-jupyternotebook"><span class="std std-ref">Jupyter Notebook</span></a> であったが， <a class="reference internal" href="#label-jupyterlab"><span class="std std-ref">Jupyter Lab</span></a> が両者を同時に使える大変便利な環境なので，今ではこちらをおすすめするべきかもしれない．（ただし筆者は <a class="reference internal" href="#label-jupyterlab"><span class="std std-ref">Jupyter Lab</span></a> から <a class="reference internal" href="#label-vscode"><span class="std std-ref">Visual Studio Code</span></a> に改宗したクチである．）</p>
+<p>これまではコマンドラインで完結した一つのPythonスクリプトを実行する方法を用いてきた．ここではPythonの大きな強みの一つである対話的な実行方法について紹介しよう．ただし，対話的と一口で言っても環境は様々なので，あくまでもいくつかの代表的な実行環境を紹介するにとどめる．筆者のおすすめは一昔前まで <a class="reference internal" href="#label-ipython"><span class="std std-ref">IPython</span></a> と <a class="reference internal" href="#label-jupyternotebook"><span class="std std-ref">Jupyter Notebook</span></a> であったが， <a class="reference internal" href="#label-jupyterlab"><span class="std std-ref">Jupyter Lab</span></a> が両者を同時に使える大変便利な環境なので，今ではこちらをおすすめするべきかもしれない．（ただし筆者は <a class="reference internal" href="#label-jupyterlab"><span class="std std-ref">Jupyter Lab</span></a> から <a class="reference internal" href="#label-vscode"><span class="std std-ref">Visual Studio Code</span></a> に改宗したクチである．）とりあえず試したいだけのときにはブラウザ以外には何もインストールが必要ない <a class="reference internal" href="#google-colab"><span class="std std-ref">Google Colaboratory (Colab)</span></a> が便利である．</p>
 <div class="admonition seealso">
 <p class="admonition-title">参考</p>
 <a href="sample/chap03/sample.html"> サンプルコード </a>
-<a href="https://colab.research.google.com/github/amanotk/python-resume-sample/blob/main/chap03/sample.ipynb">
+<a href="https://colab.research.google.com/github/amanotk/python-resume-sample/blob/main/chap03/sample.ipynb" target="_blank">
 <img src="https://colab.research.google.com/assets/colab-badge.svg" style="vertical-align: text-top;">
 </a></div>
 <div class="contents topic" id="id2">
@@ -118,9 +119,10 @@
 <li><p><a class="reference internal" href="#jupyter-notebook" id="id21">Jupyter Notebook</a></p></li>
 <li><p><a class="reference internal" href="#jupyter-lab" id="id22">Jupyter Lab</a></p></li>
 <li><p><a class="reference internal" href="#visual-studio-code" id="id23">Visual Studio Code</a></p></li>
-<li><p><a class="reference internal" href="#ide" id="id24">様々なIDE</a></p></li>
-<li><p><a class="reference internal" href="#id5" id="id25">プロット</a></p></li>
-<li><p><a class="reference internal" href="#id7" id="id26">第3章 演習課題</a></p></li>
+<li><p><a class="reference internal" href="#google-colaboratory-colab" id="id24">Google Colaboratory (Colab)</a></p></li>
+<li><p><a class="reference internal" href="#ide" id="id25">様々なIDE</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id26">プロット</a></p></li>
+<li><p><a class="reference internal" href="#id7" id="id27">第3章 演習課題</a></p></li>
 </ul>
 </li>
 </ul>
@@ -263,15 +265,21 @@
 </section>
 <section id="visual-studio-code">
 <span id="label-vscode"></span><h2><a class="toc-backref" href="#id23"><span class="section-number">3.6. </span>Visual Studio Code</a><a class="headerlink" href="#visual-studio-code" title="この見出しへのパーマリンク"></a></h2>
-<p>Visual Studio Code(VSCode)は非常に高機能なエディタ・開発環境であり，Python extension(拡張機能)をインストールすることで，VSCode内でJupyter Notebookを使うことができるようになっている．個人的に考えるVSCodeの利点としては以下が挙げられる．</p>
+<p>Visual Studio Code(VSCode)は非常に高機能なエディタ・開発環境であり，VSCode内のターミナルでpython scriptを実行することもできる．また，Python extension(拡張機能)をインストールすることで，VSCode内でJupyter Notebookを使うことができるようになっている．</p>
+<p>通常のソースコード編集はもちろん，Jupyter Notebookの実行環境としてもVSCodeは非常に便利である．個人的に考えるVSCodeの利点としては以下が挙げられる．</p>
 <ul class="simple">
 <li><p>元々がエディタなのでブラウザよりもコード編集の補助機能に長けている．</p></li>
 <li><p>sshでリモートマシン上で通常のファイル編集はもちろんJupyter Notebookの編集・実行がシームレスにできる．</p></li>
 </ul>
 <p>詳細な情報はGoogleでいくらでも見つかるのでここでは述べないが，本格的にPythonソースコード( <code class="docutils literal notranslate"><span class="pre">.py</span></code> )やJupyter Notebook( <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> )の編集・開発をするときや，リモートマシンでの作業が必須になったときにはVSCodeの利用も検討すると良いだろう．</p>
 </section>
+<section id="google-colaboratory-colab">
+<span id="google-colab"></span><h2><a class="toc-backref" href="#id24"><span class="section-number">3.7. </span>Google Colaboratory (Colab)</a><a class="headerlink" href="#google-colaboratory-colab" title="この見出しへのパーマリンク"></a></h2>
+<p><a class="reference external" href="https://colab.research.google.com/">Google Colaboratory</a> はブラウザ上でPythonのコードを実行できる環境である．計算資源に制限はあるものの，Googleアカウントがあれば誰でも無料で利用できる．ほぼJupyter Notebookと同じ環境なので，まずはこれで慣れてからローカルに環境を構築しても良いだろう．</p>
+<p>このウェブページ上のサンプルについても， 右側に表示されている <img alt="colab" src="https://colab.research.google.com/assets/colab-badge.png" /> をクリックすることで，Google Colaboratory上で開くことができる．</p>
+</section>
 <section id="ide">
-<h2><a class="toc-backref" href="#id24"><span class="section-number">3.7. </span>様々なIDE</a><a class="headerlink" href="#ide" title="この見出しへのパーマリンク"></a></h2>
+<h2><a class="toc-backref" href="#id25"><span class="section-number">3.8. </span>様々なIDE</a><a class="headerlink" href="#ide" title="この見出しへのパーマリンク"></a></h2>
 <p>多くのPythonの統合開発環境(IDE)でも対話的な実行方法を備えているようだ．内部的にIPythonのシェルを使っていたり，Jupyter Notebookのようにセル単位で実行できたりする．変数ブラウザや補完，デバッガ機能などもあり，使いこなすことができればかなり有用そうなので，興味のある人はぜひトライしてみて欲しい．以下にいくつか例を挙げておこう．</p>
 <ul>
 <li><div class="line-block">
@@ -287,7 +295,7 @@
 </ul>
 </section>
 <section id="id5">
-<h2><a class="toc-backref" href="#id25"><span class="section-number">3.8. </span>プロット</a><a class="headerlink" href="#id5" title="この見出しへのパーマリンク"></a></h2>
+<h2><a class="toc-backref" href="#id26"><span class="section-number">3.9. </span>プロット</a><a class="headerlink" href="#id5" title="この見出しへのパーマリンク"></a></h2>
 <p>IPythonやJupyter Notebookを使うと対話的にデータのプロットができる．matplotlibというデファクトスタンダードに近いライブラリを使って図をプロットするには以下のようにすればよい <a class="footnote-reference brackets" href="#matplotlib" id="id6">3</a> ．</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># numpy</span>
 <span class="linenos">2</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -309,21 +317,21 @@
 </figure>
 </section>
 <section id="id7">
-<h2><a class="toc-backref" href="#id26"><span class="section-number">3.9. </span>第3章 演習課題</a><a class="headerlink" href="#id7" title="この見出しへのパーマリンク"></a></h2>
+<h2><a class="toc-backref" href="#id27"><span class="section-number">3.10. </span>第3章 演習課題</a><a class="headerlink" href="#id7" title="この見出しへのパーマリンク"></a></h2>
 <section id="id8">
-<h3><span class="section-number">3.9.1. </span>課題1<a class="headerlink" href="#id8" title="この見出しへのパーマリンク"></a></h3>
+<h3><span class="section-number">3.10.1. </span>課題1<a class="headerlink" href="#id8" title="この見出しへのパーマリンク"></a></h3>
 <p>ターミナルからPythonの対話モードを起動し，変数の定義や四則演算， <code class="docutils literal notranslate"><span class="pre">print()</span></code> 関数を使った出力，ヒストリ機能などを実際に試してみよう．</p>
 </section>
 <section id="id9">
-<h3><span class="section-number">3.9.2. </span>課題2<a class="headerlink" href="#id9" title="この見出しへのパーマリンク"></a></h3>
+<h3><span class="section-number">3.10.2. </span>課題2<a class="headerlink" href="#id9" title="この見出しへのパーマリンク"></a></h3>
 <p>ターミナルからIPythonを起動し，補完機能や複数行の編集(ループ処理など)などを実際に試してみよう．Pythonのデフォルトの対話モードと比べて便利なことが実感できるであろう．またJupyter Qt Consoleとの使用感の違いや，IPythonの便利な機能を各自で調べてみよう．</p>
 </section>
 <section id="id10">
-<h3><span class="section-number">3.9.3. </span>課題3<a class="headerlink" href="#id10" title="この見出しへのパーマリンク"></a></h3>
-<p>Jupyter LabまたはJupyter Notebookでサンプルを開き，実際に動作を確認しよう．デフォルトの対話モードやIPythonと比べて使用感の違いを実感しよう．また，Jupyter LabのConsoleでもIPythonを使ってみよう．</p>
+<h3><span class="section-number">3.10.3. </span>課題3<a class="headerlink" href="#id10" title="この見出しへのパーマリンク"></a></h3>
+<p>様々な環境でサンプルのJupyter Notebookを開いて，実際に使用感を確認しよう．</p>
 </section>
 <section id="id11">
-<h3><span class="section-number">3.9.4. </span>課題4 <sup>†</sup><a class="headerlink" href="#id11" title="この見出しへのパーマリンク"></a></h3>
+<h3><span class="section-number">3.10.4. </span>課題4 <sup>†</sup><a class="headerlink" href="#id11" title="この見出しへのパーマリンク"></a></h3>
 <p>各種IDEについて調べ，興味のあるものを実際にインストールし使ってみよう．なお，SpyderはanacondaによってPythonをインストールした場合にはデフォルトでインストールされている．</p>
 <hr class="docutils" />
 <dl class="footnote brackets">

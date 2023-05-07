@@ -522,7 +522,7 @@
 </section>
 <section id="id23">
 <h3><span class="section-number">7.5.4. </span>課題4<a class="headerlink" href="#id23" title="この見出しへのパーマリンク"></a></h3>
-<p><a class="reference external" href="https://open-meteo.com/en">Open-Meteo</a> というサイトが，無料で天気予報データをダウンロードできるサービスを提供している．決められた形式でHTTPSアクセスをするとデータがJSON形式でダウンロードされる仕組みである．このサイトの東京の天気予報データにアクセスする <a class="reference external" href="https://api.open-meteo.com/v1/forecast?latitude=35.6785&amp;longitude=139.6823&amp;hourly=temperature_2m,precipitation,windspeed_10m,winddirection_10m&amp;windspeed_unit=ms&amp;timezone=Asia%2FTokyo&amp;past_days=1">URL</a> を使って，ダウンロードしたデータを自動でプロットするプログラムを作成せよ．ただし，オプション無しで実行した場合には画面にプロットを表示し， <code class="docutils literal notranslate"><span class="pre">--save</span></code> オプションでファイル名を指定した場合には，指定されたファイル名（例えばpng形式など）でプロットをファイルに保存するようにせよ．例えば以下のようなプロットが得られればよい．この例のURLでは温度，降水量，風速と風向きをプロットしている．（Open-Meteoのサイトではダウンロードするデータを自分でカスタマイズすることができる．）</p>
+<p><a class="reference external" href="https://open-meteo.com/en">Open-Meteo</a> というサイトでは，無料で天気予報データをダウンロードできるサービスを提供している．決められた形式でHTTPSアクセスをするとデータがJSON形式でダウンロードされる仕組みである．このサイトの東京の天気予報データにアクセスする <a class="reference external" href="https://api.open-meteo.com/v1/forecast?latitude=35.6785&amp;longitude=139.6823&amp;hourly=temperature_2m,precipitation,windspeed_10m,winddirection_10m&amp;windspeed_unit=ms&amp;timezone=Asia%2FTokyo&amp;past_days=1">URL</a> を使って，ダウンロードしたデータを自動でプロットするプログラムを作成せよ．ただし，オプション無しで実行した場合には画面にプロットを表示し， <code class="docutils literal notranslate"><span class="pre">--save</span></code> オプションでファイル名を指定した場合には，指定されたファイル名（例えばpng形式など）でプロットをファイルに保存するようにせよ．例えば以下のようなプロットが得られればよい．この例のURLでは温度，降水量，風速と風向きをプロットしている．（Open-Meteoのサイトではダウンロードするデータを自分でカスタマイズすることができる．）</p>
 <figure class="align-center">
 <a class="reference internal image-reference" href="_images/chap07_openmeteo.png"><img alt="_images/chap07_openmeteo.png" src="_images/chap07_openmeteo.png" style="width: 80%;" /></a>
 </figure>
@@ -533,9 +533,7 @@
 <dd><p>もちろん色々な環境で動くように注意してプログラムを作れば，の話である．</p>
 </dd>
 <dt class="label" id="versionnote"><span class="brackets"><a class="fn-backref" href="#id17">2</a></span></dt>
-<dd><blockquote>
-<div><p>Pythonのバージョン3.7以上が必要．それ以前であれば</p>
-</div></blockquote>
+<dd><p>Pythonのバージョン3.7以上が必要．それ以前であれば</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s1">&#39;echo&#39;</span><span class="p">,</span> <span class="s1">&#39;hello shell&#39;</span><span class="p">],</span> \
 <span class="linenos">2</span><span class="gp">... </span>        <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span> <span class="n">stderr</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
 </pre></div>
