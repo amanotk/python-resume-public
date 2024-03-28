@@ -11,8 +11,8 @@
 
   .. raw:: html
 
-    <a href="sample/chap04/kadai.html"> 解答例 </a>
-    <a href="https://colab.research.google.com/github/amanotk/python-resume-sample/blob/main/chap04/kadai.ipynb" target="_blank">
+    <a href="answer/chap04/kadai.html"> 解答例 </a>
+    <a href="https://colab.research.google.com/github/amanotk/python-resume-answer/blob/main/chap04/kadai.ipynb" target="_blank">
     <img src="https://colab.research.google.com/assets/colab-badge.svg" style="vertical-align: text-top;">
     </a>
 

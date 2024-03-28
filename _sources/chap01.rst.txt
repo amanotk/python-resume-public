@@ -17,25 +17,37 @@
 
   PDF版: https://amanotk.github.io/python-resume-public/python-resume.pdf
 
-ただしこれは機会的に変換したものなので，細部の調整まではされていない．あくまでもこのウェブページが正式版である．
+ただしこれは機械的に変換したものなので，細部の調整まではされていない．あくまでもこのウェブページが正式版である．
 
-またサンプルコードは各章のリンクからたどることもできるが，
+演習環境の準備
+--------------
 
-  サンプルコード: https://amanotk.github.io/python-resume-public/sample.tar.gz
+Pythonは昨今の機械学習ブームで非常にメジャーな言語となったので，とりあえず使ってみるのは非常に簡単である．特に便利な `Google Colaboratory (Colab) <https://colab.research.google.com/>`_ はGoogleアカウントとブラウザさえあればPythonのコードを実行できる環境であり，機械学習などにも使われている．本演習のサンプルや課題の多くもColabで実行することができる．一方で，コマンドラインからスクリプトとして実行する課題も用意されている．このような課題に取り組むには `ここ <https://amanotk.github.io/fortran-resume-public/chap01.html#id3>`_ を参考にUnix-likeな環境を用意して欲しい．
 
-から一括でダウンロードしてもよい．
+サンプルや解答は各章のリンクからたどることもできるが， `サンプル <https://github.com/amanotk/python-resume-sample>`_ および `解答 <https://github.com/amanotk/python-resume-answer>`_ のそれぞれGithubリポジトリを参照してもよい．  ``git`` コマンドで
+
+.. code-block:: bash
+
+  $ git clone https://github.com/amanotk/python-resume-sample.git sample
+  $ git clone https://github.com/amanotk/python-resume-answer.git answer
+
+
+と実行すればサンプルと解答を一括でダウンロードしてもよい．
 
 
 参考
 ----
+
 Pythonに関する書籍は数多く出版されているので，紙の教科書が欲しい人は適宜好きなものを選べばよいだろう．ただし，現代ではウェブで何でも調べられるので，あまり本を購入する必要はないかもしれない．初学者向けのまとまったサイトとして以下の2つを挙げておく．
 
-  + | `Pythonプログラミング入門 #utpython <https://sites.google.com/view/ut-python/>`_
-    | 東大理学部の講義．教材は最近公開されたようだ．結構詳しい．
+  + | `Pythonプログラミング入門 <https://utokyo-ipp.github.io/course/>`_
+    | 東大理学部の講義．かなり詳しい．現在は教材が全て公開されているようなので，**今となってはこちらを見て勉強する方がよいと思われる**．
   + | `プログラミング演習 Python <https://repository.kulib.kyoto-u.ac.jp/dspace/handle/2433/245698>`_
     | 京大の全学共通科目．PDFファイルが入手できる．初学者向けでやさしい．
 
 最近はYouTubeでチュートリアル動画が多数見つかるので，(特に英語が分かる人は)YouTubeで勉強するのも良いかもしれない．
+
+
 
 -----
 

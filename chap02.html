@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="ja" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>2. Pythonの基本 &mdash; Python演習(地球惑星物理学演習)</title>
@@ -17,7 +17,6 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
         <script src="_static/translations.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
@@ -32,18 +31,14 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-
-          
-          
-          <a href="index.html" class="icon icon-home">
-            Python演習
+            <a href="index.html" class="icon icon-home"> Python演習
           </a>
               <div class="version">
                 2023
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -92,7 +87,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li><a href="index.html" class="icon icon-home"></a></li>
       <li class="breadcrumb-item active"><span class="section-number">2. </span>Pythonの基本</li>
       <li class="wy-breadcrumbs-aside">
       </li>
@@ -103,7 +98,7 @@
            <div itemprop="articleBody">
              
   <section id="python">
-<h1><a class="toc-backref" href="#id33"><span class="section-number">2. </span>Pythonの基本</a><a class="headerlink" href="#python" title="この見出しへのパーマリンク"></a></h1>
+<h1><a class="toc-backref" href="#id33" role="doc-backlink"><span class="section-number">2. </span>Pythonの基本</a><a class="headerlink" href="#python" title="Permalink to this heading"></a></h1>
 <p>まずはPythonプログラムの実行方法と基本的な言語仕様を抑えよう．ただし，ここではCまたはFortranの基本的な文法は既に知っているものとして，それらと比較をしながら基本的な事項を抑えるにとどめる．ここで解説する以上の事柄については必要に応じて調べて欲しい．</p>
 <div class="admonition seealso">
 <p class="admonition-title">参考</p>
@@ -115,7 +110,7 @@
 <li><p><a class="reference internal" href="chap02_sample4_py.html"><span class="doc">sample4.py</span></a> : キーボード入力</p></li>
 </ul>
 </div>
-<div class="contents topic" id="id1">
+<nav class="contents" id="id1">
 <p class="topic-title">この章の内容</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#python" id="id33">Pythonの基本</a></p>
@@ -131,10 +126,10 @@
 </ul>
 </li>
 </ul>
-</div>
+</nav>
 <section id="id2">
-<h2><a class="toc-backref" href="#id34"><span class="section-number">2.1. </span>プログラムの実行</a><a class="headerlink" href="#id2" title="この見出しへのパーマリンク"></a></h2>
-<p>お決まりの&quot;Hello, World !&quot;を標準出力に表示するサンプルプログラム( <a class="reference internal" href="chap02_hello_py.html"><span class="doc">hello.py</span></a> )は以下の通りである．単純に <code class="docutils literal notranslate"><span class="pre">print</span></code> 関数に表示したい文字列を渡せばよい <a class="footnote-reference brackets" href="#print" id="id3">1</a>．</p>
+<h2><a class="toc-backref" href="#id34" role="doc-backlink"><span class="section-number">2.1. </span>プログラムの実行</a><a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
+<p>お決まりの&quot;Hello, World !&quot;を標準出力に表示するサンプルプログラム( <a class="reference internal" href="chap02_hello_py.html"><span class="doc">hello.py</span></a> )は以下の通りである．単純に <code class="docutils literal notranslate"><span class="pre">print</span></code> 関数に表示したい文字列を渡せばよい <a class="footnote-reference brackets" href="#print" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>．</p>
 <div class="literal-block-wrapper docutils container" id="id22">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="chap02_hello_py.html"><span class="doc">hello.py</span></a></span><a class="headerlink" href="#id22" title="このコードへのパーマリンク"></a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="ch">#!/usr/bin/env python</span>
@@ -152,17 +147,17 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>$<span class="w"> </span>./hello.py
 </pre></div>
 </div>
-<p>とすればよい．2番目の実行方法は <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> が実行権限を持っていなければならない <a class="footnote-reference brackets" href="#cmdexec" id="id4">2</a>．
+<p>とすればよい．2番目の実行方法は <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> が実行権限を持っていなければならない <a class="footnote-reference brackets" href="#cmdexec" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>．
 実行権限を与えるには例えば</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>$<span class="w"> </span>chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span>hello.py
 </pre></div>
 </div>
 <p>とすればよい．</p>
 <p>ここでCやFortranでは必須であったコンパイル作業が必要なかったことに注意しよう．Pythonはこれらのコンパイル型言語とは異なりインタープリター型の言語に分類される．すなわち，コンパイルによって全てが一旦機械語に変換されてから実行されるのではなく，プログラムの実行時に一文ずつ読み込まれて，解釈され(interpret)，実行される．したがって，一般にインタープリター型言語の実行速度はコンパイル型言語に比べて非常に遅い．Pythonにおいてもこれは正しいが，この問題は多くの場合（少なくともある程度は）回避することが可能である．その代わりに変数の型宣言などを事前にすることなく使うことができたりと，比較的お手軽に使えるのが大きな利点である．このようにソースコードを(コンパイルすることなく)そのまま実行する言語をスクリプト言語と呼んだりもする．bashなどのシェルも一種のスクリプト言語である．</p>
-<p>また，Pythonはインタープリターとしての特徴を生かして対話的な使い方も可能である．これについては <a class="reference internal" href="chap03.html"><span class="doc">対話型の実行方法</span></a> で別途紹介するが，ここではまずはコマンドラインでの実行方法に慣れておこう <a class="footnote-reference brackets" href="#interactive" id="id5">3</a> ．</p>
+<p>また，Pythonはインタープリターとしての特徴を生かして対話的な使い方も可能である．これについては <a class="reference internal" href="chap03.html"><span class="doc">対話型の実行方法</span></a> で別途紹介するが，ここではまずはコマンドラインでの実行方法に慣れておこう <a class="footnote-reference brackets" href="#interactive" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> ．</p>
 </section>
 <section id="id6">
-<h2><a class="toc-backref" href="#id35"><span class="section-number">2.2. </span>ソースコードの基本構造</a><a class="headerlink" href="#id6" title="この見出しへのパーマリンク"></a></h2>
+<h2><a class="toc-backref" href="#id35" role="doc-backlink"><span class="section-number">2.2. </span>ソースコードの基本構造</a><a class="headerlink" href="#id6" title="Permalink to this heading"></a></h2>
 <p>Pythonのプログラムは（変数，関数，クラスなどの定義を除けば）基本的には上から順に実行されると思ってよい．ただし各行の <code class="docutils literal notranslate"><span class="pre">#</span></code> 以降はコメントと解釈され無視される．また，Fortranとは異なりアルファベットの大文字と小文字は区別される．</p>
 <p>Pythonの大きな特徴は <strong>構文ブロックがインデント（字下げ）で区別される</strong> という点である．まずは以下のサンプルを見てみよう．</p>
 <div class="literal-block-wrapper docutils container" id="id23">
@@ -219,13 +214,13 @@
 <span class="linenos">6</span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This will be ignored&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>すなわち， <strong>文頭に余計なスペースなどがあるソースコードは文法的に許されない</strong> のである．多くの言語ではあくまで人間の見やすさのためにインデントをしているのであって，文法的には必須ではない．したがって，書き手に依存して簡単に読みにくいコードが出来てしまう．Pythonではインデントを文法として強制することで，誰が書いても読みやすいコードになるのである <a class="footnote-reference brackets" href="#readability" id="id7">4</a>．</p>
+<p>すなわち， <strong>文頭に余計なスペースなどがあるソースコードは文法的に許されない</strong> のである．多くの言語ではあくまで人間の見やすさのためにインデントをしているのであって，文法的には必須ではない．したがって，書き手に依存して簡単に読みにくいコードが出来てしまう．Pythonではインデントを文法として強制することで，誰が書いても読みやすいコードになるのである <a class="footnote-reference brackets" href="#readability" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a>．</p>
 <p>なお，このようなインデントを手動で行なうのはあまり賢いやり方ではないので，エディタの機能をうまく使うとよい．最近の高機能なエディタであればどれでもPythonを扱うための便利な機能を提供している．</p>
-<p>また，Pythonには標準で様々なモジュール（ライブラリ）が用意されており，それらを組み合わせてプログラムを開発していくことになる．モジュールの使い方についての詳細な説明はここでは割愛するが，モジュールを使うにはまず <code class="docutils literal notranslate"><span class="pre">import</span></code> する必要がある．これはFortranの <code class="docutils literal notranslate"><span class="pre">use</span></code> と同じものだと考えて良い．Cでは <code class="docutils literal notranslate"><span class="pre">include</span></code> に近い <a class="footnote-reference brackets" href="#includeinc" id="id8">5</a>．</p>
+<p>また，Pythonには標準で様々なモジュール（ライブラリ）が用意されており，それらを組み合わせてプログラムを開発していくことになる．モジュールの使い方についての詳細な説明はここでは割愛するが，モジュールを使うにはまず <code class="docutils literal notranslate"><span class="pre">import</span></code> する必要がある．これはFortranの <code class="docutils literal notranslate"><span class="pre">use</span></code> と同じものだと考えて良い．Cでは <code class="docutils literal notranslate"><span class="pre">include</span></code> に近い <a class="footnote-reference brackets" href="#includeinc" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a>．</p>
 <p>上の例では17行目で <code class="docutils literal notranslate"><span class="pre">sys</span></code> という名前のモジュールを <code class="docutils literal notranslate"><span class="pre">import</span></code> し，20行目，22行目で <code class="docutils literal notranslate"><span class="pre">sys.exit()</span></code> を呼んでいる．Pythonのプログラムは基本的には上から順に実行され最後の行に達した段階で終了するが，何らかのエラーが発生した場合など，途中でプログラムの実行を打ち切りたい場合には <code class="docutils literal notranslate"><span class="pre">sys.exit()</span></code> を呼べばよい．(Fortranの <code class="docutils literal notranslate"><span class="pre">stop</span></code> ，Cの <code class="docutils literal notranslate"><span class="pre">exit()</span></code> 関数と同じものである．）</p>
 </section>
 <section id="id9">
-<h2><a class="toc-backref" href="#id36"><span class="section-number">2.3. </span>変数</a><a class="headerlink" href="#id9" title="この見出しへのパーマリンク"></a></h2>
+<h2><a class="toc-backref" href="#id36" role="doc-backlink"><span class="section-number">2.3. </span>変数</a><a class="headerlink" href="#id9" title="Permalink to this heading"></a></h2>
 <p>スクリプト言語であるPythonにおける変数の扱いはコンパイル型言語とは大きく異なり，変数を使う際に型宣言をする必要がない．例えば以下のように変数を使うことができる．</p>
 <div class="literal-block-wrapper docutils container" id="id24">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="chap02_sample2_py.html"><span class="doc">sample2.py</span></a> 抜粋</span><a class="headerlink" href="#id24" title="このコードへのパーマリンク"></a></div>
@@ -253,7 +248,7 @@
 <p>なお，Pythonではプログラム中で書き換えのできない定数(Cの <code class="docutils literal notranslate"><span class="pre">const</span></code>, Fortranの <code class="docutils literal notranslate"><span class="pre">parameter</span></code>)は言語仕様としては提供されていない．ただし，必要な場合には実質的には定数と振る舞うような変数を用いることは可能である．</p>
 </section>
 <section id="id10">
-<h2><a class="toc-backref" href="#id37"><span class="section-number">2.4. </span>算術演算</a><a class="headerlink" href="#id10" title="この見出しへのパーマリンク"></a></h2>
+<h2><a class="toc-backref" href="#id37" role="doc-backlink"><span class="section-number">2.4. </span>算術演算</a><a class="headerlink" href="#id10" title="Permalink to this heading"></a></h2>
 <p>数学的な演算はCやFortranと共通の点が多いが，多少注意が必要である．以下に算術演算の使用例を示す．</p>
 <div class="literal-block-wrapper docutils container" id="id25">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="chap02_sample3_py.html"><span class="doc">sample3.py</span></a> 抜粋</span><a class="headerlink" href="#id25" title="このコードへのパーマリンク"></a></div>
@@ -271,7 +266,7 @@
 <p>また <code class="docutils literal notranslate"><span class="pre">%</span></code> 演算子はCと同様に整数同士の割り算の余りを返す．Fortranでは <code class="docutils literal notranslate"><span class="pre">mod</span></code> 関数に相当する．逆に <code class="docutils literal notranslate"><span class="pre">**</span></code> 演算子はFortranと同じべき乗を返すが，Cでは <code class="docutils literal notranslate"><span class="pre">pow</span></code> 関数に相当する．</p>
 </section>
 <section id="id11">
-<h2><a class="toc-backref" href="#id38"><span class="section-number">2.5. </span>数学関数</a><a class="headerlink" href="#id11" title="この見出しへのパーマリンク"></a></h2>
+<h2><a class="toc-backref" href="#id38" role="doc-backlink"><span class="section-number">2.5. </span>数学関数</a><a class="headerlink" href="#id11" title="Permalink to this heading"></a></h2>
 <p>数学関数を使うには <code class="docutils literal notranslate"><span class="pre">math</span></code> というモジュールを <code class="docutils literal notranslate"><span class="pre">import</span></code> すればよい．</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">math</span>
 </pre></div>
@@ -287,7 +282,7 @@
 </div>
 </section>
 <section id="id12">
-<h2><a class="toc-backref" href="#id39"><span class="section-number">2.6. </span>キーボード入力</a><a class="headerlink" href="#id12" title="この見出しへのパーマリンク"></a></h2>
+<h2><a class="toc-backref" href="#id39" role="doc-backlink"><span class="section-number">2.6. </span>キーボード入力</a><a class="headerlink" href="#id12" title="Permalink to this heading"></a></h2>
 <p>ここでコマンドラインでPythonプログラムを実行する際にキーボードからの入力を受け取る方法を一つ紹介しておこう．これには組み込み関数の <code class="docutils literal notranslate"><span class="pre">input</span></code> を使う．</p>
 <div class="literal-block-wrapper docutils container" id="id26">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="chap02_sample4_py.html"><span class="doc">sample4.py</span></a> 抜粋</span><a class="headerlink" href="#id26" title="このコードへのパーマリンク"></a></div>
@@ -314,10 +309,10 @@
 <p>プログラムに入力を与える方法は他にも色々と考えられるが，まずはこの一番簡単な方法を使うことにしよう．</p>
 </section>
 <section id="id13">
-<h2><a class="toc-backref" href="#id40"><span class="section-number">2.7. </span>文字列フォーマット</a><a class="headerlink" href="#id13" title="この見出しへのパーマリンク"></a></h2>
+<h2><a class="toc-backref" href="#id40" role="doc-backlink"><span class="section-number">2.7. </span>文字列フォーマット</a><a class="headerlink" href="#id13" title="Permalink to this heading"></a></h2>
 <p>Pythonの文字列のフォーマットの仕方について簡単に触れておこう．ここではよく使われるprintf形式と <code class="docutils literal notranslate"><span class="pre">format()</span></code> の使い方について最低限の情報を述べるにとどめる．printf形式はC言語とほぼ同じで，また古いPythonでも使えたことから慣れている人(筆者のことである)が好んで使う傾向がある． <code class="docutils literal notranslate"><span class="pre">format()</span></code> はprintf形式の問題を解決するために導入されたという経緯があるので，今から覚えるのであればこちらの方がよいであろう．いずれにせよ，一気に全て覚えるようなものではなく，必要に応じてPythonの公式ドキュメント等を参照して少しずつ慣れていけば十分である．</p>
 <section id="printf">
-<h3><span class="section-number">2.7.1. </span>printf形式<a class="headerlink" href="#printf" title="この見出しへのパーマリンク"></a></h3>
+<h3><span class="section-number">2.7.1. </span>printf形式<a class="headerlink" href="#printf" title="Permalink to this heading"></a></h3>
 <p>C言語のprintfで用いられるのとほぼ同じ要領で文字列のフォーマットができる．これには <code class="docutils literal notranslate"><span class="pre">%</span></code> を用いて，例えば以下のように用いる．</p>
 <div class="literal-block-wrapper docutils container" id="id28">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="chap02_sample5_py.html"><span class="doc">sample5.py</span></a> 抜粋</span><a class="headerlink" href="#id28" title="このコードへのパーマリンク"></a></div>
@@ -342,8 +337,8 @@
 <p>フォーマット指定子の詳細については <a class="reference external" href="https://docs.python.org/ja/3/library/stdtypes.html#old-string-formatting">公式ドキュメント</a> を参照のこと．なお， <code class="docutils literal notranslate"><span class="pre">%</span></code> に続く <code class="docutils literal notranslate"><span class="pre">()</span></code> は <a class="reference internal" href="chap05.html#label-chap05-tuple"><span class="std std-ref">tupleオブジェクト</span></a> である．ここに <a class="reference internal" href="chap05.html#label-chap05-dict"><span class="std std-ref">dictオブジェクト</span></a> を与えることも可能であるがここでは省略する．</p>
 </section>
 <section id="format">
-<h3><span class="section-number">2.7.2. </span>format()<a class="headerlink" href="#format" title="この見出しへのパーマリンク"></a></h3>
-<p>Pythonの文字列は <code class="docutils literal notranslate"><span class="pre">format()</span></code> というメソッド <a class="footnote-reference brackets" href="#method" id="id15">6</a> を持ち，これを用いることで文字列のフォーマットができる．以下に例を見てみよう．</p>
+<h3><span class="section-number">2.7.2. </span>format()<a class="headerlink" href="#format" title="Permalink to this heading"></a></h3>
+<p>Pythonの文字列は <code class="docutils literal notranslate"><span class="pre">format()</span></code> というメソッド <a class="footnote-reference brackets" href="#method" id="id15" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a> を持ち，これを用いることで文字列のフォーマットができる．以下に例を見てみよう．</p>
 <div class="literal-block-wrapper docutils container" id="id30">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="chap02_sample5_py.html"><span class="doc">sample5.py</span></a> 抜粋</span><a class="headerlink" href="#id30" title="このコードへのパーマリンク"></a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">21</span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> is more powerful than </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Python&#39;</span><span class="p">,</span> <span class="s1">&#39;Fortran&#39;</span><span class="p">)</span>
@@ -374,17 +369,17 @@
 </section>
 </section>
 <section id="id17">
-<h2><a class="toc-backref" href="#id41"><span class="section-number">2.8. </span>第2章 演習課題</a><a class="headerlink" href="#id17" title="この見出しへのパーマリンク"></a></h2>
+<h2><a class="toc-backref" href="#id41" role="doc-backlink"><span class="section-number">2.8. </span>第2章 演習課題</a><a class="headerlink" href="#id17" title="Permalink to this heading"></a></h2>
 <section id="id18">
-<h3><span class="section-number">2.8.1. </span>課題1<a class="headerlink" href="#id18" title="この見出しへのパーマリンク"></a></h3>
+<h3><span class="section-number">2.8.1. </span>課題1<a class="headerlink" href="#id18" title="Permalink to this heading"></a></h3>
 <p>サンプルを実行して動作を確認しよう．</p>
 </section>
 <section id="id19">
-<h3><span class="section-number">2.8.2. </span>課題2<a class="headerlink" href="#id19" title="この見出しへのパーマリンク"></a></h3>
+<h3><span class="section-number">2.8.2. </span>課題2<a class="headerlink" href="#id19" title="Permalink to this heading"></a></h3>
 <p>標準出力に <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">Python</span> <span class="pre">!</span></code> 出力するプログラムを作成しよう．</p>
 </section>
 <section id="id20">
-<h3><span class="section-number">2.8.3. </span>課題3<a class="headerlink" href="#id20" title="この見出しへのパーマリンク"></a></h3>
+<h3><span class="section-number">2.8.3. </span>課題3<a class="headerlink" href="#id20" title="Permalink to this heading"></a></h3>
 <p>標準入力から三角形の底辺 <span class="math notranslate nohighlight">\(l\)</span> と高さ <span class="math notranslate nohighlight">\(h\)</span> を読み込み，三角形の面積を表示するプログラムを作成しよう．</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>$<span class="w"> </span>python<span class="w"> </span>kadai3.py
 <span class="linenos">2</span>Input<span class="w"> </span>l<span class="w"> </span>:<span class="w"> </span><span class="m">5</span>.0<span class="w">       </span><span class="c1"># キーボード入力</span>
@@ -394,7 +389,7 @@
 </div>
 </section>
 <section id="id21">
-<h3><span class="section-number">2.8.4. </span>課題4<a class="headerlink" href="#id21" title="この見出しへのパーマリンク"></a></h3>
+<h3><span class="section-number">2.8.4. </span>課題4<a class="headerlink" href="#id21" title="Permalink to this heading"></a></h3>
 <p>キーボード入力で与えられた実数 <span class="math notranslate nohighlight">\(x\)</span> について，テイラー展開の公式</p>
 <div class="math notranslate nohighlight">
 \[\sin x = x - \frac{x^3}{3 !} + \frac{x^5}{5 !} - \frac{x^7}{7 !} \cdots\]</div>
@@ -410,29 +405,33 @@
 </pre></div>
 </div>
 <hr class="docutils" />
-<dl class="footnote brackets">
-<dt class="label" id="print"><span class="brackets"><a class="fn-backref" href="#id3">1</a></span></dt>
-<dd><p>Python-2.xでは <code class="docutils literal notranslate"><span class="pre">print</span></code> の形式が違っていたので古い情報を参照する場合には注意が必要．他にも細かいところに少しずつ違いがある．なお，以下のように <code class="docutils literal notranslate"><span class="pre">print</span></code> 関数にはカンマ区切りで複数の文字列や変数を渡すことができる．</p>
+<aside class="footnote brackets" id="print" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">1</a><span class="fn-bracket">]</span></span>
+<p>Python-2.xでは <code class="docutils literal notranslate"><span class="pre">print</span></code> の形式が違っていたので古い情報を参照する場合には注意が必要．他にも細かいところに少しずつ違いがある．なお，以下のように <code class="docutils literal notranslate"><span class="pre">print</span></code> 関数にはカンマ区切りで複数の文字列や変数を渡すことができる．</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hi, &#39;</span><span class="p">,</span> <span class="s1">&#39;I &#39;</span><span class="p">,</span> <span class="s1">&#39;Love &#39;</span><span class="p">,</span> <span class="s1">&#39;Python !&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-<dt class="label" id="cmdexec"><span class="brackets"><a class="fn-backref" href="#id4">2</a></span></dt>
-<dd><p>実は <a class="reference internal" href="chap02_hello_py.html"><span class="doc">hello.py</span></a> の1行目がPythonで実行せよという意味なので，実行権限さえ与えてあればこのように実行することができるのである．</p>
-</dd>
-<dt class="label" id="interactive"><span class="brackets"><a class="fn-backref" href="#id5">3</a></span></dt>
-<dd><p>最近ではPythonに関する情報の多くがJupyter Notebookと呼ばれる環境での実行を前提としており，Pythonスクリプトとしての実行方法についてあまり紹介してくれていない．実際にそのような使い方を知らない人も多いようなので，ここではあえてコマンドラインでの実行方法から先に紹介する．</p>
-</dd>
-<dt class="label" id="readability"><span class="brackets"><a class="fn-backref" href="#id7">4</a></span></dt>
-<dd><p>もちろんこれは程度の問題である．Pythonであっても読みにくいコードが絶対にできないわけではない．</p>
-</dd>
-<dt class="label" id="includeinc"><span class="brackets"><a class="fn-backref" href="#id8">5</a></span></dt>
-<dd><p>あくまで初学者向けの説明である．</p>
-</dd>
-<dt class="label" id="method"><span class="brackets"><a class="fn-backref" href="#id15">6</a></span></dt>
-<dd><p>とりあえず関数と同じ意味だと思ってよい．<a class="reference internal" href="chap04.html#label-chap04-object"><span class="std std-ref">ここ</span></a> で紹介する．</p>
-</dd>
-</dl>
+</aside>
+<aside class="footnote brackets" id="cmdexec" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">2</a><span class="fn-bracket">]</span></span>
+<p>実は <a class="reference internal" href="chap02_hello_py.html"><span class="doc">hello.py</span></a> の1行目がPythonで実行せよという意味なので，実行権限さえ与えてあればこのように実行することができるのである．</p>
+</aside>
+<aside class="footnote brackets" id="interactive" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">3</a><span class="fn-bracket">]</span></span>
+<p>最近ではPythonに関する情報の多くがJupyter Notebookと呼ばれる環境での実行を前提としており，Pythonスクリプトとしての実行方法についてあまり紹介してくれていない．実際にそのような使い方を知らない人も多いようなので，ここではあえてコマンドラインでの実行方法から先に紹介する．</p>
+</aside>
+<aside class="footnote brackets" id="readability" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">4</a><span class="fn-bracket">]</span></span>
+<p>もちろんこれは程度の問題である．Pythonであっても読みにくいコードが絶対にできないわけではない．</p>
+</aside>
+<aside class="footnote brackets" id="includeinc" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">5</a><span class="fn-bracket">]</span></span>
+<p>あくまで初学者向けの説明である．</p>
+</aside>
+<aside class="footnote brackets" id="method" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id15">6</a><span class="fn-bracket">]</span></span>
+<p>とりあえず関数と同じ意味だと思ってよい．<a class="reference internal" href="chap04.html#label-chap04-object"><span class="std std-ref">ここ</span></a> で紹介する．</p>
+</aside>
 </section>
 </section>
 </section>
